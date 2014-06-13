@@ -2,7 +2,7 @@ package DivDB::MeetEntry;
 use strict;
 use warnings;
 
-our @keys = qw(week team start end opponent score points);
+our @keys = qw(week team team_seed start end opponent opp_seed score points);
 
 sub new
 {
@@ -10,12 +10,6 @@ sub new
   my %this;
   @this{@keys} = @values;
   bless \%this, (ref($proto)||$proto);
-}
-
-sub sql
-{
-  my $columns = join ',', @keys;
-  return "select $columns from meets";
 }
 
 sub pairedWith
@@ -27,11 +21,17 @@ sub pairedWith
   }
   return 0 unless $t1->{opponent} = $t2->{team};
   return 0 unless $t2->{opponent} = $t1->{team};
-  return 0 unless $t1->{points} + $t2->{points} == 6;
-  return 0 unless ( ($t1->{score} > $t2->{score} && $t1->{points}==6) ||
-                    ($t2->{score} > $t1->{score} && $t2->{points}==6) ||
-                    ($t1->{score} == $t2->{score} && $t1->{points}==$t2->{points}) );
-  return 1;
+
+  my($s1,$s2) = ( $t1->{score},  $t2->{score}  );
+
+  my($p1,$p2) = ( $s1>$s2 ? (6,0) :  # team 1 won, they get 6 points
+                  $s1<$s2 ? (0,6) :  # team 2 won, they get 6 points
+                            (3,3) ); # tie, both teams get 3 points
+
+  $p1 = 0 if $t1->{opp_seed}  > 6;  # team 1 gets no points
+  $p2 = 0 if $t1->{team_seed} > 6;  # team 2 gets no points
+
+  return ( $t1->{points}==$p1 && $t2->{points}==$p2 );
 }
 
 package DivDB::Meet;
@@ -82,7 +82,7 @@ sub new
 
   my %this;
 
-  my $sql = DivDB::MeetEntry->sql;
+  my $sql = join '', <DATA>;
   my $q = $dbh->selectall_arrayref($sql);
 
   my %entries;
@@ -151,3 +151,19 @@ sub gen_html
 }
 
 1
+
+__DATA__
+select week,
+       M.team,
+       S1.rank,
+       start,
+       end,
+       opponent,
+       S2.rank,
+       score,
+       points
+  from meets M,
+       seed_standings S1,
+       seed_standings S2
+ where S1.team=M.team 
+   and S2.team=M.opponent;

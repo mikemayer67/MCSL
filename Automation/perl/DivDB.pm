@@ -12,6 +12,7 @@ use DivDB::SDIF;
 use DivDB::Stats;
 use DivDB::Swimmers;
 use DivDB::Teams;
+use DivDB::TeamSeed;
 
 use strict;
 use warnings;

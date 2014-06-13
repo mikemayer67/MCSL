@@ -250,12 +250,10 @@ AGE_SQL
     $rval .= "<tr>\n";
     $rval .= "  <td class=reportbold rowspan=2>$age</td>\n";
     $rval .= "  <td class='reportbold boys'>Boys</td>\n";
-    $rval .= "  <td class='reportbody boys'>$results{$age}{M}{$_}</td>\n"
-    foreach @teams;
+    $rval .= "  <td class='reportbody boys'>".($results{$age}{M}{$_}||'')."</td>\n" foreach @teams;
     $rval .= "</tr><tr>\n";
     $rval .= "  <td class='reportbold girls'>Girls</td>\n";
-    $rval .= "  <td class='reportbody girls'>$results{$age}{F}{$_}</td>\n"
-    foreach @teams;
+    $rval .= "  <td class='reportbody girls'>".($results{$age}{F}{$_}||'')."</td>\n" foreach @teams;
     $rval .= "</tr>\n";
   }
   $rval .= "</table>\n";

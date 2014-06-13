@@ -58,7 +58,7 @@ sub gen_html
 
   my $lastScore=0;
   my $lastPlace=0;
-  foreach my $i (0..5)
+  foreach my $i (0..$#teams)
   {
     next unless exists $teams[$i];
 

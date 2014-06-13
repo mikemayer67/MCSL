@@ -96,6 +96,8 @@ sub gen_html
         if(exists($weeks->[$week]))
         {
           my $time = $weeks->[$week]{time};
+          next unless defined $time;
+     
           if($weeks->[$week]{DQ}=~/y/i)
           {
             $times{$swimmer}[$week] = 'DQ';
@@ -164,6 +166,8 @@ sub gen_html
           $time = time_string($time,$event_number);
           $style = 'reportbody';
         }
+
+        $time = '' unless defined $time;
 
         $rval .= "  <td class=$style>$time</td>\n";
       }
