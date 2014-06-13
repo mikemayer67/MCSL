@@ -15,11 +15,9 @@ use Scalar::Util qw(looks_like_number);
 
 use DivDB qw(getDBConnection);
 
-my $week     = shift @ARGV;
 my $filename = shift @ARGV;
 
-die "\nUsage:: $FindBin::Script week cl2_filename\n\n" unless defined $filename;
-die "\nSorry:: week must be an integer between 1 and 5\n\n" unless $week=~/^[12345]$/;
+die "\nUsage:: $FindBin::Script cl2_filename\n\n" unless defined $filename;
 die "\nSorry:: filename must end with .cl2\n\n" unless $filename=~/\.cl2$/;
 
 my $cl2 = new FileHandle($filename);
@@ -31,6 +29,9 @@ my $sdif_codes = new DivDB::SDIF($dbh);
 my $events     = new DivDB::Events($dbh);
 my $teams      = new DivDB::Teams($dbh);
 my $swimmers   = new DivDB::Swimmers($dbh);
+my $schedule   = new DivDB::Schedule($dbh);
+
+my @sql;
 
 my $A0;
 my $B1;
@@ -44,6 +45,9 @@ my %score;
 
 my %results;
 my %ties;
+
+my $week_meet_where  = 'week=<<WEEK>> and meet=<<MEET>>';
+my $week_meet_values = '<<WEEK>>,<<MEET>>';
 
 my %CL2;
 while(<$cl2>)
@@ -105,28 +109,28 @@ while(<$cl2>)
 
     unless($ns || $scr)
     {
-      my @values = ( $week,
-                     "'$rec->{ussid}'",
-                     $number,
-                     $rec->{finals_heat},
-                     $rec->{finals_lane},
-                     cvt_time($rec->{seed_time})||'NULL',
-                     $dq ? "'Y'" : "'N'",
-                     cvt_time($rec->{finals_time})||'NULL',
-                     $place||'NULL',
-                     $dq ? 'NULL' : $points );
-      my $values = join ',', @values;
-      my $sql = "delete from individual_results where week=$week and swimmer='$rec->{ussid}' and event=$number";
-      $dbh->do($sql);
-      $sql = "insert into individual_results values ($values)";
-      $dbh->do($sql) unless $ns;
+      push @sql, "delete from individual_results where $week_meet_where and swimmer='$rec->{ussid}' and event=$number";
 
-      unless($dq)
+      my $values = join ',', (
+        $week_meet_values,
+        "'$rec->{ussid}'",
+        $number,
+        $rec->{finals_heat},
+        $rec->{finals_lane},
+        cvt_time($rec->{seed_time})||'NULL',
+        $dq ? "'Y'" : "'N'",
+        cvt_time($rec->{finals_time})||'NULL',
+        $place||'NULL',
+        $dq ? 'NULL' : $points,
+      );
+
+      push @sql, "insert into individual_results values ($values)";
+
+      if($place && ! $dq)
       {
         if(exists $results{$number}{$place})
         {
-          push @{$ties{$number}{$place}}, $results{$number}{$place}
-            unless exists $ties{$number}{$place};
+          push @{$ties{$number}{$place}}, $results{$number}{$place} unless exists $ties{$number}{$place};
           push @{$ties{$number}{$place}}, [$rec->{ussid},$points];
         }
         else
@@ -162,31 +166,32 @@ while(<$cl2>)
       unless($ns)
       {
         my $place = $rec->{finals_rank};
-        my @values = ( $week,
-                       "'$curTeamCode'",
-                       $number,
-                       "'$rec->{relay_team}'",
-                       'NULL','NULL','NULL','NULL',
-                       $rec->{finals_heat},
-                       $rec->{finals_lane},
-                       0,
-                       cvt_time($rec->{seed_time})||'NULL',
-                       $dq ? "'Y'" : "'N'",
-                       cvt_time($rec->{finals_time})||'NULL',
-                       $place||'NULL',
-                       $dq ? 'NULL' : $points );
-        my $values = join ',', @values;
-        my $sql = "delete from relay_results where week=$week and team='$curTeamCode' and event=$number and relay_team='$rec->{relay_team}'";
-        $dbh->do($sql);
-        $sql = "insert into relay_results values ($values)";
-        $dbh->do($sql);
 
-        unless($dq)
+        push @sql, "delete from relay_results where $week_meet_where and team='$curTeamCode' and event=$number and relay_team='$rec->{relay_team}'";
+
+        my $values = join ',', (
+          $week_meet_values,
+          "'$curTeamCode'",
+          $number,
+          "'$rec->{relay_team}'",
+          'NULL','NULL','NULL','NULL',
+          $rec->{finals_heat},
+          $rec->{finals_lane},
+          0,
+          cvt_time($rec->{seed_time})||'NULL',
+          $dq ? "'Y'" : "'N'",
+          cvt_time($rec->{finals_time})||'NULL',
+          $place||'NULL',
+          $dq ? 'NULL' : $points,
+        );
+
+        push @sql, "insert into relay_results values ($values)";
+
+        if($place && ! $dq)
         {
           if(exists $results{$number}{$place})
           {
-            push @{$ties{$number}{$place}}, $results{$number}{$place} 
-              unless exists $ties{$number}{$place};
+            push @{$ties{$number}{$place}}, $results{$number}{$place} unless exists $ties{$number}{$place};
             push @{$ties{$number}{$place}}, [$curTeamCode,$rec->{relay_team},$points];
           }
           else
@@ -214,7 +219,7 @@ while(<$cl2>)
       my $leg   = $rec->{finals_leg};
       if($leg=~/^[1234]$/)
       {
-        $dbh->do("update relay_results set swimmer$leg='$ussid',total_age=total_age+$rec->{age} where week=$week and team='$curTeamCode' and event=$curRelay->{evt_number} and relay_team='$curRelay->{relay_team}'");
+        push @sql, "update relay_results set swimmer$leg='$ussid',total_age=total_age+$rec->{age} where $week_meet_where and team='$curTeamCode' and event=$curRelay->{evt_number} and relay_team='$curRelay->{relay_team}'";
       }
     }
 
@@ -229,8 +234,7 @@ while(<$cl2>)
     foreach (qw/B C D E F/)
     {
       my $rn = $rec->{"num_$_"};
-      warn "Mismatch in $_ count (Z0 says $rn / found $num{$_})\n"
-        unless $rn == $num{$_};
+      warn "Mismatch in $_ count (Z0 says $rn / found $num{$_})\n" unless $rn == $num{$_};
     }
     $Z0 = $rec;
   }
@@ -261,7 +265,7 @@ foreach my $event_number (keys %ties)
         my($team,$relay_team,$pts) = @$s;
         my $delta = $true_pts-$pts;
         print " Correcting tie points ($event_number/$place): $team/$relay_team ($true_pts vs $pts)\n";
-        $dbh->do("update relay_results set points=$true_pts where week=$week and team='$team' and relay_team='$relay_team' and event=$event_number");
+        push @sql, "update relay_results set points=$true_pts where $week_meet_where and team='$team' and relay_team='$relay_team' and event=$event_number";
         $score{$team} += $delta;
       }
     }
@@ -282,7 +286,7 @@ foreach my $event_number (keys %ties)
         my $team = $swimmers->{$ussid}{team};
         my $delta = $true_pts-$pts;
         print " Correcting tie points ($event_number/$place): $ussid/$team ($true_pts vs $pts)\n";
-        $dbh->do("update individual_results set points=$true_pts where week=$week and swimmer='$ussid' and event=$event_number");
+        push @sql, "update individual_results set points=$true_pts where $week_meet_where and swimmer='$ussid' and event=$event_number";
         $score{$team} += $delta;
       }
     }
@@ -295,9 +299,20 @@ my($s1,$s2) = @score{$t1,$t2};
 my $p1 = ($s1>$s2 ? 6 : $s1<$s2 ? 0 : 3);
 my $p2 = ($s2>$s1 ? 6 : $s2<$s1 ? 0 : 3);
 my $dates = "'$dates[0]','$dates[1]'";
-$dbh->do("delete from meets where week=$week and team in ('$t1','$t2')");
-$dbh->do("insert into meets values ($week,'$t1',$dates,'$t2',$s1,$p1)");
-$dbh->do("insert into meets values ($week,'$t2',$dates,'$t1',$s2,$p2)");
+
+die "\nCannot find $t1 vs $t2 in dual meet schedule\n\n" unless defined $schedule->{$t1}{$t2};
+my($week,$meet) = @{$schedule->{$t1}{$t2}};
+
+push @sql, "delete from meets where $week_meet_where and team in ('$t1','$t2')";
+push @sql, "insert into meets values ($week_meet_values,'$t1',$dates,'$t2',$s1,$p1)";
+push @sql, "insert into meets values ($week_meet_values,'$t2',$dates,'$t1',$s2,$p2)";
+
+foreach my $sql (@sql)
+{
+  $sql=~s/<<WEEK>>/$week/g;
+  $sql=~s/<<MEET>>/$meet/g;
+  $dbh->do($sql);
+}
 
 print "\nNumber of Swimmers: $Z0->{num_swimmers}\n";
 print "\nFinal Score\n";

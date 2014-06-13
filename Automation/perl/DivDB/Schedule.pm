@@ -13,9 +13,9 @@ sub new
   
   foreach my $x (@$q)
   {
-    my($week,$home,$away) = @$x;
-    $this{$week}{$home} = [ home => $away ];
-    $this{$week}{$away} = [ away => $home ];
+    my($week,$meet,$home,$away) = @$x;
+    $this{$home}{$away} = [$week,$meet,'home'];
+    $this{$away}{$home} = [$week,$meet,'away'];
   }
 
   return bless \%this, (ref($proto) || $proto);
@@ -24,15 +24,16 @@ sub new
 sub verify
 {
   my($this,$week,$t1,$t2) = @_;
-  
-  $t1 = $this->{$week}{$t1};
-  return $t1->[0] eq 'home' && $t1->[1] eq $t2;
+  return $this->{$t1}{$t2}[0] == $week if exists $this->{$t1} && exists $this->{$t1}{$t2};
+  return $this->{$t2}{$t1}[0] == $week if exists $this->{$t2} && exists $this->{$t2}{$t1};
+  return undef;
 }
 
 1
 
 __DATA__
 select S.week,
+       S.meet,
        T1.team,
        T2.team
 from   dual_schedule S,
