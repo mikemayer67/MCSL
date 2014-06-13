@@ -1,0 +1,209 @@
+#!/bin/ksh --  # -*-perl-*-
+eval 'exec $PERL $0 ${1+"$@"}'
+  if 0;
+use strict;
+use warnings;
+
+use FindBin;
+use lib $FindBin::RealBin;
+
+use Data::Dumper;
+use DBI;
+use FileHandle;
+
+use DivDB qw(getDBConnection);
+
+my $dbh = getDBConnection();
+
+my $sdif     = new DivDB::SDIF($dbh);
+my $events   = new DivDB::Events($dbh);
+my $teams    = new DivDB::Teams($dbh);
+my $swimmers = new DivDB::Swimmers($dbh);
+my $meets    = new DivDB::Meets($dbh);
+my $points   = new DivDB::Points($dbh);
+my $results  = new DivDB::Results($dbh);
+my $relays   = new DivDB::Relays($dbh);
+my $stats    = new DivDB::Stats($dbh);
+my $carnival = new DivDB::CarnivalRelays($dbh);
+my $div      = new DivDB::Divisionals($dbh);
+
+my $htmldir = $FindBin::RealBin;
+$htmldir=~s(/[^/]+$)(/html);
+
+my $tmpl = join '', <DATA>;
+
+$tmpl=~s/{{YEAR}}/$DivDB::Year/g;
+$tmpl=~s/{{DIVISION}}/$DivDB::Division/g;
+
+&gen_summary;
+&gen_individual;
+&gen_relay;
+&gen_carnival;
+&gen_stats;
+
+################################################################################
+# common html setup
+################################################################################
+
+sub setup_html
+{
+  my $page = shift;
+
+  my $html = $tmpl;
+  my $date = localtime;
+  $html=~s/{{DATE}}/$date/g;
+
+  my @pages  = qw(summary individual relay carnival stats);
+  my @labels = ('Summary','Individual Results','Relay Results','Relay Carnival','Statistics');
+  my %labels = map { ( $pages[$_] => $labels[$_]||$pages[$_] ) } (0..$#pages);
+
+  my @links = map { my $tag = $_ eq $page ? 'span' : 'a' ;
+                    "<$tag class=menubar href=$_.html>$labels{$_}</$tag>" 
+                  } @pages;
+
+  $html=~s/{{TITLE}}/$labels{$page}/g;
+
+  while($html=~/{{LINKS}}/)
+  {
+    my $prefix = $`;
+    $prefix=~s/./ /g;
+
+    my $links = join "\n$prefix", @links;
+      
+    $html=~s/{{LINKS}}/$links/;
+  }
+
+  return $html;
+}
+
+################################################################################
+# gen summary page
+################################################################################
+
+sub gen_summary
+{
+  my $html = setup_html('summary');
+
+  my $fh = new FileHandle(">$htmldir/summary.html") || die "Failed to create summary.html: $!\n";
+
+  my $points_summary = $points->gen_html($teams);
+  my $meets_summary  = $meets->gen_html($teams);
+  my $div_summary    = $div->gen_html($teams);
+
+  $html=~s/(?={{BODY}})/$points_summary/g;
+  $html=~s/(?={{BODY}})/$meets_summary/g;
+  $html=~s/(?={{BODY}})/$div_summary/g;
+
+  $html=~s/{{BODY}}//g;
+
+  print $fh $html;
+  $fh->close;
+}
+
+
+################################################################################
+# gen individual page
+################################################################################
+
+sub gen_individual
+{
+  my $html = setup_html('individual');
+
+  my $fh = new FileHandle(">$htmldir/individual.html") || die "Failed to create individual.html: $!\n";
+
+  my $body = $results->gen_html($events,$swimmers);
+  
+  $html=~s/{{BODY}}/$body/g;
+
+  print $fh $html;
+  $fh->close;
+}
+
+################################################################################
+# gen relay page
+################################################################################
+
+sub gen_relay
+{
+  my $html = setup_html('relay');
+
+  my $fh = new FileHandle(">$htmldir/relay.html") || die "Failed to create relay.html: $!\n";
+
+  my $body = $relays->gen_html($events,$teams,$swimmers);
+  
+  $html=~s/{{BODY}}/$body/g;
+
+  print $fh $html;
+  $fh->close;
+}
+
+################################################################################
+# gen relay page
+################################################################################
+
+sub gen_carnival
+{
+  my $html = setup_html('carnival');
+
+  my $fh = new FileHandle(">$htmldir/carnival.html") || die "Failed to create carnival.html: $!\n";
+
+  my $body = $carnival->gen_html($teams,$swimmers);
+  
+  $html=~s/{{BODY}}/$body/g;
+
+  print $fh $html;
+  $fh->close;
+}
+
+################################################################################
+# gen stats page
+################################################################################
+
+sub gen_stats
+{
+  my $html = setup_html('stats');
+
+  my $fh = new FileHandle(">$htmldir/stats.html") || die "Failed to create stats.html: $!\n";
+
+  my $body = $stats->gen_html;
+
+  $html=~s/{{BODY}}/$body/g;
+
+  print $fh $html;
+  $fh->close;
+}
+
+__DATA__
+<html>
+  <head>
+    <title>MCSL/Div {{DIVISION}}/{{YEAR}} - {{TITLE}}</title>
+    <link rel=stylesheet type='text/css' href='div.css'>
+  </head>
+  <body>
+    <table id=layout>
+      <tr id=header>
+        <td><img id=logo src='images/mcsl.jpg'>
+          <td><h1 id=title>Montgomery County Swim League</h1>
+            <h2 id=subtitle>Division {{DIVISION}} - {{YEAR}}</h2>
+              <div id=date>Report Generated {{DATE}}</div>
+      </tr>
+      <tr id=links>
+        <td></td>
+        <td id=links>
+          {{LINKS}}
+        </td>
+      </tr>
+      <tr><td></td>
+        <td>
+          {{BODY}}
+        </td>
+      </tr>
+      <tr class=footer><td></td>
+        <td class=footer>
+          <div id=contact>Contact <a href='mailto:mikemayer67@vmwishes.com'>Mike Mayer</a> with any comments/suggestions</div>
+
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

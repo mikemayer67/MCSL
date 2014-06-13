@@ -1,0 +1,321 @@
+#!/bin/ksh --  # -*-perl-*-
+eval 'exec $PERL $0 ${1+"$@"}'
+  if 0;
+use strict;
+use warnings;
+
+use FindBin;
+use lib $FindBin::RealBin;
+
+use Data::Dumper;
+use DBI;
+use FileHandle;
+use List::Util qw(sum);
+use Scalar::Util qw(looks_like_number);
+
+use DivDB qw(getDBConnection);
+
+my $week     = shift @ARGV;
+my $filename = shift @ARGV;
+
+die "\nUsage:: $FindBin::Script week cl2_filename\n\n" unless defined $filename;
+die "\nSorry:: week must be an integer between 1 and 5\n\n" unless $week=~/^[12345]$/;
+die "\nSorry:: filename must end with .cl2\n\n" unless $filename=~/\.cl2$/;
+
+my $cl2 = new FileHandle($filename);
+die "\nSorry:: Failed to open $filename\n   $!\n\n" unless $cl2;
+
+my $dbh = getDBConnection();
+
+my $sdif_codes = new DivDB::SDIF($dbh);
+my $events     = new DivDB::Events($dbh);
+my $teams      = new DivDB::Teams($dbh);
+my $swimmers   = new DivDB::Swimmers($dbh);
+
+my $A0;
+my $B1;
+my $Z0;
+my $curTeamCode;
+my $curRelay;
+my %num;
+my @dates;
+my @teams;
+my %score;
+
+my %results;
+my %ties;
+
+my %CL2;
+while(<$cl2>)
+{
+  next unless /^([A-Z]\d)/;
+  my $code = $1;
+
+  die "\nFirst record must be A0\n\n" unless defined $A0 || $code eq 'A0';
+  die "\nOnly one A0 record allowed\n\n" if defined $A0 && $code eq 'A0';
+  die "\nOnly one B1 record allowed\n\n" if defined $B1 && $code eq 'B1';
+  die "\nNo records should follow Z0\n\n" if defined $Z0;
+
+  my $class = "CL2::$code";
+  unless(exists $CL2{$code})
+  {
+    eval "use $class;";
+    die "\nFailed to load $class\n  $@\n\n" if $@;
+    $CL2{$code} = 1;
+  }
+
+  my $rec = $class->new($_);
+
+  if($code eq 'A0')
+  {
+    $A0 = $rec;
+  }
+  elsif($code eq 'B1')
+  {
+    $B1 = $rec;
+    $num{B}++;
+    @dates = ($rec->{start_date},$rec->{end_date});
+  }
+  elsif($code eq 'C1')
+  {
+    $teams->verify_CL2($rec);
+    $curTeamCode = $rec->{team_code};
+    push @teams, $curTeamCode;
+    die "\nOnly two teams allowed in a dual meet\n\n" if @teams>2;
+
+    $num{C}++;
+  }
+  elsif($code eq 'D0')
+  {
+    die "\n D0 record requires prior C1 record\n\n" unless defined $curTeamCode;
+    $rec->{team} = $curTeamCode;
+    $rec->{relay} = 'N';
+    $swimmers->verify_CL2($rec);
+    $events->verify_CL2($rec);
+
+    my $number = $rec->{evt_number};
+
+    my $points = $rec->{points};
+    $points = 0 unless defined $points && looks_like_number($points);
+    my $scr = $rec->{finals_time}=~/scr/i;
+    my $dq  = $rec->{finals_time}=~/dq|dnf/i;
+    my $ns  = $rec->{finals_time}=~/ns/i;
+    $score{$curTeamCode} += $points;
+    my $place = $rec->{finals_rank};
+
+    unless($ns || $scr)
+    {
+      my @values = ( $week,
+                     "'$rec->{ussid}'",
+                     $number,
+                     $rec->{finals_heat},
+                     $rec->{finals_lane},
+                     cvt_time($rec->{seed_time})||'NULL',
+                     $dq ? "'Y'" : "'N'",
+                     cvt_time($rec->{finals_time})||'NULL',
+                     $place||'NULL',
+                     $dq ? 'NULL' : $points );
+      my $values = join ',', @values;
+      my $sql = "delete from individual_results where week=$week and swimmer='$rec->{ussid}' and event=$number";
+      $dbh->do($sql);
+      $sql = "insert into individual_results values ($values)";
+      $dbh->do($sql) unless $ns;
+
+      unless($dq)
+      {
+        if(exists $results{$number}{$place})
+        {
+          push @{$ties{$number}{$place}}, $results{$number}{$place}
+            unless exists $ties{$number}{$place};
+          push @{$ties{$number}{$place}}, [$rec->{ussid},$points];
+        }
+        else
+        {
+          $results{$number}{$place} = [$rec->{ussid},$points];
+        }
+      }
+    }
+
+    $num{D}++;
+  }
+  elsif($code eq 'D3')
+  {
+    $swimmers->verify_ussnum($rec);
+  }
+  elsif($code eq 'E0')
+  {
+    die "\nE0 record requires prior C1 record\n\n" unless defined $curTeamCode;
+    $rec->{relay} = 'Y';
+
+    if($rec->{relay_team} eq 'A' || $rec->{relay_team} eq 'B')
+    {
+      $events->verify_CL2($rec);
+
+      my $number = $rec->{evt_number};
+
+      my $points = $rec->{points};
+      $points = 0 unless defined $points && looks_like_number($points);
+      my $dq = $rec->{finals_time}=~/dq|dnf/i;
+      my $ns = $rec->{finals_time}=~/ns/i;
+      $score{$curTeamCode} += $points;
+
+      unless($ns)
+      {
+        my $place = $rec->{finals_rank};
+        my @values = ( $week,
+                       "'$curTeamCode'",
+                       $number,
+                       "'$rec->{relay_team}'",
+                       'NULL','NULL','NULL','NULL',
+                       $rec->{finals_heat},
+                       $rec->{finals_lane},
+                       0,
+                       cvt_time($rec->{seed_time})||'NULL',
+                       $dq ? "'Y'" : "'N'",
+                       cvt_time($rec->{finals_time})||'NULL',
+                       $place||'NULL',
+                       $dq ? 'NULL' : $points );
+        my $values = join ',', @values;
+        my $sql = "delete from relay_results where week=$week and team='$curTeamCode' and event=$number and relay_team='$rec->{relay_team}'";
+        $dbh->do($sql);
+        $sql = "insert into relay_results values ($values)";
+        $dbh->do($sql);
+
+        unless($dq)
+        {
+          if(exists $results{$number}{$place})
+          {
+            push @{$ties{$number}{$place}}, $results{$number}{$place} 
+              unless exists $ties{$number}{$place};
+            push @{$ties{$number}{$place}}, [$curTeamCode,$rec->{relay_team},$points];
+          }
+          else
+          {
+            $results{$number}{$place} = [$curTeamCode,$rec->{relay_team},$points];
+          }
+        }
+      }
+      $curRelay = $ns ? undef : $rec;
+    }
+    else
+    {
+      $curRelay = undef;
+    }
+    $num{E}++;
+  }
+  elsif($code eq 'F0')
+  {
+    if(defined $curRelay)
+    {
+      $rec->{team} = $rec->{team_code};
+      $swimmers->verify_CL2($rec);
+
+      my $ussid = $rec->{ussid};
+      my $leg   = $rec->{finals_leg};
+      if($leg=~/^[1234]$/)
+      {
+        $dbh->do("update relay_results set swimmer$leg='$ussid',total_age=total_age+$rec->{age} where week=$week and team='$curTeamCode' and event=$curRelay->{evt_number} and relay_team='$curRelay->{relay_team}'");
+      }
+    }
+
+    $num{F}++;
+  }
+  elsif($code eq 'G0')
+  {
+    $num{G}++;
+  }
+  elsif($code eq 'Z0')
+  {
+    foreach (qw/B C D E F/)
+    {
+      my $rn = $rec->{"num_$_"};
+      warn "Mismatch in $_ count (Z0 says $rn / found $num{$_})\n"
+        unless $rn == $num{$_};
+    }
+    $Z0 = $rec;
+  }
+  else
+  {
+    die Dumper($rec);
+  }
+
+  $curRelay = undef unless $code=~/^[EFG]/;
+}
+
+foreach my $event_number (keys %ties)
+{
+  my $event = $events->{$event_number};
+
+  if($event->isRelay)
+  {
+    my @points = (0,8,4,2,0);
+    foreach my $place (keys %{$ties{$event_number}})
+    {
+      my $swimmers = $ties{$event_number}{$place};
+      my $nswimmers = @$swimmers;
+      my @pts = splice @points, $place, $nswimmers;
+      my $true_pts = (sum @pts)/$nswimmers;
+      print "\n";
+      foreach my $s (@$swimmers)
+      {
+        my($team,$relay_team,$pts) = @$s;
+        my $delta = $true_pts-$pts;
+        print " Correcting tie points ($event_number/$place): $team/$relay_team ($true_pts vs $pts)\n";
+        $dbh->do("update relay_results set points=$true_pts where week=$week and team='$team' and relay_team='$relay_team' and event=$event_number");
+        $score{$team} += $delta;
+      }
+    }
+  }
+  else
+  {
+    my @points = (0,6,4,3,2,1,0,0,0,0,0,0,0);
+    foreach my $place (keys %{$ties{$event_number}})
+    {
+      my @swimmers = @{$ties{$event_number}{$place}};
+      my $nswimmers = @swimmers;
+      my @pts = splice @points, $place, $nswimmers;
+      my $true_pts = (sum @pts)/$nswimmers;
+      print "\n";
+      foreach my $s (@swimmers)
+      {
+        my($ussid,$pts) = @$s;
+        my $team = $swimmers->{$ussid}{team};
+        my $delta = $true_pts-$pts;
+        print " Correcting tie points ($event_number/$place): $ussid/$team ($true_pts vs $pts)\n";
+        $dbh->do("update individual_results set points=$true_pts where week=$week and swimmer='$ussid' and event=$event_number");
+        $score{$team} += $delta;
+      }
+    }
+  }
+}
+
+die "\nDual meet must have two team (C1) records\n\n" unless @teams==2;
+my($t1,$t2) = @teams;
+my($s1,$s2) = @score{$t1,$t2};
+my $p1 = ($s1>$s2 ? 6 : $s1<$s2 ? 0 : 3);
+my $p2 = ($s2>$s1 ? 6 : $s2<$s1 ? 0 : 3);
+my $dates = "'$dates[0]','$dates[1]'";
+$dbh->do("delete from meets where week=$week and team in ('$t1','$t2')");
+$dbh->do("insert into meets values ($week,'$t1',$dates,'$t2',$s1,$p1)");
+$dbh->do("insert into meets values ($week,'$t2',$dates,'$t1',$s2,$p2)");
+
+print "\nNumber of Swimmers: $Z0->{num_swimmers}\n";
+print "\nFinal Score\n";
+print "  $s1 $teams->{$t1}{team_name}\n";
+print "  $s2 $teams->{$t2}{team_name}\n";
+print "\n";
+
+
+
+
+################################################################################
+
+
+sub cvt_time
+{
+  my $time = shift;
+  return undef unless $time=~/^\s*(?:(\d+):)?(\d+(?:\.\d+)?)\s*$/;
+  my $sec = $2;
+  $sec += 60*$1 if defined $1;
+  return $sec;
+}

@@ -1,0 +1,213 @@
+body
+{
+  font-family:tahoma,arial,sans-serif;
+  font-size:0.8em;
+  color:#000080;
+  background:#ffffff
+}
+
+img#logo
+{
+  width:120;
+  height:100
+}
+
+tr#header
+{
+  vertical-align:top
+}
+
+tr.spacer
+{
+  height:5pt;
+}
+
+td.footer
+{
+  padding-top:1cm;
+}
+
+td#links
+{
+  border-top-style:solid;
+  border-top-width:2px;
+  border-top-color:#6666c0
+}
+
+.boys
+{
+  background:#ccccff;
+}
+
+.girls
+{
+  background:#ffcccc;
+}
+
+h1#title
+{
+  font-size:320%;
+  margin-right:0px;
+  margin-left:0px;
+  margin-top:0px;
+  margin-bottom:0px;
+}
+
+h1.reporthead
+{
+  text-align:left;
+  margin-top:1cm;
+  margin-bottom:0;
+}
+
+h2.reporthead
+{
+  text-align:center;
+  margin-top:5mm;
+  margin-bottom:0;
+}
+
+div.mcsllink
+{
+  text-align:center;
+  margin-top:0;
+  margin-bottom:0;
+}
+
+h2#subtitle
+{
+  font-size:200%
+  margin-right:0px;
+  margin-left:0px;
+  margin-top:0px;
+  margin-bottom:0px;
+}
+
+div#date
+{
+  font-size:80%;
+  text-align:right
+}
+
+div#contact
+{
+  font-size:80%;
+  text-align:right;
+  border-top-style:solid;
+  border-top-width:2px;
+  border-top-color:#6666c0
+}
+
+.swimmer
+{
+  text-align:left;
+  margin-left:5mm;
+}
+
+.menubar
+{
+  margin-right:1cm
+}
+
+span.menubar
+{
+  color:#666666;
+}
+
+a:link,a:visited,a:active
+{
+  color:#6666c0;
+  font-weight:bold;
+  text-decoration:none
+}
+
+a:hover
+{
+  color:#3333c0;
+  text-decoration:underline
+}
+
+a.mcsldual:link, a.mcsldual:visited, a.mcsldual:active
+{
+  font-weight:normal;
+  font-size:small;
+}
+
+table.report
+{
+  text-align:center;
+  font-size:small;
+  margin:auto;
+}
+
+th.reporthead
+{
+  vertical-align:bottom;
+  padding-left:1em;
+  padding-right:1em;
+}
+
+td.reportbody
+{
+  outline-style:solid;
+  outline-width:1px;
+  padding-left:1em;
+  padding-right:1em;
+}
+
+td.reportbad
+{
+  font-style:italic;
+  font-size:80%;
+  background:#f0e0e0;
+  outline-style:solid;
+  outline-width:1px;
+  padding-left:1em;
+  padding-right:1em;
+}
+
+td.reportnote
+{
+  font-style:italic;
+  font-size:70%;
+  color:purple;
+  text-align:right;
+}
+
+td.reportbold
+{
+  font-weight:bold;
+  outline-style:solid;
+  outline-width:1px;
+  padding-left:1em;
+  padding-right:1em;
+}
+
+td.teamname
+{
+  text-align:left;
+}
+
+td.eventhead
+{
+  font-weight:bold;
+  background:#ccccff;
+  outline-style:solid;
+  outline-width:1px;
+  padding-left:1em;
+  padding-right:1em;
+  text-align:left;
+}
+
+div.relayswimmers
+{
+  text-align:left;
+  padding-left:5mm;
+  font-size:80%;
+  color:#808080;
+}
+
+div.age_stroke
+{
+  font-size:80%;
+}

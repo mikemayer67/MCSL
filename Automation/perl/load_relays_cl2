@@ -1,0 +1,212 @@
+#!/bin/ksh --  # -*-perl-*-
+eval 'exec $PERL $0 ${1+"$@"}'
+  if 0;
+use strict;
+use warnings;
+
+use FindBin;
+use lib $FindBin::RealBin;
+
+use Data::Dumper;
+use DBI;
+use FileHandle;
+use List::Util qw(sum);
+use Scalar::Util qw(blessed looks_like_number);
+
+use DivDB qw(getDBConnection);
+
+my $filename = shift @ARGV;
+
+die "\nUsage:: $FindBin::Script cl2_filename\n\n" unless defined $filename;
+die "\nSorry:: filename must end with .cl2\n\n" unless $filename=~/\.cl2$/;
+
+my $cl2 = new FileHandle($filename);
+die "\nSorry:: Failed to open $filename\n   $!\n\n" unless $cl2;
+
+my $dbh = getDBConnection();
+
+my $sdif_codes = new DivDB::SDIF($dbh);
+my $events     = new DivDB::CarnivalEvents($dbh);
+my $teams      = new DivDB::Teams($dbh);
+my $swimmers   = new DivDB::Swimmers($dbh);
+
+my $A0;
+my $B1;
+my $Z0;
+my $curTeamCode;
+my $curRelay;
+my %num;
+my @dates;
+my @teams;
+my %score;
+
+my %results;
+my %ties;
+
+my %CL2;
+while(<$cl2>)
+{
+  next unless /^([A-Z]\d)/;
+  my $code = $1;
+
+  die "\nFirst record must be A0\n\n" unless defined $A0 || $code eq 'A0';
+  die "\nOnly one A0 record allowed\n\n" if defined $A0 && $code eq 'A0';
+  die "\nOnly one B1 record allowed\n\n" if defined $B1 && $code eq 'B1';
+  die "\nNo records should follow Z0\n\n" if defined $Z0;
+
+  my $class = "CL2::$code";
+  unless(exists $CL2{$code})
+  {
+    eval "use $class;";
+    die "\nFailed to load $class\n  $@\n\n" if $@;
+    $CL2{$code} = 1;
+  }
+
+  my $rec = $class->new($_);
+
+  if($code eq 'A0')
+  {
+    $A0 = $rec;
+  }
+  elsif($code eq 'B1')
+  {
+    $B1 = $rec;
+    $num{B}++;
+    @dates = ($rec->{start_date},$rec->{end_date});
+  }
+  elsif($code eq 'C1')
+  {
+    $teams->verify_CL2($rec);
+    $curTeamCode = $rec->{team_code};
+    push @teams, $curTeamCode;
+    die "\nOnly six teams allowed in a dual meet\n\n" if @teams>6;
+
+    $num{C}++;
+  }
+  elsif($code eq 'E0')
+  {
+    die "\nE0 record requires prior C1 record\n\n" unless defined $curTeamCode;
+    $events->verify_CL2($rec);
+
+    my $number = $rec->{evt_number};
+    my $points = $rec->{points};
+    $points = 0 unless defined $points && looks_like_number($points);
+    my $dq = $rec->{finals_time}=~/dq|dnf/i;
+    my $ns = $rec->{finals_time}=~/ns/i;
+    $score{$curTeamCode} += $points;
+
+    unless($ns)
+    {
+      my $place = $rec->{finals_rank};
+      my @values = ( 0,
+                     "'$curTeamCode'",
+                     $number,
+                     "'A'",
+                     'NULL','NULL','NULL','NULL',
+                     $rec->{finals_heat},
+                     $rec->{finals_lane},
+                     0,
+                     cvt_time($rec->{seed_time})||'NULL',
+                     $dq ? "'Y'" : "'N'",
+                     cvt_time($rec->{finals_time})||'NULL',
+                     $place||'NULL',
+                     $dq ? 'NULL' : $points );
+      my $values = join ',', @values;
+      my $sql = "delete from relay_results where week=0 and team='$curTeamCode' and event=$number";
+      $dbh->do($sql);
+      $sql = "insert into relay_results values ($values)";
+      $dbh->do($sql);
+
+      unless($dq)
+      {
+        if(exists $results{$number}{$place})
+        {
+          push @{$ties{$number}{$place}}, $results{$number}{$place} 
+            unless exists $ties{$number}{$place};
+          push @{$ties{$number}{$place}}, [$curTeamCode,$points];
+        }
+        else
+        {
+          $results{$number}{$place} = [$curTeamCode,$points];
+        }
+      }
+    }
+    $num{E}++;
+    $curRelay = $ns ? 'ns' : $rec;
+  }
+  elsif($code eq 'F0')
+  {
+    die "\nF0 record requires prior E0 record\n\n" unless defined $curRelay;
+    if(blessed $curRelay)
+    {
+      $rec->{team} = $rec->{team_code};
+      $swimmers->verify_CL2($rec);
+
+      my $ussid = $rec->{ussid};
+      my $leg   = $rec->{finals_leg};
+      if($leg=~/^[1234]$/)
+      {
+        $dbh->do("update relay_results set swimmer$leg='$ussid',total_age=total_age+$rec->{age} where week=0 and team='$curTeamCode' and event=$curRelay->{evt_number}");
+      }
+    }
+
+    $num{F}++;
+  }
+  elsif($code eq 'G0')
+  {
+    $num{G}++;
+  }
+  elsif($code eq 'Z0')
+  {
+    foreach (qw/B C E F/)
+    {
+      warn "Mismatch in $_ count (Z0 says $rec->{num_$_} / found $num{$_})\n"
+        unless $rec->{"num_$_"} == $num{$_};
+    }
+    $Z0 = $rec;
+  }
+  else
+  {
+    die Dumper($rec);
+  }
+
+  $curRelay = undef unless $code=~/^[EFG]/;
+}
+
+foreach my $event_number (keys %ties)
+{
+  print "Need to add tie logic for $event_number\n";
+  # See load_dual_cl2 for model logic
+}
+
+die "\nRelay Carnival must have six team (C1) records\n\n" unless @teams==6;
+
+my $dates = "'$dates[0]','$dates[1]'";
+
+$dbh->do("delete from relay_carnival");
+@teams = sort { $score{$b}<=>$score{$a} } @teams;
+my @points = (10,8,6,4,2,0);
+while(@teams)
+{
+  my $team = shift @teams;
+  if(@teams && $score{$team} == $score{$teams[0]})
+  {
+    die "\nNeed to add tie logic between final scores\n";
+  }
+  my $points = shift @points;
+  my $score  = $score{$team};
+  print "$score $team $points\n";
+  $dbh->do("insert into relay_carnival values ('$team',$dates,$score,$points)");
+}
+
+################################################################################
+
+
+sub cvt_time
+{
+  my $time = shift;
+  return undef unless $time=~/^\s*(?:(\d+):)?(\d+(?:\.\d+)?)\s*$/;
+  my $sec = $2;
+  $sec += 60*$1 if defined $1;
+  return $sec;
+}
