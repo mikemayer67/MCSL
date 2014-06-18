@@ -8,7 +8,7 @@ use FindBin;
 use lib $FindBin::RealBin;
 
 use DBI;
-use DivDB qw(getDBConnection);
+use DivDB;
 use FileHandle;
 
 my $file = shift @ARGV;
@@ -18,7 +18,7 @@ die "\nUsage:: $FindBin::Script all_star_times_file\n\n" if @ARGV;
 
 my $fh = new FileHandle($file) || die "\nFailed to open $file: $!\n\n";
 
-my $dbh = getDBConnection();
+my $dbh = &DivDB::getConnection;
 
 $dbh->do("delete from all_star_times");
 foreach (<$fh>)

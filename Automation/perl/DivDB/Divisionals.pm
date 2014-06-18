@@ -25,32 +25,43 @@ use Carp;
 
 use Scalar::Util qw(blessed);
 
+use DivDB;
+use DivDB::Teams;
+
+our $Instance;
+
 sub new
 {
-  my($proto,$dbh) = @_;
-  croak "Not a DBI connection ($dbh)\n" unless ref($dbh) eq 'DBI::db';
+  my($proto) = @_;
 
-  my %this;
-
-  my $sql = DivDB::DivisionalsEntry->sql;
-  my $q = $dbh->selectall_arrayref($sql);
-
-  my %entries;
-  foreach my $x (@$q)
+  unless( defined $Instance )
   {
-    my $entry = new DivDB::DivisionalsEntry(@$x);
-    my $team  = $entry->{team};
-    my $score = $entry->{score};
-    $this{$team} = $score;
+    my $dbh = &DivDB::getConnection;
+
+    my %this;
+
+    my $sql = DivDB::DivisionalsEntry->sql;
+    my $q = $dbh->selectall_arrayref($sql);
+
+    my %entries;
+    foreach my $x (@$q)
+    {
+      my $entry = new DivDB::DivisionalsEntry(@$x);
+      my $team  = $entry->{team};
+      my $score = $entry->{score};
+      $this{$team} = $score;
+    }
+
+    $Instance = bless \%this, (ref($proto)||$proto);
   }
 
-  bless \%this, (ref($proto)||$proto);
+  return $Instance;
 }
 
 sub gen_html
 {
-  my($this,$teams) = @_;
-  croak "Not a DivDB::Teams ($teams)\n" unless blessed($teams) && $teams->isa('DivDB::Teams');
+  my($this) = @_;
+  my $teams = new DivDB::Teams;
 
   my $rval;
   $rval .= "<h2 class=reporthead>Divisionals</h2>\n";

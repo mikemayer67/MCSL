@@ -2,7 +2,9 @@ package DivDB::Relay;
 use strict;
 use warnings;
 
-our @keys = qw(week event team relay_team swimmer1 swimmer2 swimmer3 swimmer4 DQ time place points);
+use DivDB::Schedule;
+
+our @keys = qw(meet event team relay_team swimmer1 swimmer2 swimmer3 swimmer4 DQ time place points);
 
 sub new
 {
@@ -17,7 +19,9 @@ sub new
 sub sql
 {
   my $columns = join ',', @keys;
-  return "select $columns from relay_results where week>0";
+  my $schedule = new DivDB::Schedule;
+  my $relay_meet = $schedule->relay_carnival_meet;
+  return "select $columns from relay_results where meet != $relay_meet";
 }
 
 package DivDB::Relays;
@@ -30,33 +34,42 @@ use Scalar::Util qw(blessed looks_like_number);
 use List::Util qw(min);
 use POSIX qw(floor);
 
+use DivDB;
+
+our $Instance;
+
 sub new
 {
-  my($proto,$dbh) = @_;
-  croak "Not a DBI connection ($dbh)\n" unless ref($dbh) eq 'DBI::db';
-  
-  my %this;
+  my($proto) = @_;
 
-  my $sql = DivDB::Relay->sql;
-  my $q = $dbh->selectall_arrayref($sql);
-  foreach my $x (@$q)
+  unless( defined $Instance )
   {
-    my $result = new DivDB::Relay(@$x);
-    my($team,$relay_team,$event,$week) = map { $result->{$_} } qw(team relay_team event week);
-    $relay_team = "$team.$relay_team";
-    $this{teams}{$relay_team}{$event}[$week] = $result;
-    $this{events}{$event}{$relay_team}[$week] = $result;
+    my %this;
+
+    my $dbh = &DivDB::getConnection;
+    my $sql = DivDB::Relay->sql;
+    my $q = $dbh->selectall_arrayref($sql);
+    foreach my $x (@$q)
+    {
+      my $result = new DivDB::Relay(@$x);
+      my($team,$relay_team,$event,$meet) = map { $result->{$_} } qw(team relay_team event meet);
+      $relay_team = "$team.$relay_team";
+      $this{teams}{$relay_team}{$event}[$meet] = $result;
+      $this{events}{$event}{$relay_team}[$meet] = $result;
+    }
+
+    $Instance = bless \%this, (ref($proto)||$proto);
   }
 
-  bless \%this, (ref($proto)||$proto);
+  return $Instance;
 }
 
 sub gen_html
 {
-  my($this,$events,$teams,$swimmers) = @_;
-  croak "Not a DivDB::Events ($events)\n" unless blessed($events) && $events->isa('DivDB::Events');
-  croak "Not a DivDB::Teams ($teams)\n" unless blessed($teams) && $teams->isa('DivDB::Teams');
-  croak "Not a DivDB::Swimmers ($swimmers)\n" unless blessed($swimmers) && $swimmers->isa('DivDB::Swimmers');
+  my($this) = @_;
+  my $events   = new DivDB::Events;
+  my $teams    = new DivDB::Teams;
+  my $swimmers = new DivDB::Swimmers;
 
   my $rval;
   $rval .= "<h1 class=reporthead>Relay Event Results</h1>\n";

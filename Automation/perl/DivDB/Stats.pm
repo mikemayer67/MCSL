@@ -5,12 +5,12 @@ use Carp;
 
 use List::MoreUtils qw(any);
 
+use DivDB;
+
 sub new
 {
-  my($proto,$dbh) = @_;
-  croak "Not a DBI connection ($dbh)\n" unless ref($dbh) eq 'DBI::db';
-
-  bless { dbh=>$dbh }, (ref($proto)||$proto);
+  my($proto) = @_;
+  bless {}, (ref($proto)||$proto);
 }
 
 sub gen_html
@@ -52,10 +52,11 @@ group by team,week,gender
 order by team,week,gender
 GENDER_WEEK_SQL
 
+  my $dbh = &DivDB::getConnection;
 
   my %results;
   my $weeks=0;
-  my $q = $this->{dbh}->selectall_arrayref($sql);
+  my $q = $dbh->selectall_arrayref($sql);
   foreach my $x (@$q)
   {
     my($team,$week,$gender,$avg) = @$x;
@@ -82,7 +83,7 @@ group by team,gender
 order by team,gender
 GENDER_SQL
 
-  $q = $this->{dbh}->selectall_arrayref($sql);
+  $q = $dbh->selectall_arrayref($sql);
   foreach my $x (@$q)
   {
     my($team,$gender,$avg) = @$x;
@@ -156,10 +157,12 @@ group by team,stroke,gender
 order by stroke,gender,team  
 STROKE_SQL
 
+  my $dbh = &DivDB::getConnection;
+
   my %results;
   my @teams;
   my @strokes;
-  my $q = $this->{dbh}->selectall_arrayref($sql);
+  my $q = $dbh->selectall_arrayref($sql);
   foreach my $x (@$q)
   {
     my($stroke,$gender,$team,$avg) = @$x;
@@ -224,10 +227,12 @@ group by team,age,gender
 order by e.order,gender,team  
 AGE_SQL
 
+  my $dbh = &DivDB::getConnection;
+
   my %results;
   my @teams;
   my @ages;
-  my $q = $this->{dbh}->selectall_arrayref($sql);
+  my $q = $dbh->selectall_arrayref($sql);
   foreach my $x (@$q)
   {
     my($age,$gender,$team,$avg) = @$x;
@@ -265,8 +270,10 @@ sub add_age_stats_for_stroke
 {
   my($this,$stroke) = @_;
 
+  my $dbh = &DivDB::getConnection;
+
   my $sql = "select value from sdif_codes where block=12 and code=$stroke";
-  my $q = $this->{dbh}->selectall_arrayref($sql);
+  my $q = $dbh->selectall_arrayref($sql);
   die "Could not translate stroke $stroke\n" unless @$q;
   die "Stroke $stroke translates to multipole values\n" if @$q>1;
   my $text = $q->[0][0];
@@ -303,7 +310,7 @@ AGE_STROKE_SQL
   my @ages;
   my %weeks;
 
-  $q = $this->{dbh}->selectall_arrayref($sql);
+  $q = $dbh->selectall_arrayref($sql);
   foreach my $x (@$q)
   {
     my($age,$gender,$team,$week,$avg) = @$x;

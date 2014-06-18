@@ -25,22 +25,31 @@ use Carp;
 
 use Scalar::Util qw(blessed);
 
+use DivDB;
+
+our $Instance;
+
 sub new
 {
-  my($proto,$dbh) = @_;
-  croak "Not a DBI connection ($dbh)\n" unless ref($dbh) eq 'DBI::db';
+  my($proto) = @_;
 
-  my %this = (dbh=>$dbh);
-
-  my $sql = DivDB::Swimmer->sql;
-  my $q = $dbh->selectall_arrayref($sql);
-  foreach my $x (@$q)
+  unless( defined $Instance )
   {
-    my $swimmer = new DivDB::Swimmer(@$x);
-    $this{$swimmer->{ussid}} = $swimmer;
+    my %this;
+
+    my $dbh = DivDB::getConnection;
+    my $sql = DivDB::Swimmer->sql;
+    my $q = $dbh->selectall_arrayref($sql);
+    foreach my $x (@$q)
+    {
+      my $swimmer = new DivDB::Swimmer(@$x);
+      $this{$swimmer->{ussid}} = $swimmer;
+    }
+
+    $Instance = bless \%this, (ref($proto)||$proto);
   }
 
-  bless \%this, (ref($proto)||$proto);
+  return $Instance;
 }
 
 sub verify_CL2
@@ -52,9 +61,10 @@ sub verify_CL2
     unless $rec->isa('CL2::D0') || $rec->isa('CL2::F0');
 
   my $ussid = $rec->{ussid};
-  my $dbh = $this->{dbh};
 
   my @keys = @DivDB::Swimmer::Columns[1..$#DivDB::Swimmer::Columns];
+
+  my $dbh = DivDB::getConnection;
 
   if(exists $this->{$ussid})
   {
@@ -98,8 +108,9 @@ sub verify_ussnum
   my($this,$rec) = @_;
   croak "Not a CL2::D3 ($rec)\n" unless blessed($rec) && $rec->isa('CL2::D3');
 
+  my $dbh = DivDB::getConnection;
+
   my $ussnum = $rec->{ussnum};
-  my $dbh = $this->{dbh};
  
   return unless $ussnum=~/^(............)/;
   my $ussid = $1;

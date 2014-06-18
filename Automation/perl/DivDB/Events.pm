@@ -40,34 +40,44 @@ use Carp;
 
 use Scalar::Util qw(blessed);
 
+use DivDB;
+
+our $Instance;
+
 sub new
 {
-  my($proto,$dbh) = @_;
-  croak "Not a DBI connection ($dbh)\n" unless ref($dbh) eq 'DBI::db';
+  my($proto) = @_;
 
-  my %this = (dbh=>$dbh);
-
-  my $q = $dbh->selectall_arrayref('select code,text from age_codes');
-  foreach my $x (@$q)
+  unless( defined $Instance )
   {
-    $DivDB::Event::AgeCodes{$x->[0]} = $x->[1];
+    my $dbh = &DivDB::getConnection;
+
+    my %this;
+
+    my $q = $dbh->selectall_arrayref('select code,text from age_codes');
+    foreach my $x (@$q)
+    {
+      $DivDB::Event::AgeCodes{$x->[0]} = $x->[1];
+    }
+
+    $q = $dbh->selectall_arrayref('select code,value from sdif_codes where block=12');
+    foreach my $x (@$q)
+    {
+      $DivDB::Event::StrokeCodes{$x->[0]} = $x->[1];
+    }
+
+    my $sql = DivDB::Event->sql;
+    $q = $dbh->selectall_arrayref($sql);
+    foreach my $x (@$q)
+    {
+      my $event = new DivDB::Event(@$x);
+      $this{$event->{number}} = $event;
+    }
+
+    $Instance = bless \%this, (ref($proto)||$proto);
   }
 
-  $q = $dbh->selectall_arrayref('select code,value from sdif_codes where block=12');
-  foreach my $x (@$q)
-  {
-    $DivDB::Event::StrokeCodes{$x->[0]} = $x->[1];
-  }
-
-  my $sql = DivDB::Event->sql;
-  $q = $dbh->selectall_arrayref($sql);
-  foreach my $x (@$q)
-  {
-    my $event = new DivDB::Event(@$x);
-    $this{$event->{number}} = $event;
-  }
-
-  bless \%this, (ref($proto)||$proto);
+  return $Instance;
 }
 
 sub verify_CL2
@@ -86,7 +96,6 @@ sub verify_CL2
                stroke   => 'evt_stroke',
                age      => 'evt_age',
   );
-  my $dbh = $this->{dbh};
 
   if(exists $this->{$number})
   {
@@ -114,6 +123,7 @@ sub verify_CL2
 
     my $values = join ',', ( map { (defined $_ ? "'$_'" : 'NULL') } @values );
 
+    my $dbh = &DivDB::getConnection;
     $dbh->do("insert into events values ('dual',$values)");
     $this->{$number} = new DivDB::Event(@values);
   }

@@ -13,7 +13,13 @@ use FileHandle;
 use List::Util qw(sum);
 use Scalar::Util qw(looks_like_number);
 
-use DivDB qw(getDBConnection);
+use DivDB;
+use DivDB::SDIF;
+use DivDB::Events;
+use DivDB::Teams;
+use DivDB::Swimmers;
+use DivDB::Schedule;
+use DivDB::TeamSeed;
 
 my $filename = shift @ARGV;
 
@@ -23,14 +29,12 @@ die "\nSorry:: filename must end with .cl2\n\n" unless $filename=~/\.cl2$/;
 my $cl2 = new FileHandle($filename);
 die "\nSorry:: Failed to open $filename\n   $!\n\n" unless $cl2;
 
-my $dbh = getDBConnection();
-
-my $sdif_codes = new DivDB::SDIF($dbh);
-my $events     = new DivDB::Events($dbh);
-my $teams      = new DivDB::Teams($dbh);
-my $swimmers   = new DivDB::Swimmers($dbh);
-my $schedule   = new DivDB::Schedule($dbh);
-my $team_seeds = new DivDB::TeamSeed($dbh);
+my $sdif_codes = new DivDB::SDIF;
+my $events     = new DivDB::Events;
+my $teams      = new DivDB::Teams;
+my $swimmers   = new DivDB::Swimmers;
+my $schedule   = new DivDB::Schedule;
+my $team_seeds = new DivDB::TeamSeed;
 
 my @sql;
 
@@ -46,9 +50,6 @@ my %score;
 
 my %results;
 my %ties;
-
-my $week_meet_where  = 'week=<<WEEK>> and meet=<<MEET>>';
-my $week_meet_values = '<<WEEK>>,<<MEET>>';
 
 my %CL2;
 while(<$cl2>)
@@ -110,10 +111,10 @@ while(<$cl2>)
 
     unless($ns || $scr)
     {
-      push @sql, "delete from individual_results where $week_meet_where and swimmer='$rec->{ussid}' and event=$number";
+      push @sql, "delete from individual_results where meet=<<MEET>> and swimmer='$rec->{ussid}' and event=$number";
 
       my $values = join ',', (
-        $week_meet_values,
+        '<<MEET>>',
         "'$rec->{ussid}'",
         $number,
         $rec->{finals_heat},
@@ -168,10 +169,10 @@ while(<$cl2>)
       {
         my $place = $rec->{finals_rank};
 
-        push @sql, "delete from relay_results where $week_meet_where and team='$curTeamCode' and event=$number and relay_team='$rec->{relay_team}'";
+        push @sql, "delete from relay_results where meet=<<MEET>> and team='$curTeamCode' and event=$number and relay_team='$rec->{relay_team}'";
 
         my $values = join ',', (
-          $week_meet_values,
+          '<<MEET>>',
           "'$curTeamCode'",
           $number,
           "'$rec->{relay_team}'",
@@ -220,7 +221,7 @@ while(<$cl2>)
       my $leg   = $rec->{finals_leg};
       if($leg=~/^[1234]$/)
       {
-        push @sql, "update relay_results set swimmer$leg='$ussid',total_age=total_age+$rec->{age} where $week_meet_where and team='$curTeamCode' and event=$curRelay->{evt_number} and relay_team='$curRelay->{relay_team}'";
+        push @sql, "update relay_results set swimmer$leg='$ussid',total_age=total_age+$rec->{age} where meet=<<MEET>> and team='$curTeamCode' and event=$curRelay->{evt_number} and relay_team='$curRelay->{relay_team}'";
       }
     }
 
@@ -266,7 +267,7 @@ foreach my $event_number (keys %ties)
         my($team,$relay_team,$pts) = @$s;
         my $delta = $true_pts-$pts;
         print " Correcting tie points ($event_number/$place): $team/$relay_team ($true_pts vs $pts)\n";
-        push @sql, "update relay_results set points=$true_pts where $week_meet_where and team='$team' and relay_team='$relay_team' and event=$event_number";
+        push @sql, "update relay_results set points=$true_pts where meet=<<MEET>> and team='$team' and relay_team='$relay_team' and event=$event_number";
         $score{$team} += $delta;
       }
     }
@@ -287,7 +288,7 @@ foreach my $event_number (keys %ties)
         my $team = $swimmers->{$ussid}{team};
         my $delta = $true_pts-$pts;
         print " Correcting tie points ($event_number/$place): $ussid/$team ($true_pts vs $pts)\n";
-        push @sql, "update individual_results set points=$true_pts where $week_meet_where and swimmer='$ussid' and event=$event_number";
+        push @sql, "update individual_results set points=$true_pts where meet=<<MEET>> and swimmer='$ussid' and event=$event_number";
         $score{$team} += $delta;
       }
     }
@@ -301,19 +302,19 @@ my $p1 = ($s1>$s2 ? 6 : $s1<$s2 ? 0 : 3);
 my $p2 = ($s2>$s1 ? 6 : $s2<$s1 ? 0 : 3);
 my $dates = "'$dates[0]','$dates[1]'";
 
-die "\nCannot find $t1 vs $t2 in dual meet schedule\n\n" unless defined $schedule->{$t1}{$t2};
-my($week,$meet) = @{$schedule->{$t1}{$t2}};
+my $meet = $schedule->meet($t1,$t2);
+die "\nCannot find $t1 vs $t2 in dual meet schedule\n\n" unless defined $meet;
 
-$p1 = 0 if $team_seeds->{rank}{$t2}>6;
-$p2 = 0 if $team_seeds->{rank}{$t1}>6;
+$p1 = 0 if $team_seeds->rank($t2)>6;
+$p2 = 0 if $team_seeds->rank($t1)>6;
 
-push @sql, "delete from meets where $week_meet_where and team in ('$t1','$t2')";
-push @sql, "insert into meets values ($week_meet_values,'$t1',$dates,'$t2',$s1,$p1)";
-push @sql, "insert into meets values ($week_meet_values,'$t2',$dates,'$t1',$s2,$p2)";
+push @sql, 'delete from meets where meet=<<MEET>>';
+push @sql, "insert into meets values (<<MEET>>,'$t1',$dates,'$t2',$s1,$p1)";
+push @sql, "insert into meets values (<<MEET>>,'$t2',$dates,'$t1',$s2,$p2)";
 
+my $dbh = &DivDB::getConnection;
 foreach my $sql (@sql)
 {
-  $sql=~s/<<WEEK>>/$week/g;
   $sql=~s/<<MEET>>/$meet/g;
   $dbh->do($sql);
 }

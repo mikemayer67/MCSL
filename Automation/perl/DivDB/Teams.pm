@@ -24,22 +24,32 @@ use Carp;
 
 use Scalar::Util qw(blessed);
 
+use DivDB;
+
+our $Instance;
+
 sub new
 {
-  my($proto,$dbh) = @_;
-  croak "Not a DBI connection ($dbh)\n" unless ref($dbh) eq 'DBI::db';
+  my($proto) = @_;
 
-  my %this = (dbh=>$dbh);
-
-  my $sql = DivDB::Team->sql;
-  my $q = $dbh->selectall_arrayref($sql);
-  foreach my $x (@$q)
+  unless( defined $Instance )
   {
-    my $team = new DivDB::Team(@$x);
-    $this{$team->{code}} = $team;
+    my $dbh = &DivDB::getConnection;
+
+    my %this;
+
+    my $sql = DivDB::Team->sql;
+    my $q = $dbh->selectall_arrayref($sql);
+    foreach my $x (@$q)
+    {
+      my $team = new DivDB::Team(@$x);
+      $this{$team->{code}} = $team;
+    }
+
+    $Instance = bless \%this, (ref($proto)||$proto);
   }
 
-  bless \%this, (ref($proto)||$proto);
+  return $Instance;
 }
 
 sub verify_CL2
@@ -48,9 +58,10 @@ sub verify_CL2
   croak "Not a CL2::C1 ($rec)\n" unless blessed($rec) && $rec->isa('CL2::C1');
 
   my $code = $rec->{team_code};
-  my $dbh = $this->{dbh};
 
   my @keys = @DivDB::Team::Columns[1..$#DivDB::Team::Columns];
+
+  my $dbh = &DivDB::getConnection;
 
   if(exists $this->{$code})
   {
@@ -61,8 +72,7 @@ sub verify_CL2
       next unless defined $value;
       my $oldvalue = $team->{$key};
       next if defined $oldvalue && $oldvalue eq $value;
-      warn "Updating $key for team $code from $oldvalue to $value\n"
-        if defined $oldvalue;
+      warn "Updating $key for team $code from $oldvalue to $value\n" if defined $oldvalue;
       $dbh->do("update teams set $key='$value' where code='$code'");
     }
   }

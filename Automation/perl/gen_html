@@ -11,21 +11,24 @@ use Data::Dumper;
 use DBI;
 use FileHandle;
 
-use DivDB qw(getDBConnection);
+use DivDB;
+use DivDB::SDIF;
+use DivDB::Meets;
+use DivDB::Points;
+use DivDB::Results;
+use DivDB::Relays;
+use DivDB::Stats;
+use DivDB::CarnivalRelays;
+use DivDB::Divisionals;
 
-my $dbh = getDBConnection();
-
-my $sdif     = new DivDB::SDIF($dbh);
-my $events   = new DivDB::Events($dbh);
-my $teams    = new DivDB::Teams($dbh);
-my $swimmers = new DivDB::Swimmers($dbh);
-my $meets    = new DivDB::Meets($dbh);
-my $points   = new DivDB::Points($dbh);
-my $results  = new DivDB::Results($dbh);
-my $relays   = new DivDB::Relays($dbh);
-my $stats    = new DivDB::Stats($dbh);
-my $carnival = new DivDB::CarnivalRelays($dbh);
-my $div      = new DivDB::Divisionals($dbh);
+my $sdif     = new DivDB::SDIF;
+my $meets    = new DivDB::Meets;
+my $points   = new DivDB::Points;
+my $results  = new DivDB::Results;
+my $relays   = new DivDB::Relays;
+my $stats    = new DivDB::Stats;
+my $carnival = new DivDB::CarnivalRelays;
+my $div      = new DivDB::Divisionals;
 
 my $htmldir = $FindBin::RealBin;
 $htmldir=~s(/[^/]+$)(/html);
@@ -63,9 +66,9 @@ sub setup_html
 
   $html=~s/{{TITLE}}/$labels{$page}/g;
 
-  while($html=~/{{LINKS}}/)
+  while($html=~/^(.*?){{LINKS}}/m)
   {
-    my $prefix = $`;
+    my $prefix = $1;
     $prefix=~s/./ /g;
 
     my $links = join "\n$prefix", @links;
@@ -86,9 +89,9 @@ sub gen_summary
 
   my $fh = new FileHandle(">$htmldir/summary.html") || die "Failed to create summary.html: $!\n";
 
-  my $points_summary = $points->gen_html($teams);
-  my $meets_summary  = $meets->gen_html($teams);
-  my $div_summary    = $div->gen_html($teams);
+  my $points_summary = $points->gen_html;
+  my $meets_summary  = $meets->gen_html;
+  my $div_summary    = $div->gen_html;
 
   $html=~s/(?={{BODY}})/$points_summary/g;
   $html=~s/(?={{BODY}})/$meets_summary/g;
@@ -111,7 +114,7 @@ sub gen_individual
 
   my $fh = new FileHandle(">$htmldir/individual.html") || die "Failed to create individual.html: $!\n";
 
-  my $body = $results->gen_html($events,$swimmers);
+  my $body = $results->gen_html;
   
   $html=~s/{{BODY}}/$body/g;
 
@@ -129,7 +132,7 @@ sub gen_relay
 
   my $fh = new FileHandle(">$htmldir/relay.html") || die "Failed to create relay.html: $!\n";
 
-  my $body = $relays->gen_html($events,$teams,$swimmers);
+  my $body = $relays->gen_html;
   
   $html=~s/{{BODY}}/$body/g;
 
@@ -147,7 +150,7 @@ sub gen_carnival
 
   my $fh = new FileHandle(">$htmldir/carnival.html") || die "Failed to create carnival.html: $!\n";
 
-  my $body = $carnival->gen_html($teams,$swimmers);
+  my $body = $carnival->gen_html;
   
   $html=~s/{{BODY}}/$body/g;
 

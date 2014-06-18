@@ -13,7 +13,7 @@ use FileHandle;
 use List::Util qw(sum);
 use Scalar::Util qw(blessed looks_like_number);
 
-use DivDB qw(getDBConnection);
+use DivDB;
 
 my $filename = shift @ARGV;
 
@@ -23,7 +23,7 @@ die "\nSorry:: filename must end with .cl2\n\n" unless $filename=~/\.cl2$/;
 my $cl2 = new FileHandle($filename);
 die "\nSorry:: Failed to open $filename\n   $!\n\n" unless $cl2;
 
-my $dbh = getDBConnection();
+my $dbh = &DivDB::getConnection;
 
 my $sdif_codes = new DivDB::SDIF($dbh);
 my $events     = new DivDB::CarnivalEvents($dbh);
