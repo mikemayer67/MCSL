@@ -118,12 +118,14 @@ sub teams
 sub exhibition_team
 {
   my($this,$week) = @_;
+  return unless defined $this->{exhibition};
   return $this->{exhibition}[$week]{team};
 }
 
 sub exhibition_meet
 {
   my($this,$week) = @_;
+  return unless defined $this->{exhibition};
   return $this->{exhibition}[$week]{meet};
 }
 

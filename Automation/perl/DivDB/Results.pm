@@ -2,7 +2,7 @@ package DivDB::Result;
 use strict;
 use warnings;
 
-our @keys = qw(meet swimmer event DQ time place points);
+our @keys = qw(meet event swimmer DQ time place points);
 
 sub new
 {
@@ -61,18 +61,6 @@ sub new
       $AllStarTimes{$x->[0]} = $x->[1];
     }
 
-    my @weeks = (1..5);
-
-    my $seed = new DivDB::TeamSeed($dbh);
-    my $maxSeed = $#{$seed->{team}};
-    if($maxSeed>6)
-    {
-      die "Need to update algorithm to handle $maxSeed teams\n" if $maxSeed>7;
-      push @weeks, $seed->team(7);
-    }
-
-    $this{weeks} = \@weeks;
-
     $Instance = bless \%this, (ref($proto)||$proto);
   }
 
@@ -89,6 +77,8 @@ sub gen_html
   my $seed     = new DivDB::TeamSeed;
   my $team7    = $seed->team(7);
 
+  my $colspan = 4 + $seed->count;
+
   my $rval;
   $rval .= "<h1 class=reporthead>Individual Event Results</h1>\n";
   $rval .= "<table class=report>\n";
@@ -98,22 +88,21 @@ sub gen_html
   {
     $rval .= " <tr class=spacer></tr><tr>\n";
     $rval .= "  <td class=eventhead>$event_number</td>\n";
-    my $allstar = time_string($AllStarTimes{$event_number});
-    my $colspan = 4 + @{$this->{weeks}};
-    $rval .= "  <td class=eventhead colspan=$colspan>$events->{$event_number}{label}
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <span style='font-weight:normal'>(All Star = $allstar)</span></td>\n";
-    $rval .= "</tr>\n";
-    $rval .= "<tr>\n";
-    $rval .= "<td colspan=3></td>\n";
-    foreach ( @{$this->{weeks}} )
+
+    $rval .= "<td class=eventhead colspan=2>$events->{$event_number}{label}</td>\n";
+    foreach my $week ( 1..5 )
     {
-      my $week = $_;
-      $week =~ s/^PV//;
-      $rval .= "<td class=reportbody>Week $week</td>\n";
+      $rval .= "<td class=eventcolhead>Week $week</td>\n";
     }
-    $rval .= "<td class=reportbody>Div.</td>\n";
-    $rval .= "<td class=reportbold>Best</td></tr>\n";
+    if(defined $team7)
+    {
+      my $week = $team7;
+      $week=~s/^PV//;
+      $rval .= "<td class=eventcolhead>Week $week</td>\n";
+    }
+    $rval .= "<td class=eventcolhead>Div.</td>\n";
+    $rval .= "<td class=eventcolhead><b>Best</b></td></tr>\n";
+    $rval .= "</tr>\n";
 
     my $event = $this->{events}{$event_number};
 
@@ -141,44 +130,51 @@ sub gen_html
         {
           $times{$swimmer}{$week} = 'DQ';
         }
-        elsif($time=~/dnf/i)
+        elsif(defined $time)
         {
-          $times{$swimmer}{$week} = 'DNF';
-        }
-        elsif($time==0.)
-        {
-          $times{$swimmer}{$week} = 'NS';
-        }
-        else
-        {
-          my $bad_time = 0;
-          if( $DivDB::Year==2013 ) {
-            if($week==1) {
-              if( $swimmers->{$swimmer}{team}=~/(EG|WLP)$/i ) {
-                $bad_time = 1;
-              }
-            }
-          }
-
-          if($bad_time)
+          if($time=~/dnf/i)
           {
-            $times{$swimmer}{$week} = -$time;
+            $times{$swimmer}{$week} = 'DNF';
+          }
+          elsif($time==0.)
+          {
+            $times{$swimmer}{$week} = 'NS';
           }
           else
           {
-            $times{$swimmer}{$week} = $time;
-            $best_time{$swimmer} = $time unless defined $best_time{$swimmer};
-            $best_time{$swimmer} = $time if $time<$best_time{$swimmer};
+            my $bad_time = 0;
+            if( $DivDB::Year==2013 ) {
+              if($week==1) {
+                if( $swimmers->{$swimmer}{team}=~/(EG|WLP)$/i ) {
+                  $bad_time = 1;
+                }
+              }
+            }
+
+            if($bad_time)
+            {
+              $times{$swimmer}{$week} = -$time;
+            }
+            else
+            {
+              $times{$swimmer}{$week} = $time;
+              $best_time{$swimmer} = $time unless defined $best_time{$swimmer};
+              $best_time{$swimmer} = $time if $time<$best_time{$swimmer};
+            }
           }
+        }
+        else
+        {
+          $times{$swimmer}{$week} = '';
         }
       }
     }
     
     @swimmers = sort { defined $best_time{$a}
-                       ? ( defined $best_time{$a}
-                           ? $best_time{$a} <=> $best_time{$a}
+                       ? ( defined $best_time{$b}
+                           ? $best_time{$a} <=> $best_time{$b}
                            : -1 )
-                       : ( defined $best_time{$a}
+                       : ( defined $best_time{$b}
                            ? 1
                            : $a cmp $b )
                      } @swimmers;
@@ -188,12 +184,16 @@ sub gen_html
       my $team = $swimmers->{$swimmer}{team};
       my $name = $swimmers->{$swimmer}{name};
       $name = "$2 $1" if $name=~/(.*),(.*)/;
-      $team=~s/^PV//;
+
+      my $team_key = $team;
+      $team_key=~s/^PV//;
+
       $rval .= " <tr>\n";
       $rval .= "   <td></td>\n";
       $rval .= "   <td class='reportbold swimmer'>$name</td>\n";
-      $rval .= "   <td class=reportbody>$team</td>\n";
-      foreach my $week (@{$this->{weeks}})
+      $rval .= "   <td class=reportbody>$team_key</td>\n";
+
+      foreach my $week (1..5)
       {
         my $time = $times{$swimmer}{$week};
         my $style;
@@ -210,6 +210,34 @@ sub gen_html
         }
 
         $time = '' unless defined $time;
+        $rval .= "  <td class=$style>$time</td>\n";
+      }
+
+      if(defined $team7)
+      {
+        my $time = $times{$swimmer}{$team7};
+        my $style;
+        if(looks_like_number($time) && $time<0.)
+        {
+          $time = -$time;
+          $time = time_string($time);
+          $style = 'reportbad';
+        }
+        else
+        {
+          $time = time_string($time,$event_number);
+          $style = 'reportbody';
+        }
+
+        if($time)
+        {
+          my $real_week = $schedule->week($team,$team7);
+          $time = "($real_week) $time";
+        }
+        else
+        {
+          $time = '' unless defined $time;
+        }
 
         $rval .= "  <td class=$style>$time</td>\n";
       }
@@ -223,6 +251,10 @@ sub gen_html
       $rval .= " </tr>\n";
 
     }
+
+    my $allstar = time_string($AllStarTimes{$event_number});
+    $rval .= "<tr><td colspan=$colspan class=allstar>(All Star Time = $allstar)</td></tr>\n";
+
     if($DivDB::Year==2013)
     {
       $rval .= "<tr><td><td colspan=9 class='reportnote'>Due to an automation glitch, week 1 times for the EG/WLP meet are unofficial</td></tr>\n";
