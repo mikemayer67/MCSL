@@ -24,7 +24,8 @@ sub gen_html
   $rval .= $this->add_age_stats;
   $rval .= $this->add_age_stats_for_stroke($_) foreach (1..5);
 
-  $rval .= "<H1 class=reporthead>More Coming Shortly...</H1>\n";
+  $rval .= "<H1 class=reporthead>More Coming Shortly????</H1>\n";
+  $rval .= "I'm taking suggestions\n";
 
   return $rval;
 }
@@ -33,26 +34,30 @@ sub add_gender_stats
 {
   my($this) = @_;
 
+  my $scheule = new DivDB::Schedule;
+  my $dbh     = &DivDB::getConnection;
+
   my $sql = <<'GENDER_WEEK_SQL';
 select team,
        week,
        gender,
        avg(points)
   from ( select b.team,
-                a.week,
+                c.meet,
+                c.week,
                 b.gender,
                 a.event,
                 sum(a.points) points
            from individual_results a,
-                swimmers b
+                swimmers b,
+                dual_schedule c
           where b.ussid=a.swimmer
-          group by team,event,week,gender
+            and c.meet=a.meet
+            and a.points>0
+          group by team,meet,week,event,gender
        ) d
 group by team,week,gender
-order by team,week,gender
 GENDER_WEEK_SQL
-
-  my $dbh = &DivDB::getConnection;
 
   my %results;
   my $weeks=0;
@@ -70,17 +75,17 @@ select team,
        gender,
        avg(points)
   from ( select b.team,
+                a.meet,
                 b.gender,
-                a.week,
                 a.event,
                 sum(a.points) points
            from individual_results a,
                 swimmers b
           where b.ussid=a.swimmer
-          group by team,week,event,gender
+            and a.points>0
+          group by team,meet,event,gender
        ) d
 group by team,gender
-order by team,gender
 GENDER_SQL
 
   $q = $dbh->selectall_arrayref($sql);
@@ -132,23 +137,27 @@ sub add_stroke_stats
   my($this) = @_;
 
   my $sql = <<'STROKE_SQL';
-select value,
-       gender,
-       team,
-       avg(points)
+select e.value,
+       d.gender,
+       d.team,
+       avg(d.points)
   from ( select b.team,
-                a.week,
+                a.meet,
+                s.week,
+                b.gender,
                 a.event,
                 c.stroke,
-                b.gender,
                 sum(a.points) points
            from individual_results a,
                 swimmers b,
-                events c
+                events c,
+                dual_schedule s
           where b.ussid=a.swimmer
             and c.meet_type='dual'
             and c.number=a.event
-         group by team,event,week
+            and s.meet=a.meet
+            and a.points>0
+         group by team,meet,week,gender,event,stroke
        ) d,
        sdif_codes e
  where e.block=12
@@ -185,12 +194,18 @@ STROKE_SQL
     $rval .= "<tr>\n";
     $rval .= "  <td class=reportbold rowspan=2>$stroke</td>\n";
     $rval .= "  <td class='reportbold boys'>Boys</td>\n";
-    $rval .= "  <td class='reportbody boys'>$results{$stroke}{M}{$_}</td>\n"
-    foreach @teams;
+    foreach my $team (@teams)
+    {
+      my $pts = $results{$stroke}{M}{$team} || '';
+      $rval .= "  <td class='reportbody boys'>$pts</td>\n"
+    }
     $rval .= "</tr><tr>\n";
     $rval .= "  <td class='reportbold girls'>Girls</td>\n";
-    $rval .= "  <td class='reportbody girls'>$results{$stroke}{F}{$_}</td>\n"
-    foreach @teams;
+    foreach my $team (@teams)
+    {
+      my $pts = $results{$stroke}{F}{$team} || '';
+      $rval .= "  <td class='reportbody girls'>$pts</td>\n"
+    }
     $rval .= "</tr>\n";
   }
   $rval .= "</table>\n";
@@ -203,23 +218,26 @@ sub add_age_stats
   my($this) = @_;
 
   my $sql = <<'AGE_SQL';
-select text,
-       gender,
-       team,
-       avg(points)
+select e.text,
+       d.gender,
+       d.team,
+       avg(d.points)
   from ( select b.team,
-                a.week,
+                a.meet,
+                s.week,
                 a.event,
                 c.age,
                 b.gender,
                 sum(a.points) points
            from individual_results a,
                 swimmers b,
-                events c
+                events c,
+                dual_schedule s
           where b.ussid=a.swimmer
             and c.meet_type='dual'
             and c.number=a.event
-         group by team,event,week
+            and s.meet=a.meet
+         group by team,meet,week,event,age,gender
        ) d,
        age_codes e
  where e.code=d.age
@@ -279,30 +297,33 @@ sub add_age_stats_for_stroke
   my $text = $q->[0][0];
 
   $sql = <<"AGE_STROKE_SQL";
-select text,
-       gender,
-       team,
-       week,
-       avg(points)
+select e.text,
+       d.gender,
+       d.team,
+       d.week,
+       avg(d.points)
   from ( select b.team,
-                a.week,
-                a.event,
+                a.meet,
+                s.week,
                 c.age,
                 b.gender,
+                a.event,
                 sum(a.points) points
            from individual_results a,
                 swimmers b,
-                events c
+                events c,
+                dual_schedule s
           where b.ussid=a.swimmer
             and c.meet_type='dual'
             and c.stroke=$stroke
             and c.number=a.event
-         group by team,event,week
+            and s.meet=a.meet
+         group by team,meet,week,age,gender,event
        ) d,
        age_codes e
  where e.code=d.age
 group by team,age,gender,week
-order by e.order,gender,team,week;
+order by e.order
 AGE_STROKE_SQL
 
   my %results;
