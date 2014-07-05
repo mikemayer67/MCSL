@@ -124,6 +124,7 @@ sub verify_CL2
     my $values = join ',', ( map { (defined $_ ? "'$_'" : 'NULL') } @values );
 
     my $dbh = &DivDB::getConnection;
+    print "insert into events values ('dual',$values)\n";
     $dbh->do("insert into events values ('dual',$values)");
     $this->{$number} = new DivDB::Event(@values);
   }

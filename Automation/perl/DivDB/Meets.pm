@@ -57,24 +57,23 @@ sub new
   die "incorrect number of points for $teams[0]\n" unless $points[0] == $entries[0]{points};
   die "incorrect number of points for $teams[1]\n" unless $points[1] == $entries[1]{points};
 
+  my $week = $schedule->week($meet);
+
   bless { meet      => $meet,
           start     => $entries[0]{start},
           end       => $entries[0]{end},
           home      => { team=>$home, score=>$scores[0], points=>$points[0] },
           away      => { team=>$away, score=>$scores[1], points=>$points[1] },
+          url       => ( ( $home eq 'PVP' || $away eq 'PVP') ? 
+                           "Parkland_week_${week}A.pdf" :
+                           substr($away,2) . 'v' . substr($home,2) . '.html' ),
         }, (ref($proto)||$proto);
 }
 
 sub url
 {
   my($this) = @_;
-
-  my $home = $this->{home}{team};
-  my $away = $this->{away}{team};
-
-  my $url = substr($away,2) . 'v' . substr($home,2) . '.html';
-
-  return $url;
+  return $this->{url};
 }
 
 package DivDB::Meets;

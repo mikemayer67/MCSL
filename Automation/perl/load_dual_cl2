@@ -171,34 +171,37 @@ while(<$cl2>)
 
         push @sql, "delete from relay_results where meet=<<MEET>> and team='$curTeamCode' and event=$number and relay_team='$rec->{relay_team}'";
 
-        my $values = join ',', (
-          '<<MEET>>',
-          "'$curTeamCode'",
-          $number,
-          "'$rec->{relay_team}'",
-          'NULL','NULL','NULL','NULL',
-          $rec->{finals_heat},
-          $rec->{finals_lane},
-          0,
-          cvt_time($rec->{seed_time})||'NULL',
-          $dq ? "'Y'" : "'N'",
-          cvt_time($rec->{finals_time})||'NULL',
-          $place||'NULL',
-          $dq ? 'NULL' : $points,
-        );
-
-        push @sql, "insert into relay_results values ($values)";
-
-        if($place && ! $dq)
+        if($place || $dq)
         {
-          if(exists $results{$number}{$place})
+          my $values = join ',', (
+            '<<MEET>>',
+            "'$curTeamCode'",
+            $number,
+            "'$rec->{relay_team}'",
+            'NULL','NULL','NULL','NULL',
+            $rec->{finals_heat},
+            $rec->{finals_lane},
+            0,
+            cvt_time($rec->{seed_time})||'NULL',
+            $dq ? "'Y'" : "'N'",
+            cvt_time($rec->{finals_time})||'NULL',
+            $place||'NULL',
+            $dq ? 'NULL' : $points,
+          );
+
+          push @sql, "insert into relay_results values ($values)";
+
+          if($place && ! $dq)
           {
-            push @{$ties{$number}{$place}}, $results{$number}{$place} unless exists $ties{$number}{$place};
-            push @{$ties{$number}{$place}}, [$curTeamCode,$rec->{relay_team},$points];
-          }
-          else
-          {
-            $results{$number}{$place} = [$curTeamCode,$rec->{relay_team},$points];
+            if(exists $results{$number}{$place})
+            {
+              push @{$ties{$number}{$place}}, $results{$number}{$place} unless exists $ties{$number}{$place};
+              push @{$ties{$number}{$place}}, [$curTeamCode,$rec->{relay_team},$points];
+            }
+            else
+            {
+              $results{$number}{$place} = [$curTeamCode,$rec->{relay_team},$points];
+            }
           }
         }
       }
