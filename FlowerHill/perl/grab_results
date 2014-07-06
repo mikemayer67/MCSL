@@ -1,0 +1,562 @@
+#!/bin/ksh --  # -*-perl-*-
+eval 'exec $PERL $0 ${1+"$@"}'
+  if 0;
+
+use strict;
+use DBI();
+use FileHandle;
+use FindBin;
+use Getopt::Long;
+use List::MoreUtils qw(all uniq);
+use LWP::UserAgent;
+use Pod::Usage;
+
+#
+# Constants
+#
+
+#
+# Globals
+#
+
+my %db;
+
+my $Results = "$FindBin::RealBin/../Results";
+$Results=~s{/\w*?/../}{/}g;
+
+#
+# Command Line
+#
+
+my %opts;
+GetOptions( \%opts, 'help'=> sub { pod2usage(-verbose=>2) },
+            'year=i', 'team=s@', 'week=s@', 'reload=s@')
+  || pod2usage(-verbose=>2);
+
+my $year = $opts{year};
+$year = (1900 + (localtime(time))[5]) unless defined $year;
+
+my %teams;
+my @weeks;
+
+$year += 2000 if $year<100;
+die "\nSorry:: Year must either be <100 or >=2013\n\n" if $year<2013;
+
+if(exists $opts{team})
+{
+  my @teams = ( map { split /,/, $_ } @{$opts{team}} );
+  $teams{uc($_)} = 1 foreach @teams;
+}
+
+if(exists $opts{week})
+{
+  my %weeks;
+  foreach my $x ( map { split /,/, $_ } @{$opts{week}} )
+  {
+    $x=~s/\s+//g;
+    if($x=~/^(\d+)-(\d+)$/)
+    {
+      my($a,$b) = ($1,$2);
+      ($a,$b) = ($b,$a) if $b<$a;
+      die "\nSorry week value must be in the range 1-5\n\n" if $b>5;
+      $weeks{$_} = 1 foreach ($a..$b);
+    }
+    elsif($x=~/^\d+$/)
+    {
+      die "\nSorry week value must be in the range 1-5\n\n" if $x>5;
+      $weeks{$x} = 1;
+    }
+    else
+    {
+      die "\nSorry week values must be in the range 1-5\n\n";
+    }
+    @weeks = sort { $a<=>$b } keys %weeks;
+  }
+}
+else
+{
+  @weeks = (1..5);
+}
+
+unless(-d $Results)
+{
+  system("mkdir $Results");
+  system("chmod 775 $Results");
+  die "\nCannot create Results directory ($Results)\n\n" unless -d $Results;
+}
+
+if(exists $opts{reload})
+{
+  &do_reload;
+}
+else
+{
+  &do_download;
+}
+
+sub do_download
+{
+  my $ua = new LWP::UserAgent;
+
+  foreach my $week (@weeks) 
+  {
+    unless(-d "$Results/week$week")
+    {
+      my $wdir = "$Results/week$week";
+      system("mkdir $wdir");
+      system("chmod 775 $wdir");
+      die "\nCannot create Week $week Results directory ($wdir)\n\n" unless -d $wdir;
+    }
+    my $dir_url = "http://mcsl.org/results/$year/week$week";
+    my $dir_req = new HTTP::Request(GET=>$dir_url);
+    my $dir_res = $ua->request($dir_req);
+
+    my $dir = $dir_res->content;
+    my %files;
+    while($dir=~/(\w+.html)/g)
+    {
+      my $file = $1;
+      next unless $file=~/^([A-Z]+)v([A-Z]+)\.html$/;
+      if(%teams)
+      {
+        $files{$1} = $file if $teams{$1};
+        $files{$2} = $file if $teams{$2};
+      }
+      else
+      {
+        $files{$1} = $files{$2} = $file;
+      }
+    }
+
+    my @files = uniq sort values %files;
+
+    foreach my $file (@files)
+    {
+      my $file_url = "$dir_url/$file";
+      my $file_req = new HTTP::Request(GET=>$file_url);
+      my $file_res = $ua->request($file_req);
+
+      my $prefix = "$year Week $week File $file: ";
+      print $prefix;
+      unless($file_res->is_success)
+      {
+        print "Not found\n";
+        next;
+      }
+
+      my $body = $file_res->content;
+
+      my $local_file = "$Results/week$week/$file";
+      if(-e $local_file)
+      {
+        if(same_as_file($local_file,$body))
+        {
+          print "Unchanged\n";
+          next;
+        }
+
+        print "Modified since last download\n\n";
+        my $ans;
+        do {
+          print "  Overwrite old data (y|n): ";
+          $ans = <STDIN>;
+        } until $ans=~/^y(es)?|no?$/i;
+        next unless $ans=~/^y(es)?$/i;
+
+        print "\n$prefix";
+        unlink("$local_file~");
+        rename($local_file,"$local_file~");
+      }
+
+      my $fh = new FileHandle(">$local_file") || die "\n\nSorry:: Failed to create $local_file: $!\n\n";
+
+      print $fh $body;
+      $fh->close;
+
+      system("chmod 666 $local_file");
+
+      load_data($body,$local_file);
+
+      print "Loaded and Saved\n";
+    }
+  }
+}
+
+sub same_as_file
+{
+  my $file = shift;
+  my $text = shift;
+
+  my $fh = new FileHandle($file) || return undef;
+
+  my @old = <$fh>;
+  my $old = join "", @old;
+  $fh->close;
+
+  return $old eq $text;
+}
+
+sub do_reload
+{
+  my @reload = map { split /,/, $_ } @{$opts{reload}};
+
+  my %files;
+  foreach my $reload (@reload)
+  {
+    $reload = uc($reload);
+    warn "Cannot get team(s) from $reload\n" unless $reload=~/^([A-Z]{1,3})(?:\.([A-Z]{1,3}))?$/;
+    my $team1 = $1;
+    my $team2 = $2;
+    my $regex = ( lc($reload) eq 'all' ? 
+                  qr/\.html$/ :
+                  defined $team2       ?
+                  qr/(?:${team1}v${team2}\.html|${team2}v${team1}\.html)$/ :
+                  qr/(?:${team1}v[A-Z]{1,3}\.html|[A-Z]{1,3}v${team1}\.html)$/ );
+
+    foreach my $week (@weeks)
+    {
+      my @html = <$Results/week$week/*.html>;
+      foreach my $html (@html)
+      {
+        $files{$html} = 1 if $html=~$regex;
+      }
+    }
+  }
+  my @files = sort keys %files;
+  foreach my $file (@files)
+  {
+    my $fh = new FileHandle($file) || die "Failed to open $file: $!\n";
+    my @body = <$fh>;
+    $fh->close;
+    chomp(@body);
+    my $body = join ' ', @body;
+
+    my $x = $file;
+    $x=~s/$Results\///;
+    print "Reloading file $x: ";
+    load_data($body,$file);
+    print "done\n";
+  }
+}
+
+sub load_data
+{
+  my($data,$file) = @_;
+
+  die "\nSorry:: Cannot get week/team info from filename ($file)\n\n"
+    unless $file=~m{/week(\d)/([A-Z]{1,3})v([A-Z]{1,3}).html$};
+
+  my($week,$away,$home) = ($1,$2,$3);
+
+  unless ($db{dbh})
+  {
+    $db{dbh} = DBI->connect("DBI:mysql:database=mcsl;host=localhost","mcsl","flippers");
+
+    my $sth = $db{dbh}->prepare("select * from teams");
+    $sth->execute();
+    while(my $x = $sth->fetchrow_hashref())
+    {
+      my $id   = $x->{id};
+      my $name = $x->{name};
+      $db{teams}->{$id} = $name;
+      $db{team_xref}->{$name} = $id;
+      $name=~s/\s+//g;
+      $name=uc($name);
+      $db{relayteam_xref}{$x->{report_name}} = $id;
+    }
+    $sth->finish();
+
+    $sth = $db{dbh}->prepare("select * from events");
+    $sth->execute();
+    while(my $x = $sth->fetchrow_hashref())
+    {
+      $db{events}->[$x->{id}] = $x->{name};
+      $db{relays}->[$x->{id}] = 1 if $x->{relay};
+    }
+    $sth->finish();
+  }
+
+  die "Cannot parse html ($file)\n  No outer <table></table> pair\n\n"
+    unless $data=~m{<table>(.*)</table>};
+
+  $data=$1;
+          
+  my @sql;
+  while( $data=~/<td>(.*?)<table.*?>(.*?)<\/table>/g )
+  {  
+    my($event,$event_data) = ($1,$2);
+    die "Cannot parse event ($event)\n" unless $event=~/Event\s+(\d+)/i;
+    $event = $1;
+
+    my $relay = $db{relays}[$event];
+    my %relayTeams;
+
+    my @rows = split /<tr.*?>/, $event_data;
+    foreach my $row (@rows)
+    {
+      next unless $row=~/<td/;
+      my @cells = split /<td.*?>/, $row;
+      shift @cells;
+      map { s/<.*?>//g } @cells;
+      my($place,$swimmer,$seed,$final) = @cells;
+      next unless $place=~/(\S+)\./;
+      $place = $1;
+
+      my $tie = ( $place=~/T$/ ? 1 : 0 );
+      $place =~ s/T$//;
+
+      if($relay)
+      {
+        my $team = $swimmer; 
+        $team=~s/\(.*?\)//g;
+        $team=~s/\s+$//;
+        $team=~s/^\s+//;
+        $team=~s/\s+/ /;
+        $team=uc($team);
+        $team = $db{relayteam_xref}{$team};
+        die "Failed to recognize team($swimmer)\n" unless defined $team;
+
+        my($min,$sec) = $final=~/(?:(\d+):)?(\d+\.\d+)/;
+        $sec += 60*$min if defined $min;
+
+        my $relay_team = ++$relayTeams{$team};
+
+        if($place !~ /^\d+$/)
+        {
+          if(uc($final) eq 'DQ')
+          {
+            $swimmer = $db{teams}{$team} . ' ' . ($relay_team==1 ? 'A' : 'B');
+            push @sql, "insert into dqs values ('$team','$swimmer',$event,$week,$year)";
+          }
+        }
+        else
+        {
+          push @sql, "insert into relays values ('$team',$relay_team,$event,$week,$year,$place,$sec,$tie)";
+        }
+      }
+      else
+      {
+        die "Failed to parse swimmer: $swimmer\n" unless $swimmer=~/^(.+)\(\d+\)\s*\((\w+)\)/;
+        $swimmer = $1;
+        my $team = $2;
+        $swimmer=~s/^\s+//;
+        $swimmer=~s/\s+$//;
+        $swimmer =~ s/'/''/;
+
+        if($place !~ /^\d+$/)
+        {
+          if(uc($final) eq 'DQ')
+          {
+            push @sql, "insert into dqs values ('$team','$swimmer',$event,$week,$year)";
+          }
+        }
+        else
+        {
+          my($min,$sec) = $final=~/(?:(\d+):)?(\d+\.\d+)/;
+          $sec += 60*$min if defined $min;
+
+          push @sql, "insert into results values ('$team','$swimmer',$event,$week,$year,$place,$sec,$tie)";
+        }
+      }
+    }
+  }
+
+  my $where = "week=$week and year=$year and team in ('$home','$away')";
+
+  foreach my $table (qw/dqs results relays/)
+  {
+    my $sql = "delete from $table where $where";
+    $db{dbh}->do($sql) || die "\nInvalid SQL...\n $sql\n\n";
+  }
+
+  foreach my $sql (@sql)
+  {
+    $db{dbh}->do($sql) || die "\nInvalid SQL...\n $sql\n\n";
+  }
+}
+
+__END__
+
+sub load_data
+{
+  my $text = shift;
+  my $file = shift;
+
+  $file=~s(^Results/)();
+
+  die "\nSorry:: Unparsable filename: $file\n\n" unless $file=~/^(\d\d\d\d)_([A-Z])_(\d).dat/;
+  my $year = $1;
+  my $div  = $2;
+  my $week = $3;
+
+  my @text = split /\n/, $text;
+
+  my $head = shift @text;
+  die "\nHeader line for $file is missing/corrupt\n\n" unless $head=~/Division $div Results/;
+
+  unless ($db{dbh})
+  {
+
+  my $head = shift @text;
+  die "\nHeader line for $file is missing/corrupt\n\n" unless $head=~/Division $div Results/;
+
+  unless ($db{dbh})
+  {
+    $db{dbh} = DBI->connect("DBI:mysql:database=mcsl;host=localhost","mcsl","flippers");
+
+    my $sth = $db{dbh}->prepare("select * from teams");
+    $sth->execute();
+    while(my $x = $sth->fetchrow_hashref())
+    {
+      $db{teams}->{$x->{id}} = $x->{name};:e 
+      $db{team_xref}->{$x->{name}} = $x->{id};
+    }
+    $sth->finish();
+
+    $sth = $db{dbh}->prepare("select * from events");
+    $sth->execute();
+    while(my $x = $sth->fetchrow_hashref())
+    {
+      $db{events}->[$x->{id}] = $x->{name};
+      $db{relays}->[$x->{id}] = 1 if $x->{relay};
+    }
+    $sth->finish();
+  }
+
+  my $where = "where week=$week and year=$year and team in (select id from teams where division='$div' and year=$year)";
+
+  $db{dbh}->do("delete from dqs $where");
+  $db{dbh}->do("delete from results $where");
+  $db{dbh}->do("delete from relays $where");
+
+  my $cur_event;
+  my $relay_list;
+
+  foreach my $x (@text)
+  {
+    if($x=~/^\s+(.*)\s+\((\S+)\)\s+DQ\s*$/)
+    {
+      my $swimmer = $1;
+      my $team_id = $2;
+
+      $swimmer =~ s/'/''/;
+
+      my $sql = "insert into dqs values ('$team_id','$swimmer',$cur_event,$week,$year)";
+      $db{dbh}->do($sql);
+    }
+    elsif($x=~/^\s+(\d+)(T?)\s+(.*)\s+\((\S+)\)\s+(\d+:)?(\d+\.\d+)\s*$/)
+    {
+      my $place = $1;
+      my $tie = ($2 eq 'T' ? 1 : 0);
+      my $swimmer = $3;
+      my $team_id = $4;
+      my $time = 60*$5 + $6;
+
+
+      $swimmer =~ s/'/''/;
+
+      die "\nError:: $x\n Swimmer ($3) found without an event\n\n" unless $cur_event;
+      die "\nError:: $x\n Swimmer ($3), not a team found in a relay\n\n" if $db{relays}->[$cur_event];
+
+      my $sql = "insert into results values ('$team_id','$swimmer',$cur_event,$week,$year,$place,$time,$tie)";
+      $db{dbh}->do($sql);
+    }
+    elsif($x=~/^\s+(\d+)(T?)\s+(.*)\s+(\d+:)?(\d+\.\d+)\s*$/)
+    {
+      my $place = $1;
+      my $tie = ($2 eq 'T' ? 1 : 0);
+      my $team = $3;
+      my $time = 60*$4 + $5;
+
+      die "\nError:: $x\n Relay team ($3) found without an event\n\n" unless $cur_event;
+      die "\nError:: $x\nRelay team ($3) found in a non relay\n\n" unless $db{relays}->[$cur_event];
+
+      my $team_id = $db{team_xref}{$team};
+      $relay_list->{$team_id}++;
+      my $lane = $relay_list->{$team_id};
+      my $sql = "insert into relays values ('$team_id',$lane,$cur_event,$week,$year,$place,$time,$tie)";
+      $db{dbh}->do($sql);
+    }
+    elsif($x=~/^\s*(\d+)\s+(.*)\s*$/)
+    {
+      my $id = $1;
+      my $event = $2;
+      if( $event eq $db{events}->[$id] )
+      {
+        $cur_event = $id;
+        $relay_list = undef;
+      }
+    }
+  }
+
+}
+
+=head1 NAME
+
+grab_results - MCSL data extraction from mcsl.org
+
+=head1 SYNTAX
+
+Grab ALL results for the current year
+
+ grab_results
+
+Grab results for a specified year, week(s), and/or team(s)
+
+ grab_results -week 1
+ grab_results -week 3,5
+ grab_results -week 3 -week 5
+ grab_results -year 2013 -week 1-3 -team FH,QV
+ grab_results -team FH -team TF
+
+Reload results from a saved file
+
+ grab_results -reload file_path [ -reload file_path2 [ ... ] 
+ grab_results -reload FH.TF,EG.WLP
+ grab_results -reload FH.TF -reload EG.WLP
+
+=head1 DESCRIPTION
+
+Grabs dual meet results from the MCSL.org website or reloads data that has already been
+grabbed and saved to file.
+
+Note that in 2013, MCSL changed how the data is stored on their website.  This script
+only works with the new format.  If you wish to load old data, you will need to use
+grab_results_2012 instead.
+
+=head1 OPTIONS
+=item -year (2 or 4 digit integer)
+
+The year for which the data sould be grabbed.  May be specified either as a 2 or 4
+digit number.  Two-digit years are number of years since 2000.  If this option is
+not specified, then the current year is assumed.
+
+=item -week (1-5)
+
+The week for which the data should be grabbed.  Must be an integer in the range 1-5.
+This option may be specfied more than once.  In addition, multiple weeks may be specified
+with a single argument using commas (,) and dashes (-).  If this option is not specified,
+then all weeks are assumed.
+
+=item -team ( team_code(s) )
+
+The team for which the data should be grabbed.  Must be a valid team code (or no data
+will be found).  This option may be specfied more than once.  In addition, multiple teams
+may be specified with a single argument using commas (,).  If this option is not specified,
+then all teams are assumed.
+
+=item -reload file_path
+
+=item -reload team1.team2
+
+This option cannot be used with any other option.  It identifies a file that should be
+used to reload the data.  May be specified eiher as a fully qualified file path, a 
+file name in the Results directory, or as a pair of teams separated by a period (.).
+Parsing of team codes is case-insensitive.  
+
+This option may be specfied more than once.  In addition, multiple files
+may be specified with a single argument using commas (,).
+
+=back
+
+=cut

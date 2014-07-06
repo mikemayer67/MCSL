@@ -1,0 +1,167 @@
+#!/bin/ksh --  # -*-perl-*-
+eval 'exec $PERL $0 ${1+"$@"}'
+  if 0;
+
+use strict;
+use POSIX;
+use DBI();
+
+my $year = 1900 + (localtime(time))[5];
+
+my ($path,$cmd) = (".",$0);
+if( $0 =~ /\/([^\/]+)$/ ) { ($path,$cmd) = ($`,$1); }
+
+my $teamA = shift @ARGV;
+my $teamB = shift @ARGV;
+
+my $usage = "Usage::$cmd teamA teamB";
+die "\n$usage\n\n" unless defined $teamB;
+die "\n$usage\n\n" if @ARGV;
+
+$teamA=~tr/[a-z]/[A-Z]/;
+$teamB=~tr/[a-z]/[A-Z]/;
+
+
+my $dbh = DBI->connect("DBI:mysql:database=mcsl;host=localhost","mcsl","flippers");
+
+my @x = @{$dbh->selectall_arrayref("select id,name from teams where year=$year")};
+my %teams = map { $_->[0] => $_->[1] } @x;
+
+my @events;
+@x = @{$dbh->selectall_arrayref("select id,name,relay,swimmers from events")};
+foreach my $x (@x) 
+{
+  $events[$x->[0]] = { id=>$x->[0], name=>$x->[1], relay=>$x->[2], swimmers=>$x->[3] };
+}
+
+@x = @{$dbh->selectall_arrayref("select id,place,points from points where type='dual'")};
+foreach my $x (@x)
+{
+  $events[$x->[0]]->{points}[$x->[1]-1] = $x->[2];
+}
+
+die "\nSorry:: Don't recognize team $teamA\n\n" unless $teams{$teamA};
+die "\nSorry:: Don't recognize team $teamB\n\n" unless $teams{$teamB};
+
+my @statsA = load_stats($teamA);
+my @statsB = load_stats($teamB);
+
+my %score;
+foreach my $i (1..$#events)
+{
+  my %pts = compete($events[$i], $statsA[$i], $statsB[$i]);
+  
+  foreach my $x (keys %pts) { $score{$x} += $pts{$x}; }
+}
+
+
+my $score = "$teams{$teamA} ($score{$teamA})  -  $teams{$teamB} ($score{$teamB})";
+print "="x(length($score)+4);
+print "\n| $score |\n";
+print "="x(length($score)+4);
+print "\n";
+foreach my $i (1..$#events)
+{
+  my $event = $events[$i];
+  print "\n$event->{id}) $event->{name}\n";
+  if($event->{place})
+  {
+    my $pos=1;
+    foreach my $x (@{$event->{place}})
+    {
+      my $time = $x->[0];
+      
+      my $min = floor($time/60);
+      $time -= 60*$min;
+      my $sec = floor($time);
+      $time -= $sec;
+      my $frac = floor(100*$time+0.5);
+
+      $frac = "0$frac" if $frac<10;
+      $sec  = "0$sec" if $sec<10 && $min>0;
+      $time = "$sec.$frac";
+      $time = "$min:$time" if $min>0;
+
+      my $name = ( $event->{relay} ? $teams{$x->[2]} : "$x->[1] ($x->[2])" );
+      
+      $name .= " "x(30-length($name));
+      $pos  = " $pos" if $pos<10;
+      $time = " "x(8-length($time)) . $time;
+      print "  $pos.  $name    $time\n";
+      $pos++;
+    }
+  }
+}
+
+sub load_stats
+{
+  my $id = shift;
+
+  my @stats;
+  my @x = @{$dbh->selectall_arrayref("select event,swimmer,min(time) from results where team='$id' and year=$year group by event,swimmer")};
+  foreach my $x (@x)
+  {
+    $stats[$x->[0]]->{$x->[1]} = $x->[2];
+  }
+
+  
+  @x = @{$dbh->selectall_arrayref("select event,lane,min(time) from relays where team='$id' and year=$year group by event,lane")};
+  foreach my $x (@x)
+  {
+    $stats[$x->[0]]->{$x->[1]} = $x->[2];
+  }
+
+  my @rval;
+  while(@stats)
+  {
+    my $x = shift @stats;
+    if($x)
+    {
+      $x = [ sort {$a->[0] <=> $b->[0]} map { [ $x->{$_}, $_, $id ] } keys %$x ];
+    }
+    push @rval, $x;
+  }
+
+  return @rval;
+}
+
+
+sub compete
+{
+  my $event = shift;
+  my $statsA = shift;
+  my $statsB = shift;
+
+  my $n = $event->{swimmers};
+
+  my @stats;
+  if($statsA) 
+  {
+    my @x = @$statsA;
+    splice @x, $n;
+    push @stats, @x;
+  }
+  if($statsB)
+  {
+    my @x = @$statsB;
+    splice @x, $n;
+    push @stats, @x;
+  }
+
+  my %rval;
+  return %rval unless @stats;
+
+  my @place = sort { $a->[0] <=> $b->[0] } @stats;
+
+  $event->{place} = [@place];
+
+  my @points =  @{$event->{points}};
+
+  while(@points && @place)
+  {
+    my $place = shift @place;
+    my $points = shift @points;
+    $rval{$place->[2]} += $points;
+  }
+  return %rval;
+}

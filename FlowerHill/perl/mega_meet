@@ -1,0 +1,159 @@
+#!/bin/ksh --  # -*-perl-*-
+eval 'exec $PERL $0 ${1+"$@"}'
+  if 0;
+
+use strict;
+use DBI();
+
+my $year = 1900 + (localtime(time))[5];
+
+my ($path,$cmd) = (".",$0);
+if( $0 =~ /\/([^\/]+)$/ ) { ($path,$cmd) = ($`,$1); }
+
+my $dbh = DBI->connect("DBI:mysql:database=mcsl;host=localhost","mcsl","flippers");
+
+my @x = @{$dbh->selectall_arrayref("select id,name from teams where year=$year")};
+my %teams = map { $_->[0] => $_->[1] } @x;
+
+my @events;
+@x = @{$dbh->selectall_arrayref("select id,name,relay,swimmers from events")};
+foreach my $x (@x) 
+{
+  $events[$x->[0]] = { id=>$x->[0], name=>$x->[1], relay=>$x->[2], swimmers=>$x->[3] };
+}
+@x = @{$dbh->selectall_arrayref("select id,place,points from points where type='dual'")};
+foreach my $x (@x)
+{
+  $events[$x->[0]]->{points}[$x->[1]-1] = $x->[2];
+}
+
+my %stats;
+foreach my $team (keys %teams)
+{
+  @{$stats{$team}} = load_stats($team);
+}
+
+my %wins;
+my %points;
+
+my @teams = sort keys %teams;
+while(@teams>1)
+{
+  my $teamA = shift @teams;
+  print STDERR "Competing $teams{$teamA}\n";
+  my $statsA = $stats{$teamA};
+  foreach my $teamB (@teams)
+  {
+    my $statsB = $stats{$teamB};
+
+    my $scoreA;
+    my $scoreB;
+    foreach my $i (1..$#events)
+    {
+      my @pts = compete($events[$i], $statsA->[$i],$statsB->[$i]);
+      $scoreA += $pts[0];
+      $scoreB += $pts[1];
+    }
+
+    if($scoreA > $scoreB)     { $wins{$teamA} += 1;                         }
+    elsif($scoreB > $scoreA)  { $wins{$teamB} += 1;                         }
+    else                      { $wins{$teamA} += 0.5; $wins{$teamB} += 0.5; }
+
+    $points{$teamA} += $scoreA;
+    $points{$teamB} += $scoreB;
+
+    if($scoreA > $scoreB) { print "  $teamA ($scoreA) over $teamB($scoreB)\n"; }
+    else                  { print "  $teamB ($scoreB) over $teamA($scoreA)\n"; }
+  }
+  print "\n";
+}
+
+print STDERR "\n\n";
+
+my @sorted_teams = sort { $wins{$b} == $wins{$a} ? 
+			      $points{$b} <=> $points{$a} :
+			      $wins{$b} <=> $wins{$a} } keys %teams;
+my @div = ('A'..'Z');
+while(@sorted_teams)
+{
+  my $div = shift @div;
+  print "Division $div\n";
+
+  my @x = splice @sorted_teams, 0, 6;
+  foreach my $x (@x)
+  {
+    print "  $teams{$x}   Wins: $wins{$x}  Points: $points{$x}\n";
+  }
+  print "\n";
+}
+
+sub load_stats
+{
+  my $id = shift;
+
+  my @stats;
+  my @x = @{$dbh->selectall_arrayref("select event,swimmer,min(time) from results where team='$id' and year=$year group by event,swimmer")};
+  foreach my $x (@x)
+  {
+    $stats[$x->[0]]->{$x->[1]} = $x->[2];
+  }
+
+  @x = @{$dbh->selectall_arrayref("select event,lane,min(time) from relays where team='$id' and year=$year group by event,lane")};
+  foreach my $x (@x)
+  {
+    $stats[$x->[0]]->{$x->[1]} = $x->[2];
+  }
+
+  my @rval;
+  while(@stats)
+  {
+    my $x = shift @stats;
+    if($x)
+    {
+      $x = [ sort {$a <=> $b} map { $x->{$_} } keys %$x ];
+    }
+    push @rval, $x;
+  }
+
+  return @rval;
+}
+
+sub compete
+{
+  my $event = shift;
+  my $statsA = shift;
+  my $statsB = shift;
+
+  my $n = $event->{swimmers};
+
+  my @stats;
+  if($statsA) { 
+    my @x = @$statsA;
+    splice @x,$n;
+    push @stats, map { [$_, 0] } @x;
+  }
+  if($statsB) { 
+    my @x = @$statsB;
+    splice @x,$n;
+    push @stats, map { [$_, 1] } @x;
+  }
+
+  return (0,0) unless @stats;
+
+  my @rank = sort { $a->[0] <=> $b->[0] } @stats;
+  my @place = splice @rank, 0, 2*$n;
+
+  $event->{place} = [@place];
+
+  my @points = @{$event->{points}};
+
+  my @rval = (0,0);
+  while(@points && @place)
+  {
+    my $place = shift @place;
+    my $points = shift @points;
+    $rval[$place->[1]] += $points;
+  }
+  return @rval;
+}
+
