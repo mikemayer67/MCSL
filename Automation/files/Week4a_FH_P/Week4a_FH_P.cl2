@@ -294,7 +294,7 @@ D3000000MAR*FRIE                                                                
 D07PV      Friedman, Merav             000000MAR*FRA   0829200112FF  501 12 111206302014   40.13S                     40.91S     2 3     2  4.   2  0100    NN30
 D07PV      Friedman, Merav             000000MAR*FRA   0829200112FF  503 34 111206302014   54.53S                     54.19S     1 3     2  4.   2  0300    NN40
 D07PV      Friedman, Merav             000000MAR*FRA   0829200112FF  504 44 111206302014   49.56S                     47.95S     1 3     3  3.   3  0400    NN50
-D07PV      Frumpkin, Ruthie                        A   11132007 6FF  251  6 UN0806302014                                 NSS     1 3     0       0  01      NN38
+D07PV      Frumpkin, Ruthie            000000004MAMA   11132007 6FF  251  6 UN0806302014                                 NSS     1 3     0       0  01      NN38
 D3                                                                                                                                                           N67
 D07PV      Frumpkin, Uriel             111105URI*FRA   11112005 8MM  251  5 UN0806302014                              51.95S     1 3     6       2  01      NN99
 D3111105URI*FRUM                                                                                                                                             N00
@@ -303,9 +303,9 @@ D3051199AMB*GARR                                                                
 D07PV      Garrison, Amber             051199AMB*GAA   0511199915FF 1002 22 151806302014 1:34.78S                   1:38.06S     1 3     2  4.   2  0200    NN01
 D07PV      Garrison, Amber             051199AMB*GAA   0511199915FF 1005 28 151806302014 1:38.72S                   1:46.01S     1 3     4  2.   4  0500    NN11
 D07PV      Garrison, Amber             051199AMB*GAA   0511199915FF 1003 38 151806302014 1:56.65S                   2:00.97S     1 3     2  4.   2  0300    NN11
-D07PV      Goldman, Daniel                         A   0707200013MM  501  9 131406302014   52.72S                     49.70S     2 1     8       5  01      NN28
+D07PV      Goldman, Daniel             000000003MAMA   0707200013MM  501  9 131406302014   52.72S                     49.70S     2 1     8       5  01      NN28
 D3                                                                                                                                                           N67
-D07PV      Goldman, Zachary                        A   0317200311MM  501 11 111206302014                                 NSS     1 1     0       0  01      NN97
+D07PV      Goldman, Zachary            000000005MAMA   0317200311MM  501 11 111206302014                                 NSS     1 1     0       0  01      NN97
 D3                                                                                                                                                           N67
 D07PV      Gross, Tommy                062304TOM*GRA   06232004 9MM  501  7 091006302014   43.84S                     43.31S     2 3     1  6.   1  0100    NN69
 D3062304TOM*GROS                                                                                                                                             N00
@@ -346,9 +346,9 @@ D07PV      Leibowitz, Niv              092103NIV*LEA   0921200310MM  254 41 0910
 D07PV      Litwack, Ariella            081106ARI*LIA   08112006 7FF  251  6 UN0806302014                              50.20S     2 1     7       5  01      NN89
 D3081106ARI*LITW                                                                                                                                             N99
 D07PV      Litwack, Ariella            081106ARI*LIA   08112006 7FF  252 18 UN0806302014                              43.07S     1 1     5  1.   5  0200    NN30
-D07PV      Rabinowitz, Batsheva                    A   1016200112FF  501 12 111206302014                                 NSS     1 3     0       0  01      NN69
+D07PV      Rabinowitz, Batsheva        000000002MAMA   1016200112FF  501 12 111206302014                                 NSS     1 3     0       0  01      NN69
 D3                                                                                                                                                           N67
-D07PV      Rabinowitz, Batsheva                    A   1016200112FF  502 24 111206302014 1:20.94S                        NSS     1 5     0       0  02      NN60
+D07PV      Rabinowitz, Batsheva        000000002MAMA   1016200112FF  502 24 111206302014 1:20.94S                        NSS     1 5     0       0  02      NN60
 D07PV      Rivera, Alejandro           123105ALE*RIA   12312005 8MM  251  5 UN0806302014   23.53S                     23.22S     2 3     1  6.   1  0100    NN31
 D3123105ALE*RIVE                                                                                                                                             N89
 D07PV      Rivera, Alejandro           123105ALE*RIA   12312005 8MM  252 17 UN0806302014   30.88S                     30.28S     1 3     2  4.   2  0200    NN51
@@ -413,7 +413,7 @@ F07PV          PVP   AStraus, Joshua              021199JOS*ST   0211199915M  2 
 F07PV          PVP   AFriedman, Matan             000000MAT*FR   0620199815M  3             000000MAT*FRIE                                                   N29
 F07PV          PVP   AAbrams, Yehuda              031299YEH*AB   0312199915M  4             031299YEH*ABRA                                                   N98
 E07PV      BPVP     M 2007  3 UNOV  006302014              SCR               SCR      0 0     0                                                0N   05  X    N34
-F07PV          PVP   BGoldman, Daniel                            0707200013M  1                                                                              N25
+F07PV          PVP   BGoldman, Daniel             000000003MAM   0707200013M  1                                                                              N25
 F07PV          PVP   BLandy, Amitai               062797AMI*LA   0627199716M  2             062797AMI*LAND                                                   N68
 F07PV          PVP   BFogel, Eiyal                111901EIY*FO   1119200112M  3             111901EIY*FOGE                                                   N18
 E07PV      APVP     F 2007  4 UNOV  006302014 3:08.19S                   3:13.08S     1 3     2  4.                                            2N   0500X    N35

@@ -319,7 +319,7 @@ F01PV          PVP   AAbrams, Yehuda              031299YEH*AB   0312199914M  4 
 E01PV      APVP     X 2006  4 1314   06222014                            3:16.72S     1 5     6  4.                                            6N   0100X    N63
 F01PV          PVP   ABaras, Orly                 082900ORL*BA   0829200012F  1             082900ORL*BARA                                                   N77
 F01PV          PVP   AUngar, Paula                082103PAU*UN   082120039 F  2             082103PAU*UNGA                                                   N28
-F01PV          PVP   AGoldman, Daniel                            0707200012M  3                                                                              N25
+F01PV          PVP   AGoldman, Daniel             000000003MAM   0707200012M  3                                                                              N25
 F01PV          PVP   AFriedman, Edan              021000EDA*FR   0210200013M  4             021000EDA*FRIE                                                   N38
 E01PV      APVP     X 2006  6 0910   06222014                            3:36.27S     2 2     7  2.                                            4N   0100X    N63
 F01PV          PVP   ARountree, Autumn            052504AUT*RO   052520049 F  1             052504AUT*ROUN                                                   N20
@@ -355,7 +355,7 @@ E01PV      APVP     M 2007 19 1314   06222014                                 NS
 F01PV          PVP   AFogel, Eiyal                111901EIY*FO   1119200111M  1             111901EIY*FOGE                                                   N08
 F01PV          PVP   AFriedman, Edan              021000EDA*FR   0210200013M  2             021000EDA*FRIE                                                   N38
 F01PV          PVP   AKostreski, William          060999WIL*KO   0609199914M  3             060999WIL*KOST                                                   N31
-F01PV          PVP   AGoldman, Daniel                            0707200012M  4                                                                              N25
+F01PV          PVP   AGoldman, Daniel             000000003MAM   0707200012M  4                                                                              N25
 E01PV      APVP     X 2007 16 1518   06222014                                 DQS     2 4     0                                                0N   05  X    N13
 F01PV          PVP   ATucker, Kenda               071296KEN*TU   0712199616F  1             071296KEN*TUCK                                                   N88
 F01PV          PVP   AGarrison, Amber             051199AMB*GA   0511199914F  2             051199AMB*GARR                                                   N29
@@ -367,7 +367,7 @@ E01PV      APVP     M 2007 17 1112   06222014                                 NS
 F01PV          PVP   ARoth, Noam                  000000NOA*RO           11M  1             000000NOA*ROTH                                                   N66
 F01PV          PVP   AStraus, Noam                000000NOA*ST           11M  2             000000NOA*STRA                                                   N57
 F01PV          PVP   ARivera, Antonio             120502ANT*RI   1205200210M  3             120502ANT*RIVE                                                   N49
-F01PV          PVP   AGoldman, Zachary                           0317200310M  4                                                                              N75
+F01PV          PVP   AGoldman, Zachary            000000005MAM   0317200310M  4                                                                              N75
 E01PV      APVP     F 2007 18 1112   06222014                                 NSS     1 3     0                                                0N   05  X    N03
 F01PV          PVP   ARabinowitz, Batsheva                       1016200111F  1                                                                              N37
 F01PV          PVP   AFriedman, Merav             000000MAR*FR   0829200111F  2             000000MAR*FRIE                                                   N09

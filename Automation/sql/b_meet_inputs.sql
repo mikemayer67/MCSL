@@ -18,7 +18,7 @@ from   individual_results R,
        age_codes AX
 where  R.swimmer=S.USSID
   and  S.team='PVFH'
-  and  R.meet=9
+  and  R.meet=15
   and  E.meet_type='dual'
   and  E.number=R.event
   and  SDIF.block=12

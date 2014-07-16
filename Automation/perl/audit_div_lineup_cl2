@@ -1,0 +1,368 @@
+#!/bin/ksh --  # -*-perl-*-
+eval 'exec $PERL $0 ${1+"$@"}'
+if 0;
+use strict;
+use warnings;
+
+use FindBin;
+use lib $FindBin::RealBin;
+
+use Data::Dumper;
+use DBI;
+use FileHandle;
+use List::Util qw(sum);
+use Scalar::Util qw(looks_like_number);
+
+use DivDB;
+use DivDB::Ages;
+use DivDB::SDIF;
+use DivDB::Events;
+use DivDB::Teams;
+use DivDB::Schedule;
+use DivDB::Swimmers;
+use DivDB::TeamSeed;
+use DivDB::Results;
+use DivDB::Relays;
+use DivDB::CarnivalRelays;
+
+my $filename = shift @ARGV;
+
+die "\nUsage:: $FindBin::Script cl2_filename\n\n" unless defined $filename;
+die "\nSorry:: filename must end with .cl2\n\n" unless $filename=~/\.cl2$/;
+
+my $cl2 = new FileHandle($filename);
+die "\nSorry:: Failed to open $filename\n   $!\n\n" unless $cl2;
+
+my $ages       = new DivDB::Ages;
+my $sdif_codes = new DivDB::SDIF;
+my $events     = new DivDB::Events;
+my $teams      = new DivDB::Teams;
+my $swimmers   = new DivDB::Swimmers;
+my $schedule   = new DivDB::Schedule;
+my $seed       = new DivDB::TeamSeed;
+my $results    = new DivDB::Results;
+my $relays     = new DivDB::Relays;
+my $carnival   = new DivDB::CarnivalRelays;
+
+my $A0;
+my $B1;
+my $Z0;
+my $curTeamCode;
+my $curRelay;
+my %num;
+my @teams;
+my %score;
+
+my %lineup;
+my %relay;
+my @report;
+
+my $nteams = $seed->count;
+
+my %CL2;
+while(<$cl2>)
+{
+  next unless /^([A-Z]\d)/;
+  my $code = $1;
+
+  die "\nFirst record must be A0\n\n" unless defined $A0 || $code eq 'A0';
+  die "\nOnly one A0 record allowed\n\n" if defined $A0 && $code eq 'A0';
+  die "\nOnly one B1 record allowed\n\n" if defined $B1 && $code eq 'B1';
+  die "\nNo records should follow Z0\n\n" if defined $Z0;
+
+  my $class = "CL2::$code";
+  unless(exists $CL2{$code})
+  {
+    eval "use $class;";
+    die "\nFailed to load $class\n  $@\n\n" if $@;
+    $CL2{$code} = 1;
+  }
+
+  my $rec = $class->new($_);
+
+  if($code eq 'A0')
+  {
+    $A0 = $rec;
+  }
+  elsif($code eq 'B1')
+  {
+    $B1 = $rec;
+    $num{B}++;
+  }
+  elsif($code eq 'C1')
+  {
+    $teams->verify_CL2($rec);
+    $curTeamCode = $rec->{team_code};
+    push @teams, $curTeamCode;
+    die "\nOnly $nteams teams allowed in a divisional meet\n\n" if @teams>$nteams;
+
+    $num{C}++;
+  }
+  elsif($code eq 'D0')
+  {
+    die "\n D0 record requires prior C1 record\n\n" unless defined $curTeamCode;
+    $rec->{team} = $curTeamCode;
+    $rec->{relay} = 'N';
+    $events->verify_CL2($rec);
+
+    my $number = $rec->{evt_number};
+
+    unless($rec->{ussid}=~/\w/)
+    {
+      push @report, "$rec->{name} ($rec->{team}) is missing a USSID, manually audit event $number";
+    }
+    else
+    {
+      $swimmers->verify_CL2($rec);
+      $relay{$number} = 0;
+      $lineup{$number}{$rec->{ussid}} = { team  => $rec->{team},
+                                          name  => $rec->{name},
+                                          seed  => cvt_time($rec->{seed_time}),
+                                        };
+    }
+
+    $num{D}++;
+  }
+  elsif($code eq 'D3')
+  {
+    $swimmers->verify_ussnum($rec);
+  }
+  elsif($code eq 'E0')
+  {
+    die "\nE0 record requires prior C1 record\n\n" unless defined $curTeamCode;
+    $rec->{relay} = 'Y';
+
+    my $number = $rec->{evt_number};
+
+    unless($rec->{relay_team} eq 'A')
+    {
+      print "$curTeamCode has entered more than one relay team in event $number\n";
+    }
+
+    $events->verify_CL2($rec);
+
+    $curRelay = $rec;
+    $relay{$number} = 1;
+    $lineup{$number}{$rec->{team_code}} = cvt_time($rec->{seed_time});
+
+    $num{E}++;
+  }
+  elsif($code eq 'F0')
+  {
+    $num{F}++;
+  }
+  elsif($code eq 'G0')
+  {
+    $num{G}++;
+  }
+  elsif($code eq 'Z0')
+  {
+    foreach (qw/B C D E F/)
+    {
+      my $rn = $rec->{"num_$_"};
+      warn "Mismatch in $_ count (Z0 says $rn / found $num{$_})\n" unless $rn == $num{$_};
+    }
+    $Z0 = $rec;
+  }
+  else
+  {
+    die Dumper($rec);
+  }
+  $curRelay = undef unless $code=~/^[EFG]/;
+}
+
+foreach my $number ( sort {$a<=>$b} keys %lineup )
+{
+  no warnings qw/uninitialized/;
+
+  my $event     = $events->{$number};
+  my $age_group = $event->{age};
+
+  print "Event #$number: $event->{label} ($age_group)\n";
+  my $lineup = $lineup{$number};
+
+  if($relay{$number})
+  {
+    my @teams = sort { $lineup->{$a} > 0 
+                       ? ( $lineup->{$b} > 0 ? $lineup->{$a} <=> $lineup->{$b} : -1 )
+                       : ( $lineup->{$b} > 0 ? 1 : $a cmp $b ) } keys %$lineup;
+
+      my $carnival_number = $events->comparable_carnival_event($number);
+
+      foreach my $team (@teams)
+      {
+        my $name = $teams->{$team}{team_name};
+        printf("%36s: %8s            ", $name, print_time($lineup->{$team}));
+
+        my $seed = $lineup->{$team};
+
+        my $best_time;
+        foreach my $lane (qw/A B/)
+        {
+          my $recs = $relays->{events}{$number}{$team.'.'.$lane};
+          next unless defined $recs;
+          foreach my $meet (keys %$recs)
+          {
+            my $time = $recs->{$meet}{time};
+            next unless $time>0;
+            my $week = $schedule->week($meet);
+            $best_time = [ $time, $week, $lane ] if ( ! defined $best_time ) || $time < $best_time->[0];
+          }
+        }
+        my $rec = $carnival->{events}{$carnival_number}{$team};
+        if(defined $rec)
+        {
+          my $time = $rec->{time};
+          if($time>0)
+          {
+            $best_time = [ $time, 'carnival' ] if ( ! defined $best_time ) || $time < $best_time->[0];
+          }
+        }
+
+        if(defined $best_time)
+        {
+          if ( $seed eq 'NT' )
+          {
+            if($best_time->[1] eq 'carnival')
+            {
+              print " ERR [ Missing Seed.  Best time of ".print_time($best_time->[0])." at the relay carnival ]";
+            }
+            else
+            {
+              print " ERR [ Missing Seed.  Best time of ".print_time($best_time->[0])." on week $best_time->[1] team $best_time->[2] ]";
+            }
+            push @report, "Event $number: $name is missing seed time";
+          }
+          elsif ( abs($best_time->[0] - $seed ) > .001 )
+          {
+            if( $best_time->[1] eq 'carnival')
+            {
+              print " ERR [ Bad Seed.  Best time of ".print_time($best_time->[0])." at the relay carnival ]";
+            }
+            else
+            {
+              print " ERR [ Bad Seed.  Best time of $best_time->[0] on week ".print_time($best_time->[1])." team $best_time->[2] ]";
+            }
+            push @report, "Event $number: $name has bad seed time";
+          }
+        }
+        else
+        {
+          if ( $seed ne 'NT' )
+          {
+            print "FLAG [ Relay Team has no A meet time in this event ]";
+            push @report, "Event $number: $name has no A meet time in this event";
+          }
+        }
+        print "\n";
+      }
+  }
+  else
+  {
+    my @all_comparable_events = ( $number, $events->comparable_events($number) );
+    my $event_results = $results->{events}{$number};
+    
+    my @ussid = sort { $lineup->{$a}{seed} > 0
+                       ? ( $lineup->{$b}{seed} > 0 ? $lineup->{$a}{seed} <=> $lineup->{$b}{seed} : -1 )
+                       : ( $lineup->{$b}{seed} > 0 ? 1 : $a cmp $b ) } keys %$lineup;
+    foreach my $ussid ( @ussid )
+    {
+      my $seed = $lineup->{$ussid}{seed} || 'NT';
+      my $name = $lineup->{$ussid}{name};
+      my $team = $lineup->{$ussid}{team};
+      my $age  = $swimmers->{$ussid}{age};
+      $team=~s/^PV//;
+      printf("%25s (%3s) [%2d]: %8s            ", $name, $team, $age, print_time($seed));
+      unless($ages->may_swim($age,$age_group))
+      {
+        print " ERR [ Bad Age ]";
+        push @report, "Event $number: $name has wrong age";
+      }
+
+      my $best_time;
+      foreach my $i (@all_comparable_events)
+      {
+        my $recs = $results->{events}{$i}{$ussid};
+        if(defined $recs)
+        {
+          foreach my $meet (keys %$recs)
+          {
+            my $time = $recs->{$meet}{time};
+            next unless $time > 0;
+            my $week = $schedule->week($meet);
+            $best_time = [ $time, $week, $i ] if ( ! defined $best_time ) || $time < $best_time->[0];
+          }
+        }
+      }
+      if(defined $best_time)
+      {
+        if ( $seed eq 'NT' )
+        {
+          print " ERR [ Missing Seed.  Best time of ".print_time($best_time->[0])." on week $best_time->[1] event $best_time->[2] ]";
+          push @report, "Event $number: $name is missing seed time";
+        }
+        elsif ( abs($best_time->[0] - $seed ) > .001 )
+        {
+          print " ERR [ Bad Seed.  Best time of ".print_time($best_time->[0])." on week $best_time->[1] event $best_time->[2] ]";
+          push @report, "Event $number: $name has bad seed time";
+        }
+        elsif( $best_time->[2] != $number )
+        {
+          print "NOTE [ This time is event $best_time->[2] week $best_time->[1] ]";
+        }
+      }
+      else
+      {
+        if( ! defined $results->{swimmers}{$ussid})
+        {
+          print " ERR [ Swimmer has not swam an A meet ]";
+          push @report, "Event $number: $name has never swam an A meet";
+        }
+        elsif ( $seed ne 'NT' )
+        {
+          print "FLAG [ Swimmer has no A meet time in this event ]";
+          push @report, "Event $number: $name has no A meet time in this event";
+        }
+      }
+
+      print "\n";
+    }
+  }
+  print "\n";
+}
+
+if(@report)
+{
+  print "\n\nDiscrepancies:\n\n";
+  foreach my $i (0..$#report)
+  {
+    printf(" %2d) $report[$i]\n",1+$i);
+  }
+  print "\n";
+}
+else
+{
+  print "\n\nAll is clean\n\n";
+}
+
+sub cvt_time
+{
+  my $time = shift;
+  return undef unless $time=~/^\s*(?:(\d+):)?(\d+(?:\.\d+)?)\s*$/;
+  my $sec = $2;
+  $sec += 60*$1 if defined $1;
+  return $sec;
+}
+
+sub print_time
+{
+  my $time = shift;
+
+  return $time unless looks_like_number($time);
+  return sprintf("%5.2f",$time) unless $time>=60;
+
+  my $min = POSIX::floor($time/60);
+  my $sec = $time - 60*$min;
+
+  return sprintf("%d:%05.2f",$min,$sec);
+}

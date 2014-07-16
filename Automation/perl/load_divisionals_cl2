@@ -13,7 +13,12 @@ use FileHandle;
 use List::Util qw(sum);
 use Scalar::Util qw(looks_like_number);
 
-use DivDB;
+use DivDB::SDIF;
+use DivDB::CarnivalEvents;
+use DivDB::Teams;
+use DivDB::Schedule;
+use DivDB::Swimmers;
+use DivDB::TeamSeed;
 
 my $filename = shift @ARGV;
 
@@ -29,6 +34,8 @@ my $sdif_codes = new DivDB::SDIF;
 my $events     = new DivDB::Events;
 my $teams      = new DivDB::Teams;
 my $swimmers   = new DivDB::Swimmers;
+my $schedule   = new DivDB::Schedule;
+my $seed       = new DivDB::TeamSeed;
 
 my $A0;
 my $B1;
@@ -39,6 +46,9 @@ my %num;
 my @dates;
 my @teams;
 my %score;
+
+my $meet   = $schedule->divisionals_meet;
+my $nteams = $seed->count;
 
 my %results;
 my %ties;
@@ -79,7 +89,7 @@ while(<$cl2>)
     $teams->verify_CL2($rec);
     $curTeamCode = $rec->{team_code};
     push @teams, $curTeamCode;
-    die "\nOnly six teams allowed in a divisional meet\n\n" if @teams>6;
+    die "\nOnly $nteams teams allowed in a divisional meet\n\n" if @teams>$nteams;
 
     $num{C}++;
   }
@@ -156,7 +166,7 @@ while(<$cl2>)
     unless($ns)
     {
       my $place = $rec->{finals_rank};
-      my @values = ( 6,
+      my @values = ( $meet,
                      "'$curTeamCode'",
                      $number,
                      "'A'",
@@ -170,7 +180,7 @@ while(<$cl2>)
                      $place||'NULL',
                      $dq ? 'NULL' : $points );
       my $values = join ',', @values;
-      my $sql = "delete from relay_results where week=6 and team='$curTeamCode' and relay_team='A' and event=$number";
+      my $sql = "delete from relay_results where meet=$meet and team='$curTeamCode' and relay_team='A' and event=$number";
       $dbh->do($sql);
       $sql = "insert into relay_results values ($values)";
       $dbh->do($sql);
@@ -190,7 +200,7 @@ while(<$cl2>)
       }
     }
     $num{E}++;
-    $curRelay = $ns ? undef : $rec;
+    $curRelay = $ns ? 'ns' : $rec;
   }
   elsif($code eq 'F0')
   {
@@ -202,7 +212,7 @@ while(<$cl2>)
     my $leg   = $rec->{finals_leg};
     if($leg=~/^[1234]$/)
     {
-      $dbh->do("update relay_results set swimmer$leg='$ussid',total_age=total_age+$rec->{age} where week=6 and team='$curTeamCode' and event=$curRelay->{evt_number} and relay_team='A'");
+      $dbh->do("update relay_results set swimmer$leg='$ussid',total_age=total_age+$rec->{age} where meet=$meet and team='$curTeamCode' and event=$curRelay->{evt_number} and relay_team='A'");
     }
 
     $num{F}++;
@@ -234,7 +244,10 @@ foreach my $event_number (keys %ties)
 
   if($event->isRelay)
   {
-    my @points = (0,28,20,16,12,8,4);
+    my @points = ( $nteams == 6 ? (0,28,20,16,12,8,4) :
+                   $nteams == 7 ? (0,32,28,20,16,12,8,4) :
+                   die "need to add points for $nteams teams\n" );
+
     foreach my $place (keys %{$ties{$event_number}})
     {
       my $swimmers = $ties{$event_number}{$place};
@@ -254,7 +267,9 @@ foreach my $event_number (keys %ties)
   }
   else
   {
-    my @points = (0,16,13,12,11,10,9,7,5,4,3,2,1);
+    my @points = ( $nteams == 6 ? (0, 16, 13,12,11,10,9, 7, 5,4,3,2,1) :
+                   $nteams == 7 ? (0, 18, 15,14,13,12,11,10, 8, 6,5,4,3,2,1) :
+                   die "need to add points for $nteams $teams\n" );
     foreach my $place (keys %{$ties{$event_number}})
     {
       my @swimmers = @{$ties{$event_number}{$place}};
@@ -275,10 +290,10 @@ foreach my $event_number (keys %ties)
   }
 }
 
-die "\nDivisionals meet must have six team (C1) records\n\n" unless @teams==6;
+die "\nDivisionals meet must have $nteams team (C1) records\n\n" unless @teams==$nteams;
 my @ranked_teams = sort { $score{$b} <=> $score{$a} } @teams;
 my $lastScore=0;
-my @points = (20,16,12,8,4,0); 
+my @points = (20,16,12,8,4,0,0); 
 $dbh->do("delete from divisionals");
 foreach my $team (@ranked_teams)
 {

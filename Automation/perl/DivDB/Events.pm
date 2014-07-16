@@ -2,8 +2,9 @@ package DivDB::Event;
 use strict;
 use warnings;
 
+use DivDB::Ages;
+
 our @Columns = qw(number relay gender distance stroke age);
-our %AgeCodes;
 our %StrokeCodes;
 
 sub new
@@ -11,8 +12,10 @@ sub new
   my($proto,@values) = @_;
   my %this = map { $Columns[$_] => $values[$_] } (0..$#Columns);
 
+  my $ages = new DivDB::Ages;
+
   my $gender = $this{gender} eq 'M' ? 'Boys' : 'Girls';
-  my $age    = $AgeCodes{$this{age}};
+  my $age    = $ages->label($this{age});
   my $dist   = $this{distance} . 'M';
   my $stroke = $StrokeCodes{$this{stroke}};
 
@@ -27,10 +30,37 @@ sub sql
   return "select $columns from events where meet_type='dual'";
 }
 
+sub relays_sql
+{
+  my $columns = join ',', @Columns;
+  return "select $columns from events where meet_type='relays'";
+}
+
 sub isRelay
 {
   my $this = shift;
   return $this->{relay} eq 'Y' ? 1 : 0;
+}
+
+sub isComparable
+{
+  my($this,$event) = @_;
+  return undef unless $this->{relay}    eq $event->{relay};
+  return undef unless $this->{gender}   eq $event->{gender};
+  return undef unless $this->{distance} eq $event->{distance};
+  return undef unless $this->{stroke}   eq $event->{stroke};
+  return 1;
+}
+
+sub isComparableRelay
+{
+  my($this,$event) = @_;
+  return undef unless $this->{relay}    eq $event->{relay};
+  return undef unless $this->{gender}   eq $event->{gender};
+  return undef unless $this->{age}      eq $event->{age};
+  return undef unless $this->{distance} eq $event->{distance};
+  return undef unless $this->{stroke}   eq $event->{stroke};
+  return 1;
 }
 
 package DivDB::Events;
@@ -43,6 +73,7 @@ use Scalar::Util qw(blessed);
 use DivDB;
 
 our $Instance;
+our $RelayCarnival;
 
 sub new
 {
@@ -54,13 +85,7 @@ sub new
 
     my %this;
 
-    my $q = $dbh->selectall_arrayref('select code,text from age_codes');
-    foreach my $x (@$q)
-    {
-      $DivDB::Event::AgeCodes{$x->[0]} = $x->[1];
-    }
-
-    $q = $dbh->selectall_arrayref('select code,value from sdif_codes where block=12');
+    my $q = $dbh->selectall_arrayref('select code,value from sdif_codes where block=12');
     foreach my $x (@$q)
     {
       $DivDB::Event::StrokeCodes{$x->[0]} = $x->[1];
@@ -74,10 +99,43 @@ sub new
       $this{$event->{number}} = $event;
     }
 
+    $sql = DivDB::Event->relays_sql;
+    $q = $dbh->selectall_arrayref($sql);
+    foreach my $x (@$q)
+    {
+      my $event = new DivDB::Event(@$x);
+      $RelayCarnival->{$event->{number}} = $event;
+    }
+
     $Instance = bless \%this, (ref($proto)||$proto);
   }
 
   return $Instance;
+}
+
+sub comparable_events
+{
+  my($this,$event) = @_;
+
+  my @rval;
+  foreach my $number ( keys %$this )
+  {
+    next if $number == $event;
+    push @rval, $number if $this->{$number}->isComparable($this->{$event});
+  }
+  return @rval;
+}
+
+sub comparable_carnival_event
+{
+  my($this,$event) = @_;
+  croak "Oops... $event is not a relay\n" unless $this->{$event}->isRelay;
+
+  foreach my $number (keys %$RelayCarnival)
+  {
+    return $number if $RelayCarnival->{$number}->isComparableRelay($this->{$event});
+  }
+  return undef;
 }
 
 sub verify_CL2
@@ -124,7 +182,6 @@ sub verify_CL2
     my $values = join ',', ( map { (defined $_ ? "'$_'" : 'NULL') } @values );
 
     my $dbh = &DivDB::getConnection;
-    print "insert into events values ('dual',$values)\n";
     $dbh->do("insert into events values ('dual',$values)");
     $this->{$number} = new DivDB::Event(@values);
   }

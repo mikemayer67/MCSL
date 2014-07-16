@@ -89,7 +89,7 @@ while(<$cl2>)
     $teams->verify_CL2($rec);
     $curTeamCode = $rec->{team_code};
     push @teams, $curTeamCode;
-    die "\nOnly $nteams teams allowed in a dual meet\n\n" if @teams>$nteams;
+    die "\nOnly $nteams teams allowed in a relay carnival \n\n" if @teams>$nteams;
 
     $num{C}++;
   }

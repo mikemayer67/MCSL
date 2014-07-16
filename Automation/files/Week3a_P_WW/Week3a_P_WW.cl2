@@ -54,9 +54,9 @@ D3020398COD*GARR                                                                
 D07PV      Garrison, Cody              020398COD*GAA   0203199815MM 1005 27 151806252014 1:30.59S                   1:29.31S     1 2     2  4.   2  0500    NN80
 D07PV      Garrison, Cody              020398COD*GAA   0203199815MM 1003 37 151806252014 1:54.44S                   1:52.22S     1 2     4  2.   4  0300    NN80
 D07PV      Garrison, Cody              020398COD*GAA   0203199815MM  504 47 151806252014   44.56S                     40.34S     1 2     2  4.   2  0400    NN30
-D07PV      Goldman, Daniel                         A   0707200012MM  501  9 131406252014                              52.72S     2 6     9       6  01      NN57
+D07PV      Goldman, Daniel             000000003MAMA   0707200012MM  501  9 131406252014                              52.72S     2 6     9       6  01      NN57
 D3                                                                                                                                                           N67
-D07PV      Goldman, Daniel                         A   0707200012MM  502 25 131406252014                                 NSS     1 6     0       0  02      NN57
+D07PV      Goldman, Daniel             000000003MAMA   0707200012MM  502 25 131406252014                                 NSS     1 6     0       0  02      NN57
 D07PV      Gross, Tommy                062304TOM*GRA   06232004 8MM  501  7 091006252014   43.84S                     44.25S     2 4     2  4.   2  0100    NN69
 D3062304TOM*GROS                                                                                                                                             N00
 D07PV      Gross, Tommy                062304TOM*GRA   06232004 8MM  252 19 091006252014   26.15S                     26.53S     1 4     4  2.   4  0200    NN79

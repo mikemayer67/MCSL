@@ -23,6 +23,7 @@ use strict;
 use warnings;
 use Carp;
 
+use Data::Dumper;
 use Scalar::Util qw(blessed);
 
 use DivDB;
@@ -61,6 +62,7 @@ sub verify_CL2
     unless $rec->isa('CL2::D0') || $rec->isa('CL2::F0');
 
   my $ussid = $rec->{ussid};
+  croak "Found a swimmer witout a USSID:\n".Dumper($rec) unless $ussid=~/\w/;
 
   my @keys = @DivDB::Swimmer::Columns[1..$#DivDB::Swimmer::Columns];
 
