@@ -1,39 +1,3 @@
-package DivDB::MeetEntry;
-use strict;
-use warnings;
-
-our @keys = qw(week team start end opponent score points);
-
-sub new
-{
-  my($proto,@values) = @_;
-  my %this;
-  @this{@keys} = @values;
-  bless \%this, (ref($proto)||$proto);
-}
-
-sub sql
-{
-  my $columns = join ',', @keys;
-  return "select $columns from meets";
-}
-
-sub pairedWith
-{
-  my($t1,$t2) = @_;
-  foreach (qw/week start end/)
-  {
-    return 0 unless $t1->{$_} eq $t2->{$_};
-  }
-  return 0 unless $t1->{opponent} = $t2->{team};
-  return 0 unless $t2->{opponent} = $t1->{team};
-  return 0 unless $t1->{points} + $t2->{points} == 6;
-  return 0 unless ( ($t1->{score} > $t2->{score} && $t1->{points}==6) ||
-                    ($t2->{score} > $t1->{score} && $t2->{points}==6) ||
-                    ($t1->{score} == $t2->{score} && $t1->{points}==$t2->{points}) );
-  return 1;
-}
-
 package DivDB::Meet;
 use strict;
 use warnings;
@@ -42,27 +6,74 @@ use Carp;
 use Data::Dumper;
 use Scalar::Util qw(blessed);
 
+use DivDB;
+use DivDB::Schedule;
+
 sub new
 {
-  my($proto,$t1,$t2,$dbh) = @_;
-  croak "Not a DivDB::MeetEntry ($t1)\n" unless blessed($t1) && $t1->isa('DivDB::MeetEntry');
-  croak "Not a DivDB::MeetEntry ($t2)\n" unless blessed($t2) && $t2->isa('DivDB::MeetEntry');
+  my($proto,$meet,@entries) = @_;
 
-  croak "\nMismatched Data\n".Dumper($t1)."vs\n".Dumper($t2)."\n" unless $t1->pairedWith($t2);
+  my $schedule = new DivDB::Schedule;
+  my $seed     = new DivDB::TeamSeed;
 
-  my $url = substr($t2->{team},2) . 'v' . substr($t1->{team},2) . '.html';
+  my $n = @entries;
+  die "found $n teams rather than the expected 2\n" unless $n==2;
 
-  ($t1,$t2) = ($t2,$t1) if $t2->{score}>$t1->{score};
+  die "start times do not match\n" unless $entries[0]{start} eq $entries[1]{start};
+  die "end times do not match\n"   unless $entries[0]{end}   eq $entries[1]{end};
 
-  bless { week   => $t1->{week},
-          start  => $t1->{start},
-          end    => $t1->{end},
-          tied   => $t1->{points}==$t2->{points},
-          teams  => [ $t1->{team},   $t2->{team} ],
-          scores => [ $t1->{score},  $t2->{score} ],
-          points => [ $t1->{points}, $t2->{points} ],
-          url    => $url,
+  my @teams  = map { $_->{team} } @entries;
+  my $home = $schedule->home_team($meet);
+  my $away = $schedule->away_team($meet);
+
+  if( $home eq $teams[0] )
+  {
+    die "missing away team $away\n" unless $away eq $teams[1];
+  }
+  elsif( $home eq $teams[1] )
+  {
+    die "missing away team $away\n" unless $away eq $teams[0];
+    @entries = reverse @entries;
+  }
+  else
+  {
+    die "missing home team $home\n";
+  }
+
+  die "opponent entry for $home is $entries[0]{opponent}, not $away\n"
+    unless $entries[0]{opponent} eq $away;
+  die "opponent entry for $away is $entries[1]{opponent}, not $home\n"
+    unless $entries[1]{opponent} eq $home;
+
+  my @scores = map { $_->{score}  } @entries;
+
+  my @points = ( $scores[0] > $scores[1] ? ( 6, 0 ) :  # team 1 won, they get 6 points
+                 $scores[0] < $scores[1] ? ( 0, 6 ) :  # team 2 won, they get 6 points
+                                           ( 3, 3 ) ); # tie, both teams get 3 points
+
+  $points[0] = 0 if $seed->rank($away)>6;
+  $points[1] = 0 if $seed->rank($home)>6;
+
+  die "incorrect number of points for $teams[0]\n" unless $points[0] == $entries[0]{points};
+  die "incorrect number of points for $teams[1]\n" unless $points[1] == $entries[1]{points};
+
+  my $week = $schedule->week($meet);
+
+  bless { meet      => $meet,
+          start     => $entries[0]{start},
+          end       => $entries[0]{end},
+          home      => { team=>$home, score=>$scores[0], points=>$points[0] },
+          away      => { team=>$away, score=>$scores[1], points=>$points[1] },
+          url       => ( ( $home eq 'PVP' || $away eq 'PVP') ? 
+                           "Parkland_week_${week}A.pdf" :
+                           substr($away,2) . 'v' . substr($home,2) . '.html' ),
         }, (ref($proto)||$proto);
+}
+
+sub url
+{
+  my($this) = @_;
+  return $this->{url};
 }
 
 package DivDB::Meets;
@@ -70,77 +81,107 @@ use strict;
 use warnings;
 use Carp;
 
+use DivDB;
 use DivDB::Schedule;
+use DivDB::Teams;
+
 use Scalar::Util qw(blessed);
+use List::Util qw(max);
+
+our $Instance;
 
 sub new
 {
-  my($proto,$dbh) = @_;
-  croak "Not a DBI connection ($dbh)\n" unless ref($dbh) eq 'DBI::db';
+  my($proto) = @_;
 
-  my $schedule = new DivDB::Schedule($dbh);
-
-  my %this;
-
-  my $sql = DivDB::MeetEntry->sql;
-  my $q = $dbh->selectall_arrayref($sql);
-
-  my %entries;
-  foreach my $x (@$q)
+  unless( defined $Instance )
   {
-    my $entry = new DivDB::MeetEntry(@$x);
-    my $week     = $entry->{week};
-    my $team     = $entry->{team};
-    my $opponent = $entry->{opponent};
-    if(exists $entries{$week}{$opponent})
+    my $schedule = new DivDB::Schedule;
+
+    my %this;
+
+    my @columns = qw(meet team start end opponent score points);
+
+    my $dbh = &DivDB::getConnection;
+    my $sql = 'select ' . (join ', ', @columns) . ' from meets';
+    my $q = $dbh->selectall_arrayref($sql);
+
+    my %meets;
+    foreach my $x (@$q)
     {
-      if($schedule->verify($week,$team,$opponent))
-      {
-        push @{$this{$week}}, new DivDB::Meet($entry,$entries{$week}{$opponent});
-      }
-      elsif($schedule->verify($week,$opponent,$team))
-      {
-        push @{$this{$week}}, new DivDB::Meet($entries{$week}{$opponent},$entry);
-      }
-      else
-      {
-        croak "\nUnschedule week $week meet ($team vs $opponent)\n";
-      }
-      $entries{$week}{$team} = $entries{$week}{$opponent} = 'Already Processed';
-    } 
-    else
-    {
-      $entries{$week}{$team} = $entry;
+      my $meet  = $x->[0];
+      my %entry = map { ( $columns[$_] => $x->[$_] ) } (1..$#columns);
+
+      push @{$meets{$meet}}, \%entry;
     }
+
+    foreach my $meet ( keys %meets )
+    {
+      eval { $this{$meet} = new DivDB::Meet( $meet, @{$meets{$meet}} ) };
+      croak "There is a problem with meet: $@" if $@;
+    }
+
+    $Instance = bless \%this, (ref($proto)||$proto);
   }
 
-  bless \%this, (ref($proto)||$proto);
+  return $Instance;
 }
 
 sub gen_html
 {
-  my($this,$teams) = @_;
-  croak "Not a DivDB::Teams ($teams)\n" unless blessed($teams) && $teams->isa('DivDB::Teams');
+  my($this) = @_;
+  my $teams = new DivDB::Teams;
+
+  my $schedule = new DivDB::Schedule;
 
   my $rval;
 
   $rval .= "<h1 class=reporthead>Dual Meet Results</h1>\n";
 
-  foreach my $week (sort keys %$this)
+  my %meets;
+  foreach my $meet (keys %$this)
+  {
+    my $week = $schedule->week($meet);
+    push @{$meets{$week}}, $meet;
+  }
+
+  foreach my $week ( sort {$a<=>$b} keys %meets )
   {
     $rval .= "<h2 class=reporthead>Week $week</h2>\n";
     my $url = "http://mcsl.org/results/$DivDB::Year/week$week";
     $rval .= "<table id=week$week class=report>\n";
 
-    my @meets = sort { $b->{scores}[0] <=> $a->{scores}[0] } @{$this->{$week}};
-    foreach my $meet (@meets)
+    my @meets = sort { max ( $this->{$b}{home}{score},
+                             $this->{$b}{away}{score} ) <=>
+                       max ( $this->{$a}{home}{score},
+                             $this->{$a}{away}{score} ) } @{$meets{$week}};
+
+    foreach (@meets)
     {
+      my $meet = $this->{$_};
+
+      my $home = $meet->{home}{team};
+      my $away = $meet->{away}{team};
+
       $rval .= " <tr class=reporthead>\n";
-      $rval .= "<td class=reportbold class=teamname>$teams->{$meet->{teams}[0]}{team_name}</td>\n";
-      $rval .= "<td class=reportbody>$meet->{scores}[0]</td>\n";
-      $rval .= "<td class=reportbold class=teamname>$teams->{$meet->{teams}[1]}{team_name}</td>\n";
-      $rval .= "<td class=reportbody>$meet->{scores}[1]</td>\n";
-      $rval .= "<td class=reporturl><a class=mcsldual href='$url/$meet->{url}' target=_blank>Full MCSL Report</a>\n";
+
+      if( $meet->{home}{score} > $meet->{away}{score} )
+      {
+        $rval .= "<td class=reportbold class=teamname>$teams->{$home}{team_name}</td>\n";
+        $rval .= "<td class=reportbody>$meet->{home}{score}</td>\n";
+        $rval .= "<td class=reportbold class=teamname>$teams->{$away}{team_name}</td>\n";
+        $rval .= "<td class=reportbody>$meet->{away}{score}</td>\n";
+      }
+      else
+      {
+        $rval .= "<td class=reportbold class=teamname>$teams->{$away}{team_name}</td>\n";
+        $rval .= "<td class=reportbody>$meet->{away}{score}</td>\n";
+        $rval .= "<td class=reportbold class=teamname>$teams->{$home}{team_name}</td>\n";
+        $rval .= "<td class=reportbody>$meet->{home}{score}</td>\n";
+      }
+
+      my $meet_url = $url . '/' . $meet->url;
+      $rval .= "<td class=reporturl><a class=mcsldual href='$meet_url' target=_blank>Full MCSL Report</a>\n";
       $rval .= "</tr>\n";
     }
     $rval .= "</table>\n";

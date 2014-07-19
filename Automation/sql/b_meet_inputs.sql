@@ -1,4 +1,4 @@
-select R.week,
+select R.meet,
        S.age,
        S.gender,
        S.name,
@@ -18,7 +18,7 @@ from   individual_results R,
        age_codes AX
 where  R.swimmer=S.USSID
   and  S.team='PVFH'
-  and  R.week=3
+  and  R.meet=15
   and  E.meet_type='dual'
   and  E.number=R.event
   and  SDIF.block=12

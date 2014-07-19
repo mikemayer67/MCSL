@@ -6,42 +6,54 @@ use Carp;
 use Data::Dumper;
 use Scalar::Util qw(blessed);
 
+use DivDB;
+use DivDB::Teams;
+
+our $Instance;
+
 sub new
 {
-  my($proto,$dbh) = @_;
-  croak "Not a DBI connection ($dbh)\n" unless ref($dbh) eq 'DBI::db';
+  my($proto) = @_;
 
-  my %this;
-
-  my $sql = 'select team,sum(points) from meets group by team';
-  my $q = $dbh->selectall_arrayref($sql);
-  foreach my $x (@$q)
+  unless ( defined $Instance )
   {
-    $this{$x->[0]}{dual} = $x->[1];
-    $this{$x->[0]}{total} = $x->[1];
+    my %this;
+
+    my $dbh = &DivDB::getConnection;
+
+    my $sql = 'select team,sum(points) from meets group by team';
+    my $q = $dbh->selectall_arrayref($sql);
+    foreach my $x (@$q)
+    {
+      $this{$x->[0]}{dual} = $x->[1];
+      $this{$x->[0]}{total} = $x->[1];
+    }
+
+    $q = $dbh->selectall_arrayref('select team,points from relay_carnival');
+    foreach my $x (@$q)
+    {
+      $this{$x->[0]}{relay} = $x->[1];
+      $this{$x->[0]}{total} += $x->[1];
+    }
+
+    $q = $dbh->selectall_arrayref('select team,points from divisionals');
+    foreach my $x (@$q)
+    {
+      $this{$x->[0]}{div} = $x->[1];
+      $this{$x->[0]}{total} += $x->[1];
+    }
+
+    $Instance = bless \%this, (ref($proto)||$proto);
   }
 
-  $q = $dbh->selectall_arrayref('select team,points from relay_carnival');
-  foreach my $x (@$q)
-  {
-    $this{$x->[0]}{relay} = $x->[1];
-    $this{$x->[0]}{total} += $x->[1];
-  }
-
-  $q = $dbh->selectall_arrayref('select team,points from divisionals');
-  foreach my $x (@$q)
-  {
-    $this{$x->[0]}{div} = $x->[1];
-    $this{$x->[0]}{total} += $x->[1];
-  }
-
-  bless \%this, (ref($proto)||$proto);
+  return $Instance;
 }
 
 sub gen_html
 {
-  my($this,$teams) = @_;
-  croak "Not a DivDB::Teams ($teams)\n" unless blessed($teams) && $teams->isa('DivDB::Teams');
+  my($this) = @_;
+
+  my $teams = new DivDB::Teams;
 
   my @teams = sort { $this->{$b}{total} <=> $this->{$a}{total} } keys %$this;
 
@@ -58,7 +70,7 @@ sub gen_html
 
   my $lastScore=0;
   my $lastPlace=0;
-  foreach my $i (0..5)
+  foreach my $i (0..$#teams)
   {
     next unless exists $teams[$i];
 

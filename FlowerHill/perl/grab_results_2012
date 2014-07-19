@@ -1,0 +1,301 @@
+#!/bin/ksh --  # -*-perl-*-
+eval 'exec $PERL $0 ${1+"$@"}'
+  if 0;
+
+use strict;
+use LWP::UserAgent;
+use DBI();
+
+#
+# Constants
+#
+
+my $year = 1900 + (localtime(time))[5];
+my @weeks = (1..6);
+my @divs  = ('A'..'O');
+
+#
+# Globals
+#
+
+my %db;
+
+#
+# Command Line
+#
+
+my ($path,$cmd) = (".",$0);
+if( $0 =~ /\/([^\/]+)$/ ) { ($path,$cmd) = ($`,$1); }
+
+my $usage = "\n$cmd -year=YYYY -div[s]=List -week[s]=List\n\n\n$cmd -reload=file";
+
+unless(-d "Results") 
+{
+  system("mkdir Results");
+  system("chmod 775 Results");
+  die "\nCannot create Results directory\n\n" unless -d "Results";
+}
+
+my %args;
+foreach my $arg (@ARGV)
+{
+  if( $arg =~ /^-year=(\d\d\d\d)$/i )
+  {
+    die "$usage\n" if $args{year} || $args{reload};
+    $args{year}=1;
+    $year = $1;
+  } 
+  elsif( $arg =~ /^-divs?=/i )
+  {
+    die "$usage\n" if $args{div} || $args{reload};
+    $args{div}=1;
+
+    my %divs;
+
+    my @ranges = split /,/, $';
+    foreach my $x (@ranges)
+    {
+      die "$usage\n" unless $x =~ /^([A-Za-z])(-([A-Za-z]))?$/;
+      my $a = $1;
+      my $b = $3 || $a;
+      $a=~tr/[a-z]/[A-Z]/;
+      $b=~tr/[a-z]/[A-Z]/;
+      foreach my $x ($a..$b) {
+        die "$usage\n" if $divs{$x};
+        $divs{$x}=1;
+      }
+    }
+
+    @divs = sort keys %divs;
+  }
+  elsif( $arg =~ /^-weeks?=/i )
+  {
+    die "$usage\n" if $args{week} || $args{reload};
+    $args{year}=1;
+
+    my %weeks;
+
+    my @ranges = split /,/, $';
+    foreach my $x (@ranges)
+    {
+      die "$usage\n" unless $x =~ /^(\d)(-(\d))?$/;
+      my $a = $1;
+      my $b = $3 || $a;
+      foreach my $x ($a..$b) {
+        die "$usage\n" if $weeks{$x};
+        $weeks{$x}=1;
+      }
+    }
+
+    @weeks = sort keys %weeks;
+  }
+  elsif( $arg=~/^-reload=/i )
+  {
+    die "$usage\n" if keys %args;
+    chomp($args{reload} = $');
+  }
+  else
+  {
+    die "$usage\n";
+  }
+}
+
+if($args{reload})
+{
+  my $file = $args{reload};
+  $file = "Results/$file" unless $file=~m(^Results/);
+  open(DATA,"$file") || die "\nSorry:: Failed to open $file: $!\n\n";
+  my @data = <DATA>;
+  my $data = join "", @data;
+  load_data($data,$file);
+  exit 0;
+}
+
+my $ua = new LWP::UserAgent;
+
+foreach my $week (@weeks) 
+{
+  foreach my $div (@divs)
+  {
+    my $url = "http://mcsl.org/results/$year/week$week/div_$div.txt";
+    my $req = new HTTP::Request(GET=>$url);
+    my $res = $ua->request($req);
+
+    my $prefix = "$year Week $week Div $div: ";
+    print $prefix;
+    unless($res->is_success)
+    {
+      print "Not found\n";
+      next;
+    }
+
+    my $text = $res->content;
+
+    my $body;
+    if($text=~/Division $div Results/)
+    {
+      $body = "$&$'";
+    }
+    else
+    {
+      print " (missing 'Division $div Results' header)\n";
+      next;
+    }
+
+    my $file = "Results/$year\_$div\_$week.dat";
+    if(-e $file)
+    {
+      if ( same_as_file($file,$text) ) 
+      {
+        print "Unchanged\n";
+        next;
+      }
+      else
+      {
+        print "Modified since last download\n\n";
+        my $ans;
+        do {
+          print "  Overwrite old data (y|n): ";
+          $ans = <STDIN>;
+        } until $ans=~/^y(es)?|no?$/i;
+        next unless $ans=~/^y(es)?$/i;
+        print "\n$prefix";
+      }
+
+      unlink("$file~");
+      rename($file,"$file~");
+    }
+
+    open(TXT,">$file") || die "\n\nSorry:: Failed to create $file: $!\n\n";
+    print TXT $text;
+    close(TXT);
+    system("chmod 666 $file");
+
+    load_data($body,$file);
+
+    print "Loaded and Saved\n";
+  }
+}
+
+sub same_as_file
+{
+  my $file = shift;
+  my $text = shift;
+
+  open(OLD,$file) || return undef;
+
+  my @old = <OLD>;
+  my $old = join "", @old;
+  close(OLD);
+
+  return $old eq $text;
+}
+
+
+sub load_data
+{
+  my $text = shift;
+  my $file = shift;
+
+  $file=~s(^Results/)();
+
+  die "\nSorry:: Unparsable filename: $file\n\n" unless $file=~/^(\d\d\d\d)_([A-Z])_(\d).dat/;
+  my $year = $1;
+  my $div  = $2;
+  my $week = $3;
+
+  my @text = split /\n/, $text;
+
+  my $head = shift @text;
+  die "\nHeader line for $file is missing/corrupt\n\n" unless $head=~/Division $div Results/;
+
+  unless ($db{dbh})
+  {
+    $db{dbh} = DBI->connect("DBI:mysql:database=mcsl;host=localhost","mcsl","flippers");
+
+    my $sth = $db{dbh}->prepare("select * from teams");
+    $sth->execute();
+    while(my $x = $sth->fetchrow_hashref())
+    {
+      $db{teams}->{$x->{id}} = $x->{name};
+      $db{team_xref}->{$x->{name}} = $x->{id};
+    }
+    $sth->finish();
+
+    $sth = $db{dbh}->prepare("select * from events");
+    $sth->execute();
+    while(my $x = $sth->fetchrow_hashref())
+    {
+      $db{events}->[$x->{id}] = $x->{name};
+      $db{relays}->[$x->{id}] = 1 if $x->{relay};
+    }
+    $sth->finish();
+  }
+
+  my $where = "where week=$week and year=$year and team in (select id from teams where division='$div' and year=$year)";
+
+  $db{dbh}->do("delete from dqs $where");
+  $db{dbh}->do("delete from results $where");
+  $db{dbh}->do("delete from relays $where");
+
+  my $cur_event;
+  my $relay_list;
+
+  foreach my $x (@text)
+  {
+    if($x=~/^\s+(.*)\s+\((\S+)\)\s+DQ\s*$/)
+    {
+      my $swimmer = $1;
+      my $team_id = $2;
+
+      $swimmer =~ s/'/''/;
+
+      my $sql = "insert into dqs values ('$team_id','$swimmer',$cur_event,$week,$year)";
+      $db{dbh}->do($sql);
+    }
+    elsif($x=~/^\s+(\d+)(T?)\s+(.*)\s+\((\S+)\)\s+(\d+:)?(\d+\.\d+)\s*$/)
+    {
+      my $place = $1;
+      my $tie = ($2 eq 'T' ? 1 : 0);
+      my $swimmer = $3;
+      my $team_id = $4;
+      my $time = 60*$5 + $6;
+
+
+      $swimmer =~ s/'/''/;
+
+      die "\nError:: $x\n Swimmer ($3) found without an event\n\n" unless $cur_event;
+      die "\nError:: $x\n Swimmer ($3), not a team found in a relay\n\n" if $db{relays}->[$cur_event];
+
+      my $sql = "insert into results values ('$team_id','$swimmer',$cur_event,$week,$year,$place,$time,$tie)";
+      $db{dbh}->do($sql);
+    }
+    elsif($x=~/^\s+(\d+)(T?)\s+(.*)\s+(\d+:)?(\d+\.\d+)\s*$/)
+    {
+      my $place = $1;
+      my $tie = ($2 eq 'T' ? 1 : 0);
+      my $team = $3;
+      my $time = 60*$4 + $5;
+
+      die "\nError:: $x\n Relay team ($3) found without an event\n\n" unless $cur_event;
+      die "\nError:: $x\nRelay team ($3) found in a non relay\n\n" unless $db{relays}->[$cur_event];
+
+      my $team_id = $db{team_xref}{$team};
+      $relay_list->{$team_id}++;
+      my $lane = $relay_list->{$team_id};
+      my $sql = "insert into relays values ('$team_id',$lane,$cur_event,$week,$year,$place,$time,$tie)";
+      $db{dbh}->do($sql);
+    }
+    elsif($x=~/^\s*(\d+)\s+(.*)\s*$/)
+    {
+      my $id = $1;
+      my $event = $2;
+      if( $event eq $db{events}->[$id] )
+      {
+        $cur_event = $id;
+        $relay_list = undef;
+      }
+    }
+  }
+
+}

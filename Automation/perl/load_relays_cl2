@@ -13,7 +13,12 @@ use FileHandle;
 use List::Util qw(sum);
 use Scalar::Util qw(blessed looks_like_number);
 
-use DivDB qw(getDBConnection);
+use DivDB::SDIF;
+use DivDB::CarnivalEvents;
+use DivDB::Teams;
+use DivDB::Schedule;
+use DivDB::Swimmers;
+use DivDB::TeamSeed;
 
 my $filename = shift @ARGV;
 
@@ -23,12 +28,14 @@ die "\nSorry:: filename must end with .cl2\n\n" unless $filename=~/\.cl2$/;
 my $cl2 = new FileHandle($filename);
 die "\nSorry:: Failed to open $filename\n   $!\n\n" unless $cl2;
 
-my $dbh = getDBConnection();
+my $dbh = &DivDB::getConnection;
 
-my $sdif_codes = new DivDB::SDIF($dbh);
-my $events     = new DivDB::CarnivalEvents($dbh);
-my $teams      = new DivDB::Teams($dbh);
-my $swimmers   = new DivDB::Swimmers($dbh);
+my $sdif_codes = new DivDB::SDIF;
+my $events     = new DivDB::CarnivalEvents;
+my $teams      = new DivDB::Teams;
+my $swimmers   = new DivDB::Swimmers;
+my $schedule   = new DivDB::Schedule;
+my $seed       = new DivDB::TeamSeed;
 
 my $A0;
 my $B1;
@@ -39,6 +46,9 @@ my %num;
 my @dates;
 my @teams;
 my %score;
+
+my $meet   = $schedule->relay_carnival_meet;
+my $nteams = $seed->count;
 
 my %results;
 my %ties;
@@ -79,7 +89,7 @@ while(<$cl2>)
     $teams->verify_CL2($rec);
     $curTeamCode = $rec->{team_code};
     push @teams, $curTeamCode;
-    die "\nOnly six teams allowed in a dual meet\n\n" if @teams>6;
+    die "\nOnly $nteams teams allowed in a relay carnival \n\n" if @teams>$nteams;
 
     $num{C}++;
   }
@@ -98,7 +108,7 @@ while(<$cl2>)
     unless($ns)
     {
       my $place = $rec->{finals_rank};
-      my @values = ( 0,
+      my @values = ( $meet,
                      "'$curTeamCode'",
                      $number,
                      "'A'",
@@ -112,7 +122,7 @@ while(<$cl2>)
                      $place||'NULL',
                      $dq ? 'NULL' : $points );
       my $values = join ',', @values;
-      my $sql = "delete from relay_results where week=0 and team='$curTeamCode' and event=$number";
+      my $sql = "delete from relay_results where meet=$meet and team='$curTeamCode' and event=$number";
       $dbh->do($sql);
       $sql = "insert into relay_results values ($values)";
       $dbh->do($sql);
@@ -146,7 +156,7 @@ while(<$cl2>)
       my $leg   = $rec->{finals_leg};
       if($leg=~/^[1234]$/)
       {
-        $dbh->do("update relay_results set swimmer$leg='$ussid',total_age=total_age+$rec->{age} where week=0 and team='$curTeamCode' and event=$curRelay->{evt_number}");
+        $dbh->do("update relay_results set swimmer$leg='$ussid',total_age=total_age+$rec->{age} where meet=$meet and team='$curTeamCode' and event=$curRelay->{evt_number}");
       }
     }
 
@@ -175,17 +185,34 @@ while(<$cl2>)
 
 foreach my $event_number (keys %ties)
 {
-  print "Need to add tie logic for $event_number\n";
-  # See load_dual_cl2 for model logic
+  foreach my $place (keys %{$ties{$event_number}})
+  {
+    my @tied = @{$ties{$event_number}{$place}};
+    my $n_teams     = @tied;
+    my @pts = map { $_->[1] } @tied;
+    my $true_pts = (sum @pts) / $n_teams;
+    print "\n";
+    foreach my $t (@tied)
+    {
+      my($team,$pts) = @$t;
+      my $delta = $true_pts-$pts;
+      next unless $delta;
+
+      print " Correcting tie points ($event_number/$place): $team ($true_pts vs $pts)\n";
+      my $sql = "update relay_results set points=$true_pts where meet=$meet and team='$team' and event=$event_number";
+      $dbh->do($sql);
+      $score{$team} += $delta;
+    }
+  }
 }
 
-die "\nRelay Carnival must have six team (C1) records\n\n" unless @teams==6;
+die "\nRelay Carnival must have $nteams team (C1) records\n\n" unless @teams==$nteams;
 
 my $dates = "'$dates[0]','$dates[1]'";
 
 $dbh->do("delete from relay_carnival");
 @teams = sort { $score{$b}<=>$score{$a} } @teams;
-my @points = (10,8,6,4,2,0);
+my @points = (10,8,6,4,2,0,0);
 while(@teams)
 {
   my $team = shift @teams;

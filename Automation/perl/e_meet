@@ -1,0 +1,124 @@
+#!/bin/ksh --  # -*-perl-*-
+eval 'exec $PERL $0 ${1+"$@"}'
+  if 0;
+
+use strict;
+use warnings;
+use Carp;
+use Data::Dumper;
+
+use FindBin;
+use lib $FindBin::RealBin;
+
+use DivDB;
+use DivDB::Events;
+use DivDB::Schedule;
+use DivDB::Teams;
+
+my $teamA = shift @ARGV;
+my $teamB = shift @ARGV;
+
+my $usage = "Usage::$FindBin::Script teamA teamB";
+die "\n$usage\n\n" unless defined $teamB;
+die "\n$usage\n\n" if @ARGV;
+
+$teamA=~tr/[a-z]/[A-Z]/;
+$teamB=~tr/[a-z]/[A-Z]/;
+
+$teamA = "PV$teamA" unless $teamA=~/^PV/;
+$teamB = "PV$teamB" unless $teamB=~/^PV/;
+
+my $dbh = &DivDB::getConnection;
+my $events   = new DivDB::Events;
+my $schedule = new DivDB::Schedule;
+my $teams    = new DivDB::Teams;
+
+my @times;
+
+my $sql = "select a.USSID,
+                  a.team,
+                  a.name,
+                  b.event,
+                  min(b.time) 
+             from swimmers a,
+                  individual_results b 
+            where a.team in ('$teamA','$teamB') 
+              and b.swimmer=a.ussid 
+              and b.dq='N' 
+            group by a.ussid,event";
+
+my @x = @{$dbh->selectall_arrayref($sql)};
+foreach my $x (@x)
+{
+  my($ussid,$team,$name,$event,$time) = @$x;
+  $times[$event]{$team}{$name} = $time;
+}
+
+my $relay_meet = $schedule->relay_carnival_meet;
+
+$sql = "select team,
+               relay_team,
+               event,
+               min(time) 
+          from relay_results 
+         where team in ('$teamA','$teamB') 
+           and meet != $relay_meet
+           and DQ='N' 
+           and time is not null 
+      group by team,relay_team,event 
+      order by event,team,relay_team";
+
+@x = @{$dbh->selectall_arrayref($sql)};
+foreach my $x (@x)
+{
+  my($team,$relay_team,$event,$time) = @$x;
+  my $name = $teams->{$team}{team_name} . ' ' . $relay_team;
+  $times[$event]{$team}{$name} = $time;
+}
+
+my %points = ( $teamA => 0, $teamB => 0 );
+foreach my $event (1..$#times)
+{
+  my $event_info = $events->{$event};
+  my @points = ( $event_info->{relay} eq 'Y' ? qw( 8 4 2 0 ) :
+                 $event_info->{stroke} == 1  ? qw( 6 4 3 2 1 0 0 0 0 0 0 0 ) :
+                 qw( 6 4 3 2 1 0 ) );
+
+  my $nswimmers = @points/2;
+
+  my @finish;
+  foreach my $team ( keys %{$times[$event]} )
+  {
+    my @swimmers = keys %{$times[$event]{$team}};
+    @swimmers = map { [ $team, $_, $times[$event]{$team}{$_} ] } @swimmers;
+    @swimmers = sort { $a->[2] <=> $b->[2] } @swimmers;
+    splice @swimmers, $nswimmers if @swimmers > $nswimmers;
+    push @finish, @swimmers;
+  }
+  @finish = sort { $a->[2] <=> $b->[2] } @finish;
+
+  print "\n$event $event_info->{label}\n";
+  foreach my $i (0..$#finish)
+  {
+    my $team = $finish[$i][0];
+    my $name = $finish[$i][1];
+
+    $points{$team} += $points[$i];
+
+    $team=~s/^PV//;
+    $name = "$2 $1" if $name=~/^(.*?),(.*)$/;
+    printf("%2d %5s  %6.2f  %s\n",$points[$i],$team,$finish[$i][2],$name);
+  }
+}
+
+print "\n";
+if($points{$teamA} > $points{$teamB})
+{
+  printf("  %3d  %s\n",$points{$teamA},$teams->{$teamA}{team_name});
+  printf("  %3d  %s\n",$points{$teamB},$teams->{$teamB}{team_name});
+}
+else
+{
+  printf("  %3d  %s\n",$points{$teamB},$teams->{$teamB}{team_name});
+  printf("  %3d  %s\n",$points{$teamA},$teams->{$teamA}{team_name});
+}
