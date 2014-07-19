@@ -119,11 +119,19 @@ sub gen_html
       {
         my $time = $meets->{$meet}{time};
 
-        my $week = $schedule->week($meet);
-        if ( $team eq $schedule->exhibition_team($week) &&
-             $meet eq $schedule->exhibition_meet($week) )
+        my $week;
+        if($meet == $schedule->divisionals_meet)
         {
-          $week = $team7 
+          $week = 'div';
+        }
+        else
+        {
+          $week = $schedule->week($meet);
+          if ( $team eq $schedule->exhibition_team($week) &&
+               $meet eq $schedule->exhibition_meet($week) )
+          {
+            $week = $team7 
+          }
         }
      
         if($meets->{$meet}{DQ}=~/y/i)
@@ -242,9 +250,23 @@ sub gen_html
         $rval .= "  <td class=$style>$time</td>\n";
       }
 
-      $rval .= "  <td class=reportbody></td>\n";  # divisionals go here
+      my $time = $times{$swimmer}{div};
+      my $style;
+      if(looks_like_number($time) && $time<0.)
+      {
+        $time = -$time;
+        $time = time_string($time);
+        $style = 'reportbad';
+      }
+      else
+      {
+        $time = time_string($time,$event_number);
+        $style = 'reportbody';
+      }
+      $time = '' unless defined $time;
+      $rval .= "  <td class=$style>$time</td>\n";  # divisionals go here
 
-      my $time = time_string($best_time{$swimmer},$event_number);
+      $time = time_string($best_time{$swimmer},$event_number);
       $time = '' unless defined $time;
       $rval .= "  <td class=reportbold>$time</td>\n";
 

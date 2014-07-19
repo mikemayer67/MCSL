@@ -114,11 +114,20 @@ sub gen_html
       {
         my $time = $meets->{$meet}{time};
 
-        my $week = $schedule->week($meet);
-        if( $meet eq $schedule->exhibition_meet($week) )
+        my $week;
+        
+        if($meet == $schedule->divisionals_meet)
         {
-          my $exhibition_team = $schedule->exhibition_team($week);
-          $week = $team7 if $team=~/^$exhibition_team\./;
+          $week = 'div';
+        }
+        else
+        {
+          $week = $schedule->week($meet);
+          if( $meet eq $schedule->exhibition_meet($week) )
+          {
+            my $exhibition_team = $schedule->exhibition_team($week);
+            $week = $team7 if $team=~/^$exhibition_team\./;
+          }
         }
      
         if($meets->{$meet}{DQ}=~/y/i)
@@ -183,9 +192,13 @@ sub gen_html
         $rval .= "  <td class=reportbody>$time</td>\n";
       }
 
-      $rval .= "  <td class=reportbody></td>\n";  # divisionals go here
 
-      my $time = time_string($best_time{$team});
+      my $time = time_string($times{$team}{div});
+      $time = '' unless defined $time;
+#       $rval .= "  <td class=reportbody>$time</td\n";
+      $rval .= "  <td class=reportbody>$time</td>\n";  # divisionals go here
+
+      $time = time_string($best_time{$team});
       $time = '' unless defined $time;
       $rval .= "  <td class=reportbold>$time</td>\n";
 
@@ -195,13 +208,20 @@ sub gen_html
       my $meets = $event->{$team};
       foreach my $meet ( sort { $a<=>$b } keys %$meets )
       {
-        my $week = $schedule->week($meet);
-
-        if ( $team_code eq $schedule->exhibition_team($week) &&
-             $meet      eq $schedule->exhibition_meet($week) )
+        my $week;
+        if( $meet == $schedule->divisionals_meet )
         {
-          $week = $team7;
-          $week=~s/^PV//;
+          $week = 'div';
+        }
+        else
+        {
+          $week = $schedule->week($meet);
+          if ( $team_code eq $schedule->exhibition_team($week) &&
+            $meet      eq $schedule->exhibition_meet($week) )
+          {
+            $week = $team7;
+            $week=~s/^PV//;
+          }
         }
 
         my @swimmers = @{$meets->{$meet}{swimmers}};
@@ -212,7 +232,14 @@ sub gen_html
                $name = "$2 $1" if $name=~/(.*),\s*(.*)/;
                $name } @swimmers;
 
-          $rval .= "<div class=relayswimmers>Week $week: $names</div>\n";
+          if($week eq 'div')
+          {
+            $rval .= "<div class=relayswimmers>Divisionals: $names</div>\n";
+          }
+          else
+          {
+            $rval .= "<div class=relayswimmers>Week $week: $names</div>\n";
+          }
         }
       }
       $rval .= "  </td>\n";
