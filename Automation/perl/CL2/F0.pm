@@ -41,6 +41,12 @@ sub new
 #   $this->decode(swimoff_leg=>24);
 #   $this->decode(finals_leg=>24);
     $this->decode(leg_code=>13);
+
+    my $tc = $this->{team_code};
+    unless ( $tc =~ /^PV/ )
+    {
+      $this->{team_code} = "PV$tc";
+    }
   }
   return $this;
 }

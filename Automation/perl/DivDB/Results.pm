@@ -21,6 +21,7 @@ sub sql
 package DivDB::Results;
 use strict;
 use warnings;
+no warnings qw(uninitialized);
 use Carp;
 
 our %AllStarTimes;

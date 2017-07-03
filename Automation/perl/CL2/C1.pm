@@ -29,6 +29,13 @@ sub new
   {
     $this->decode(org=>1);
     $this->decode(region=>7);
+
+    my $tc = $this->{team_code};
+    unless ( $tc =~ /^PV/ )
+    {
+      print "Changing team code from $tc to PV$tc\n";
+      $this->{team_code} = "PV$tc";
+    }
   }
 
   return $this;
@@ -39,6 +46,9 @@ sub verifyRoster
   my($this,$rec) = @_;
   
   my $sid = $rec->{ussid};
+  
+  warn "$rec->{name} from $rec->{team_code} is missing USSID\n" unless length($sid);
+
   if(exists $this->{roster}{$sid})
   {
     foreach my $key (qw/name age birthdate gender/)

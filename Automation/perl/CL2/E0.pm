@@ -61,13 +61,19 @@ sub new
       $this->{evt_age} = ( $min eq 'UN' ? 
                            ( $max eq 'OV'         ? 
                                'All Ages'         : 
-                               1*$max . ' and Ander' 
+                               1*$max . ' and Under' 
                            ) :
                            ( $max eq 'OV'         ? 
                              1*$max . ' and Over' : 
                              1*$min . '-' . 1*$max 
                            )
                          );
+    }
+
+    my $tc = $this->{team_code};
+    unless ( $tc =~ /^PV/ )
+    {
+      $this->{team_code} = "PV$tc";
     }
   }
   return $this;

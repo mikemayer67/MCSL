@@ -128,8 +128,8 @@ sub new
         unless $rec->{file} eq $this{A0}{file};
       foreach (qw/B C D E F/)
       { 
-        my $n1 = $rec->{"num_$_"};
-        my $n2 = $this{num}{$_};
+        my $n1 = $rec->{"num_$_"} || 0;
+        my $n2 = $this{num}{$_} || 0;
         croak "Number of $_ records in Z0 ($n1) does not match content of file($n2)\n"
           unless $n1==$n2;
       }

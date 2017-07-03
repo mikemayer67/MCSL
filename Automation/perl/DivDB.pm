@@ -4,8 +4,8 @@ use strict;
 use warnings;
 use DBI;
 
-our $Division  = 'O';
-our $Year      = 2014;
+our $Division  = 'N';
+our $Year      = 2017;
 
 our $Instance;
 

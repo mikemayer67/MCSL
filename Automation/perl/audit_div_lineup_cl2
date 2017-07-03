@@ -1,6 +1,4 @@
-#!/bin/ksh --  # -*-perl-*-
-eval 'exec $PERL $0 ${1+"$@"}'
-if 0;
+#!/usr/bin/env perl
 use strict;
 use warnings;
 

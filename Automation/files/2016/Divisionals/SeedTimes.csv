@@ -1,0 +1,1153 @@
+number,gender,age,distance,stroke,team,ussid,name,best_time
+1,Boys,"12 & Under",100M,"Individual Medley",PVTN,100103DAR*JE,"Jenkins-Johnston, Darren",94.46
+1,Boys,"12 & Under",100M,"Individual Medley",PVMB,040804MAT*NG,"Nguyen, Matthew",95.15
+1,Boys,"12 & Under",100M,"Individual Medley",PVKM,081103EDU*MA,"Martinez, Eduardo",96.6
+1,Boys,"12 & Under",100M,"Individual Medley",PVTB,102503HTE*OO,"Oo, Hted",95.35
+1,Boys,"12 & Under",100M,"Individual Medley",PVMB,030204CALACA,"Cajayon, Calvin A",98.54
+1,Boys,"12 & Under",100M,"Individual Medley",PVMB,092904NIGACA,"Cacho, Nigel A",98.09
+1,Boys,"12 & Under",100M,"Individual Medley",PVFH,062003IVADSO,"Solovieff, Ivan D",96.5
+1,Boys,"12 & Under",100M,"Individual Medley",PVMB,090104SEB*PE,"Penate, Sebastian",106.92
+1,Boys,"12 & Under",100M,"Individual Medley",PVTN,051609TRE*DO,"Donley, Trevor",108.5
+1,Boys,"12 & Under",100M,"Individual Medley",PVFH,083105JOSELO,"Lopez, Joshua E",104.94
+1,Boys,"12 & Under",100M,"Individual Medley",PVTB,091704MACSLA,"Langsam, Macky S",108.88
+1,Boys,"12 & Under",100M,"Individual Medley",PVTB,111503NICCDI,"Diaz, Nicolas C",103.83
+1,Boys,"12 & Under",100M,"Individual Medley",PVTN,120204HUN*LA,"Lawry, Hunter L",104.69
+1,Boys,"12 & Under",100M,"Individual Medley",PVWHI,030105DAVGGA,"Garcia, David G",109.63
+1,Boys,"12 & Under",100M,"Individual Medley",PVTB,050405MATJPI,"Pickell, Matthew J",118.4
+1,Boys,"12 & Under",100M,"Individual Medley",PVWHI,111705GABBYE,"Yetter, Gabriel B",121.1
+1,Boys,"12 & Under",100M,"Individual Medley",PVFH,110503SHA*PA,"Parmhans, Shawn",119.02
+1,Boys,"12 & Under",100M,"Individual Medley",PVTN,072407KHO*NG,"Nguyen, Khoi",123.04
+1,Boys,"12 & Under",100M,"Individual Medley",PVKM,072403GAM*SO,"Sosa, Gamaliel",126.03
+1,Boys,"12 & Under",100M,"Individual Medley",PVFH,121704BENHRO,"Rosenberg, Benny H",130.39
+1,Boys,"12 & Under",100M,"Individual Medley",PVTN,032805TAI*GA,"Gassaway-Mesutmen, Taikhem",133
+1,Boys,"12 & Under",100M,"Individual Medley",PVKM,101604MEN*AB,"Abrams, Menachem",133.29
+1,Boys,"12 & Under",100M,"Individual Medley",PVKM,011305YEH*BI,"Bienstock, Yehuda",157.62
+2,Girls,"12 & Under",100M,"Individual Medley",PVMB,010805HANEGA,"Gaskill, Hannah E",95.03
+2,Girls,"12 & Under",100M,"Individual Medley",PVFH,060204ABI*BE,"Behailu, Abigail",95.81
+2,Girls,"12 & Under",100M,"Individual Medley",PVFH,080403BOBMLA,"Lawrence, Bobbie M",100.31
+2,Girls,"12 & Under",100M,"Individual Medley",PVTB,081303BELHLA,"Langsam, Bella H",96.34
+2,Girls,"12 & Under",100M,"Individual Medley",PVTB,041004ELYSIN,"In, Elynore S",99.08
+2,Girls,"12 & Under",100M,"Individual Medley",PVFH,073005LEE*CH,"Chandran, Leela",96.39
+2,Girls,"12 & Under",100M,"Individual Medley",PVFH,082904BEL*GE,"Gershevich, Bella",102.19
+2,Girls,"12 & Under",100M,"Individual Medley",PVFH,062005AURRCH,"Chapple, Aurora R",104.34
+2,Girls,"12 & Under",100M,"Individual Medley",PVFH,062103ISAEPE,"PeBenito, Isabella E",105.13
+2,Girls,"12 & Under",100M,"Individual Medley",PVTN,062604CEL*PA,"Paul, Celine",106.2
+2,Girls,"12 & Under",100M,"Individual Medley",PVTN,060603SAR*DI,"Diaz, Sara",103.38
+2,Girls,"12 & Under",100M,"Individual Medley",PVTB,090903OLIGTU,"Turner, Olivia G",108
+2,Girls,"12 & Under",100M,"Individual Medley",PVTN,120604GAB*DI,"Diaz, Gabriella",111.31
+2,Girls,"12 & Under",100M,"Individual Medley",PVKM,090606CLANSE,"Semaria, Clara N",114.31
+2,Girls,"12 & Under",100M,"Individual Medley",PVKM,040104CHA*LE,"Lesnoy, Charne",116.7
+2,Girls,"12 & Under",100M,"Individual Medley",PVMB,110707PAY*MO,"Morris, Payton",117.22
+2,Girls,"12 & Under",100M,"Individual Medley",PVTN,072704ALY*HU,"Hubbard, Alyssa",121.5
+2,Girls,"12 & Under",100M,"Individual Medley",PVTN,101404SARACA,"Carroll, Sara A",105.31
+2,Girls,"12 & Under",100M,"Individual Medley",PVKM,112206SUNWKA,"Kasper, Sunita W",120.13
+2,Girls,"12 & Under",100M,"Individual Medley",PVWHI,100103DAN*GA,"Garner, Dana",124.69
+2,Girls,"12 & Under",100M,"Individual Medley",PVMB,070706SAV*WO,"Woolard, Savannah",121.03
+2,Girls,"12 & Under",100M,"Individual Medley",PVMB,092904LAUPCA,"Cacho, Lauren P",132.53
+2,Girls,"12 & Under",100M,"Individual Medley",PVKM,051804SAR*TA,"Tabin, Sarah",131.41
+2,Girls,"12 & Under",100M,"Individual Medley",PVTB,032906SHODPE,"Peck, Shoshana D",140.22
+2,Girls,"12 & Under",100M,"Individual Medley",PVTN,102204JORGGY,"Gyeke-Aboagye, Jordan G",141
+2,Girls,"12 & Under",100M,"Individual Medley",PVWHI,033104CAM*MA,"Mason, Cameron",142.59
+2,Girls,"12 & Under",100M,"Individual Medley",PVKM,102804GAL*RO,"Roth, Galit",149.65
+2,Girls,"12 & Under",100M,"Individual Medley",PVKM,122305CIENBR,"Brown, Ciera N",150.22
+5,Boys,"8 & Under",25M,Freestyle,PVTN,051609TRE*DO,"Donley, Trevor",19.13
+5,Boys,"8 & Under",25M,Freestyle,PVTN,072407KHO*NG,"Nguyen, Khoi",18.91
+5,Boys,"8 & Under",25M,Freestyle,PVFH,012308ALE*CH,"Chandran, Alexander",19.69
+5,Boys,"8 & Under",25M,Freestyle,PVTN,010108BRESFO,"Ford, Brendan S",19.66
+5,Boys,"8 & Under",25M,Freestyle,PVMB,010809ALE*JU,"Jungbluth, Alexander",19.84
+5,Boys,"8 & Under",25M,Freestyle,PVWHI,101707ANDVLU,"Luse, Andrew V",21.32
+5,Boys,"8 & Under",25M,Freestyle,PVFH,042808SHR*GH,"Ghosh, Shreyas",22.15
+5,Boys,"8 & Under",25M,Freestyle,PVFH,111307CULARA,"Ray, Cullum A",22.82
+5,Boys,"8 & Under",25M,Freestyle,PVFH,091008MAN*TA,"Taheri, Mansoor",25.06
+5,Boys,"8 & Under",25M,Freestyle,PVWHI,082207RICISM,"Smith, Richardo I",26.47
+5,Boys,"8 & Under",25M,Freestyle,PVKM,061209MAXBSE,"Semaria, Maxwell B",27.34
+5,Boys,"8 & Under",25M,Freestyle,PVWHI,100807OLI*RA,"Raymond, Oliver",27.06
+5,Boys,"8 & Under",25M,Freestyle,PVWHI,090507ALEDGA,"Garcia, Alexander D",24.78
+5,Boys,"8 & Under",25M,Freestyle,PVTN,062807TYL*HU,"Hubbard, Tyler",26.65
+5,Boys,"8 & Under",25M,Freestyle,PVTN,060609SIM*FA,"Farias, Simon G",28.22
+5,Boys,"8 & Under",25M,Freestyle,PVTB,072507ADAJPO,"Poje, Adam J",25.69
+5,Boys,"8 & Under",25M,Freestyle,PVWHI,042208JAMAST,"Stelmach, James A",25.22
+5,Boys,"8 & Under",25M,Freestyle,PVMB,010608JAM*WI,"Wilson, James J",28.87
+5,Boys,"8 & Under",25M,Freestyle,PVMB,081108LAN*FO,"Fowler, Landon",26.85
+5,Boys,"8 & Under",25M,Freestyle,PVFH,061807ABH*DH,"Dhaubhadel, Abhi",28.22
+5,Boys,"8 & Under",25M,Freestyle,PVFH,072209PET*ZH,"Zhao, Peter",30.21
+5,Boys,"8 & Under",25M,Freestyle,PVWHI,062109ROYANA,"Nazir, Royce A",29.13
+5,Boys,"8 & Under",25M,Freestyle,PVKM,091207SAMWDO,"Dorr, Sam W",29
+5,Boys,"8 & Under",25M,Freestyle,PVWHI,111407LOGCPO,"Potter, Logan C",27.69
+5,Boys,"8 & Under",25M,Freestyle,PVTN,060411LOGPDO,"Donley, Logan P",34.19
+5,Boys,"8 & Under",25M,Freestyle,PVFH,040208MAXDSO,"Solovieff, Max D",27.88
+5,Boys,"8 & Under",25M,Freestyle,PVWHI,030508COLJMA,"Mason, Collin J",24.32
+5,Boys,"8 & Under",25M,Freestyle,PVMB,071908GIAZVI,"Villada, Giancarlo Z",39.34
+5,Boys,"8 & Under",25M,Freestyle,PVTN,050109CAL*SO,"Solomon, Caleb",35.76
+5,Boys,"8 & Under",25M,Freestyle,PVKM,091207JASEDO,"Dorr, Jason E",40.16
+5,Boys,"8 & Under",25M,Freestyle,PVWHI,052509BEN*TH,"Thomas, Benjamin",41.32
+5,Boys,"8 & Under",25M,Freestyle,PVTB,021411JAMEBE,"Berube, James E",47.53
+5,Boys,"8 & Under",25M,Freestyle,PVMB,032911PATACO,"Couch, Patrick A",52.97
+5,Boys,"8 & Under",25M,Freestyle,PVKM,052609MIC*KO,"Kotek, Michael",62.03
+6,Girls,"8 & Under",25M,Freestyle,PVMB,110707PAY*MO,"Morris, Payton",21
+6,Girls,"8 & Under",25M,Freestyle,PVTB,102008ALIBTU,"Turner, Alise B",22.82
+6,Girls,"8 & Under",25M,Freestyle,PVWHI,070907VAN*GA,"Garcia, Vanessa",21.89
+6,Girls,"8 & Under",25M,Freestyle,PVWHI,051809ANNDDO,"Dobrota, Anne D",23.41
+6,Girls,"8 & Under",25M,Freestyle,PVTB,090108AVIZPE,"Peck, Aviva Z",26.79
+6,Girls,"8 & Under",25M,Freestyle,PVKM,030108ISAMST,"Stein, Isabelle M",27.14
+6,Girls,"8 & Under",25M,Freestyle,PVWHI,011708ISEGMC,"McKeever-Maragni, Isela G",25.9
+6,Girls,"8 & Under",25M,Freestyle,PVWHI,090707TAT*TH,"Thiero, Tatiana",25.08
+6,Girls,"8 & Under",25M,Freestyle,PVTN,070107HAN*HA,"Hart, Hannah",28.59
+6,Girls,"8 & Under",25M,Freestyle,PVKM,042708ANN*MO,"Moser, Annabelle",30.61
+6,Girls,"8 & Under",25M,Freestyle,PVWHI,080307KAIRCA,"Canubas, Kaila R",30.76
+6,Girls,"8 & Under",25M,Freestyle,PVTN,101508JIMPBA,"Bayona, Jimena P",26
+6,Girls,"8 & Under",25M,Freestyle,PVKM,032608YAE*SI,"Siesser, Yael",31.57
+6,Girls,"8 & Under",25M,Freestyle,PVKM,010508ABICHU,"Hu, Abigail C",33.28
+6,Girls,"8 & Under",25M,Freestyle,PVKM,080908MAG*LY,"Lyons, Magnolia",33.63
+6,Girls,"8 & Under",25M,Freestyle,PVTB,121008MARVBE,"Berube, Margaret V",31.81
+6,Girls,"8 & Under",25M,Freestyle,PVKM,110807STECGU,"Gutierrez, Stephanie C",35.95
+6,Girls,"8 & Under",25M,Freestyle,PVKM,090607AVAPWA,"Wahl, Ava P",34.17
+6,Girls,"8 & Under",25M,Freestyle,PVWHI,120610ELLCLU,"Luse, Ellie C",36.81
+6,Girls,"8 & Under",25M,Freestyle,PVKM,070208EME*MA,"Martinez, Emely",32.93
+6,Girls,"8 & Under",25M,Freestyle,PVTB,090208KANFBE,"Bergoffen, Kannika F",33.63
+6,Girls,"8 & Under",25M,Freestyle,PVWHI,042010FARECA,"Caslani, Farrah E",34.25
+6,Girls,"8 & Under",25M,Freestyle,PVTN,012110SARGDE,"Desalegn, Saron G",38.66
+6,Girls,"8 & Under",25M,Freestyle,PVTN,021909JOR*CH,"Chally, Jordan",34.11
+6,Girls,"8 & Under",25M,Freestyle,PVKM,020410SIE*LY,"Lyons, Sierra",36.09
+6,Girls,"8 & Under",25M,Freestyle,PVMB,050409CASAAM,"Amaya, Cassandra A",40.41
+6,Girls,"8 & Under",25M,Freestyle,PVWHI,032909CHEMTH,"Thiero, Cheyenne M",36.32
+6,Girls,"8 & Under",25M,Freestyle,PVMB,092209KAYGES,"Escobar, Kayri G",36.71
+6,Girls,"8 & Under",25M,Freestyle,PVWHI,092407MAT*SM,"Smith, Mattea",38.97
+6,Girls,"8 & Under",25M,Freestyle,PVFH,051509JOCNCA,"Campos, Joceline N",35.47
+6,Girls,"8 & Under",25M,Freestyle,PVTN,012110SAR*DE,"Desalegn, Saron",46.12
+6,Girls,"8 & Under",25M,Freestyle,PVTN,022310MAY*BA,"Bascope, Maya",39.45
+6,Girls,"8 & Under",25M,Freestyle,PVTN,100110MAR*FA,"Farias, Maria",39.41
+6,Girls,"8 & Under",25M,Freestyle,PVMB,061310SIECTA,"Taylor, Sienna C",49
+6,Girls,"8 & Under",25M,Freestyle,PVKM,040609GAB*OR,"Ortellado, Gabriella",44.1
+6,Girls,"8 & Under",25M,Freestyle,PVKM,012609AYE*RO,"Roth, Ayelet",54.52
+6,Girls,"8 & Under",25M,Freestyle,PVTN,031009RUTBDE,"Dessie, Ruth B",57.38
+6,Girls,"8 & Under",25M,Freestyle,PVMB,052510DIA*WI,"Wilson, Diana E",59.35
+7,Boys,9-10,50M,Freestyle,PVFH,083105JOSELO,"Lopez, Joshua E",38.91
+7,Boys,9-10,50M,Freestyle,PVTB,042806ELIPTU,"Turner, Eli P",39.66
+7,Boys,9-10,50M,Freestyle,PVFH,091106DIEFRA,"Ramirez, Diego F",42.33
+7,Boys,9-10,50M,Freestyle,PVWHI,062906ADAJBR,"Brown, Adan J",42.33
+7,Boys,9-10,50M,Freestyle,PVWHI,111705GABBYE,"Yetter, Gabriel B",43.26
+7,Boys,9-10,50M,Freestyle,PVTN,051609TRE*DO,"Donley, Trevor",43.69
+7,Boys,9-10,50M,Freestyle,PVKM,062105ISA*KO,"Kotek, Isaac",44.16
+7,Boys,9-10,50M,Freestyle,PVFH,043007RYA*PA,"Parmhans, Ryan",44.59
+7,Boys,9-10,50M,Freestyle,PVWHI,071906THOEDO,"Dobrota, Thomas E",45.84
+7,Boys,9-10,50M,Freestyle,PVFH,011207AXEFBA,"Badobre, Axel F",39.47
+7,Boys,9-10,50M,Freestyle,PVTN,080105COLMFO,"Ford, Collin M",47.28
+7,Boys,9-10,50M,Freestyle,PVFH,032906PETWSO,"Solovieff, Peter W",49.5
+7,Boys,9-10,50M,Freestyle,PVWHI,032006CHRDMI,"Miles, Christian D",45.9
+7,Boys,9-10,50M,Freestyle,PVTN,092806SAN*BA,"Bascope, Santiago",50.85
+7,Boys,9-10,50M,Freestyle,PVTB,120905LINWRE,"Reed, Lincoln W",50.55
+7,Boys,9-10,50M,Freestyle,PVKM,090206COB*FA,"Faleder, Coby",52.1
+7,Boys,9-10,50M,Freestyle,PVWHI,022107JAC*LA,"Lansky, Jacob",58.85
+7,Boys,9-10,50M,Freestyle,PVFH,032906WILDJA,"Jauquet, William D",55.08
+7,Boys,9-10,50M,Freestyle,PVMB,080305PEYLWH,"Whisenton, Peyton L",53.57
+7,Boys,9-10,50M,Freestyle,PVWHI,041007JOH*BO,"Bostick-Delgado, Joni",51.15
+7,Boys,9-10,50M,Freestyle,PVKM,051707GAB*BI,"Bienstock, Gabriel",57.31
+7,Boys,9-10,50M,Freestyle,PVTB,100606MATLLY,"Lyons-Bennington, Matthew L",66.31
+7,Boys,9-10,50M,Freestyle,PVKM,111906MIT*LE,"Lederman, Mitchell",68.06
+7,Boys,9-10,50M,Freestyle,PVTN,060609SIM*FA,"Farias, Simon G",67.91
+7,Boys,9-10,50M,Freestyle,PVTB,101405JAMBGA,"Galmeijer, James B",58.55
+7,Boys,9-10,50M,Freestyle,PVWHI,040407XAVFFE,"Felix, Xavier F",63.14
+7,Boys,9-10,50M,Freestyle,PVKM,082406CALWGR,"Grimes, Caleb W",66.28
+7,Boys,9-10,50M,Freestyle,PVTN,121705ABE*FE,"Fessehazion, Abel",70.97
+7,Boys,9-10,50M,Freestyle,PVKM,091306JAC*GU,"Guberman, Jacob",75.04
+7,Boys,9-10,50M,Freestyle,PVTN,042807NAT*MI,"Michael, Nathan",87.34
+7,Boys,9-10,50M,Freestyle,PVTB,022707CONJSO,"Sorrentino, Connor J",106.75
+8,Girls,9-10,50M,Freestyle,PVFH,062005AURRCH,"Chapple, Aurora R",38.11
+8,Girls,9-10,50M,Freestyle,PVFH,073005LEE*CH,"Chandran, Leela",39.09
+8,Girls,9-10,50M,Freestyle,PVFH,063005OCETBA,"Badobre, Oceanie T",40.89
+8,Girls,9-10,50M,Freestyle,PVWHI,042106ELLPRA,"Raymond, Ella P",43
+8,Girls,9-10,50M,Freestyle,PVTB,091605GRAEDI,"Diaz, Grace E",39.53
+8,Girls,9-10,50M,Freestyle,PVTB,032906SHODPE,"Peck, Shoshana D",43.28
+8,Girls,9-10,50M,Freestyle,PVFH,031606NATAPE,"PeBenito, Natalia A",44.83
+8,Girls,9-10,50M,Freestyle,PVKM,090606CLANSE,"Semaria, Clara N",43.58
+8,Girls,9-10,50M,Freestyle,PVTB,072006ELIYEP,"Epley, Elizabeth Y",41.37
+8,Girls,9-10,50M,Freestyle,PVMB,051207CAI*CO,"Couch, Caitlyn J",46.85
+8,Girls,9-10,50M,Freestyle,PVFH,042106LANJHE,"Helton, Lana J",46.56
+8,Girls,9-10,50M,Freestyle,PVMB,070706SAV*WO,"Woolard, Savannah",48.94
+8,Girls,9-10,50M,Freestyle,PVKM,112206SUNWKA,"Kasper, Sunita W",47.22
+8,Girls,9-10,50M,Freestyle,PVTN,120506CHAKHO,"Hoang, Charlize K",51.34
+8,Girls,9-10,50M,Freestyle,PVFH,121406JASSCA,"Campos, Jasmin S",52.71
+8,Girls,9-10,50M,Freestyle,PVTN,100105JOYGGY,"Gyeke-Aboagye, Joy G",51.6
+8,Girls,9-10,50M,Freestyle,PVWHI,120205LAY*SM,"Smith, Laylie",54.96
+8,Girls,9-10,50M,Freestyle,PVKM,010806SAM*MO,"Moser, Samantha",51.51
+8,Girls,9-10,50M,Freestyle,PVFH,081806EMAPJA,"Jaramillo, Emalie P",50.33
+8,Girls,9-10,50M,Freestyle,PVTN,110606ANA*CO,"Colas, Anais",55.91
+8,Girls,9-10,50M,Freestyle,PVTN,032907ABE*SO,"Solomon, Abelia",56.59
+8,Girls,9-10,50M,Freestyle,PVFH,022607ALIAJO,"Jones, Aliyah A",58.71
+8,Girls,9-10,50M,Freestyle,PVKM,122305CIENBR,"Brown, Ciera N",53.66
+8,Girls,9-10,50M,Freestyle,PVKM,072705ATA*PA,"Parness, Atara",59.13
+8,Girls,9-10,50M,Freestyle,PVTN,072506KAL*MV,"Mvunganyi, Kaliza",55.88
+8,Girls,9-10,50M,Freestyle,PVFH,072706SOP*ES,"Escobar, Sophy",61
+8,Girls,9-10,50M,Freestyle,PVTB,030106ISADPO,"Pone, Isabelle D",55.09
+8,Girls,9-10,50M,Freestyle,PVKM,110806DEE*LE,"Lesnoy, Deena",62.33
+8,Girls,9-10,50M,Freestyle,PVTN,053107MEKAKE,"Kersima, Meklet A",59.06
+8,Girls,9-10,50M,Freestyle,PVKM,022307BEL*KO,"Kotek, Bella",64.93
+8,Girls,9-10,50M,Freestyle,PVMB,090905WHIASO,"Somuah, Whitney A",55.31
+8,Girls,9-10,50M,Freestyle,PVTB,052707ARIHBO,"Bouvier, Arina H",63.08
+8,Girls,9-10,50M,Freestyle,PVWHI,100406AVAKPO,"Potter, Ava K",58.31
+8,Girls,9-10,50M,Freestyle,PVTN,081305SIF*FU,"Fufa, Sifene",60.15
+8,Girls,9-10,50M,Freestyle,PVKM,081106ARIMLI,"Litwack, Ariella M",77.34
+8,Girls,9-10,50M,Freestyle,PVKM,110306CAL*LY,"Lyons, Calla",77.4
+8,Girls,9-10,50M,Freestyle,PVTN,092606CLA*AL,"Alfaro, Claire",99.13
+9,Boys,13-14,50M,Freestyle,PVTN,060301JON*MA,"Martin, Jonathan",27.47
+9,Boys,13-14,50M,Freestyle,PVKM,111102STE*PE,"Perencevich, Stephen",30.56
+9,Boys,13-14,50M,Freestyle,PVTB,071001CONDPH,"Phillips, Connor D",31.02
+9,Boys,13-14,50M,Freestyle,PVFH,110802BRIAHE,"Helton, Brian A",31.27
+9,Boys,13-14,50M,Freestyle,PVWHI,102601IANSAR,"Ard, Ian S",32.48
+9,Boys,13-14,50M,Freestyle,PVWHI,011402ANT*RO,"Rojas, Anthony",31.75
+9,Boys,13-14,50M,Freestyle,PVMB,081602SHA*FO,"Fowler, Shane",33.41
+9,Boys,13-14,50M,Freestyle,PVMB,013003BRA*HU,"Huynh, Brandon D",34.13
+9,Boys,13-14,50M,Freestyle,PVTB,110802MICPSA,"Salas, Michael P",34.28
+9,Boys,13-14,50M,Freestyle,PVFH,102802CHRMFE,"Ferentinos, Christopher M",35.56
+9,Boys,13-14,50M,Freestyle,PVMB,021402ADA*GA,"Gaskill, Adam",33.67
+9,Boys,13-14,50M,Freestyle,PVKM,112202JAY*MA,"Matusow, Jayden",36.69
+9,Boys,13-14,50M,Freestyle,PVKM,070602TYL*DA,"Davis, Tylor",35.12
+9,Boys,13-14,50M,Freestyle,PVKM,020802ZAN*LE,"Lesnoy, Zanvy",37.09
+9,Boys,13-14,50M,Freestyle,PVKM,020502TERJMA,"Manzon, Terrence J",36.75
+9,Boys,13-14,50M,Freestyle,PVTN,103102JON*MA,"Martin, Jonah",34.03
+9,Boys,13-14,50M,Freestyle,PVKM,071201SCO*ME,"Menendez, Scott",35.08
+9,Boys,13-14,50M,Freestyle,PVFH,110802ALE*BR,"Brien, Alejandro",36.03
+9,Boys,13-14,50M,Freestyle,PVFH,042303JUSJGO,"Goggin, Justin J",36.97
+9,Boys,13-14,50M,Freestyle,PVKM,020502JASSMA,"Manzon, Jason S",39.87
+9,Boys,13-14,50M,Freestyle,PVKM,070902AND*MO,"Moser, Andrew",39.65
+9,Boys,13-14,50M,Freestyle,PVWHI,032203JAI*SM,"Smith, Jaidon",41.6
+9,Boys,13-14,50M,Freestyle,PVKM,020502PHIHMA,"Manzon, Phillip H",42.62
+9,Boys,13-14,50M,Freestyle,PVFH,020503SUB*SU,"Sunwar, Subham",40.47
+9,Boys,13-14,50M,Freestyle,PVKM,090301MATDWE,"Weinsheimer, Matthew D",45.53
+9,Boys,13-14,50M,Freestyle,PVMB,050903MAI*AU,"Audige, Maixent",42.76
+9,Boys,13-14,50M,Freestyle,PVFH,010303ARR*MA,"Mazhari, Arron",46.84
+10,Girls,13-14,50M,Freestyle,PVTN,101402TRI*HU,"Hubbard, Trinity",29.31
+10,Girls,13-14,50M,Freestyle,PVTB,082802MAR*HA,"Harty, Maris",35.13
+10,Girls,13-14,50M,Freestyle,PVMB,032202VIC*PE,"Penate, Victoria",36.43
+10,Girls,13-14,50M,Freestyle,PVFH,061602NICABA,"Badobre, Nicole-Chelsea A",36.97
+10,Girls,13-14,50M,Freestyle,PVTB,072602CAD*FO,"Forrest, Cadie",35.73
+10,Girls,13-14,50M,Freestyle,PVTN,101102MIN*NG,"Nguyen, Minh-Anh",37.65
+10,Girls,13-14,50M,Freestyle,PVTB,060801KATESM,"Smith, Katherine E",37.72
+10,Girls,13-14,50M,Freestyle,PVTN,112601RAC*CA,"Castle, Rachael",37.5
+10,Girls,13-14,50M,Freestyle,PVTB,081301HAIMSU,"Suthard, Hailey M",37.33
+10,Girls,13-14,50M,Freestyle,PVWHI,032803GEM*LY,"Lynch, Gemma",38.23
+10,Girls,13-14,50M,Freestyle,PVTB,120602GRA*OS,"Ostuni, Grace",38.65
+10,Girls,13-14,50M,Freestyle,PVKM,032402RIL*SY,"Sylvester, Riley",38.25
+10,Girls,13-14,50M,Freestyle,PVKM,082601SELLBI,"Bickel, Selah L",37.81
+10,Girls,13-14,50M,Freestyle,PVTB,050903ALELMO,"Moser, Alexia L",38.78
+10,Girls,13-14,50M,Freestyle,PVWHI,090501MAR*AL,"Alvarez, Mariah",39.03
+10,Girls,13-14,50M,Freestyle,PVTN,101404SARACA,"Carroll, Sara A",39.67
+10,Girls,13-14,50M,Freestyle,PVMB,031502AMIEWH,"Whitaker, Amira E",37.58
+10,Girls,13-14,50M,Freestyle,PVFH,121602MAA*GU,"Gupta, Maansi",38.78
+10,Girls,13-14,50M,Freestyle,PVTB,110401MAD*OS,"Ostlund, Madeline",36.16
+10,Girls,13-14,50M,Freestyle,PVWHI,111602PENJMA,"Mason, Penny J",39.01
+10,Girls,13-14,50M,Freestyle,PVWHI,120201SAMMWA,"Wallace, Samantha M",40.83
+10,Girls,13-14,50M,Freestyle,PVTN,120604GAB*DI,"Diaz, Gabriella",40.88
+10,Girls,13-14,50M,Freestyle,PVFH,010303CAMMPA,"Page, Camille M",41.4
+10,Girls,13-14,50M,Freestyle,PVTB,052703FYNABU,"Burow, Fynn A",40.6
+10,Girls,13-14,50M,Freestyle,PVKM,091602TABDDO,"Dorr, Tabitha D",43.31
+10,Girls,13-14,50M,Freestyle,PVKM,051403DEN*KO,"Kotek, Dena",44.21
+10,Girls,13-14,50M,Freestyle,PVTB,091902ELL*PI,"Pickell, Ella",45.93
+10,Girls,13-14,50M,Freestyle,PVTN,042502ADO*MI,"Michael, Adonia",47.81
+10,Girls,13-14,50M,Freestyle,PVFH,012503HRI*TA,"Tamrakar, Hridayesha",43.03
+10,Girls,13-14,50M,Freestyle,PVTN,112302FEVGDE,"Desalegn, Feven G",49.03
+10,Girls,13-14,50M,Freestyle,PVTN,022904ABB*HA,"Hart, Abbey",52.69
+10,Girls,13-14,50M,Freestyle,PVTB,062902MEGRTE,"Tench, Megan R",52.66
+10,Girls,13-14,50M,Freestyle,PVFH,042603BAMMOD,"Odubayo, Bami M",49.06
+10,Girls,13-14,50M,Freestyle,PVKM,070602KENLDA,"Davis, Kennedy L",52.42
+10,Girls,13-14,50M,Freestyle,PVTN,072602SAL*FE,"Fessehazion, Salina",55.34
+10,Girls,13-14,50M,Freestyle,PVTN,080703HAB*FE,"Fessehazion, Haben",60.63
+10,Girls,13-14,50M,Freestyle,PVTN,060105BIT*SO,"Solomon, Bithynia",66.03
+11,Boys,11-12,50M,Freestyle,PVTN,100103DAR*JE,"Jenkins-Johnston, Darren",33.15
+11,Boys,11-12,50M,Freestyle,PVMB,040804MAT*NG,"Nguyen, Matthew",34.33
+11,Boys,11-12,50M,Freestyle,PVMB,030204CALACA,"Cajayon, Calvin A",35.81
+11,Boys,11-12,50M,Freestyle,PVTB,102503HTE*OO,"Oo, Hted",37.17
+11,Boys,11-12,50M,Freestyle,PVKM,081103EDU*MA,"Martinez, Eduardo",36.44
+11,Boys,11-12,50M,Freestyle,PVTB,111503NICCDI,"Diaz, Nicolas C",36.07
+11,Boys,11-12,50M,Freestyle,PVMB,092904NIGACA,"Cacho, Nigel A",38.27
+11,Boys,11-12,50M,Freestyle,PVFH,062003IVADSO,"Solovieff, Ivan D",37.27
+11,Boys,11-12,50M,Freestyle,PVMB,090104SEB*PE,"Penate, Sebastian",38.03
+11,Boys,11-12,50M,Freestyle,PVTB,102904GABDPO,"Pone, Gabriel D",37.8
+11,Boys,11-12,50M,Freestyle,PVKM,101104WILHJO,"Johnson, William H",41.58
+11,Boys,11-12,50M,Freestyle,PVWHI,030105DAVGGA,"Garcia, David G",40.97
+11,Boys,11-12,50M,Freestyle,PVKM,072403GAM*SO,"Sosa, Gamaliel",41.97
+11,Boys,11-12,50M,Freestyle,PVTB,091704MACSLA,"Langsam, Macky S",41.26
+11,Boys,11-12,50M,Freestyle,PVMB,053015AND*NG,"Nguyen, Andy",39.44
+11,Boys,11-12,50M,Freestyle,PVFH,110503SHA*PA,"Parmhans, Shawn",41.59
+11,Boys,11-12,50M,Freestyle,PVTN,120204HUN*LA,"Lawry, Hunter L",39.75
+11,Boys,11-12,50M,Freestyle,PVMB,100504EDIEDO,"Dohler-Rodas, Edison E",43.04
+11,Boys,11-12,50M,Freestyle,PVMB,022704LAK*RO,"Ropeta, Lakki",44.76
+11,Boys,11-12,50M,Freestyle,PVTN,032805TAI*GA,"Gassaway-Mesutmen, Taikhem",45.65
+11,Boys,11-12,50M,Freestyle,PVWHI,100404AIDAPO,"Potter, Aiden A",41.37
+11,Boys,11-12,50M,Freestyle,PVFH,101504MARCPA,"Page, Marcus C",42.8
+11,Boys,11-12,50M,Freestyle,PVTN,022605CALGDE,"Desalegn, Caleb G",47.64
+11,Boys,11-12,50M,Freestyle,PVMB,101403IND*LY,"Lyness, Indy I",47.16
+11,Boys,11-12,50M,Freestyle,PVTB,050405MATJPI,"Pickell, Matthew J",43.78
+11,Boys,11-12,50M,Freestyle,PVFH,020305DAVHCL,"Clark, David H",48.91
+11,Boys,11-12,50M,Freestyle,PVWHI,051705HAR*HI,"Hines, Harry",48.82
+11,Boys,11-12,50M,Freestyle,PVKM,011305YEH*BI,"Bienstock, Yehuda",47.78
+11,Boys,11-12,50M,Freestyle,PVFH,121704BENHRO,"Rosenberg, Benny H",47.77
+11,Boys,11-12,50M,Freestyle,PVMB,010405ALE*NG,"Nguyen, Alex",48.14
+11,Boys,11-12,50M,Freestyle,PVTN,042105CHRAPR,"Prudencio, Christ A",52.13
+11,Boys,11-12,50M,Freestyle,PVFH,011705MIG*AV,"Avila, Miguel",51.59
+11,Boys,11-12,50M,Freestyle,PVKM,020305JOSMOR,"Ortellado, Jose M",50
+11,Boys,11-12,50M,Freestyle,PVTB,103004ANDDGU,"Guthe, Andre D",56.78
+11,Boys,11-12,50M,Freestyle,PVTB,022805NATEPO,"Poje, Nathan E",59.28
+11,Boys,11-12,50M,Freestyle,PVKM,101604MEN*AB,"Abrams, Menachem",53.47
+12,Girls,11-12,50M,Freestyle,PVMB,010805HANEGA,"Gaskill, Hannah E",36.58
+12,Girls,11-12,50M,Freestyle,PVTB,081303BELHLA,"Langsam, Bella H",38.2
+12,Girls,11-12,50M,Freestyle,PVFH,060204ABI*BE,"Behailu, Abigail",38
+12,Girls,11-12,50M,Freestyle,PVFH,080403BOBMLA,"Lawrence, Bobbie M",39.16
+12,Girls,11-12,50M,Freestyle,PVFH,082904BEL*GE,"Gershevich, Bella",39.34
+12,Girls,11-12,50M,Freestyle,PVFH,062103ISAEPE,"PeBenito, Isabella E",39.41
+12,Girls,11-12,50M,Freestyle,PVFH,073103MAIERA,"Ramos-Nogueron, Maia E",40.34
+12,Girls,11-12,50M,Freestyle,PVFH,080703MAR*CA,"Carmona, Marisol",38.55
+12,Girls,11-12,50M,Freestyle,PVTN,120604GAB*DI,"Diaz, Gabriella",40.06
+12,Girls,11-12,50M,Freestyle,PVTN,072704ALY*HU,"Hubbard, Alyssa",40.73
+12,Girls,11-12,50M,Freestyle,PVTN,060603SAR*DI,"Diaz, Sara",39.13
+12,Girls,11-12,50M,Freestyle,PVTB,090903OLIGTU,"Turner, Olivia G",41.37
+12,Girls,11-12,50M,Freestyle,PVFH,102904MARNSA,"Safronova, Maria N",39.83
+12,Girls,11-12,50M,Freestyle,PVTB,041004ELYSIN,"In, Elynore S",41.94
+12,Girls,11-12,50M,Freestyle,PVTN,062604CEL*PA,"Paul, Celine",43.06
+12,Girls,11-12,50M,Freestyle,PVMB,092904LAUPCA,"Cacho, Lauren P",39.71
+12,Girls,11-12,50M,Freestyle,PVMB,040205ANNCTA,"Taylor, Anna-Charlize C",43.78
+12,Girls,11-12,50M,Freestyle,PVTN,090104QUAMLU,"Luu, QuayLinh M",44.87
+12,Girls,11-12,50M,Freestyle,PVTB,080103ANCEBO,"Bouvier, Anca E",45.04
+12,Girls,11-12,50M,Freestyle,PVFH,090503ALARGE,"Gemma, Alana R",47.47
+12,Girls,11-12,50M,Freestyle,PVKM,040104CHA*LE,"Lesnoy, Charne",46.66
+12,Girls,11-12,50M,Freestyle,PVTN,101404SARACA,"Carroll, Sara A",39.19
+12,Girls,11-12,50M,Freestyle,PVTN,102204JORGGY,"Gyeke-Aboagye, Jordan G",45.97
+12,Girls,11-12,50M,Freestyle,PVWHI,100103DAN*GA,"Garner, Dana",50.94
+12,Girls,11-12,50M,Freestyle,PVKM,051804SAR*TA,"Tabin, Sarah",49.53
+12,Girls,11-12,50M,Freestyle,PVKM,032104LEA*GU,"Guberman, Leah",52.7
+12,Girls,11-12,50M,Freestyle,PVFH,120104KRI*SU,"Sunwar, Kristi",50.9
+12,Girls,11-12,50M,Freestyle,PVWHI,062904KYR*SM,"Smith, Kyra",45.32
+12,Girls,11-12,50M,Freestyle,PVWHI,033104CAM*MA,"Mason, Cameron",49.5
+12,Girls,11-12,50M,Freestyle,PVTN,022904ABB*HA,"Hart, Abbey",51.86
+12,Girls,11-12,50M,Freestyle,PVKM,102804GAL*RO,"Roth, Galit",57.1
+12,Girls,11-12,50M,Freestyle,PVTN,031604ARI*DA,"Daniel, Ariana",58.16
+12,Girls,11-12,50M,Freestyle,PVTN,060105BIT*SO,"Solomon, Bithynia",62.25
+12,Girls,11-12,50M,Freestyle,PVTN,061004SYDJCA,"Campbell, Sydney J",64.47
+12,Girls,11-12,50M,Freestyle,PVMB,050905KAI*SU,"Sutton, Kailey",89.97
+13,Boys,15-18,100M,Freestyle,PVFH,030198HUNLRE,"Reed, Hunter L",55.28
+13,Boys,15-18,100M,Freestyle,PVTB,050398ELIMSA,"Samuelson, Eli M",58.94
+13,Boys,15-18,100M,Freestyle,PVMB,012501RYA*VI,"Vipavetz, Ryan",55.26
+13,Boys,15-18,100M,Freestyle,PVMB,120797MAR*GI,"Girguis, Mark",59.44
+13,Boys,15-18,100M,Freestyle,PVMB,061000WOL*WO,"Woolard, Wolfie",60.62
+13,Boys,15-18,100M,Freestyle,PVFH,013100JUA*RA,"Ramirez, JuanCarlos",61.16
+13,Boys,15-18,100M,Freestyle,PVTB,110198ANT*OS,"Ostuni, Anthony",60.44
+13,Boys,15-18,100M,Freestyle,PVTN,032499JAC*FA,"Farias, Jack",60.73
+13,Boys,15-18,100M,Freestyle,PVTB,120399COLBPH,"Phillips, Collin B",62.24
+13,Boys,15-18,100M,Freestyle,PVWHI,071199KYLAWA,"Wallace, Kyle A",64
+13,Boys,15-18,100M,Freestyle,PVTB,062698JER*LY,"Lyons, Jeremy",66.42
+13,Boys,15-18,100M,Freestyle,PVTN,042501VIE*NG,"Nguyen, Viet",67.06
+13,Boys,15-18,100M,Freestyle,PVWHI,041400LUK*YE,"Yetter, Luka",65.94
+13,Boys,15-18,100M,Freestyle,PVTN,101297CHR*GA,"Garcia-McConnell, Christian",68.25
+13,Boys,15-18,100M,Freestyle,PVWHI,080699JOHRSA,"Sainvilier, Joshua R",68.66
+13,Boys,15-18,100M,Freestyle,PVKM,071300TYL*KI,"Kitts, Tyler",72.09
+13,Boys,15-18,100M,Freestyle,PVTB,111599THO*BA,"Barr, Thomas",68.47
+13,Boys,15-18,100M,Freestyle,PVTB,071900FIN*HA,"Harty, Finn",73.5
+13,Boys,15-18,100M,Freestyle,PVWHI,051699MIC*DA,"Daniel, Mickey",73.65
+13,Boys,15-18,100M,Freestyle,PVWHI,011401HAI*DA,"Daniel, Hailu",73.85
+13,Boys,15-18,100M,Freestyle,PVTN,092400ETH*AL,"Alfaro, Ethan",70.22
+13,Boys,15-18,100M,Freestyle,PVFH,030901JACMGE,"Gemma, Jacob M",74.13
+13,Boys,15-18,100M,Freestyle,PVKM,070700DYL*SY,"Sylvester, Dylan",74.15
+13,Boys,15-18,100M,Freestyle,PVFH,112700NATWES,"Eshbaugh, Nathaniel W",71.85
+13,Boys,15-18,100M,Freestyle,PVTN,051900DYLKHO,"Hoang, Dylin K",70.44
+13,Boys,15-18,100M,Freestyle,PVFH,052501ZEEFAN,"Anam, Zeeshan F",74.97
+13,Boys,15-18,100M,Freestyle,PVTN,012201ALE*DI,"Diaz, Alejandro",76.78
+13,Boys,15-18,100M,Freestyle,PVTN,111998SHA*MC,"McGovern, Shane",74.91
+13,Boys,15-18,100M,Freestyle,PVTB,061699SCO*SO,"Soldavini, Scott",77.01
+13,Boys,15-18,100M,Freestyle,PVMB,051701BIL*FO,"Fowler, Billy",69.97
+13,Boys,15-18,100M,Freestyle,PVKM,020398COD*GA,"Garrison, Cody",76
+13,Boys,15-18,100M,Freestyle,PVMB,010100MAL*CA,"Cacho, Malcolm",75.65
+13,Boys,15-18,100M,Freestyle,PVMB,050600BRY*HU,"Huynh, Bryan V",73.78
+13,Boys,15-18,100M,Freestyle,PVFH,112100AKH*GU,"Gupta, Akhil",79.43
+13,Boys,15-18,100M,Freestyle,PVTN,102399JAC*HU,"Huddle, Jack",76.47
+13,Boys,15-18,100M,Freestyle,PVFH,092900RICACA,"Carmona, Ricardo A",76.56
+13,Boys,15-18,100M,Freestyle,PVTN,100300TYL*PR,"Przygocki, Tyler",89.29
+13,Boys,15-18,100M,Freestyle,PVTB,100799MIN*OO,"Oo, Min",87.21
+13,Boys,15-18,100M,Freestyle,PVKM,070902AND*MO,"Moser, Andrew",91.64
+13,Boys,15-18,100M,Freestyle,PVTB,031101XANGLA,"Langsam, Xander G",85.68
+13,Boys,15-18,100M,Freestyle,PVFH,082598EISDDE,"DelRosario, Eisley D",97.44
+13,Boys,15-18,100M,Freestyle,PVTB,040600DMI*BI,"Bilous, Dmitry",106.05
+14,Girls,15-18,100M,Freestyle,PVMB,061899AMI*NG,"N'Gambwa, Amina J",63.25
+14,Girls,15-18,100M,Freestyle,PVFH,092798SAYHVA,"Vaules, Sayaka H",64.97
+14,Girls,15-18,100M,Freestyle,PVWHI,031300GEOWLO,"Lo, Georgia W",70.72
+14,Girls,15-18,100M,Freestyle,PVTB,122700ZOEJMO,"Moser, Zoe J",74.44
+14,Girls,15-18,100M,Freestyle,PVWHI,082900ANDMGA,"Garcia, Andrea M",76.46
+14,Girls,15-18,100M,Freestyle,PVKM,051199AMB*GA,"Garrison, Amber",77.28
+14,Girls,15-18,100M,Freestyle,PVFH,031900ANNIMA,"Mayer, Anna I",74.85
+14,Girls,15-18,100M,Freestyle,PVWHI,090399DELHHA,"Harrison-Peters, Delaney H",81.16
+14,Girls,15-18,100M,Freestyle,PVMB,051900EMI*DO,"Dohler-Rodas, Emily",77.62
+14,Girls,15-18,100M,Freestyle,PVTB,092999CARSSM,"Smith, Caroline S",75.41
+14,Girls,15-18,100M,Freestyle,PVTB,112499REB*PI,"Pittman, Rebecca",80.93
+14,Girls,15-18,100M,Freestyle,PVTN,071599JES*MA,"Martin, Jessica",81.16
+14,Girls,15-18,100M,Freestyle,PVKM,090598MAYMBI,"Bickel, Maya M",83.33
+14,Girls,15-18,100M,Freestyle,PVTN,110497MAI*NG,"Nguyen, Mai-Anh",84.1
+14,Girls,15-18,100M,Freestyle,PVMB,110797LEX*VI,"Vipavetz, Lexi",76.65
+14,Girls,15-18,100M,Freestyle,PVTN,022100JAS*HU,"Hubbard, Jasmine",79.77
+14,Girls,15-18,100M,Freestyle,PVKM,102198REBCSP,"Spritzer, Rebecca C",86.87
+14,Girls,15-18,100M,Freestyle,PVTB,111800CLA*KI,"Kimiecik, Clare",83.15
+14,Girls,15-18,100M,Freestyle,PVWHI,041400MOL*MU,"Murray, Molly",90
+14,Girls,15-18,100M,Freestyle,PVWHI,081599CHL*YE,"Yetter, Chloe",87.19
+14,Girls,15-18,100M,Freestyle,PVTB,041398ISA*MA,"Manor, Isabel",93.09
+14,Girls,15-18,100M,Freestyle,PVTN,070198ELI*ID,"Iduma, Elizabeth",88.41
+14,Girls,15-18,100M,Freestyle,PVTN,082098MIC*PR,"Przygocki, Michaela",92.44
+14,Girls,15-18,100M,Freestyle,PVFH,032601CARMKI,"King, Caroline M",91.97
+14,Girls,15-18,100M,Freestyle,PVTB,082400JAC*DE,"De Melo, Jacqueline",90
+14,Girls,15-18,100M,Freestyle,PVKM,022499EMMGRA,"Rainard, Emma G",94.63
+14,Girls,15-18,100M,Freestyle,PVTB,100299JUL*OS,"Ostlund, Julia",91.65
+14,Girls,15-18,100M,Freestyle,PVKM,040500MER*MA,"Matusow, Meribor",106.64
+14,Girls,15-18,100M,Freestyle,PVKM,041699KATJWE,"Weinsheimer, Katherine J",105.43
+14,Girls,15-18,100M,Freestyle,PVKM,050301CATGCA,"Campagna, Catherine G",112.14
+15,Boys,13-14,100M,"Individual Medley",PVTN,060301JON*MA,"Martin, Jonathan",75.19
+15,Boys,13-14,100M,"Individual Medley",PVFH,110802BRIAHE,"Helton, Brian A",83.07
+15,Boys,13-14,100M,"Individual Medley",PVWHI,021702JACBHI,"Hines, Jack B",83.21
+15,Boys,13-14,100M,"Individual Medley",PVKM,111102STE*PE,"Perencevich, Stephen",80.57
+15,Boys,13-14,100M,"Individual Medley",PVWHI,102601IANSAR,"Ard, Ian S",90.34
+15,Boys,13-14,100M,"Individual Medley",PVWHI,011402ANT*RO,"Rojas, Anthony",88.75
+15,Boys,13-14,100M,"Individual Medley",PVFH,102802CHRMFE,"Ferentinos, Christopher M",91.44
+15,Boys,13-14,100M,"Individual Medley",PVMB,081602SHA*FO,"Fowler, Shane",94.54
+15,Boys,13-14,100M,"Individual Medley",PVMB,021402ADA*GA,"Gaskill, Adam",95.71
+15,Boys,13-14,100M,"Individual Medley",PVTB,110802MICPSA,"Salas, Michael P",92.55
+15,Boys,13-14,100M,"Individual Medley",PVFH,110802ALE*BR,"Brien, Alejandro",97.95
+15,Boys,13-14,100M,"Individual Medley",PVKM,020502TERJMA,"Manzon, Terrence J",93.06
+15,Boys,13-14,100M,"Individual Medley",PVKM,112202JAY*MA,"Matusow, Jayden",92.78
+15,Boys,13-14,100M,"Individual Medley",PVMB,013003BRA*HU,"Huynh, Brandon D",100.58
+15,Boys,13-14,100M,"Individual Medley",PVKM,071201SCO*ME,"Menendez, Scott",100.65
+15,Boys,13-14,100M,"Individual Medley",PVFH,042303JUSJGO,"Goggin, Justin J",91.33
+15,Boys,13-14,100M,"Individual Medley",PVKM,020502PHIHMA,"Manzon, Phillip H",104.06
+15,Boys,13-14,100M,"Individual Medley",PVTN,103102JON*MA,"Martin, Jonah",96.68
+16,Girls,13-14,100M,"Individual Medley",PVTN,101402TRI*HU,"Hubbard, Trinity",82.15
+16,Girls,13-14,100M,"Individual Medley",PVTB,082802MAR*HA,"Harty, Maris",92.34
+16,Girls,13-14,100M,"Individual Medley",PVTN,112601RAC*CA,"Castle, Rachael",98.34
+16,Girls,13-14,100M,"Individual Medley",PVKM,032402RIL*SY,"Sylvester, Riley",98.3
+16,Girls,13-14,100M,"Individual Medley",PVTB,120602GRA*OS,"Ostuni, Grace",98.69
+16,Girls,13-14,100M,"Individual Medley",PVFH,061602NICABA,"Badobre, Nicole-Chelsea A",95.81
+16,Girls,13-14,100M,"Individual Medley",PVTN,101102MIN*NG,"Nguyen, Minh-Anh",95.91
+16,Girls,13-14,100M,"Individual Medley",PVTB,081301HAIMSU,"Suthard, Hailey M",100.7
+16,Girls,13-14,100M,"Individual Medley",PVTB,072602CAD*FO,"Forrest, Cadie",95.95
+16,Girls,13-14,100M,"Individual Medley",PVMB,031502AMIEWH,"Whitaker, Amira E",103.02
+16,Girls,13-14,100M,"Individual Medley",PVTN,101404SARACA,"Carroll, Sara A",110.06
+16,Girls,13-14,100M,"Individual Medley",PVFH,121602MAA*GU,"Gupta, Maansi",99.01
+16,Girls,13-14,100M,"Individual Medley",PVWHI,032803GEM*LY,"Lynch, Gemma",110.86
+16,Girls,13-14,100M,"Individual Medley",PVTN,120604GAB*DI,"Diaz, Gabriella",111
+16,Girls,13-14,100M,"Individual Medley",PVKM,082601SELLBI,"Bickel, Selah L",105.03
+16,Girls,13-14,100M,"Individual Medley",PVKM,091602TABDDO,"Dorr, Tabitha D",114.62
+16,Girls,13-14,100M,"Individual Medley",PVWHI,090501MAR*AL,"Alvarez, Mariah",113.56
+16,Girls,13-14,100M,"Individual Medley",PVWHI,120201SAMMWA,"Wallace, Samantha M",113.25
+16,Girls,13-14,100M,"Individual Medley",PVFH,010303CAMMPA,"Page, Camille M",111.17
+16,Girls,13-14,100M,"Individual Medley",PVTN,042502ADO*MI,"Michael, Adonia",122.85
+17,Boys,"8 & Under",25M,Backstroke,PVTN,051609TRE*DO,"Donley, Trevor",24.78
+17,Boys,"8 & Under",25M,Backstroke,PVFH,012308ALE*CH,"Chandran, Alexander",23.95
+17,Boys,"8 & Under",25M,Backstroke,PVTN,010108BRESFO,"Ford, Brendan S",26.58
+17,Boys,"8 & Under",25M,Backstroke,PVWHI,101707ANDVLU,"Luse, Andrew V",26.91
+17,Boys,"8 & Under",25M,Backstroke,PVMB,010809ALE*JU,"Jungbluth, Alexander",28.44
+17,Boys,"8 & Under",25M,Backstroke,PVWHI,062109ROYANA,"Nazir, Royce A",30.41
+17,Boys,"8 & Under",25M,Backstroke,PVWHI,090507ALEDGA,"Garcia, Alexander D",31.44
+17,Boys,"8 & Under",25M,Backstroke,PVTN,060609SIM*FA,"Farias, Simon G",32.68
+17,Boys,"8 & Under",25M,Backstroke,PVFH,091008MAN*TA,"Taheri, Mansoor",29.43
+17,Boys,"8 & Under",25M,Backstroke,PVKM,061209MAXBSE,"Semaria, Maxwell B",32.84
+17,Boys,"8 & Under",25M,Backstroke,PVFH,042808SHR*GH,"Ghosh, Shreyas",30.08
+17,Boys,"8 & Under",25M,Backstroke,PVWHI,111407LOGCPO,"Potter, Logan C",34.87
+17,Boys,"8 & Under",25M,Backstroke,PVMB,081108LAN*FO,"Fowler, Landon",33.18
+17,Boys,"8 & Under",25M,Backstroke,PVFH,111307CULARA,"Ray, Cullum A",31.25
+17,Boys,"8 & Under",25M,Backstroke,PVTB,072507ADAJPO,"Poje, Adam J",32.64
+17,Boys,"8 & Under",25M,Backstroke,PVTN,062807TYL*HU,"Hubbard, Tyler",31.27
+17,Boys,"8 & Under",25M,Backstroke,PVTN,050109CAL*SO,"Solomon, Caleb",40.96
+17,Boys,"8 & Under",25M,Backstroke,PVKM,091207SAMWDO,"Dorr, Sam W",34.53
+17,Boys,"8 & Under",25M,Backstroke,PVMB,010608JAM*WI,"Wilson, James J",45.68
+17,Boys,"8 & Under",25M,Backstroke,PVTN,060411LOGPDO,"Donley, Logan P",46.19
+17,Boys,"8 & Under",25M,Backstroke,PVFH,061807ABH*DH,"Dhaubhadel, Abhi",46.75
+17,Boys,"8 & Under",25M,Backstroke,PVKM,091207JASEDO,"Dorr, Jason E",60.94
+18,Girls,"8 & Under",25M,Backstroke,PVMB,110707PAY*MO,"Morris, Payton",25.94
+18,Girls,"8 & Under",25M,Backstroke,PVWHI,070907VAN*GA,"Garcia, Vanessa",27.5
+18,Girls,"8 & Under",25M,Backstroke,PVKM,032608YAE*SI,"Siesser, Yael",31.34
+18,Girls,"8 & Under",25M,Backstroke,PVWHI,090707TAT*TH,"Thiero, Tatiana",31.4
+18,Girls,"8 & Under",25M,Backstroke,PVWHI,011708ISEGMC,"McKeever-Maragni, Isela G",31.31
+18,Girls,"8 & Under",25M,Backstroke,PVTB,102008ALIBTU,"Turner, Alise B",32.74
+18,Girls,"8 & Under",25M,Backstroke,PVWHI,051809ANNDDO,"Dobrota, Anne D",32.08
+18,Girls,"8 & Under",25M,Backstroke,PVKM,030108ISAMST,"Stein, Isabelle M",33.39
+18,Girls,"8 & Under",25M,Backstroke,PVFH,102208LILTJA,"Jauquet, Lillian T",33.49
+18,Girls,"8 & Under",25M,Backstroke,PVTB,090208KANFBE,"Bergoffen, Kannika F",37.59
+18,Girls,"8 & Under",25M,Backstroke,PVTN,012110SARGDE,"Desalegn, Saron G",37.82
+18,Girls,"8 & Under",25M,Backstroke,PVKM,082307ARI*PA,"Parness, Ariella",38.13
+18,Girls,"8 & Under",25M,Backstroke,PVTN,101508JIMPBA,"Bayona, Jimena P",33.34
+18,Girls,"8 & Under",25M,Backstroke,PVTB,090108AVIZPE,"Peck, Aviva Z",35.13
+18,Girls,"8 & Under",25M,Backstroke,PVWHI,080307KAIRCA,"Canubas, Kaila R",38.7
+18,Girls,"8 & Under",25M,Backstroke,PVKM,080908MAG*LY,"Lyons, Magnolia",39.38
+18,Girls,"8 & Under",25M,Backstroke,PVKM,042708ANN*MO,"Moser, Annabelle",39.93
+18,Girls,"8 & Under",25M,Backstroke,PVTN,021909JOR*CH,"Chally, Jordan",41.75
+18,Girls,"8 & Under",25M,Backstroke,PVKM,010508ABICHU,"Hu, Abigail C",37.25
+18,Girls,"8 & Under",25M,Backstroke,PVTN,070107HAN*HA,"Hart, Hannah",42.14
+18,Girls,"8 & Under",25M,Backstroke,PVKM,090607AVAPWA,"Wahl, Ava P",42.16
+18,Girls,"8 & Under",25M,Backstroke,PVTB,121008MARVBE,"Berube, Margaret V",33.29
+18,Girls,"8 & Under",25M,Backstroke,PVKM,070208EME*MA,"Martinez, Emely",50.87
+18,Girls,"8 & Under",25M,Backstroke,PVMB,052510DIA*WI,"Wilson, Diana E",45.98
+18,Girls,"8 & Under",25M,Backstroke,PVFH,051509JOCNCA,"Campos, Joceline N",45.69
+18,Girls,"8 & Under",25M,Backstroke,PVTN,100110MAR*FA,"Farias, Maria",51.53
+18,Girls,"8 & Under",25M,Backstroke,PVKM,040609GAB*OR,"Ortellado, Gabriella",64.55
+18,Girls,"8 & Under",25M,Backstroke,PVTN,022310MAY*BA,"Bascope, Maya",54.38
+19,Boys,9-10,25M,Backstroke,PVFH,091106DIEFRA,"Ramirez, Diego F",24.4
+19,Boys,9-10,25M,Backstroke,PVFH,083105JOSELO,"Lopez, Joshua E",24
+19,Boys,9-10,25M,Backstroke,PVTB,042806ELIPTU,"Turner, Eli P",24.69
+19,Boys,9-10,25M,Backstroke,PVKM,062105ISA*KO,"Kotek, Isaac",25.41
+19,Boys,9-10,25M,Backstroke,PVFH,043007RYA*PA,"Parmhans, Ryan",26.09
+19,Boys,9-10,25M,Backstroke,PVTN,080105COLMFO,"Ford, Collin M",26.28
+19,Boys,9-10,25M,Backstroke,PVWHI,062906ADAJBR,"Brown, Adan J",24.13
+19,Boys,9-10,25M,Backstroke,PVWHI,111705GABBYE,"Yetter, Gabriel B",26.93
+19,Boys,9-10,25M,Backstroke,PVWHI,071906THOEDO,"Dobrota, Thomas E",27.21
+19,Boys,9-10,25M,Backstroke,PVFH,011207AXEFBA,"Badobre, Axel F",26.06
+19,Boys,9-10,25M,Backstroke,PVFH,032906PETWSO,"Solovieff, Peter W",28.84
+19,Boys,9-10,25M,Backstroke,PVWHI,041007JOH*BO,"Bostick-Delgado, Joni",30.31
+19,Boys,9-10,25M,Backstroke,PVTN,092806SAN*BA,"Bascope, Santiago",32.49
+19,Boys,9-10,25M,Backstroke,PVWHI,032006CHRDMI,"Miles, Christian D",33.18
+19,Boys,9-10,25M,Backstroke,PVKM,090206COB*FA,"Faleder, Coby",29.75
+19,Boys,9-10,25M,Backstroke,PVTB,100606MATLLY,"Lyons-Bennington, Matthew L",34.69
+19,Boys,9-10,25M,Backstroke,PVTN,121705ABE*FE,"Fessehazion, Abel",35.34
+19,Boys,9-10,25M,Backstroke,PVTN,060609SIM*FA,"Farias, Simon G",36.58
+19,Boys,9-10,25M,Backstroke,PVKM,051707GAB*BI,"Bienstock, Gabriel",35.68
+19,Boys,9-10,25M,Backstroke,PVTB,120905LINWRE,"Reed, Lincoln W",32
+19,Boys,9-10,25M,Backstroke,PVKM,082406CALWGR,"Grimes, Caleb W",35.42
+19,Boys,9-10,25M,Backstroke,PVTB,101405JAMBGA,"Galmeijer, James B",40.01
+19,Boys,9-10,25M,Backstroke,PVTN,042807NAT*MI,"Michael, Nathan",40.2
+19,Boys,9-10,25M,Backstroke,PVMB,080305PEYLWH,"Whisenton, Peyton L",32.63
+19,Boys,9-10,25M,Backstroke,PVTN,060411LOGPDO,"Donley, Logan P",53.82
+19,Boys,9-10,25M,Backstroke,PVTB,022707CONJSO,"Sorrentino, Connor J",82.39
+20,Girls,9-10,25M,Backstroke,PVFH,073005LEE*CH,"Chandran, Leela",21.13
+20,Girls,9-10,25M,Backstroke,PVFH,062005AURRCH,"Chapple, Aurora R",22.07
+20,Girls,9-10,25M,Backstroke,PVTB,072006ELIYEP,"Epley, Elizabeth Y",23.79
+20,Girls,9-10,25M,Backstroke,PVFH,031606NATAPE,"PeBenito, Natalia A",23.95
+20,Girls,9-10,25M,Backstroke,PVWHI,042106ELLPRA,"Raymond, Ella P",26.28
+20,Girls,9-10,25M,Backstroke,PVTB,091605GRAEDI,"Diaz, Grace E",27.35
+20,Girls,9-10,25M,Backstroke,PVFH,042106LANJHE,"Helton, Lana J",26.91
+20,Girls,9-10,25M,Backstroke,PVTB,032906SHODPE,"Peck, Shoshana D",28.28
+20,Girls,9-10,25M,Backstroke,PVKM,112206SUNWKA,"Kasper, Sunita W",27.81
+20,Girls,9-10,25M,Backstroke,PVTN,120506CHAKHO,"Hoang, Charlize K",28.59
+20,Girls,9-10,25M,Backstroke,PVTB,030106ISADPO,"Pone, Isabelle D",28.16
+20,Girls,9-10,25M,Backstroke,PVKM,072705ATA*PA,"Parness, Atara",29.89
+20,Girls,9-10,25M,Backstroke,PVMB,070706SAV*WO,"Woolard, Savannah",27.88
+20,Girls,9-10,25M,Backstroke,PVKM,110806DEE*LE,"Lesnoy, Deena",32.14
+20,Girls,9-10,25M,Backstroke,PVWHI,120205LAY*SM,"Smith, Laylie",32.19
+20,Girls,9-10,25M,Backstroke,PVKM,122305CIENBR,"Brown, Ciera N",30.63
+20,Girls,9-10,25M,Backstroke,PVMB,051207CAI*CO,"Couch, Caitlyn J",28.13
+20,Girls,9-10,25M,Backstroke,PVTN,100105JOYGGY,"Gyeke-Aboagye, Joy G",34
+20,Girls,9-10,25M,Backstroke,PVTB,052707ARIHBO,"Bouvier, Arina H",34.77
+20,Girls,9-10,25M,Backstroke,PVWHI,100406AVAKPO,"Potter, Ava K",29.44
+20,Girls,9-10,25M,Backstroke,PVKM,010806SAM*MO,"Moser, Samantha",34.71
+20,Girls,9-10,25M,Backstroke,PVTN,072506KAL*MV,"Mvunganyi, Kaliza",35.47
+20,Girls,9-10,25M,Backstroke,PVTN,092606CLA*AL,"Alfaro, Claire",37.47
+20,Girls,9-10,25M,Backstroke,PVMB,090905WHIASO,"Somuah, Whitney A",36.66
+20,Girls,9-10,25M,Backstroke,PVKM,110306CAL*LY,"Lyons, Calla",43.46
+20,Girls,9-10,25M,Backstroke,PVTN,110606ANA*CO,"Colas, Anais",43.6
+20,Girls,9-10,25M,Backstroke,PVTN,081305SIF*FU,"Fufa, Sifene",49.25
+21,Boys,15-18,100M,Backstroke,PVMB,012501RYA*VI,"Vipavetz, Ryan",65.03
+21,Boys,15-18,100M,Backstroke,PVMB,061000WOL*WO,"Woolard, Wolfie",64.76
+21,Boys,15-18,100M,Backstroke,PVTB,050398ELIMSA,"Samuelson, Eli M",66.02
+21,Boys,15-18,100M,Backstroke,PVTB,120399COLBPH,"Phillips, Collin B",68.93
+21,Boys,15-18,100M,Backstroke,PVTB,110198ANT*OS,"Ostuni, Anthony",74.55
+21,Boys,15-18,100M,Backstroke,PVFH,030198HUNLRE,"Reed, Hunter L",63.37
+21,Boys,15-18,100M,Backstroke,PVFH,013100JUA*RA,"Ramirez, JuanCarlos",77.43
+21,Boys,15-18,100M,Backstroke,PVTN,032499JAC*FA,"Farias, Jack",77.85
+21,Boys,15-18,100M,Backstroke,PVWHI,071199KYLAWA,"Wallace, Kyle A",79.57
+21,Boys,15-18,100M,Backstroke,PVWHI,051699MIC*DA,"Daniel, Mickey",79.71
+21,Boys,15-18,100M,Backstroke,PVTB,071900FIN*HA,"Harty, Finn",83.69
+21,Boys,15-18,100M,Backstroke,PVTN,012201ALE*DI,"Diaz, Alejandro",82.75
+21,Boys,15-18,100M,Backstroke,PVTN,101297CHR*GA,"Garcia-McConnell, Christian",82.44
+21,Boys,15-18,100M,Backstroke,PVWHI,080699JOHRSA,"Sainvilier, Joshua R",89.01
+21,Boys,15-18,100M,Backstroke,PVTB,111599THO*BA,"Barr, Thomas",89.63
+21,Boys,15-18,100M,Backstroke,PVWHI,011401HAI*DA,"Daniel, Hailu",84.66
+21,Boys,15-18,100M,Backstroke,PVKM,071300TYL*KI,"Kitts, Tyler",91.78
+21,Boys,15-18,100M,Backstroke,PVFH,030901JACMGE,"Gemma, Jacob M",94.47
+21,Boys,15-18,100M,Backstroke,PVTN,051900DYLKHO,"Hoang, Dylin K",94.5
+21,Boys,15-18,100M,Backstroke,PVKM,020398COD*GA,"Garrison, Cody",97.09
+21,Boys,15-18,100M,Backstroke,PVKM,070700DYL*SY,"Sylvester, Dylan",97.2
+21,Boys,15-18,100M,Backstroke,PVTN,111998SHA*MC,"McGovern, Shane",98.65
+21,Boys,15-18,100M,Backstroke,PVMB,010100MAL*CA,"Cacho, Malcolm",99.65
+21,Boys,15-18,100M,Backstroke,PVMB,051701BIL*FO,"Fowler, Billy",95.13
+21,Boys,15-18,100M,Backstroke,PVFH,112700NATWES,"Eshbaugh, Nathaniel W",93.52
+21,Boys,15-18,100M,Backstroke,PVTN,100300TYL*PR,"Przygocki, Tyler",106
+21,Boys,15-18,100M,Backstroke,PVMB,050600BRY*HU,"Huynh, Bryan V",110
+21,Boys,15-18,100M,Backstroke,PVKM,090301MATDWE,"Weinsheimer, Matthew D",112.01
+21,Boys,15-18,100M,Backstroke,PVTN,102399JAC*HU,"Huddle, Jack",116.25
+21,Boys,15-18,100M,Backstroke,PVFH,052501ZEEFAN,"Anam, Zeeshan F",122.71
+22,Girls,15-18,100M,Backstroke,PVMB,061899AMI*NG,"N'Gambwa, Amina J",74.22
+22,Girls,15-18,100M,Backstroke,PVFH,092798SAYHVA,"Vaules, Sayaka H",79.12
+22,Girls,15-18,100M,Backstroke,PVWHI,031300GEOWLO,"Lo, Georgia W",82.87
+22,Girls,15-18,100M,Backstroke,PVTB,122700ZOEJMO,"Moser, Zoe J",85.02
+22,Girls,15-18,100M,Backstroke,PVTB,112499REB*PI,"Pittman, Rebecca",88.64
+22,Girls,15-18,100M,Backstroke,PVWHI,090399DELHHA,"Harrison-Peters, Delaney H",91.78
+22,Girls,15-18,100M,Backstroke,PVWHI,082900ANDMGA,"Garcia, Andrea M",90.71
+22,Girls,15-18,100M,Backstroke,PVKM,051199AMB*GA,"Garrison, Amber",92.61
+22,Girls,15-18,100M,Backstroke,PVTB,092999CARSSM,"Smith, Caroline S",94.64
+22,Girls,15-18,100M,Backstroke,PVTN,110497MAI*NG,"Nguyen, Mai-Anh",99.35
+22,Girls,15-18,100M,Backstroke,PVTN,071599JES*MA,"Martin, Jessica",101.4
+22,Girls,15-18,100M,Backstroke,PVMB,051900EMI*DO,"Dohler-Rodas, Emily",98.16
+22,Girls,15-18,100M,Backstroke,PVTN,022100JAS*HU,"Hubbard, Jasmine",93.9
+22,Girls,15-18,100M,Backstroke,PVFH,032601CARMKI,"King, Caroline M",109.39
+22,Girls,15-18,100M,Backstroke,PVWHI,081599CHL*YE,"Yetter, Chloe",110.02
+22,Girls,15-18,100M,Backstroke,PVKM,022499EMMGRA,"Rainard, Emma G",110.67
+22,Girls,15-18,100M,Backstroke,PVKM,102198REBCSP,"Spritzer, Rebecca C",111.53
+22,Girls,15-18,100M,Backstroke,PVTB,111800CLA*KI,"Kimiecik, Clare",113.88
+22,Girls,15-18,100M,Backstroke,PVTN,082098MIC*PR,"Przygocki, Michaela",104.38
+22,Girls,15-18,100M,Backstroke,PVKM,041699KATJWE,"Weinsheimer, Katherine J",121.77
+22,Girls,15-18,100M,Backstroke,PVTB,100299JUL*OS,"Ostlund, Julia",107.88
+22,Girls,15-18,100M,Backstroke,PVKM,050301CATGCA,"Campagna, Catherine G",139.47
+23,Boys,11-12,50M,Backstroke,PVMB,040804MAT*NG,"Nguyen, Matthew",44.06
+23,Boys,11-12,50M,Backstroke,PVTB,102503HTE*OO,"Oo, Hted",45.88
+23,Boys,11-12,50M,Backstroke,PVMB,092904NIGACA,"Cacho, Nigel A",46.5
+23,Boys,11-12,50M,Backstroke,PVMB,030204CALACA,"Cajayon, Calvin A",48.59
+23,Boys,11-12,50M,Backstroke,PVKM,081103EDU*MA,"Martinez, Eduardo",47.27
+23,Boys,11-12,50M,Backstroke,PVTN,120204HUN*LA,"Lawry, Hunter L",50.05
+23,Boys,11-12,50M,Backstroke,PVMB,090104SEB*PE,"Penate, Sebastian",46.58
+23,Boys,11-12,50M,Backstroke,PVTB,111503NICCDI,"Diaz, Nicolas C",44.82
+23,Boys,11-12,50M,Backstroke,PVFH,062003IVADSO,"Solovieff, Ivan D",46.46
+23,Boys,11-12,50M,Backstroke,PVTN,100103DAR*JE,"Jenkins-Johnston, Darren",51.83
+23,Boys,11-12,50M,Backstroke,PVTB,050405MATJPI,"Pickell, Matthew J",46.32
+23,Boys,11-12,50M,Backstroke,PVWHI,030105DAVGGA,"Garcia, David G",55.1
+23,Boys,11-12,50M,Backstroke,PVWHI,100404AIDAPO,"Potter, Aiden A",51.47
+23,Boys,11-12,50M,Backstroke,PVMB,022704LAK*RO,"Ropeta, Lakki",60.31
+23,Boys,11-12,50M,Backstroke,PVWHI,051705HAR*HI,"Hines, Harry",60.71
+23,Boys,11-12,50M,Backstroke,PVFH,110503SHA*PA,"Parmhans, Shawn",57.94
+23,Boys,11-12,50M,Backstroke,PVFH,020305DAVHCL,"Clark, David H",61.63
+23,Boys,11-12,50M,Backstroke,PVTN,022605CALGDE,"Desalegn, Caleb G",62.6
+23,Boys,11-12,50M,Backstroke,PVKM,072403GAM*SO,"Sosa, Gamaliel",63.36
+23,Boys,11-12,50M,Backstroke,PVMB,101403IND*LY,"Lyness, Indy I",59.87
+23,Boys,11-12,50M,Backstroke,PVMB,100504EDIEDO,"Dohler-Rodas, Edison E",57.56
+23,Boys,11-12,50M,Backstroke,PVKM,101604MEN*AB,"Abrams, Menachem",69.11
+23,Boys,11-12,50M,Backstroke,PVFH,121704BENHRO,"Rosenberg, Benny H",70.41
+23,Boys,11-12,50M,Backstroke,PVTN,042105CHRAPR,"Prudencio, Christ A",70.82
+23,Boys,11-12,50M,Backstroke,PVTN,032805TAI*GA,"Gassaway-Mesutmen, Taikhem",65.16
+23,Boys,11-12,50M,Backstroke,PVKM,011305YEH*BI,"Bienstock, Yehuda",61.41
+23,Boys,11-12,50M,Backstroke,PVFH,011705MIG*AV,"Avila, Miguel",73
+23,Boys,11-12,50M,Backstroke,PVKM,020305JOSMOR,"Ortellado, Jose M",80.25
+24,Girls,11-12,50M,Backstroke,PVFH,060204ABI*BE,"Behailu, Abigail",44.15
+24,Girls,11-12,50M,Backstroke,PVMB,010805HANEGA,"Gaskill, Hannah E",45.44
+24,Girls,11-12,50M,Backstroke,PVTB,041004ELYSIN,"In, Elynore S",46.12
+24,Girls,11-12,50M,Backstroke,PVTB,081303BELHLA,"Langsam, Bella H",43.93
+24,Girls,11-12,50M,Backstroke,PVTN,120604GAB*DI,"Diaz, Gabriella",49.78
+24,Girls,11-12,50M,Backstroke,PVTN,060603SAR*DI,"Diaz, Sara",47.25
+24,Girls,11-12,50M,Backstroke,PVFH,080703MAR*CA,"Carmona, Marisol",45.18
+24,Girls,11-12,50M,Backstroke,PVFH,080403BOBMLA,"Lawrence, Bobbie M",48.15
+24,Girls,11-12,50M,Backstroke,PVFH,102904MARNSA,"Safronova, Maria N",50.83
+24,Girls,11-12,50M,Backstroke,PVTB,090903OLIGTU,"Turner, Olivia G",51.09
+24,Girls,11-12,50M,Backstroke,PVKM,040104CHA*LE,"Lesnoy, Charne",51.47
+24,Girls,11-12,50M,Backstroke,PVFH,082904BEL*GE,"Gershevich, Bella",51.62
+24,Girls,11-12,50M,Backstroke,PVFH,073103MAIERA,"Ramos-Nogueron, Maia E",54.5
+24,Girls,11-12,50M,Backstroke,PVTN,062604CEL*PA,"Paul, Celine",54.62
+24,Girls,11-12,50M,Backstroke,PVTN,101404SARACA,"Carroll, Sara A",54.43
+24,Girls,11-12,50M,Backstroke,PVMB,092904LAUPCA,"Cacho, Lauren P",53.28
+24,Girls,11-12,50M,Backstroke,PVMB,040205ANNCTA,"Taylor, Anna-Charlize C",57.26
+24,Girls,11-12,50M,Backstroke,PVWHI,100103DAN*GA,"Garner, Dana",57.71
+24,Girls,11-12,50M,Backstroke,PVTB,080103ANCEBO,"Bouvier, Anca E",58.44
+24,Girls,11-12,50M,Backstroke,PVKM,051804SAR*TA,"Tabin, Sarah",60.46
+24,Girls,11-12,50M,Backstroke,PVTN,072704ALY*HU,"Hubbard, Alyssa",58.59
+24,Girls,11-12,50M,Backstroke,PVTN,090104QUAMLU,"Luu, QuayLinh M",64.97
+24,Girls,11-12,50M,Backstroke,PVWHI,062904KYR*SM,"Smith, Kyra",57.75
+24,Girls,11-12,50M,Backstroke,PVTN,022904ABB*HA,"Hart, Abbey",64.07
+24,Girls,11-12,50M,Backstroke,PVKM,102804GAL*RO,"Roth, Galit",65.84
+24,Girls,11-12,50M,Backstroke,PVMB,050905KAI*SU,"Sutton, Kailey",126.99
+25,Boys,13-14,50M,Backstroke,PVTN,060301JON*MA,"Martin, Jonathan",36.06
+25,Boys,13-14,50M,Backstroke,PVTB,071001CONDPH,"Phillips, Connor D",38.35
+25,Boys,13-14,50M,Backstroke,PVFH,110802BRIAHE,"Helton, Brian A",38.94
+25,Boys,13-14,50M,Backstroke,PVWHI,021702JACBHI,"Hines, Jack B",39.63
+25,Boys,13-14,50M,Backstroke,PVKM,111102STE*PE,"Perencevich, Stephen",39.16
+25,Boys,13-14,50M,Backstroke,PVTB,110802MICPSA,"Salas, Michael P",41.34
+25,Boys,13-14,50M,Backstroke,PVWHI,102601IANSAR,"Ard, Ian S",43.93
+25,Boys,13-14,50M,Backstroke,PVMB,081602SHA*FO,"Fowler, Shane",43.44
+25,Boys,13-14,50M,Backstroke,PVKM,020502TERJMA,"Manzon, Terrence J",42.5
+25,Boys,13-14,50M,Backstroke,PVWHI,011402ANT*RO,"Rojas, Anthony",42.41
+25,Boys,13-14,50M,Backstroke,PVKM,112202JAY*MA,"Matusow, Jayden",45.73
+25,Boys,13-14,50M,Backstroke,PVMB,013003BRA*HU,"Huynh, Brandon D",46.09
+25,Boys,13-14,50M,Backstroke,PVTN,103102JON*MA,"Martin, Jonah",47.02
+25,Boys,13-14,50M,Backstroke,PVMB,021402ADA*GA,"Gaskill, Adam",45.03
+25,Boys,13-14,50M,Backstroke,PVKM,020502JASSMA,"Manzon, Jason S",47.4
+25,Boys,13-14,50M,Backstroke,PVKM,020802ZAN*LE,"Lesnoy, Zanvy",47.75
+25,Boys,13-14,50M,Backstroke,PVFH,102802CHRMFE,"Ferentinos, Christopher M",47.13
+25,Boys,13-14,50M,Backstroke,PVKM,070902AND*MO,"Moser, Andrew",47.84
+25,Boys,13-14,50M,Backstroke,PVKM,090301MATDWE,"Weinsheimer, Matthew D",49.72
+25,Boys,13-14,50M,Backstroke,PVFH,042303JUSJGO,"Goggin, Justin J",44.19
+25,Boys,13-14,50M,Backstroke,PVFH,110802ALE*BR,"Brien, Alejandro",49.95
+25,Boys,13-14,50M,Backstroke,PVWHI,032203JAI*SM,"Smith, Jaidon",56.88
+25,Boys,13-14,50M,Backstroke,PVFH,010303ARR*MA,"Mazhari, Arron",58.96
+25,Boys,13-14,50M,Backstroke,PVKM,070602TYL*DA,"Davis, Tylor",63.44
+25,Boys,13-14,50M,Backstroke,PVMB,050903MAI*AU,"Audige, Maixent",62.47
+26,Girls,13-14,50M,Backstroke,PVTN,101402TRI*HU,"Hubbard, Trinity",37.94
+26,Girls,13-14,50M,Backstroke,PVTB,082802MAR*HA,"Harty, Maris",41.52
+26,Girls,13-14,50M,Backstroke,PVTB,072602CAD*FO,"Forrest, Cadie",43.03
+26,Girls,13-14,50M,Backstroke,PVTN,101102MIN*NG,"Nguyen, Minh-Anh",46.94
+26,Girls,13-14,50M,Backstroke,PVMB,032202VIC*PE,"Penate, Victoria",47.26
+26,Girls,13-14,50M,Backstroke,PVMB,031502AMIEWH,"Whitaker, Amira E",47.22
+26,Girls,13-14,50M,Backstroke,PVFH,061602NICABA,"Badobre, Nicole-Chelsea A",46.47
+26,Girls,13-14,50M,Backstroke,PVTB,060801KATESM,"Smith, Katherine E",45.63
+26,Girls,13-14,50M,Backstroke,PVTB,081301HAIMSU,"Suthard, Hailey M",42.7
+26,Girls,13-14,50M,Backstroke,PVWHI,090501MAR*AL,"Alvarez, Mariah",49.29
+26,Girls,13-14,50M,Backstroke,PVKM,082601SELLBI,"Bickel, Selah L",50.41
+26,Girls,13-14,50M,Backstroke,PVKM,032402RIL*SY,"Sylvester, Riley",51.1
+26,Girls,13-14,50M,Backstroke,PVTN,120604GAB*DI,"Diaz, Gabriella",52.29
+26,Girls,13-14,50M,Backstroke,PVTN,112601RAC*CA,"Castle, Rachael",52.32
+26,Girls,13-14,50M,Backstroke,PVFH,121602MAA*GU,"Gupta, Maansi",53
+26,Girls,13-14,50M,Backstroke,PVWHI,111602PENJMA,"Mason, Penny J",51.2
+26,Girls,13-14,50M,Backstroke,PVTN,101404SARACA,"Carroll, Sara A",55.67
+26,Girls,13-14,50M,Backstroke,PVWHI,032803GEM*LY,"Lynch, Gemma",54.62
+26,Girls,13-14,50M,Backstroke,PVFH,010303CAMMPA,"Page, Camille M",57.19
+26,Girls,13-14,50M,Backstroke,PVKM,091602TABDDO,"Dorr, Tabitha D",55.84
+26,Girls,13-14,50M,Backstroke,PVTN,042502ADO*MI,"Michael, Adonia",56.44
+26,Girls,13-14,50M,Backstroke,PVWHI,120201SAMMWA,"Wallace, Samantha M",59.78
+26,Girls,13-14,50M,Backstroke,PVTN,112302FEVGDE,"Desalegn, Feven G",64.45
+26,Girls,13-14,50M,Backstroke,PVTN,022904ABB*HA,"Hart, Abbey",64.66
+26,Girls,13-14,50M,Backstroke,PVFH,012503HRI*TA,"Tamrakar, Hridayesha",66.34
+26,Girls,13-14,50M,Backstroke,PVKM,070602KENLDA,"Davis, Kennedy L",65.07
+26,Girls,13-14,50M,Backstroke,PVTN,072602SAL*FE,"Fessehazion, Salina",71.03
+26,Girls,13-14,50M,Backstroke,PVFH,042603BAMMOD,"Odubayo, Bami M",69.44
+27,Boys,15-18,100M,"Individual Medley",PVMB,061000WOL*WO,"Woolard, Wolfie",65.56
+27,Boys,15-18,100M,"Individual Medley",PVMB,012501RYA*VI,"Vipavetz, Ryan",67.82
+27,Boys,15-18,100M,"Individual Medley",PVFH,030198HUNLRE,"Reed, Hunter L",64.57
+27,Boys,15-18,100M,"Individual Medley",PVMB,120797MAR*GI,"Girguis, Mark",67.44
+27,Boys,15-18,100M,"Individual Medley",PVTB,110198ANT*OS,"Ostuni, Anthony",66.63
+27,Boys,15-18,100M,"Individual Medley",PVTB,050398ELIMSA,"Samuelson, Eli M",68.91
+27,Boys,15-18,100M,"Individual Medley",PVFH,013100JUA*RA,"Ramirez, JuanCarlos",70.93
+27,Boys,15-18,100M,"Individual Medley",PVTN,032499JAC*FA,"Farias, Jack",69.45
+27,Boys,15-18,100M,"Individual Medley",PVTB,120399COLBPH,"Phillips, Collin B",70.84
+27,Boys,15-18,100M,"Individual Medley",PVWHI,071199KYLAWA,"Wallace, Kyle A",73.47
+27,Boys,15-18,100M,"Individual Medley",PVTN,042501VIE*NG,"Nguyen, Viet",78.84
+27,Boys,15-18,100M,"Individual Medley",PVTN,092400ETH*AL,"Alfaro, Ethan",83.03
+27,Boys,15-18,100M,"Individual Medley",PVTN,101297CHR*GA,"Garcia-McConnell, Christian",83.6
+27,Boys,15-18,100M,"Individual Medley",PVTN,103098CAL*PA,"Paul, Calixte",83.35
+27,Boys,15-18,100M,"Individual Medley",PVTN,012201ALE*DI,"Diaz, Alejandro",88
+27,Boys,15-18,100M,"Individual Medley",PVWHI,051699MIC*DA,"Daniel, Mickey",87.33
+27,Boys,15-18,100M,"Individual Medley",PVKM,020398COD*GA,"Garrison, Cody",88.72
+27,Boys,15-18,100M,"Individual Medley",PVFH,030901JACMGE,"Gemma, Jacob M",85.01
+27,Boys,15-18,100M,"Individual Medley",PVFH,112700NATWES,"Eshbaugh, Nathaniel W",88.98
+27,Boys,15-18,100M,"Individual Medley",PVKM,070700DYL*SY,"Sylvester, Dylan",89.07
+27,Boys,15-18,100M,"Individual Medley",PVMB,051701BIL*FO,"Fowler, Billy",86.01
+27,Boys,15-18,100M,"Individual Medley",PVKM,071300TYL*KI,"Kitts, Tyler",85.58
+27,Boys,15-18,100M,"Individual Medley",PVTN,051900DYLKHO,"Hoang, Dylin K",91.22
+27,Boys,15-18,100M,"Individual Medley",PVWHI,080699JOHRSA,"Sainvilier, Joshua R",86.81
+27,Boys,15-18,100M,"Individual Medley",PVMB,050600BRY*HU,"Huynh, Bryan V",92.93
+27,Boys,15-18,100M,"Individual Medley",PVKM,070902AND*MO,"Moser, Andrew",112.46
+28,Girls,15-18,100M,"Individual Medley",PVFH,092798SAYHVA,"Vaules, Sayaka H",73.36
+28,Girls,15-18,100M,"Individual Medley",PVMB,061899AMI*NG,"N'Gambwa, Amina J",72.56
+28,Girls,15-18,100M,"Individual Medley",PVWHI,031300GEOWLO,"Lo, Georgia W",80.22
+28,Girls,15-18,100M,"Individual Medley",PVTB,122700ZOEJMO,"Moser, Zoe J",81.91
+28,Girls,15-18,100M,"Individual Medley",PVWHI,082900ANDMGA,"Garcia, Andrea M",88.45
+28,Girls,15-18,100M,"Individual Medley",PVFH,031900ANNIMA,"Mayer, Anna I",86.22
+28,Girls,15-18,100M,"Individual Medley",PVTB,092999CARSSM,"Smith, Caroline S",89.34
+28,Girls,15-18,100M,"Individual Medley",PVTB,112499REB*PI,"Pittman, Rebecca",91.85
+28,Girls,15-18,100M,"Individual Medley",PVWHI,090399DELHHA,"Harrison-Peters, Delaney H",92.95
+28,Girls,15-18,100M,"Individual Medley",PVTN,071599JES*MA,"Martin, Jessica",89.54
+28,Girls,15-18,100M,"Individual Medley",PVKM,051199AMB*GA,"Garrison, Amber",90.85
+28,Girls,15-18,100M,"Individual Medley",PVKM,102198REBCSP,"Spritzer, Rebecca C",97.69
+28,Girls,15-18,100M,"Individual Medley",PVTN,110497MAI*NG,"Nguyen, Mai-Anh",96.19
+28,Girls,15-18,100M,"Individual Medley",PVMB,051900EMI*DO,"Dohler-Rodas, Emily",89.44
+28,Girls,15-18,100M,"Individual Medley",PVWHI,081599CHL*YE,"Yetter, Chloe",99.81
+28,Girls,15-18,100M,"Individual Medley",PVTN,022100JAS*HU,"Hubbard, Jasmine",95.56
+28,Girls,15-18,100M,"Individual Medley",PVKM,090598MAYMBI,"Bickel, Maya M",101.26
+28,Girls,15-18,100M,"Individual Medley",PVMB,110797LEX*VI,"Vipavetz, Lexi",94.59
+28,Girls,15-18,100M,"Individual Medley",PVTN,070198ELI*ID,"Iduma, Elizabeth",100.32
+28,Girls,15-18,100M,"Individual Medley",PVTN,082098MIC*PR,"Przygocki, Michaela",103.64
+28,Girls,15-18,100M,"Individual Medley",PVTB,111800CLA*KI,"Kimiecik, Clare",102.85
+28,Girls,15-18,100M,"Individual Medley",PVFH,032601CARMKI,"King, Caroline M",101.78
+28,Girls,15-18,100M,"Individual Medley",PVKM,040500MER*MA,"Matusow, Meribor",129.75
+28,Girls,15-18,100M,"Individual Medley",PVKM,050301CATGCA,"Campagna, Catherine G",142.72
+29,Boys,"8 & Under",25M,Breaststroke,PVFH,012308ALE*CH,"Chandran, Alexander",25.01
+29,Boys,"8 & Under",25M,Breaststroke,PVTN,072407KHO*NG,"Nguyen, Khoi",25.25
+29,Boys,"8 & Under",25M,Breaststroke,PVTN,051609TRE*DO,"Donley, Trevor",26.6
+29,Boys,"8 & Under",25M,Breaststroke,PVMB,010809ALE*JU,"Jungbluth, Alexander",29.2
+29,Boys,"8 & Under",25M,Breaststroke,PVTN,010108BRESFO,"Ford, Brendan S",29.61
+29,Boys,"8 & Under",25M,Breaststroke,PVFH,042808SHR*GH,"Ghosh, Shreyas",29.24
+29,Boys,"8 & Under",25M,Breaststroke,PVMB,081108LAN*FO,"Fowler, Landon",32.59
+29,Boys,"8 & Under",25M,Breaststroke,PVFH,091008MAN*TA,"Taheri, Mansoor",32.84
+29,Boys,"8 & Under",25M,Breaststroke,PVWHI,101707ANDVLU,"Luse, Andrew V",39.21
+29,Boys,"8 & Under",25M,Breaststroke,PVTB,072507ADAJPO,"Poje, Adam J",36.16
+29,Boys,"8 & Under",25M,Breaststroke,PVMB,010608JAM*WI,"Wilson, James J",37.32
+29,Boys,"8 & Under",25M,Breaststroke,PVKM,091207JASEDO,"Dorr, Jason E",50.22
+30,Girls,"8 & Under",25M,Breaststroke,PVMB,110707PAY*MO,"Morris, Payton",28.19
+30,Girls,"8 & Under",25M,Breaststroke,PVKM,042708ANN*MO,"Moser, Annabelle",34.03
+30,Girls,"8 & Under",25M,Breaststroke,PVKM,082307ARI*PA,"Parness, Ariella",30.79
+30,Girls,"8 & Under",25M,Breaststroke,PVWHI,070907VAN*GA,"Garcia, Vanessa",35.28
+30,Girls,"8 & Under",25M,Breaststroke,PVTB,090108AVIZPE,"Peck, Aviva Z",35.43
+30,Girls,"8 & Under",25M,Breaststroke,PVWHI,011708ISEGMC,"McKeever-Maragni, Isela G",37.19
+30,Girls,"8 & Under",25M,Breaststroke,PVWHI,051809ANNDDO,"Dobrota, Anne D",36.03
+30,Girls,"8 & Under",25M,Breaststroke,PVTN,070107HAN*HA,"Hart, Hannah",35.78
+30,Girls,"8 & Under",25M,Breaststroke,PVKM,030108ISAMST,"Stein, Isabelle M",40.37
+30,Girls,"8 & Under",25M,Breaststroke,PVTB,090208KANFBE,"Bergoffen, Kannika F",43.24
+30,Girls,"8 & Under",25M,Breaststroke,PVFH,102208LILTJA,"Jauquet, Lillian T",36.7
+30,Girls,"8 & Under",25M,Breaststroke,PVTB,102008ALIBTU,"Turner, Alise B",34.97
+30,Girls,"8 & Under",25M,Breaststroke,PVWHI,090707TAT*TH,"Thiero, Tatiana",38.84
+30,Girls,"8 & Under",25M,Breaststroke,PVKM,110807STECGU,"Gutierrez, Stephanie C",52.6
+30,Girls,"8 & Under",25M,Breaststroke,PVTN,101508JIMPBA,"Bayona, Jimena P",55.53
+31,Boys,9-10,25M,Breaststroke,PVFH,083105JOSELO,"Lopez, Joshua E",24.69
+31,Boys,9-10,25M,Breaststroke,PVTB,042806ELIPTU,"Turner, Eli P",25.67
+31,Boys,9-10,25M,Breaststroke,PVWHI,111705GABBYE,"Yetter, Gabriel B",26.43
+31,Boys,9-10,25M,Breaststroke,PVTN,051609TRE*DO,"Donley, Trevor",26.45
+31,Boys,9-10,25M,Breaststroke,PVFH,032906PETWSO,"Solovieff, Peter W",26.69
+31,Boys,9-10,25M,Breaststroke,PVWHI,071906THOEDO,"Dobrota, Thomas E",25.97
+31,Boys,9-10,25M,Breaststroke,PVFH,011207AXEFBA,"Badobre, Axel F",25.79
+31,Boys,9-10,25M,Breaststroke,PVFH,043007RYA*PA,"Parmhans, Ryan",28.4
+31,Boys,9-10,25M,Breaststroke,PVTN,092806SAN*BA,"Bascope, Santiago",29.72
+31,Boys,9-10,25M,Breaststroke,PVKM,062105ISA*KO,"Kotek, Isaac",31.57
+31,Boys,9-10,25M,Breaststroke,PVTN,121705ABE*FE,"Fessehazion, Abel",31.98
+31,Boys,9-10,25M,Breaststroke,PVTB,100606MATLLY,"Lyons-Bennington, Matthew L",35.1
+31,Boys,9-10,25M,Breaststroke,PVTB,101405JAMBGA,"Galmeijer, James B",39.14
+31,Boys,9-10,25M,Breaststroke,PVMB,080305PEYLWH,"Whisenton, Peyton L",37.97
+31,Boys,9-10,25M,Breaststroke,PVKM,090206COB*FA,"Faleder, Coby",44.71
+31,Boys,9-10,25M,Breaststroke,PVTB,120905LINWRE,"Reed, Lincoln W",47.06
+32,Girls,9-10,25M,Breaststroke,PVKM,090606CLANSE,"Semaria, Clara N",22.9
+32,Girls,9-10,25M,Breaststroke,PVFH,073005LEE*CH,"Chandran, Leela",24.83
+32,Girls,9-10,25M,Breaststroke,PVFH,063005OCETBA,"Badobre, Oceanie T",22.19
+32,Girls,9-10,25M,Breaststroke,PVMB,070706SAV*WO,"Woolard, Savannah",23.69
+32,Girls,9-10,25M,Breaststroke,PVFH,031606NATAPE,"PeBenito, Natalia A",24.45
+32,Girls,9-10,25M,Breaststroke,PVFH,062005AURRCH,"Chapple, Aurora R",23.25
+32,Girls,9-10,25M,Breaststroke,PVMB,051207CAI*CO,"Couch, Caitlyn J",25.53
+32,Girls,9-10,25M,Breaststroke,PVWHI,042106ELLPRA,"Raymond, Ella P",26.28
+32,Girls,9-10,25M,Breaststroke,PVFH,042106LANJHE,"Helton, Lana J",26.58
+32,Girls,9-10,25M,Breaststroke,PVTB,032906SHODPE,"Peck, Shoshana D",27.56
+32,Girls,9-10,25M,Breaststroke,PVTN,110606ANA*CO,"Colas, Anais",29.28
+32,Girls,9-10,25M,Breaststroke,PVKM,010806SAM*MO,"Moser, Samantha",29.7
+32,Girls,9-10,25M,Breaststroke,PVTB,091605GRAEDI,"Diaz, Grace E",28.25
+32,Girls,9-10,25M,Breaststroke,PVKM,112206SUNWKA,"Kasper, Sunita W",28.86
+32,Girls,9-10,25M,Breaststroke,PVTN,100105JOYGGY,"Gyeke-Aboagye, Joy G",27.82
+32,Girls,9-10,25M,Breaststroke,PVWHI,120205LAY*SM,"Smith, Laylie",31.16
+32,Girls,9-10,25M,Breaststroke,PVTB,030106ISADPO,"Pone, Isabelle D",32.16
+32,Girls,9-10,25M,Breaststroke,PVKM,122305CIENBR,"Brown, Ciera N",34.88
+32,Girls,9-10,25M,Breaststroke,PVTN,032907ABE*SO,"Solomon, Abelia",36.26
+32,Girls,9-10,25M,Breaststroke,PVKM,102505WIL*RO,"Rothenberg, Willa",38.59
+32,Girls,9-10,25M,Breaststroke,PVTN,053107MEKAKE,"Kersima, Meklet A",39.71
+32,Girls,9-10,25M,Breaststroke,PVWHI,100406AVAKPO,"Potter, Ava K",40.38
+32,Girls,9-10,25M,Breaststroke,PVMB,090905WHIASO,"Somuah, Whitney A",38
+33,Boys,11-12,50M,Breaststroke,PVMB,040804MAT*NG,"Nguyen, Matthew",45.37
+33,Boys,11-12,50M,Breaststroke,PVTB,102503HTE*OO,"Oo, Hted",47.04
+33,Boys,11-12,50M,Breaststroke,PVTB,091704MACSLA,"Langsam, Macky S",51.44
+33,Boys,11-12,50M,Breaststroke,PVKM,081103EDU*MA,"Martinez, Eduardo",53.96
+33,Boys,11-12,50M,Breaststroke,PVTB,111503NICCDI,"Diaz, Nicolas C",55.53
+33,Boys,11-12,50M,Breaststroke,PVMB,092904NIGACA,"Cacho, Nigel A",56.28
+33,Boys,11-12,50M,Breaststroke,PVMB,022704LAK*RO,"Ropeta, Lakki",52.97
+33,Boys,11-12,50M,Breaststroke,PVMB,101403IND*LY,"Lyness, Indy I",57.68
+33,Boys,11-12,50M,Breaststroke,PVTN,120204HUN*LA,"Lawry, Hunter L",53.78
+33,Boys,11-12,50M,Breaststroke,PVMB,090104SEB*PE,"Penate, Sebastian",53.76
+33,Boys,11-12,50M,Breaststroke,PVKM,101104WILHJO,"Johnson, William H",57.28
+33,Boys,11-12,50M,Breaststroke,PVFH,062003IVADSO,"Solovieff, Ivan D",60.89
+33,Boys,11-12,50M,Breaststroke,PVTN,032805TAI*GA,"Gassaway-Mesutmen, Taikhem",57.55
+33,Boys,11-12,50M,Breaststroke,PVMB,100504EDIEDO,"Dohler-Rodas, Edison E",56.66
+33,Boys,11-12,50M,Breaststroke,PVFH,020305DAVHCL,"Clark, David H",56.25
+33,Boys,11-12,50M,Breaststroke,PVWHI,030105DAVGGA,"Garcia, David G",61.49
+33,Boys,11-12,50M,Breaststroke,PVTB,102904GABDPO,"Pone, Gabriel D",63.21
+33,Boys,11-12,50M,Breaststroke,PVTB,050405MATJPI,"Pickell, Matthew J",64.84
+33,Boys,11-12,50M,Breaststroke,PVFH,121704BENHRO,"Rosenberg, Benny H",64.98
+33,Boys,11-12,50M,Breaststroke,PVFH,110503SHA*PA,"Parmhans, Shawn",58.8
+33,Boys,11-12,50M,Breaststroke,PVKM,072403GAM*SO,"Sosa, Gamaliel",65.14
+33,Boys,11-12,50M,Breaststroke,PVFH,101504MARCPA,"Page, Marcus C",60.27
+33,Boys,11-12,50M,Breaststroke,PVWHI,051705HAR*HI,"Hines, Harry",68.59
+33,Boys,11-12,50M,Breaststroke,PVTN,042105CHRAPR,"Prudencio, Christ A",69.25
+33,Boys,11-12,50M,Breaststroke,PVKM,101604MEN*AB,"Abrams, Menachem",69.65
+33,Boys,11-12,50M,Breaststroke,PVFH,011705MIG*AV,"Avila, Miguel",73.75
+33,Boys,11-12,50M,Breaststroke,PVTN,022605CALGDE,"Desalegn, Caleb G",71.13
+33,Boys,11-12,50M,Breaststroke,PVKM,020305JOSMOR,"Ortellado, Jose M",111.71
+34,Girls,11-12,50M,Breaststroke,PVFH,062103ISAEPE,"PeBenito, Isabella E",45.19
+34,Girls,11-12,50M,Breaststroke,PVTB,081303BELHLA,"Langsam, Bella H",45.25
+34,Girls,11-12,50M,Breaststroke,PVMB,010805HANEGA,"Gaskill, Hannah E",48.41
+34,Girls,11-12,50M,Breaststroke,PVTN,062604CEL*PA,"Paul, Celine",48.17
+34,Girls,11-12,50M,Breaststroke,PVFH,060204ABI*BE,"Behailu, Abigail",48.07
+34,Girls,11-12,50M,Breaststroke,PVFH,080403BOBMLA,"Lawrence, Bobbie M",50.64
+34,Girls,11-12,50M,Breaststroke,PVTB,041004ELYSIN,"In, Elynore S",55.02
+34,Girls,11-12,50M,Breaststroke,PVFH,073103MAIERA,"Ramos-Nogueron, Maia E",56.63
+34,Girls,11-12,50M,Breaststroke,PVTN,060603SAR*DI,"Diaz, Sara",56.77
+34,Girls,11-12,50M,Breaststroke,PVFH,082904BEL*GE,"Gershevich, Bella",54.16
+34,Girls,11-12,50M,Breaststroke,PVTB,090903OLIGTU,"Turner, Olivia G",57.87
+34,Girls,11-12,50M,Breaststroke,PVKM,040104CHA*LE,"Lesnoy, Charne",57.15
+34,Girls,11-12,50M,Breaststroke,PVMB,040205ANNCTA,"Taylor, Anna-Charlize C",60.07
+34,Girls,11-12,50M,Breaststroke,PVTN,120604GAB*DI,"Diaz, Gabriella",59.5
+34,Girls,11-12,50M,Breaststroke,PVTN,072704ALY*HU,"Hubbard, Alyssa",55.78
+34,Girls,11-12,50M,Breaststroke,PVWHI,100103DAN*GA,"Garner, Dana",62.87
+34,Girls,11-12,50M,Breaststroke,PVMB,092904LAUPCA,"Cacho, Lauren P",66.57
+34,Girls,11-12,50M,Breaststroke,PVWHI,033104CAM*MA,"Mason, Cameron",68.06
+34,Girls,11-12,50M,Breaststroke,PVTN,102204JORGGY,"Gyeke-Aboagye, Jordan G",68.66
+34,Girls,11-12,50M,Breaststroke,PVKM,102804GAL*RO,"Roth, Galit",69.87
+34,Girls,11-12,50M,Breaststroke,PVWHI,062904KYR*SM,"Smith, Kyra",58.09
+34,Girls,11-12,50M,Breaststroke,PVTB,080103ANCEBO,"Bouvier, Anca E",72.15
+34,Girls,11-12,50M,Breaststroke,PVTN,061004SYDJCA,"Campbell, Sydney J",84.07
+35,Boys,13-14,50M,Breaststroke,PVTN,060301JON*MA,"Martin, Jonathan",39.73
+35,Boys,13-14,50M,Breaststroke,PVKM,071201SCO*ME,"Menendez, Scott",42.1
+35,Boys,13-14,50M,Breaststroke,PVWHI,021702JACBHI,"Hines, Jack B",43.15
+35,Boys,13-14,50M,Breaststroke,PVKM,111102STE*PE,"Perencevich, Stephen",43.44
+35,Boys,13-14,50M,Breaststroke,PVFH,110802BRIAHE,"Helton, Brian A",44.59
+35,Boys,13-14,50M,Breaststroke,PVKM,112202JAY*MA,"Matusow, Jayden",46.75
+35,Boys,13-14,50M,Breaststroke,PVMB,081602SHA*FO,"Fowler, Shane",45.4
+35,Boys,13-14,50M,Breaststroke,PVMB,021402ADA*GA,"Gaskill, Adam",45.63
+35,Boys,13-14,50M,Breaststroke,PVWHI,011402ANT*RO,"Rojas, Anthony",42.06
+35,Boys,13-14,50M,Breaststroke,PVFH,102802CHRMFE,"Ferentinos, Christopher M",47.04
+35,Boys,13-14,50M,Breaststroke,PVTB,071001CONDPH,"Phillips, Connor D",46.71
+35,Boys,13-14,50M,Breaststroke,PVTN,103102JON*MA,"Martin, Jonah",47.68
+35,Boys,13-14,50M,Breaststroke,PVFH,042303JUSJGO,"Goggin, Justin J",51.22
+35,Boys,13-14,50M,Breaststroke,PVFH,020503SUB*SU,"Sunwar, Subham",51.72
+35,Boys,13-14,50M,Breaststroke,PVFH,010303ARR*MA,"Mazhari, Arron",46.45
+35,Boys,13-14,50M,Breaststroke,PVKM,020502PHIHMA,"Manzon, Phillip H",47.9
+35,Boys,13-14,50M,Breaststroke,PVKM,020502JASSMA,"Manzon, Jason S",52.23
+35,Boys,13-14,50M,Breaststroke,PVFH,110802ALE*BR,"Brien, Alejandro",51.69
+35,Boys,13-14,50M,Breaststroke,PVTB,110802MICPSA,"Salas, Michael P",52.93
+35,Boys,13-14,50M,Breaststroke,PVWHI,032203JAI*SM,"Smith, Jaidon",57.56
+35,Boys,13-14,50M,Breaststroke,PVWHI,102601IANSAR,"Ard, Ian S",49.64
+35,Boys,13-14,50M,Breaststroke,PVMB,013003BRA*HU,"Huynh, Brandon D",64.76
+36,Girls,13-14,50M,Breaststroke,PVTN,101402TRI*HU,"Hubbard, Trinity",42.61
+36,Girls,13-14,50M,Breaststroke,PVTN,101102MIN*NG,"Nguyen, Minh-Anh",43.66
+36,Girls,13-14,50M,Breaststroke,PVTB,050903ALELMO,"Moser, Alexia L",44.82
+36,Girls,13-14,50M,Breaststroke,PVMB,032202VIC*PE,"Penate, Victoria",45.22
+36,Girls,13-14,50M,Breaststroke,PVFH,061602NICABA,"Badobre, Nicole-Chelsea A",46.53
+36,Girls,13-14,50M,Breaststroke,PVTB,120602GRA*OS,"Ostuni, Grace",47.92
+36,Girls,13-14,50M,Breaststroke,PVTB,052703FYNABU,"Burow, Fynn A",49.06
+36,Girls,13-14,50M,Breaststroke,PVFH,121602MAA*GU,"Gupta, Maansi",47.85
+36,Girls,13-14,50M,Breaststroke,PVKM,032402RIL*SY,"Sylvester, Riley",51.07
+36,Girls,13-14,50M,Breaststroke,PVTN,112601RAC*CA,"Castle, Rachael",51.19
+36,Girls,13-14,50M,Breaststroke,PVTB,110401MAD*OS,"Ostlund, Madeline",51.1
+36,Girls,13-14,50M,Breaststroke,PVTB,072602CAD*FO,"Forrest, Cadie",52.47
+36,Girls,13-14,50M,Breaststroke,PVKM,091602TABDDO,"Dorr, Tabitha D",52.14
+36,Girls,13-14,50M,Breaststroke,PVFH,010303CAMMPA,"Page, Camille M",51.9
+36,Girls,13-14,50M,Breaststroke,PVWHI,120201SAMMWA,"Wallace, Samantha M",52.64
+36,Girls,13-14,50M,Breaststroke,PVKM,082601SELLBI,"Bickel, Selah L",54.68
+36,Girls,13-14,50M,Breaststroke,PVTN,112302FEVGDE,"Desalegn, Feven G",52.91
+36,Girls,13-14,50M,Breaststroke,PVWHI,032803GEM*LY,"Lynch, Gemma",55.77
+36,Girls,13-14,50M,Breaststroke,PVTN,120604GAB*DI,"Diaz, Gabriella",59.66
+36,Girls,13-14,50M,Breaststroke,PVKM,051403DEN*KO,"Kotek, Dena",61.33
+36,Girls,13-14,50M,Breaststroke,PVWHI,090501MAR*AL,"Alvarez, Mariah",61.41
+36,Girls,13-14,50M,Breaststroke,PVTN,022904ABB*HA,"Hart, Abbey",61.68
+36,Girls,13-14,50M,Breaststroke,PVFH,012503HRI*TA,"Tamrakar, Hridayesha",62.94
+36,Girls,13-14,50M,Breaststroke,PVWHI,111602PENJMA,"Mason, Penny J",65.62
+37,Boys,15-18,100M,Breaststroke,PVMB,061000WOL*WO,"Woolard, Wolfie",72.94
+37,Boys,15-18,100M,Breaststroke,PVMB,120797MAR*GI,"Girguis, Mark",74.19
+37,Boys,15-18,100M,Breaststroke,PVTB,110198ANT*OS,"Ostuni, Anthony",75.47
+37,Boys,15-18,100M,Breaststroke,PVTN,032499JAC*FA,"Farias, Jack",78.19
+37,Boys,15-18,100M,Breaststroke,PVFH,030198HUNLRE,"Reed, Hunter L",78.81
+37,Boys,15-18,100M,Breaststroke,PVFH,013100JUA*RA,"Ramirez, JuanCarlos",81.94
+37,Boys,15-18,100M,Breaststroke,PVWHI,071199KYLAWA,"Wallace, Kyle A",84.56
+37,Boys,15-18,100M,Breaststroke,PVTB,061699SCO*SO,"Soldavini, Scott",84.43
+37,Boys,15-18,100M,Breaststroke,PVTN,042501VIE*NG,"Nguyen, Viet",90.31
+37,Boys,15-18,100M,Breaststroke,PVTB,062698JER*LY,"Lyons, Jeremy",90.16
+37,Boys,15-18,100M,Breaststroke,PVFH,052501ZEEFAN,"Anam, Zeeshan F",90.97
+37,Boys,15-18,100M,Breaststroke,PVTN,111998SHA*MC,"McGovern, Shane",92.25
+37,Boys,15-18,100M,Breaststroke,PVWHI,011401HAI*DA,"Daniel, Hailu",94.9
+37,Boys,15-18,100M,Breaststroke,PVKM,071300TYL*KI,"Kitts, Tyler",88.58
+37,Boys,15-18,100M,Breaststroke,PVTN,102399JAC*HU,"Huddle, Jack",98.18
+37,Boys,15-18,100M,Breaststroke,PVFH,112100AKH*GU,"Gupta, Akhil",99.77
+37,Boys,15-18,100M,Breaststroke,PVMB,050600BRY*HU,"Huynh, Bryan V",96.88
+37,Boys,15-18,100M,Breaststroke,PVWHI,051699MIC*DA,"Daniel, Mickey",99.96
+37,Boys,15-18,100M,Breaststroke,PVTN,103098CAL*PA,"Paul, Calixte",94.79
+37,Boys,15-18,100M,Breaststroke,PVKM,070700DYL*SY,"Sylvester, Dylan",100.31
+37,Boys,15-18,100M,Breaststroke,PVMB,051701BIL*FO,"Fowler, Billy",96.5
+37,Boys,15-18,100M,Breaststroke,PVTN,100300TYL*PR,"Przygocki, Tyler",100.66
+37,Boys,15-18,100M,Breaststroke,PVKM,020398COD*GA,"Garrison, Cody",105.08
+37,Boys,15-18,100M,Breaststroke,PVFH,092900RICACA,"Carmona, Ricardo A",103.4
+37,Boys,15-18,100M,Breaststroke,PVFH,112700NATWES,"Eshbaugh, Nathaniel W",109.68
+37,Boys,15-18,100M,Breaststroke,PVTN,012201ALE*DI,"Diaz, Alejandro",117.91
+38,Girls,15-18,100M,Breaststroke,PVFH,092798SAYHVA,"Vaules, Sayaka H",84.87
+38,Girls,15-18,100M,Breaststroke,PVTB,122700ZOEJMO,"Moser, Zoe J",88.59
+38,Girls,15-18,100M,Breaststroke,PVFH,031900ANNIMA,"Mayer, Anna I",88.48
+38,Girls,15-18,100M,Breaststroke,PVWHI,031300GEOWLO,"Lo, Georgia W",95
+38,Girls,15-18,100M,Breaststroke,PVTN,070198ELI*ID,"Iduma, Elizabeth",98.75
+38,Girls,15-18,100M,Breaststroke,PVWHI,090399DELHHA,"Harrison-Peters, Delaney H",105.43
+38,Girls,15-18,100M,Breaststroke,PVMB,051900EMI*DO,"Dohler-Rodas, Emily",97.66
+38,Girls,15-18,100M,Breaststroke,PVTB,112499REB*PI,"Pittman, Rebecca",108.13
+38,Girls,15-18,100M,Breaststroke,PVTN,071599JES*MA,"Martin, Jessica",105.17
+38,Girls,15-18,100M,Breaststroke,PVWHI,082900ANDMGA,"Garcia, Andrea M",108.32
+38,Girls,15-18,100M,Breaststroke,PVTN,110497MAI*NG,"Nguyen, Mai-Anh",105.75
+38,Girls,15-18,100M,Breaststroke,PVTB,092999CARSSM,"Smith, Caroline S",109.28
+38,Girls,15-18,100M,Breaststroke,PVTN,082098MIC*PR,"Przygocki, Michaela",110.32
+38,Girls,15-18,100M,Breaststroke,PVKM,102198REBCSP,"Spritzer, Rebecca C",110.6
+38,Girls,15-18,100M,Breaststroke,PVWHI,081599CHL*YE,"Yetter, Chloe",107.2
+38,Girls,15-18,100M,Breaststroke,PVMB,110797LEX*VI,"Vipavetz, Lexi",107.78
+38,Girls,15-18,100M,Breaststroke,PVFH,032601CARMKI,"King, Caroline M",108.21
+38,Girls,15-18,100M,Breaststroke,PVKM,090598MAYMBI,"Bickel, Maya M",115.89
+38,Girls,15-18,100M,Breaststroke,PVTB,111800CLA*KI,"Kimiecik, Clare",120.57
+38,Girls,15-18,100M,Breaststroke,PVKM,040500MER*MA,"Matusow, Meribor",132.45
+38,Girls,15-18,100M,Breaststroke,PVTB,100299JUL*OS,"Ostlund, Julia",139.38
+38,Girls,15-18,100M,Breaststroke,PVKM,050301CATGCA,"Campagna, Catherine G",141
+39,Boys,"8 & Under",25M,Butterfly,PVTN,051609TRE*DO,"Donley, Trevor",21.63
+39,Boys,"8 & Under",25M,Butterfly,PVTN,010108BRESFO,"Ford, Brendan S",26.09
+39,Boys,"8 & Under",25M,Butterfly,PVFH,012308ALE*CH,"Chandran, Alexander",26.96
+39,Boys,"8 & Under",25M,Butterfly,PVFH,111307CULARA,"Ray, Cullum A",31.03
+39,Boys,"8 & Under",25M,Butterfly,PVTN,072407KHO*NG,"Nguyen, Khoi",30.71
+39,Boys,"8 & Under",25M,Butterfly,PVWHI,101707ANDVLU,"Luse, Andrew V",31.56
+39,Boys,"8 & Under",25M,Butterfly,PVMB,010809ALE*JU,"Jungbluth, Alexander",26.34
+39,Boys,"8 & Under",25M,Butterfly,PVFH,042808SHR*GH,"Ghosh, Shreyas",30.15
+39,Boys,"8 & Under",25M,Butterfly,PVFH,091008MAN*TA,"Taheri, Mansoor",30.95
+39,Boys,"8 & Under",25M,Butterfly,PVTN,062807TYL*HU,"Hubbard, Tyler",39.46
+39,Boys,"8 & Under",25M,Butterfly,PVMB,081108LAN*FO,"Fowler, Landon",47.09
+40,Girls,"8 & Under",25M,Butterfly,PVMB,110707PAY*MO,"Morris, Payton",27.22
+40,Girls,"8 & Under",25M,Butterfly,PVWHI,070907VAN*GA,"Garcia, Vanessa",28.13
+40,Girls,"8 & Under",25M,Butterfly,PVWHI,090707TAT*TH,"Thiero, Tatiana",32.69
+40,Girls,"8 & Under",25M,Butterfly,PVWHI,051809ANNDDO,"Dobrota, Anne D",38.07
+40,Girls,"8 & Under",25M,Butterfly,PVKM,110807STECGU,"Gutierrez, Stephanie C",40.41
+40,Girls,"8 & Under",25M,Butterfly,PVKM,082307ARI*PA,"Parness, Ariella",31.75
+40,Girls,"8 & Under",25M,Butterfly,PVTN,070107HAN*HA,"Hart, Hannah",36.5
+40,Girls,"8 & Under",25M,Butterfly,PVTB,090108AVIZPE,"Peck, Aviva Z",37.47
+40,Girls,"8 & Under",25M,Butterfly,PVFH,102208LILTJA,"Jauquet, Lillian T",36.28
+40,Girls,"8 & Under",25M,Butterfly,PVTB,102008ALIBTU,"Turner, Alise B",48.77
+40,Girls,"8 & Under",25M,Butterfly,PVKM,010508ABICHU,"Hu, Abigail C",49.75
+41,Boys,9-10,25M,Butterfly,PVFH,083105JOSELO,"Lopez, Joshua E",21.7
+41,Boys,9-10,25M,Butterfly,PVTN,051609TRE*DO,"Donley, Trevor",22.57
+41,Boys,9-10,25M,Butterfly,PVFH,043007RYA*PA,"Parmhans, Ryan",22.57
+41,Boys,9-10,25M,Butterfly,PVWHI,062906ADAJBR,"Brown, Adan J",24.37
+41,Boys,9-10,25M,Butterfly,PVWHI,111705GABBYE,"Yetter, Gabriel B",24.57
+41,Boys,9-10,25M,Butterfly,PVFH,091106DIEFRA,"Ramirez, Diego F",21.92
+41,Boys,9-10,25M,Butterfly,PVFH,011207AXEFBA,"Badobre, Axel F",21.94
+41,Boys,9-10,25M,Butterfly,PVTN,080105COLMFO,"Ford, Collin M",26.14
+41,Boys,9-10,25M,Butterfly,PVTB,042806ELIPTU,"Turner, Eli P",21.86
+41,Boys,9-10,25M,Butterfly,PVWHI,071906THOEDO,"Dobrota, Thomas E",29.97
+41,Boys,9-10,25M,Butterfly,PVMB,080305PEYLWH,"Whisenton, Peyton L",30.45
+41,Boys,9-10,25M,Butterfly,PVWHI,022107JAC*LA,"Lansky, Jacob",34.38
+41,Boys,9-10,25M,Butterfly,PVTN,092806SAN*BA,"Bascope, Santiago",38.41
+41,Boys,9-10,25M,Butterfly,PVKM,090206COB*FA,"Faleder, Coby",38.52
+41,Boys,9-10,25M,Butterfly,PVKM,051707GAB*BI,"Bienstock, Gabriel",33.16
+41,Boys,9-10,25M,Butterfly,PVTB,100606MATLLY,"Lyons-Bennington, Matthew L",42.15
+41,Boys,9-10,25M,Butterfly,PVKM,111906MIT*LE,"Lederman, Mitchell",42.69
+41,Boys,9-10,25M,Butterfly,PVTN,121705ABE*FE,"Fessehazion, Abel",46.81
+42,Girls,9-10,25M,Butterfly,PVFH,073005LEE*CH,"Chandran, Leela",19
+42,Girls,9-10,25M,Butterfly,PVFH,063005OCETBA,"Badobre, Oceanie T",20.84
+42,Girls,9-10,25M,Butterfly,PVFH,062005AURRCH,"Chapple, Aurora R",22.2
+42,Girls,9-10,25M,Butterfly,PVTB,072006ELIYEP,"Epley, Elizabeth Y",23.36
+42,Girls,9-10,25M,Butterfly,PVFH,042106LANJHE,"Helton, Lana J",24.87
+42,Girls,9-10,25M,Butterfly,PVKM,090606CLANSE,"Semaria, Clara N",24.38
+42,Girls,9-10,25M,Butterfly,PVTN,120506CHAKHO,"Hoang, Charlize K",27.77
+42,Girls,9-10,25M,Butterfly,PVKM,112206SUNWKA,"Kasper, Sunita W",25.84
+42,Girls,9-10,25M,Butterfly,PVTB,091605GRAEDI,"Diaz, Grace E",27.74
+42,Girls,9-10,25M,Butterfly,PVTB,032906SHODPE,"Peck, Shoshana D",27.63
+42,Girls,9-10,25M,Butterfly,PVTN,100105JOYGGY,"Gyeke-Aboagye, Joy G",27.06
+42,Girls,9-10,25M,Butterfly,PVMB,051207CAI*CO,"Couch, Caitlyn J",28.34
+42,Girls,9-10,25M,Butterfly,PVMB,090905WHIASO,"Somuah, Whitney A",33.81
+42,Girls,9-10,25M,Butterfly,PVKM,010806SAM*MO,"Moser, Samantha",30.34
+42,Girls,9-10,25M,Butterfly,PVTN,053107MEKAKE,"Kersima, Meklet A",33.44
+42,Girls,9-10,25M,Butterfly,PVTN,032907ABE*SO,"Solomon, Abelia",36.16
+42,Girls,9-10,25M,Butterfly,PVKM,081106ARIMLI,"Litwack, Ariella M",48.94
+43,Boys,11-12,50M,Butterfly,PVMB,030204CALACA,"Cajayon, Calvin A",40.84
+43,Boys,11-12,50M,Butterfly,PVTB,102503HTE*OO,"Oo, Hted",40.15
+43,Boys,11-12,50M,Butterfly,PVTN,100103DAR*JE,"Jenkins-Johnston, Darren",46.25
+43,Boys,11-12,50M,Butterfly,PVKM,081103EDU*MA,"Martinez, Eduardo",44.31
+43,Boys,11-12,50M,Butterfly,PVTB,102904GABDPO,"Pone, Gabriel D",47.88
+43,Boys,11-12,50M,Butterfly,PVFH,062003IVADSO,"Solovieff, Ivan D",44.28
+43,Boys,11-12,50M,Butterfly,PVMB,092904NIGACA,"Cacho, Nigel A",48
+43,Boys,11-12,50M,Butterfly,PVTB,111503NICCDI,"Diaz, Nicolas C",51.44
+43,Boys,11-12,50M,Butterfly,PVMB,090104SEB*PE,"Penate, Sebastian",50.75
+43,Boys,11-12,50M,Butterfly,PVTN,120204HUN*LA,"Lawry, Hunter L",52.62
+43,Boys,11-12,50M,Butterfly,PVTB,091704MACSLA,"Langsam, Macky S",53.69
+43,Boys,11-12,50M,Butterfly,PVKM,101104WILHJO,"Johnson, William H",57.75
+43,Boys,11-12,50M,Butterfly,PVFH,110503SHA*PA,"Parmhans, Shawn",58.12
+43,Boys,11-12,50M,Butterfly,PVWHI,100404AIDAPO,"Potter, Aiden A",53.19
+43,Boys,11-12,50M,Butterfly,PVMB,100504EDIEDO,"Dohler-Rodas, Edison E",62.28
+43,Boys,11-12,50M,Butterfly,PVTB,050405MATJPI,"Pickell, Matthew J",63.47
+43,Boys,11-12,50M,Butterfly,PVTN,022605CALGDE,"Desalegn, Caleb G",63.61
+43,Boys,11-12,50M,Butterfly,PVWHI,030105DAVGGA,"Garcia, David G",60.03
+43,Boys,11-12,50M,Butterfly,PVFH,101504MARCPA,"Page, Marcus C",59.03
+43,Boys,11-12,50M,Butterfly,PVKM,072403GAM*SO,"Sosa, Gamaliel",61.22
+43,Boys,11-12,50M,Butterfly,PVTN,032805TAI*GA,"Gassaway-Mesutmen, Taikhem",71.96
+43,Boys,11-12,50M,Butterfly,PVKM,011305YEH*BI,"Bienstock, Yehuda",74.79
+43,Boys,11-12,50M,Butterfly,PVFH,011705MIG*AV,"Avila, Miguel",66.85
+44,Girls,11-12,50M,Butterfly,PVMB,010805HANEGA,"Gaskill, Hannah E",44.32
+44,Girls,11-12,50M,Butterfly,PVFH,080403BOBMLA,"Lawrence, Bobbie M",44.41
+44,Girls,11-12,50M,Butterfly,PVFH,080703MAR*CA,"Carmona, Marisol",45.69
+44,Girls,11-12,50M,Butterfly,PVFH,082904BEL*GE,"Gershevich, Bella",48.36
+44,Girls,11-12,50M,Butterfly,PVTB,090903OLIGTU,"Turner, Olivia G",46.93
+44,Girls,11-12,50M,Butterfly,PVTN,101404SARACA,"Carroll, Sara A",49.75
+44,Girls,11-12,50M,Butterfly,PVTB,081303BELHLA,"Langsam, Bella H",46.89
+44,Girls,11-12,50M,Butterfly,PVTN,062604CEL*PA,"Paul, Celine",49.28
+44,Girls,11-12,50M,Butterfly,PVTB,041004ELYSIN,"In, Elynore S",46.97
+44,Girls,11-12,50M,Butterfly,PVTN,060603SAR*DI,"Diaz, Sara",49.75
+44,Girls,11-12,50M,Butterfly,PVFH,073103MAIERA,"Ramos-Nogueron, Maia E",55.72
+44,Girls,11-12,50M,Butterfly,PVFH,102904MARNSA,"Safronova, Maria N",51.59
+44,Girls,11-12,50M,Butterfly,PVWHI,100103DAN*GA,"Garner, Dana",53.25
+44,Girls,11-12,50M,Butterfly,PVKM,040104CHA*LE,"Lesnoy, Charne",54.37
+44,Girls,11-12,50M,Butterfly,PVTN,120604GAB*DI,"Diaz, Gabriella",60.53
+44,Girls,11-12,50M,Butterfly,PVTN,102204JORGGY,"Gyeke-Aboagye, Jordan G",65.26
+44,Girls,11-12,50M,Butterfly,PVTN,072704ALY*HU,"Hubbard, Alyssa",55.98
+44,Girls,11-12,50M,Butterfly,PVKM,051804SAR*TA,"Tabin, Sarah",69.78
+44,Girls,11-12,50M,Butterfly,PVWHI,033104CAM*MA,"Mason, Cameron",69.16
+44,Girls,11-12,50M,Butterfly,PVMB,092904LAUPCA,"Cacho, Lauren P",75.88
+44,Girls,11-12,50M,Butterfly,PVKM,102804GAL*RO,"Roth, Galit",85.4
+45,Boys,13-14,50M,Butterfly,PVTN,060301JON*MA,"Martin, Jonathan",33
+45,Boys,13-14,50M,Butterfly,PVFH,110802BRIAHE,"Helton, Brian A",34.27
+45,Boys,13-14,50M,Butterfly,PVKM,111102STE*PE,"Perencevich, Stephen",35.75
+45,Boys,13-14,50M,Butterfly,PVWHI,021702JACBHI,"Hines, Jack B",38.87
+45,Boys,13-14,50M,Butterfly,PVFH,102802CHRMFE,"Ferentinos, Christopher M",38.35
+45,Boys,13-14,50M,Butterfly,PVWHI,102601IANSAR,"Ard, Ian S",42.03
+45,Boys,13-14,50M,Butterfly,PVFH,110802ALE*BR,"Brien, Alejandro",47.2
+45,Boys,13-14,50M,Butterfly,PVKM,071201SCO*ME,"Menendez, Scott",47.33
+45,Boys,13-14,50M,Butterfly,PVKM,020502TERJMA,"Manzon, Terrence J",43.41
+45,Boys,13-14,50M,Butterfly,PVFH,042303JUSJGO,"Goggin, Justin J",39.96
+45,Boys,13-14,50M,Butterfly,PVKM,020502JASSMA,"Manzon, Jason S",50.15
+45,Boys,13-14,50M,Butterfly,PVTN,103102JON*MA,"Martin, Jonah",45.55
+45,Boys,13-14,50M,Butterfly,PVKM,090301MATDWE,"Weinsheimer, Matthew D",50.81
+45,Boys,13-14,50M,Butterfly,PVTB,110802MICPSA,"Salas, Michael P",44.67
+45,Boys,13-14,50M,Butterfly,PVMB,081602SHA*FO,"Fowler, Shane",55.19
+45,Boys,13-14,50M,Butterfly,PVMB,050903MAI*AU,"Audige, Maixent",65.94
+46,Girls,13-14,50M,Butterfly,PVTN,101402TRI*HU,"Hubbard, Trinity",34.11
+46,Girls,13-14,50M,Butterfly,PVTB,082802MAR*HA,"Harty, Maris",39.69
+46,Girls,13-14,50M,Butterfly,PVTN,112601RAC*CA,"Castle, Rachael",45
+46,Girls,13-14,50M,Butterfly,PVTB,072602CAD*FO,"Forrest, Cadie",44.69
+46,Girls,13-14,50M,Butterfly,PVFH,061602NICABA,"Badobre, Nicole-Chelsea A",42.09
+46,Girls,13-14,50M,Butterfly,PVTN,101102MIN*NG,"Nguyen, Minh-Anh",46.22
+46,Girls,13-14,50M,Butterfly,PVTB,050903ALELMO,"Moser, Alexia L",46.23
+46,Girls,13-14,50M,Butterfly,PVKM,032402RIL*SY,"Sylvester, Riley",45.78
+46,Girls,13-14,50M,Butterfly,PVTB,060801KATESM,"Smith, Katherine E",45.68
+46,Girls,13-14,50M,Butterfly,PVWHI,090501MAR*AL,"Alvarez, Mariah",48.13
+46,Girls,13-14,50M,Butterfly,PVTB,081301HAIMSU,"Suthard, Hailey M",46.91
+46,Girls,13-14,50M,Butterfly,PVTN,101404SARACA,"Carroll, Sara A",52.56
+46,Girls,13-14,50M,Butterfly,PVWHI,032803GEM*LY,"Lynch, Gemma",52.78
+46,Girls,13-14,50M,Butterfly,PVMB,031502AMIEWH,"Whitaker, Amira E",54.39
+46,Girls,13-14,50M,Butterfly,PVKM,082601SELLBI,"Bickel, Selah L",55.6
+46,Girls,13-14,50M,Butterfly,PVFH,121602MAA*GU,"Gupta, Maansi",48.04
+46,Girls,13-14,50M,Butterfly,PVFH,010303CAMMPA,"Page, Camille M",51.57
+46,Girls,13-14,50M,Butterfly,PVKM,091602TABDDO,"Dorr, Tabitha D",56.5
+46,Girls,13-14,50M,Butterfly,PVTN,042502ADO*MI,"Michael, Adonia",57.81
+46,Girls,13-14,50M,Butterfly,PVFH,012503HRI*TA,"Tamrakar, Hridayesha",57.91
+46,Girls,13-14,50M,Butterfly,PVTN,120604GAB*DI,"Diaz, Gabriella",57.81
+46,Girls,13-14,50M,Butterfly,PVWHI,120201SAMMWA,"Wallace, Samantha M",54.72
+46,Girls,13-14,50M,Butterfly,PVTN,112302FEVGDE,"Desalegn, Feven G",65.41
+47,Boys,15-18,50M,Butterfly,PVFH,030198HUNLRE,"Reed, Hunter L",28.12
+47,Boys,15-18,50M,Butterfly,PVMB,012501RYA*VI,"Vipavetz, Ryan",27.46
+47,Boys,15-18,50M,Butterfly,PVFH,013100JUA*RA,"Ramirez, JuanCarlos",28.95
+47,Boys,15-18,50M,Butterfly,PVTB,110198ANT*OS,"Ostuni, Anthony",28.48
+47,Boys,15-18,50M,Butterfly,PVTB,050398ELIMSA,"Samuelson, Eli M",29.71
+47,Boys,15-18,50M,Butterfly,PVMB,061000WOL*WO,"Woolard, Wolfie",31.02
+47,Boys,15-18,50M,Butterfly,PVTB,120399COLBPH,"Phillips, Collin B",30.94
+47,Boys,15-18,50M,Butterfly,PVTN,032499JAC*FA,"Farias, Jack",31.47
+47,Boys,15-18,50M,Butterfly,PVWHI,041400LUK*YE,"Yetter, Luka",31.78
+47,Boys,15-18,50M,Butterfly,PVWHI,071199KYLAWA,"Wallace, Kyle A",31.81
+47,Boys,15-18,50M,Butterfly,PVFH,030901JACMGE,"Gemma, Jacob M",34.09
+47,Boys,15-18,50M,Butterfly,PVTN,103098CAL*PA,"Paul, Calixte",33.13
+47,Boys,15-18,50M,Butterfly,PVWHI,080699JOHRSA,"Sainvilier, Joshua R",34.65
+47,Boys,15-18,50M,Butterfly,PVMB,120797MAR*GI,"Girguis, Mark",30.42
+47,Boys,15-18,50M,Butterfly,PVTN,101297CHR*GA,"Garcia-McConnell, Christian",36.06
+47,Boys,15-18,50M,Butterfly,PVFH,052501ZEEFAN,"Anam, Zeeshan F",36.34
+47,Boys,15-18,50M,Butterfly,PVKM,020398COD*GA,"Garrison, Cody",37.89
+47,Boys,15-18,50M,Butterfly,PVTN,042501VIE*NG,"Nguyen, Viet",38.03
+47,Boys,15-18,50M,Butterfly,PVTN,092400ETH*AL,"Alfaro, Ethan",37.78
+47,Boys,15-18,50M,Butterfly,PVFH,112700NATWES,"Eshbaugh, Nathaniel W",36.51
+47,Boys,15-18,50M,Butterfly,PVKM,071300TYL*KI,"Kitts, Tyler",38.69
+47,Boys,15-18,50M,Butterfly,PVKM,070700DYL*SY,"Sylvester, Dylan",36.89
+47,Boys,15-18,50M,Butterfly,PVTN,051900DYLKHO,"Hoang, Dylin K",39.46
+47,Boys,15-18,50M,Butterfly,PVWHI,011401HAI*DA,"Daniel, Hailu",42.9
+47,Boys,15-18,50M,Butterfly,PVMB,051701BIL*FO,"Fowler, Billy",42.11
+47,Boys,15-18,50M,Butterfly,PVMB,010100MAL*CA,"Cacho, Malcolm",45.31
+47,Boys,15-18,50M,Butterfly,PVKM,070902AND*MO,"Moser, Andrew",50.89
+47,Boys,15-18,50M,Butterfly,PVKM,090301MATDWE,"Weinsheimer, Matthew D",55.95
+48,Girls,15-18,50M,Butterfly,PVFH,092798SAYHVA,"Vaules, Sayaka H",32.07
+48,Girls,15-18,50M,Butterfly,PVMB,061899AMI*NG,"N'Gambwa, Amina J",32.03
+48,Girls,15-18,50M,Butterfly,PVWHI,031300GEOWLO,"Lo, Georgia W",35.53
+48,Girls,15-18,50M,Butterfly,PVTN,071599JES*MA,"Martin, Jessica",35.82
+48,Girls,15-18,50M,Butterfly,PVWHI,082900ANDMGA,"Garcia, Andrea M",38.36
+48,Girls,15-18,50M,Butterfly,PVTB,122700ZOEJMO,"Moser, Zoe J",37.7
+48,Girls,15-18,50M,Butterfly,PVMB,110797LEX*VI,"Vipavetz, Lexi",38.65
+48,Girls,15-18,50M,Butterfly,PVFH,031900ANNIMA,"Mayer, Anna I",39.07
+48,Girls,15-18,50M,Butterfly,PVWHI,090399DELHHA,"Harrison-Peters, Delaney H",42.34
+48,Girls,15-18,50M,Butterfly,PVKM,051199AMB*GA,"Garrison, Amber",42.2
+48,Girls,15-18,50M,Butterfly,PVTB,111800CLA*KI,"Kimiecik, Clare",39.57
+48,Girls,15-18,50M,Butterfly,PVTB,092999CARSSM,"Smith, Caroline S",40.56
+48,Girls,15-18,50M,Butterfly,PVTB,112499REB*PI,"Pittman, Rebecca",44.75
+48,Girls,15-18,50M,Butterfly,PVKM,102198REBCSP,"Spritzer, Rebecca C",45.22
+48,Girls,15-18,50M,Butterfly,PVMB,051900EMI*DO,"Dohler-Rodas, Emily",45.67
+48,Girls,15-18,50M,Butterfly,PVTN,070198ELI*ID,"Iduma, Elizabeth",46.34
+48,Girls,15-18,50M,Butterfly,PVKM,090598MAYMBI,"Bickel, Maya M",46.59
+48,Girls,15-18,50M,Butterfly,PVTN,022100JAS*HU,"Hubbard, Jasmine",41.91
+48,Girls,15-18,50M,Butterfly,PVTB,100299JUL*OS,"Ostlund, Julia",48.46
+48,Girls,15-18,50M,Butterfly,PVWHI,081599CHL*YE,"Yetter, Chloe",48.75
+48,Girls,15-18,50M,Butterfly,PVTN,082098MIC*PR,"Przygocki, Michaela",47.41
+48,Girls,15-18,50M,Butterfly,PVTN,110497MAI*NG,"Nguyen, Mai-Anh",49.03
+48,Girls,15-18,50M,Butterfly,PVKM,041699KATJWE,"Weinsheimer, Katherine J",55.1
+48,Girls,15-18,50M,Butterfly,PVKM,040500MER*MA,"Matusow, Meribor",58.88
+48,Girls,15-18,50M,Butterfly,PVFH,032601CARMKI,"King, Caroline M",56

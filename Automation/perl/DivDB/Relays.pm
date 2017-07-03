@@ -27,6 +27,7 @@ sub sql
 package DivDB::Relays;
 use strict;
 use warnings;
+no warnings qw(uninitialized);
 use Carp;
 
 use Data::Dumper;

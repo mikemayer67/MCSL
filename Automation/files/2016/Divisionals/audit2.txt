@@ -1,0 +1,618 @@
+Event #1: Boys 12 & Under 100M Individual Medley (UN12)
+ Jenkins-Johnston, Darren ( TN) [12]:  1:34.46            
+          Nguyen, Matthew ( MB) [12]:  1:35.15            
+                 Oo, Hted ( TB) [12]:  1:35.35            
+           Cacho, Nigel A ( MB) [11]:  1:38.09            
+          Diaz, Nicolas C ( TB) [12]:  1:43.83            
+          Lawry, Hunter L ( TN) [11]:  1:44.69            
+          Lopez, Joshua E ( FH) [10]:  1:44.94            
+          Garcia, David G (WHI) [11]:  1:49.63            
+          Parmhans, Shawn ( FH) [12]:  1:59.02            
+        Yetter, Gabriel B (WHI) [10]:  2:01.10            
+           Sosa, Gamaliel ( KM) [12]:  2:06.03            
+       Johnson, William H ( KM) [11]:       NT            
+
+Event #2: Girls 12 & Under 100M Individual Medley (UN12)
+         Behailu, Abigail ( FH) [11]:  1:35.81            
+         Langsam, Bella H ( TB) [12]:  1:36.34            
+        Gaskill, Hannah E ( MB) [11]:  1:36.45             ERR [ Bad Seed.  Best time of 1:35.03 on week 1 event 2 ]
+               Diaz, Sara ( TN) [12]:  1:43.38            
+        Chapple, Aurora R ( FH) [10]:  1:44.34            
+             Paul, Celine ( TN) [11]:  1:46.20            
+         Turner, Olivia G ( TB) [12]:  1:48.00            
+           Morris, Payton ( MB) [ 8]:  1:57.22            
+         Kasper, Sunita W ( KM) [ 9]:  2:00.13            
+             Garner, Dana (WHI) [12]:  2:04.69            
+           Mason, Cameron (WHI) [12]:  2:22.59            
+           Brown, Ciera N ( KM) [10]:  2:30.22            
+
+Event #3: Boys Open 200M Medley Relay (UNOV)
+      Middlebridge Marlins Swim Team:  2:02.32            
+           Twinbrook Ducks Swim Team:  2:05.34            
+                Flower Hill Dolphins:  2:12.46            
+                     West Hillandale:  2:14.32            
+                   Tanglewood Tigers:  2:18.65            
+                 Kemp Mill Kangaroos:  2:33.19            
+
+Event #4: Girls Open 200M Medley Relay (UNOV)
+           Twinbrook Ducks Swim Team:  2:33.48            
+                   Tanglewood Tigers:  2:35.44            
+      Middlebridge Marlins Swim Team:  2:36.22            
+                     West Hillandale:  2:38.10            
+                Flower Hill Dolphins:  2:40.14            
+                 Kemp Mill Kangaroos:  2:52.66            
+
+Event #5: Boys 8 & Under 25M Freestyle (UN08)
+             Nguyen, Khoi ( TN) [ 8]:    18.91            
+           Donley, Trevor ( TN) [ 7]:    19.13            
+     Jungbluth, Alexander ( MB) [ 7]:    19.84            
+           Luse, Andrew V (WHI) [ 8]:    21.32            
+           Ghosh, Shreyas ( FH) [ 8]:    22.15            
+            Ray, Cullum A ( FH) [ 8]:    22.82            
+          Mason, Collin J (WHI) [ 8]:    24.32            
+             Poje, Adam J ( TB) [ 8]:    25.69            
+           Fowler, Landon ( MB) [ 7]:    26.85            
+              Dorr, Sam W ( KM) [ 8]:    29.00            
+            Dorr, Jason E ( KM) [ 8]:    40.16            
+          Berube, James E ( TB) [ 5]:    47.53            
+
+Event #6: Girls 8 & Under 25M Freestyle (UN08)
+           Morris, Payton ( MB) [ 8]:    21.00            
+          Garcia, Vanessa (WHI) [ 8]:    21.89            
+          Turner, Alise B ( TB) [ 7]:    22.82            
+          Dobrota, Anne D (WHI) [ 7]:    23.41            
+         Bayona, Jimena P ( TN) [ 7]:    26.00            
+         Moser, Annabelle ( KM) [ 8]:    30.61            
+       Berube, Margaret V ( TB) [ 7]:    31.81            
+          Martinez, Emely ( KM) [ 7]:    32.93            
+       Campos, Joceline N ( FH) [ 7]:    35.47            
+            Bascope, Maya ( TN) [ 6]:    39.45            
+       Amaya, Cassandra A ( MB) [ 7]:    40.41            
+
+Event #7: Boys 9-10 50M Freestyle (0910)
+          Lopez, Joshua E ( FH) [10]:    38.91            
+          Badobre, Axel F ( FH) [ 9]:    39.47            
+            Turner, Eli P ( TB) [10]:    39.66            
+            Brown, Adan J (WHI) [ 9]:    42.33            
+        Yetter, Gabriel B (WHI) [10]:    43.26            
+           Ford, Collin M ( TN) [10]:    47.28            
+          Reed, Lincoln W ( TB) [10]:    50.55            
+        Bascope, Santiago ( TN) [ 9]:    50.85            
+
+Event #8: Girls 9-10 50M Freestyle (0910)
+        Chapple, Aurora R ( FH) [10]:    38.11            
+          Chandran, Leela ( FH) [10]:    39.09            
+            Diaz, Grace E ( TB) [10]:    39.53            
+       Epley, Elizabeth Y ( TB) [ 9]:    41.37            
+          Raymond, Ella P (WHI) [10]:    43.00            
+         Couch, Caitlyn J ( MB) [ 9]:    46.85            
+         Kasper, Sunita W ( KM) [ 9]:    47.22            
+        Woolard, Savannah ( MB) [ 9]:    48.94            
+        Hoang, Charlize K ( TN) [ 9]:    51.34            
+          Moser, Samantha ( KM) [10]:    51.51            
+     Gyeke-Aboagye, Joy G ( TN) [10]:    51.60            
+            Potter, Ava K (WHI) [ 9]:    58.31            
+
+Event #9: Boys 13-14 50M Freestyle (1314)
+         Martin, Jonathan ( TN) [14]:    27.47            
+     Perencevich, Stephen ( KM) [13]:    30.56            
+       Phillips, Connor D ( TB) [14]:    31.02            
+          Helton, Brian A ( FH) [13]:    31.27            
+           Rojas, Anthony (WHI) [14]:    31.75            
+               Ard, Ian S (WHI) [14]:    32.48            
+            Fowler, Shane ( MB) [13]:    33.41            
+            Martin, Jonah ( TN) [13]:    34.03            
+         Huynh, Brandon D ( MB) [13]:    34.13            
+         Salas, Michael P ( TB) [13]:    34.28            
+          Menendez, Scott ( KM) [14]:    35.08            
+Ferentinos, Christopher M ( FH) [13]:    35.56            
+
+Event #10: Girls 13-14 50M Freestyle (1314)
+         Hubbard, Trinity ( TN) [13]:    29.31            
+             Harty, Maris ( TB) [13]:    35.13            
+           Forrest, Cadie ( TB) [13]:    35.73            
+         Penate, Victoria ( MB) [14]:    36.43            
+Badobre, Nicole-Chelsea A ( FH) [13]:    36.97            
+          Castle, Rachael ( TN) [14]:    37.50            
+        Whitaker, Amira E ( MB) [14]:    37.58            
+             Lynch, Gemma (WHI) [13]:    38.23            
+          Alvarez, Mariah (WHI) [14]:    39.03            
+          Page, Camille M ( FH) [13]:    41.40            
+          Dorr, Tabitha D ( KM) [13]:    43.31            
+         Davis, Kennedy L ( KM) [13]:    52.42            
+
+Event #11: Boys 11-12 50M Freestyle (1112)
+ Jenkins-Johnston, Darren ( TN) [12]:    33.15            
+          Nguyen, Matthew ( MB) [12]:    34.33            
+        Cajayon, Calvin A ( MB) [12]:    35.81            
+          Diaz, Nicolas C ( TB) [12]:    36.07            
+          Pone, Gabriel D ( TB) [11]:    37.80            
+          Lawry, Hunter L ( TN) [11]:    39.75            
+          Garcia, David G (WHI) [11]:    40.97            
+          Potter, Aiden A (WHI) [11]:    41.37            
+       Johnson, William H ( KM) [11]:    41.58            
+           Sosa, Gamaliel ( KM) [12]:    41.97            
+           Page, Marcus C ( FH) [11]:    42.80            
+       Rosenberg, Benny H ( FH) [11]:    47.77            
+
+Event #12: Girls 11-12 50M Freestyle (1112)
+        Gaskill, Hannah E ( MB) [11]:    36.58            
+         Behailu, Abigail ( FH) [11]:    38.00            
+         Langsam, Bella H ( TB) [12]:    38.20            
+         Carmona, Marisol ( FH) [12]:    38.55            
+               Diaz, Sara ( TN) [12]:    39.13            
+          Cacho, Lauren P ( MB) [11]:    39.71            
+          Diaz, Gabriella ( TN) [11]:    40.06            
+         Turner, Olivia G ( TB) [12]:    41.37            
+              Smith, Kyra (WHI) [11]:    45.32            
+           Mason, Cameron (WHI) [12]:    49.50            
+
+Event #13: Boys 15-18 100M Freestyle (1518)
+           Vipavetz, Ryan ( MB) [15]:    55.26            
+           Reed, Hunter L ( FH) [18]:    55.28            
+         Samuelson, Eli M ( TB) [18]:    58.94            
+            Girguis, Mark ( MB) [18]:    59.44            
+          Ostuni, Anthony ( TB) [17]:  1:00.44            
+      Ramirez, JuanCarlos ( FH) [16]:  1:01.16            
+          Wallace, Kyle A (WHI) [16]:  1:04.00            
+             Yetter, Luka (WHI) [17]:  1:05.94            
+             Nguyen, Viet ( TN) [15]:  1:07.06            
+Garcia-McConnell, Christian ( TN) [18]:  1:08.25            
+             Kitts, Tyler ( KM) [15]:  1:12.09            
+         Sylvester, Dylan ( KM) [15]:  1:14.15            
+
+Event #14: Girls 15-18 100M Freestyle (1518)
+        N'Gambwa, Amina J ( MB) [16]:  1:03.25            
+            Lo, Georgia W (WHI) [16]:  1:10.72            
+             Moser, Zoe J ( TB) [15]:  1:14.44            
+            Mayer, Anna I ( FH) [16]:  1:14.85            
+         Garcia, Andrea M (WHI) [15]:  1:16.46            
+           Vipavetz, Lexi ( MB) [18]:  1:16.65            
+          Garrison, Amber ( KM) [17]:  1:17.28            
+         Hubbard, Jasmine ( TN) [16]:  1:19.77            
+          Martin, Jessica ( TN) [16]:  1:21.16            
+      Spritzer, Rebecca C ( KM) [17]:  1:26.87            
+      De Melo, Jacqueline ( TB) [15]:  1:30.00            
+         King, Caroline M ( FH) [15]:  1:31.97            
+
+Event #15: Boys 13-14 100M Individual Medley (1314)
+         Martin, Jonathan ( TN) [14]:  1:15.19            
+          Helton, Brian A ( FH) [13]:  1:23.07            
+            Hines, Jack B (WHI) [14]:  1:23.21            
+           Rojas, Anthony (WHI) [14]:  1:28.75            
+         Goggin, Justin J ( FH) [13]:  1:31.33            
+         Salas, Michael P ( TB) [13]:  1:32.55            
+          Matusow, Jayden ( KM) [13]:  1:32.78            
+            Fowler, Shane ( MB) [13]:  1:34.54            
+            Martin, Jonah ( TN) [13]:  1:36.68            
+         Huynh, Brandon D ( MB) [13]:  1:40.58            
+          Manzon, Jason S ( KM) [14]:       NT            
+       Phillips, Connor D ( TB) [14]:       NT            
+
+Event #16: Girls 13-14 100M Individual Medley (1314)
+         Hubbard, Trinity ( TN) [13]:  1:22.15            
+             Harty, Maris ( TB) [13]:  1:32.34            
+Badobre, Nicole-Chelsea A ( FH) [13]:  1:35.81            
+           Forrest, Cadie ( TB) [13]:  1:35.95            
+          Castle, Rachael ( TN) [14]:  1:38.34            
+            Gupta, Maansi ( FH) [13]:  1:39.01            
+        Whitaker, Amira E ( MB) [14]:  1:43.02            
+             Lynch, Gemma (WHI) [13]:  1:50.86            
+      Wallace, Samantha M (WHI) [14]:  1:53.25            
+          Dorr, Tabitha D ( KM) [13]:  1:54.62            
+         Penate, Victoria ( MB) [14]:       NT            
+
+Event #17: Boys 8 & Under 25M Backstroke (UN08)
+      Chandran, Alexander ( FH) [ 8]:    23.95            
+          Ford, Brendan S ( TN) [ 8]:    26.58            
+           Luse, Andrew V (WHI) [ 8]:    26.91            
+     Jungbluth, Alexander ( MB) [ 7]:    28.44            
+          Taheri, Mansoor ( FH) [ 7]:    29.43            
+           Nazir, Royce A (WHI) [ 6]:    30.41            
+             Poje, Adam J ( TB) [ 8]:    32.64            
+           Fowler, Landon ( MB) [ 7]:    33.18            
+              Dorr, Sam W ( KM) [ 8]:    34.53            
+            Dorr, Jason E ( KM) [ 8]:  1:00.94            
+          Berube, James E ( TB) [ 5]:       NT            
+             Nguyen, Khoi ( TN) [ 8]:       NT            
+
+Event #18: Girls 8 & Under 25M Backstroke (UN08)
+           Morris, Payton ( MB) [ 8]:    25.94            
+          Garcia, Vanessa (WHI) [ 8]:    27.50            
+McKeever-Maragni, Isela G (WHI) [ 8]:    31.31            
+          Turner, Alise B ( TB) [ 7]:    32.74            
+       Berube, Margaret V ( TB) [ 7]:    33.29            
+         Bayona, Jimena P ( TN) [ 7]:    33.34            
+       Jauquet, Lillian T ( FH) [ 7]:    33.49            
+            Hu, Abigail C ( KM) [ 8]:    37.25            
+             Hart, Hannah ( TN) [ 8]:    42.14            
+       Campos, Joceline N ( FH) [ 7]:    45.69            
+          Wilson, Diana E ( MB) [ 6]:    45.98            
+          Martinez, Emely ( KM) [ 7]:    50.87            
+
+Event #19: Boys 9-10 25M Backstroke (0910)
+          Lopez, Joshua E ( FH) [10]:    24.00            
+            Brown, Adan J (WHI) [ 9]:    24.13            
+         Ramirez, Diego F ( FH) [ 9]:    24.40            
+            Turner, Eli P ( TB) [10]:    24.69            
+           Ford, Collin M ( TN) [10]:    26.28            
+        Dobrota, Thomas E (WHI) [ 9]:    27.21            
+          Reed, Lincoln W ( TB) [10]:    32.00            
+        Fessehazion, Abel ( TN) [10]:    35.34            
+
+Event #20: Girls 9-10 25M Backstroke (0910)
+          Chandran, Leela ( FH) [10]:    21.13            
+        Chapple, Aurora R ( FH) [10]:    22.07            
+       Epley, Elizabeth Y ( TB) [ 9]:    23.79            
+          Raymond, Ella P (WHI) [10]:    26.28            
+            Diaz, Grace E ( TB) [10]:    27.35            
+         Kasper, Sunita W ( KM) [ 9]:    27.81            
+        Woolard, Savannah ( MB) [ 9]:    27.88            
+        Hoang, Charlize K ( TN) [ 9]:    28.59            
+            Potter, Ava K (WHI) [ 9]:    29.44            
+           Brown, Ciera N ( KM) [10]:    30.63            
+           Alfaro, Claire ( TN) [ 9]:    37.47            
+
+Event #21: Boys 15-18 100M Backstroke (1518)
+           Reed, Hunter L ( FH) [18]:  1:03.37            
+          Woolard, Wolfie ( MB) [15]:  1:04.76            
+           Vipavetz, Ryan ( MB) [15]:  1:05.03            
+         Samuelson, Eli M ( TB) [18]:  1:06.02            
+       Phillips, Collin B ( TB) [16]:  1:08.93            
+      Ramirez, JuanCarlos ( FH) [16]:  1:17.43            
+           Daniel, Mickey (WHI) [17]:  1:19.71            
+Garcia-McConnell, Christian ( TN) [18]:  1:22.44            
+          Diaz, Alejandro ( TN) [15]:  1:22.75            
+            Daniel, Hailu (WHI) [15]:  1:24.66            
+             Kitts, Tyler ( KM) [15]:  1:31.78            
+           Garrison, Cody ( KM) [18]:  1:37.09            
+
+Event #22: Girls 15-18 100M Backstroke (1518)
+        N'Gambwa, Amina J ( MB) [16]:  1:14.22            
+         Vaules, Sayaka H ( FH) [17]:  1:19.12            
+            Lo, Georgia W (WHI) [16]:  1:22.87            
+             Moser, Zoe J ( TB) [15]:  1:25.02            
+         Garcia, Andrea M (WHI) [15]:  1:30.71            
+          Garrison, Amber ( KM) [17]:  1:32.61            
+         Hubbard, Jasmine ( TN) [16]:  1:33.90            
+      Dohler-Rodas, Emily ( MB) [16]:  1:38.16            
+          Nguyen, Mai-Anh ( TN) [18]:  1:39.35            
+           Ostlund, Julia ( TB) [16]:  1:47.88            
+         King, Caroline M ( FH) [15]:  1:49.39            
+    Campagna, Catherine G ( KM) [15]:  2:19.47            
+
+Event #23: Boys 11-12 50M Backstroke (1112)
+          Nguyen, Matthew ( MB) [12]:    44.06            
+          Diaz, Nicolas C ( TB) [12]:    44.82            
+                 Oo, Hted ( TB) [12]:    45.88            
+           Cacho, Nigel A ( MB) [11]:    46.50            
+          Lawry, Hunter L ( TN) [11]:    50.05            
+          Potter, Aiden A (WHI) [11]:    51.47            
+ Jenkins-Johnston, Darren ( TN) [12]:    51.83            
+          Parmhans, Shawn ( FH) [12]:    57.94            
+             Hines, Harry (WHI) [11]:  1:00.71            
+           Clark, David H ( FH) [11]:  1:01.63            
+           Sosa, Gamaliel ( KM) [12]:  1:03.36            
+
+Event #24: Girls 11-12 50M Backstroke (1112)
+         Langsam, Bella H ( TB) [12]:    43.93            
+         Behailu, Abigail ( FH) [11]:    44.15            
+         Carmona, Marisol ( FH) [12]:    45.18            
+        Gaskill, Hannah E ( MB) [11]:    45.44            
+               Diaz, Sara ( TN) [12]:    47.25            
+          Diaz, Gabriella ( TN) [11]:    49.78            
+         Turner, Olivia G ( TB) [12]:    51.09            
+          Cacho, Lauren P ( MB) [11]:    53.28            
+             Garner, Dana (WHI) [12]:    57.71            
+              Smith, Kyra (WHI) [11]:    57.75            
+
+Event #25: Boys 13-14 50M Backstroke (1314)
+         Martin, Jonathan ( TN) [14]:    36.06            
+       Phillips, Connor D ( TB) [14]:    38.35            
+          Helton, Brian A ( FH) [13]:    38.94            
+     Perencevich, Stephen ( KM) [13]:    39.16            
+            Hines, Jack B (WHI) [14]:    39.63            
+         Salas, Michael P ( TB) [13]:    41.34            
+           Rojas, Anthony (WHI) [14]:    42.41            
+       Manzon, Terrence J ( KM) [14]:    42.50            
+            Fowler, Shane ( MB) [13]:    43.44            
+         Goggin, Justin J ( FH) [13]:    44.19            
+         Huynh, Brandon D ( MB) [13]:    46.09            
+
+Event #26: Girls 13-14 50M Backstroke (1314)
+             Harty, Maris ( TB) [13]:    41.52            
+           Forrest, Cadie ( TB) [13]:    43.03            
+Badobre, Nicole-Chelsea A ( FH) [13]:    46.47            
+         Nguyen, Minh-Anh ( TN) [13]:    46.94            
+        Whitaker, Amira E ( MB) [14]:    47.22            
+          Alvarez, Mariah (WHI) [14]:    49.29            
+           Mason, Penny J (WHI) [13]:    51.20            
+          Castle, Rachael ( TN) [14]:    52.32            
+            Gupta, Maansi ( FH) [13]:    53.00            
+         Davis, Kennedy L ( KM) [13]:  1:05.07            
+
+Event #27: Boys 15-18 100M Individual Medley (1518)
+           Reed, Hunter L ( FH) [18]:  1:04.57            
+          Woolard, Wolfie ( MB) [15]:  1:05.56            
+          Ostuni, Anthony ( TB) [17]:  1:06.63            
+           Vipavetz, Ryan ( MB) [15]:  1:07.82            
+         Samuelson, Eli M ( TB) [18]:  1:08.91            
+      Ramirez, JuanCarlos ( FH) [16]:  1:10.93            
+          Wallace, Kyle A (WHI) [16]:  1:13.47            
+             Nguyen, Viet ( TN) [15]:  1:18.84            
+            Alfaro, Ethan ( TN) [15]:  1:23.03            
+             Kitts, Tyler ( KM) [15]:  1:25.58            
+     Sainvilier, Joshua R (WHI) [16]:  1:26.81            
+           Garrison, Cody ( KM) [18]:  1:28.72            
+
+Event #28: Girls 15-18 100M Individual Medley (1518)
+        N'Gambwa, Amina J ( MB) [16]:  1:12.56            
+         Vaules, Sayaka H ( FH) [17]:  1:13.36            
+            Lo, Georgia W (WHI) [16]:  1:20.22            
+             Moser, Zoe J ( TB) [15]:  1:21.91            
+            Mayer, Anna I ( FH) [16]:  1:26.22            
+         Garcia, Andrea M (WHI) [15]:  1:28.45            
+          Martin, Jessica ( TN) [16]:  1:29.54            
+          Garrison, Amber ( KM) [17]:  1:30.85            
+           Vipavetz, Lexi ( MB) [18]:  1:34.59            
+          Nguyen, Mai-Anh ( TN) [18]:  1:36.19            
+      Spritzer, Rebecca C ( KM) [17]:  1:37.69            
+            Manor, Isabel ( TB) [18]:       NT            
+
+Event #29: Boys 8 & Under 25M Breaststroke (UN08)
+      Chandran, Alexander ( FH) [ 8]:    25.01            
+             Nguyen, Khoi ( TN) [ 8]:    25.25            
+           Donley, Trevor ( TN) [ 7]:    26.45            NOTE [ This time is event 31 week 3 ]
+     Jungbluth, Alexander ( MB) [ 7]:    29.20            
+           Ghosh, Shreyas ( FH) [ 8]:    29.24            
+             Poje, Adam J ( TB) [ 8]:    36.16            
+          Wilson, James J ( MB) [ 8]:    37.32            
+            Dorr, Jason E ( KM) [ 8]:    50.22            
+              Dorr, Sam W ( KM) [ 8]:       NT            
+
+Event #30: Girls 8 & Under 25M Breaststroke (UN08)
+           Morris, Payton ( MB) [ 8]:    28.19            
+         Moser, Annabelle ( KM) [ 8]:    34.03            
+          Turner, Alise B ( TB) [ 7]:    34.97            
+             Hart, Hannah ( TN) [ 8]:    35.78            
+          Dobrota, Anne D (WHI) [ 7]:    36.03            
+       Jauquet, Lillian T ( FH) [ 7]:    36.70            
+          Thiero, Tatiana (WHI) [ 8]:    38.84            
+     Bergoffen, Kannika F ( TB) [ 7]:    43.24            
+         Bayona, Jimena P ( TN) [ 7]:    55.53            
+       Campos, Joceline N ( FH) [ 7]:       NT            
+          Martinez, Emely ( KM) [ 7]:       NT            
+
+Event #31: Boys 9-10 25M Breaststroke (0910)
+          Lopez, Joshua E ( FH) [10]:    24.69            
+            Turner, Eli P ( TB) [10]:    25.67            
+          Badobre, Axel F ( FH) [ 9]:    25.79            
+        Dobrota, Thomas E (WHI) [ 9]:    25.97            
+        Yetter, Gabriel B (WHI) [10]:    26.43            
+        Bascope, Santiago ( TN) [ 9]:    29.72            
+        Fessehazion, Abel ( TN) [10]:    31.98            
+Lyons-Bennington, Matthew L ( TB) [ 9]:    35.10            
+
+Event #32: Girls 9-10 25M Breaststroke (0910)
+       Badobre, Oceanie T ( FH) [10]:    22.19            
+        Chapple, Aurora R ( FH) [10]:    23.25            
+        Woolard, Savannah ( MB) [ 9]:    23.69            
+          Raymond, Ella P (WHI) [10]:    26.28            
+     Gyeke-Aboagye, Joy G ( TN) [10]:    27.82            
+             Colas, Anais ( TN) [ 9]:    29.28            
+          Moser, Samantha ( KM) [10]:    29.70            
+         Pone, Isabelle D ( TB) [10]:    32.16            
+           Brown, Ciera N ( KM) [10]:    34.88            
+
+Event #33: Boys 11-12 50M Breaststroke (1112)
+          Nguyen, Matthew ( MB) [12]:    45.37            
+                 Oo, Hted ( TB) [12]:    47.04            
+         Langsam, Macky S ( TB) [11]:    51.44            
+            Ropeta, Lakki ( MB) [12]:    52.97            
+          Lawry, Hunter L ( TN) [11]:    53.78            
+           Clark, David H ( FH) [11]:    56.25            
+       Johnson, William H ( KM) [11]:    57.28            
+Gassaway-Mesutmen, Taikhem ( TN) [11]:    57.55            
+          Parmhans, Shawn ( FH) [12]:    58.80            
+          Garcia, David G (WHI) [11]:  1:01.49            
+             Hines, Harry (WHI) [11]:  1:08.59            
+
+Event #34: Girls 11-12 50M Breaststroke (1112)
+     PeBenito, Isabella E ( FH) [12]:    45.19            
+         Langsam, Bella H ( TB) [12]:    45.25            
+         Behailu, Abigail ( FH) [11]:    48.07            
+             Paul, Celine ( TN) [11]:    48.17            
+        Gaskill, Hannah E ( MB) [11]:    48.41            
+          Hubbard, Alyssa ( TN) [11]:    55.78            
+              Smith, Kyra (WHI) [11]:    58.09            
+  Taylor, Anna-Charlize C ( MB) [11]:  1:00.07            
+             Garner, Dana (WHI) [12]:  1:02.87            
+
+Event #35: Boys 13-14 50M Breaststroke (1314)
+           Rojas, Anthony (WHI) [14]:    42.06            
+          Menendez, Scott ( KM) [14]:    42.10            
+            Hines, Jack B (WHI) [14]:    43.15            
+            Fowler, Shane ( MB) [13]:    45.40            
+           Mazhari, Arron ( FH) [13]:    46.45            
+       Phillips, Connor D ( TB) [14]:    46.71            
+Ferentinos, Christopher M ( FH) [13]:    47.04            
+            Martin, Jonah ( TN) [13]:    47.68            
+        Manzon, Phillip H ( KM) [14]:    47.90            
+
+Event #36: Girls 13-14 50M Breaststroke (1314)
+         Hubbard, Trinity ( TN) [13]:    42.61            
+         Nguyen, Minh-Anh ( TN) [13]:    43.66            
+          Moser, Alexia L ( TB) [13]:    44.82            
+         Penate, Victoria ( MB) [14]:    45.22            
+            Gupta, Maansi ( FH) [13]:    47.85            
+            Ostuni, Grace ( TB) [13]:    47.92            
+          Page, Camille M ( FH) [13]:    51.90            
+          Dorr, Tabitha D ( KM) [13]:    52.14            
+      Wallace, Samantha M (WHI) [14]:    52.64            
+             Lynch, Gemma (WHI) [13]:    55.77            
+
+Event #37: Boys 15-18 100M Breaststroke (1518)
+          Woolard, Wolfie ( MB) [15]:  1:12.94            
+            Girguis, Mark ( MB) [18]:  1:14.19            
+          Ostuni, Anthony ( TB) [17]:  1:15.47            
+      Ramirez, JuanCarlos ( FH) [16]:  1:21.94            
+         Soldavini, Scott ( TB) [16]:  1:24.43            
+          Wallace, Kyle A (WHI) [16]:  1:24.56            
+             Kitts, Tyler ( KM) [15]:  1:28.58            
+             Nguyen, Viet ( TN) [15]:  1:30.31            
+          Anam, Zeeshan F ( FH) [15]:  1:30.97            
+            Paul, Calixte ( TN) [17]:  1:34.79            
+            Daniel, Hailu (WHI) [15]:  1:34.90            
+         Sylvester, Dylan ( KM) [15]:  1:40.31            
+
+Event #38: Girls 15-18 100M Breaststroke (1518)
+         Vaules, Sayaka H ( FH) [17]:  1:24.87            
+            Mayer, Anna I ( FH) [16]:  1:28.48            
+             Moser, Zoe J ( TB) [15]:  1:28.59            
+      Dohler-Rodas, Emily ( MB) [16]:  1:37.66            
+         Iduma, Elizabeth ( TN) [17]:  1:38.75            
+          Martin, Jessica ( TN) [16]:  1:45.17            
+            Yetter, Chloe (WHI) [16]:  1:47.20            
+      Spritzer, Rebecca C ( KM) [17]:  1:50.60            
+    Campagna, Catherine G ( KM) [15]:  2:21.00            
+            Murray, Molly (WHI) [16]:       NT            
+        N'Gambwa, Amina J ( MB) [16]:       NT            
+      De Melo, Jacqueline ( TB) [15]:       NT            
+
+Event #39: Boys 8 & Under 25M Butterfly (UN08)
+           Donley, Trevor ( TN) [ 7]:    21.63            
+          Ford, Brendan S ( TN) [ 8]:    26.09            
+      Chandran, Alexander ( FH) [ 8]:    26.96            
+           Ghosh, Shreyas ( FH) [ 8]:    30.15            
+           Luse, Andrew V (WHI) [ 8]:    31.56            
+           Fowler, Landon ( MB) [ 7]:    47.09            
+
+Event #40: Girls 8 & Under 25M Butterfly (UN08)
+          Garcia, Vanessa (WHI) [ 8]:    28.13            
+          Thiero, Tatiana (WHI) [ 8]:    32.69            
+       Jauquet, Lillian T ( FH) [ 7]:    36.28            
+             Hart, Hannah ( TN) [ 8]:    36.50            
+            Hu, Abigail C ( KM) [ 8]:    49.75            
+         Moser, Annabelle ( KM) [ 8]:       NT            
+       Berube, Margaret V ( TB) [ 7]:       NT            
+
+Event #41: Boys 9-10 25M Butterfly (0910)
+         Ramirez, Diego F ( FH) [ 9]:    21.92            
+          Badobre, Axel F ( FH) [ 9]:    21.94            
+            Brown, Adan J (WHI) [ 9]:    24.37            
+        Yetter, Gabriel B (WHI) [10]:    24.57            
+           Ford, Collin M ( TN) [10]:    26.14            
+        Bascope, Santiago ( TN) [ 9]:    38.41            
+Lyons-Bennington, Matthew L ( TB) [ 9]:    42.15            
+
+Event #42: Girls 9-10 25M Butterfly (0910)
+          Chandran, Leela ( FH) [10]:    19.00            
+       Badobre, Oceanie T ( FH) [10]:    20.84            
+       Epley, Elizabeth Y ( TB) [ 9]:    23.36            
+         Kasper, Sunita W ( KM) [ 9]:    25.84            
+     Gyeke-Aboagye, Joy G ( TN) [10]:    27.06            
+            Diaz, Grace E ( TB) [10]:    27.74            
+         Couch, Caitlyn J ( MB) [ 9]:    28.34            
+          Moser, Samantha ( KM) [10]:    30.34            
+        Kersima, Meklet A ( TN) [ 9]:    33.44            
+
+Event #43: Boys 11-12 50M Butterfly (1112)
+                 Oo, Hted ( TB) [12]:    40.15            
+        Cajayon, Calvin A ( MB) [12]:    40.84            
+ Jenkins-Johnston, Darren ( TN) [12]:    46.25            
+          Pone, Gabriel D ( TB) [11]:    47.88            
+           Cacho, Nigel A ( MB) [11]:    48.00            
+          Potter, Aiden A (WHI) [11]:    53.19            
+       Johnson, William H ( KM) [11]:    57.75            
+          Parmhans, Shawn ( FH) [12]:    58.12            
+           Page, Marcus C ( FH) [11]:    59.03            
+          Garcia, David G (WHI) [11]:  1:00.03            
+           Sosa, Gamaliel ( KM) [12]:  1:01.22            
+        Desalegn, Caleb G ( TN) [11]:  1:03.61            
+
+Event #44: Girls 11-12 50M Butterfly (1112)
+       Lawrence, Bobbie M ( FH) [12]:    44.41            
+         Carmona, Marisol ( FH) [12]:    45.69            
+         Turner, Olivia G ( TB) [12]:    46.93            
+             Paul, Celine ( TN) [11]:    49.28            
+               Diaz, Sara ( TN) [12]:    49.75            
+             Garner, Dana (WHI) [12]:    53.25            
+           Mason, Cameron (WHI) [12]:  1:09.16            
+          Cacho, Lauren P ( MB) [11]:  1:15.88            
+
+Event #45: Boys 13-14 50M Butterfly (1314)
+         Martin, Jonathan ( TN) [14]:    33.00            
+          Helton, Brian A ( FH) [13]:    34.27            
+     Perencevich, Stephen ( KM) [13]:    35.75            
+Ferentinos, Christopher M ( FH) [13]:    38.35            
+            Hines, Jack B (WHI) [14]:    38.87            
+               Ard, Ian S (WHI) [14]:    42.03            
+         Salas, Michael P ( TB) [13]:    44.67            
+            Martin, Jonah ( TN) [13]:    45.55            
+         Huynh, Brandon D ( MB) [13]:       NT            
+          Matusow, Jayden ( KM) [13]:       NT            
+
+Event #46: Girls 13-14 50M Butterfly (1314)
+         Hubbard, Trinity ( TN) [13]:    34.11            
+             Harty, Maris ( TB) [13]:    39.69            
+Badobre, Nicole-Chelsea A ( FH) [13]:    42.09            
+           Forrest, Cadie ( TB) [13]:    44.69            
+          Castle, Rachael ( TN) [14]:    45.00            
+            Gupta, Maansi ( FH) [13]:    48.04            
+          Alvarez, Mariah (WHI) [14]:    48.13            
+        Whitaker, Amira E ( MB) [14]:    54.39            
+      Wallace, Samantha M (WHI) [14]:    54.72            
+          Dorr, Tabitha D ( KM) [13]:    56.50            
+         Davis, Kennedy L ( KM) [13]:       NT            
+
+Event #47: Boys 15-18 50M Butterfly (1518)
+           Vipavetz, Ryan ( MB) [15]:    27.46            
+           Reed, Hunter L ( FH) [18]:    28.12            
+          Ostuni, Anthony ( TB) [17]:    28.48            
+         Samuelson, Eli M ( TB) [18]:    29.71            
+            Girguis, Mark ( MB) [18]:    30.42            
+             Yetter, Luka (WHI) [17]:    31.78            
+          Wallace, Kyle A (WHI) [16]:    31.81            
+            Paul, Calixte ( TN) [17]:    33.13            
+           Gemma, Jacob M ( FH) [15]:    34.09            
+Garcia-McConnell, Christian ( TN) [18]:    36.06            
+         Sylvester, Dylan ( KM) [15]:    36.89            
+           Garrison, Cody ( KM) [18]:    37.89            
+
+Event #48: Girls 15-18 50M Butterfly (1518)
+         Vaules, Sayaka H ( FH) [17]:    32.07            
+            Lo, Georgia W (WHI) [16]:    35.53            
+          Martin, Jessica ( TN) [16]:    35.82            
+         Garcia, Andrea M (WHI) [15]:    38.36            
+           Vipavetz, Lexi ( MB) [18]:    38.65            
+            Mayer, Anna I ( FH) [16]:    39.07            
+         Hubbard, Jasmine ( TN) [16]:    41.91            
+          Garrison, Amber ( KM) [17]:    42.20            
+      Spritzer, Rebecca C ( KM) [17]:    45.22            
+      Dohler-Rodas, Emily ( MB) [16]:    45.67            
+           Ostlund, Julia ( TB) [16]:    48.46            
+            Manor, Isabel ( TB) [18]:       NT            
+
+Event #49: Boys 14 & Under 175M Freestyle Relay (UN14)
+                   Tanglewood Tigers:  2:08.68            
+                Flower Hill Dolphins:  2:09.22            
+           Twinbrook Ducks Swim Team:  2:16.99            
+                     West Hillandale:  2:23.69            
+                 Kemp Mill Kangaroos:                      ERR [ Bad Seed.  Best time of 2:44.28 at the relay carnival ]
+
+Event #50: Girls 14 & Under 175M Freestyle Relay (UN14)
+      Middlebridge Marlins Swim Team:  2:18.16            
+                Flower Hill Dolphins:  2:22.42            
+                   Tanglewood Tigers:  2:26.90            
+           Twinbrook Ducks Swim Team:  2:27.62            
+                     West Hillandale:  2:35.26            
+                 Kemp Mill Kangaroos:                      ERR [ Bad Seed.  Best time of 167.09 on week  5.00 team A ]
+
+
+
+Discrepancies:
+
+  1) Event 2: Gaskill, Hannah E has bad seed time
+  2) Event 49: Kemp Mill Kangaroos has bad seed time
+  3) Event 50: Kemp Mill Kangaroos has bad seed time
+

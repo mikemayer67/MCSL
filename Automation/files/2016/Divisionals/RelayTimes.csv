@@ -1,0 +1,44 @@
+event,gender,age,distance,stroke,team,seed_time
+3,Boys,Open,200M,"Medley Relay",PVTB-A,125.34
+3,Boys,Open,200M,"Medley Relay",PVWHI-A,134.32
+3,Boys,Open,200M,"Medley Relay",PVMB-A,122.32
+3,Boys,Open,200M,"Medley Relay",PVFH-A,134.22
+3,Boys,Open,200M,"Medley Relay",PVTN-A,138.65
+3,Boys,Open,200M,"Medley Relay",PVKM-A,153.19
+3,Boys,Open,200M,"Medley Relay",PVTN-B,151.42
+3,Boys,Open,200M,"Medley Relay",PVKM-B,163.21
+3,Boys,Open,200M,"Medley Relay",PVMB-B,127.44
+3,Boys,Open,200M,"Medley Relay",PVTB-B,148.1
+3,Boys,Open,200M,"Medley Relay",PVFH-B,167.92
+4,Girls,Open,200M,"Medley Relay",PVWHI-A,159.03
+4,Girls,Open,200M,"Medley Relay",PVMB-A,156.22
+4,Girls,Open,200M,"Medley Relay",PVFH-A,160.14
+4,Girls,Open,200M,"Medley Relay",PVTN-A,157.44
+4,Girls,Open,200M,"Medley Relay",PVTB-B,172.54
+4,Girls,Open,200M,"Medley Relay",PVTB-A,153.48
+4,Girls,Open,200M,"Medley Relay",PVFH-B,175.44
+4,Girls,Open,200M,"Medley Relay",PVKM-A,172.66
+4,Girls,Open,200M,"Medley Relay",PVTN-B,165.71
+4,Girls,Open,200M,"Medley Relay",PVKM-B,213.27
+49,Boys,"14 & Under",175M,"Freestyle Relay",PVTN-A,131.96
+49,Boys,"14 & Under",175M,"Freestyle Relay",PVFH-A,134.69
+49,Boys,"14 & Under",175M,"Freestyle Relay",PVWHI-A,143.69
+49,Boys,"14 & Under",175M,"Freestyle Relay",PVFH-B,140.9
+49,Boys,"14 & Under",175M,"Freestyle Relay",PVWHI-B,149.83
+49,Boys,"14 & Under",175M,"Freestyle Relay",PVMB-A,143.45
+49,Boys,"14 & Under",175M,"Freestyle Relay",PVTB-A,136.99
+49,Boys,"14 & Under",175M,"Freestyle Relay",PVTN-B,148.85
+49,Boys,"14 & Under",175M,"Freestyle Relay",PVKM-A,171.14
+49,Boys,"14 & Under",175M,"Freestyle Relay",PVKM-B,182.47
+49,Boys,"14 & Under",175M,"Freestyle Relay",PVTB-B,192.75
+50,Girls,"14 & Under",175M,"Freestyle Relay",PVFH-A,145
+50,Girls,"14 & Under",175M,"Freestyle Relay",PVMB-A,144.19
+50,Girls,"14 & Under",175M,"Freestyle Relay",PVWHI-A,155.26
+50,Girls,"14 & Under",175M,"Freestyle Relay",PVTB-B,149.13
+50,Girls,"14 & Under",175M,"Freestyle Relay",PVTB-A,147.62
+50,Girls,"14 & Under",175M,"Freestyle Relay",PVTN-A,147.76
+50,Girls,"14 & Under",175M,"Freestyle Relay",PVWHI-B,176.05
+50,Girls,"14 & Under",175M,"Freestyle Relay",PVFH-B,155.89
+50,Girls,"14 & Under",175M,"Freestyle Relay",PVTN-B,169.87
+50,Girls,"14 & Under",175M,"Freestyle Relay",PVKM-A,167.09
+50,Girls,"14 & Under",175M,"Freestyle Relay",PVKM-B,191.29

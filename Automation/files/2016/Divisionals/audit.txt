@@ -1,0 +1,732 @@
+Event #1: Boys 12 & Under 100M Individual Medley (UN12)
+ Jenkins-Johnston, Darren ( TN) [12]:  1:34.46            
+          Nguyen, Matthew ( MB) [12]:  1:35.15            
+                 Oo, Hted ( TB) [12]:  1:35.35            
+           Cacho, Nigel A ( MB) [11]:  1:38.09            
+          Diaz, Nicolas C ( TB) [12]:  1:43.83            
+          Lopez, Joshua E ( FH) [10]:  1:44.94            
+          Lawry, Hunter L ( TN) [11]:  1:45.33             ERR [ Bad Seed.  Best time of 1:44.69 on week 5 event 1 ]
+          Garcia, David G (WHI) [11]:  1:49.63            
+          Parmhans, Shawn ( FH) [12]:  1:59.02            
+        Yetter, Gabriel B (WHI) [10]:  2:01.10            
+           Sosa, Gamaliel ( KM) [12]:  2:06.03            
+       Johnson, William H ( KM) [11]:       NT            
+
+Event #2: Girls 12 & Under 100M Individual Medley (UN12)
+         Behailu, Abigail ( FH) [11]:  1:35.81            
+         Langsam, Bella H ( TB) [12]:  1:36.34            
+        Gaskill, Hannah E ( MB) [11]:  1:36.45             ERR [ Bad Seed.  Best time of 1:35.03 on week 1 event 2 ]
+        Chapple, Aurora R ( FH) [10]:  1:44.34            
+               Diaz, Sara ( TN) [12]:  1:45.60             ERR [ Bad Seed.  Best time of 1:43.38 on week 5 event 2 ]
+             Paul, Celine ( TN) [11]:  1:46.20            
+         Turner, Olivia G ( TB) [12]:  1:48.00            
+           Morris, Payton ( MB) [ 8]:  1:57.22            
+         Kasper, Sunita W ( KM) [ 9]:  1:58.04             ERR [ Bad Seed.  Best time of 2:00.13 on week 4 event 2 ]
+             Garner, Dana (WHI) [12]:  2:04.69            
+           Mason, Cameron (WHI) [12]:  2:22.59            
+           Brown, Ciera N ( KM) [10]:  2:30.22            
+
+Event #3: Boys Open 200M Medley Relay (UNOV)
+           Twinbrook Ducks Swim Team:  2:05.34            
+      Middlebridge Marlins Swim Team:  2:09.17             ERR [ Bad Seed.  Best time of 122.32 on week  4.00 team A ]
+                Flower Hill Dolphins:  2:12.46            
+                     West Hillandale:  2:14.32            
+                 Kemp Mill Kangaroos:  3:06.32             ERR [ Bad Seed.  Best time of 153.19 on week  1.00 team A ]
+                   Tanglewood Tigers:                      ERR [ Bad Seed.  Best time of 138.65 on week  3.00 team A ]
+
+Event #4: Girls Open 200M Medley Relay (UNOV)
+      Middlebridge Marlins Swim Team:  2:32.61             ERR [ Bad Seed.  Best time of 156.22 on week  5.00 team A ]
+           Twinbrook Ducks Swim Team:  2:33.48            
+                     West Hillandale:  2:39.03             ERR [ Bad Seed.  Best time of 2:38.10 at the relay carnival ]
+                Flower Hill Dolphins:  2:40.14            
+                 Kemp Mill Kangaroos:  3:16.17             ERR [ Bad Seed.  Best time of 172.66 on week  3.00 team A ]
+                   Tanglewood Tigers:                      ERR [ Bad Seed.  Best time of 2:35.44 at the relay carnival ]
+
+Event #5: Boys 8 & Under 25M Freestyle (UN08)
+             Nguyen, Khoi ( TN) [ 8]:    18.94             ERR [ Bad Seed.  Best time of 18.91 on week 5 event 5 ]
+           Donley, Trevor ( TN) [ 7]:    19.13            
+     Jungbluth, Alexander ( MB) [ 7]:    19.84            
+           Luse, Andrew V (WHI) [ 8]:    21.32            
+           Ghosh, Shreyas ( FH) [ 8]:    22.15            
+            Ray, Cullum A ( FH) [ 8]:    22.82            
+          Mason, Collin J (WHI) [ 8]:    24.32            
+             Poje, Adam J ( TB) [ 8]:    25.69            
+           Fowler, Landon ( MB) [ 7]:    26.85            
+              Dorr, Sam W ( KM) [ 8]:    28.27             ERR [ Bad Seed.  Best time of 29.00 on week 3 event 5 ]
+            Dorr, Jason E ( KM) [ 8]:    39.06             ERR [ Bad Seed.  Best time of 40.16 on week 4 event 5 ]
+          Berube, James E ( TB) [ 5]:    47.53            
+
+Event #6: Girls 8 & Under 25M Freestyle (UN08)
+           Morris, Payton ( MB) [ 8]:    21.00            
+          Garcia, Vanessa (WHI) [ 8]:    21.89            
+          Turner, Alise B ( TB) [ 7]:    22.82            
+          Dobrota, Anne D (WHI) [ 7]:    23.41            
+         Bayona, Jimena P ( TN) [ 7]:    28.06             ERR [ Bad Seed.  Best time of 26.00 on week 5 event 6 ]
+         Moser, Annabelle ( KM) [ 8]:    29.69             ERR [ Bad Seed.  Best time of 30.61 on week 4 event 6 ]
+       Berube, Margaret V ( TB) [ 7]:    31.81            
+          Martinez, Emely ( KM) [ 7]:    34.21             ERR [ Bad Seed.  Best time of 32.93 on week 5 event 6 ]
+       Campos, Joceline N ( FH) [ 7]:    35.47            
+            Bascope, Maya ( TN) [ 6]:    39.45            
+       Amaya, Cassandra A ( MB) [ 7]:    40.41            
+
+Event #7: Boys 9-10 50M Freestyle (0910)
+          Lopez, Joshua E ( FH) [10]:    38.91            
+          Badobre, Axel F ( FH) [ 9]:    39.47            
+            Turner, Eli P ( TB) [10]:    39.66            
+            Brown, Adan J (WHI) [ 9]:    42.33            
+        Yetter, Gabriel B (WHI) [10]:    43.26            
+           Ford, Collin M ( TN) [10]:    48.62             ERR [ Bad Seed.  Best time of 47.28 on week 5 event 7 ]
+          Reed, Lincoln W ( TB) [10]:    50.55            
+        Bascope, Santiago ( TN) [ 9]:    50.85            
+
+Event #8: Girls 9-10 50M Freestyle (0910)
+        Chapple, Aurora R ( FH) [10]:    38.11            
+          Chandran, Leela ( FH) [10]:    39.09            
+            Diaz, Grace E ( TB) [10]:    39.53            
+       Epley, Elizabeth Y ( TB) [ 9]:    41.37            
+          Raymond, Ella P (WHI) [10]:    43.00            
+         Couch, Caitlyn J ( MB) [ 9]:    46.85            
+         Kasper, Sunita W ( KM) [ 9]:    48.88             ERR [ Bad Seed.  Best time of 47.22 on week 5 event 8 ]
+        Woolard, Savannah ( MB) [ 9]:    48.94            
+        Hoang, Charlize K ( TN) [ 9]:    51.34            
+          Moser, Samantha ( KM) [10]:    51.51            
+     Gyeke-Aboagye, Joy G ( TN) [10]:    54.88             ERR [ Bad Seed.  Best time of 51.60 on week 5 event 8 ]
+            Potter, Ava K (WHI) [ 9]:    58.31            
+
+Event #9: Boys 13-14 50M Freestyle (1314)
+         Martin, Jonathan ( TN) [14]:    27.93             ERR [ Bad Seed.  Best time of 27.47 on week 5 event 9 ]
+     Perencevich, Stephen ( KM) [13]:    30.85             ERR [ Bad Seed.  Best time of 30.56 on week 5 event 9 ]
+       Phillips, Connor D ( TB) [14]:    31.02            
+          Helton, Brian A ( FH) [13]:    31.27            
+           Rojas, Anthony (WHI) [14]:    31.75            
+               Ard, Ian S (WHI) [14]:    32.48            
+            Fowler, Shane ( MB) [13]:    33.41            
+         Huynh, Brandon D ( MB) [13]:    34.13            
+         Salas, Michael P ( TB) [13]:    34.28            
+          Menendez, Scott ( KM) [14]:    35.08            
+Ferentinos, Christopher M ( FH) [13]:    35.56            
+            Martin, Jonah ( TN) [13]:    36.63             ERR [ Bad Seed.  Best time of 34.03 on week 5 event 9 ]
+
+Event #10: Girls 13-14 50M Freestyle (1314)
+         Hubbard, Trinity ( TN) [13]:    29.31            
+             Harty, Maris ( TB) [13]:    35.13            
+           Forrest, Cadie ( TB) [13]:    35.73            
+         Penate, Victoria ( MB) [14]:    36.43            
+Badobre, Nicole-Chelsea A ( FH) [13]:    36.97            
+          Castle, Rachael ( TN) [14]:    37.10             ERR [ Bad Seed.  Best time of 37.50 on week 2 event 10 ]
+        Whitaker, Amira E ( MB) [14]:    37.20             ERR [ Bad Seed.  Best time of 37.58 on week 3 event 10 ]
+             Lynch, Gemma (WHI) [13]:    38.23            
+          Alvarez, Mariah (WHI) [14]:    39.03            
+          Dorr, Tabitha D ( KM) [13]:    40.86             ERR [ Bad Seed.  Best time of 43.31 on week 5 event 10 ]
+          Page, Camille M ( FH) [13]:    41.40            
+         Davis, Kennedy L ( KM) [13]:    52.42            
+
+Event #11: Boys 11-12 50M Freestyle (1112)
+          Nguyen, Matthew ( MB) [12]:    34.33            
+ Jenkins-Johnston, Darren ( TN) [12]:    34.38             ERR [ Bad Seed.  Best time of 33.15 on week 5 event 11 ]
+        Cajayon, Calvin A ( MB) [12]:    35.81            
+          Diaz, Nicolas C ( TB) [12]:    36.07            
+          Pone, Gabriel D ( TB) [11]:    37.80            
+          Lawry, Hunter L ( TN) [11]:    40.03             ERR [ Bad Seed.  Best time of 39.75 on week 5 event 11 ]
+          Garcia, David G (WHI) [11]:    40.97            
+          Potter, Aiden A (WHI) [11]:    41.37            
+       Johnson, William H ( KM) [11]:    41.58            
+           Sosa, Gamaliel ( KM) [12]:    41.97            
+           Page, Marcus C ( FH) [11]:    42.80            
+       Rosenberg, Benny H ( FH) [11]:    47.77            
+
+Event #12: Girls 11-12 50M Freestyle (1112)
+        Gaskill, Hannah E ( MB) [11]:    36.58            
+         Behailu, Abigail ( FH) [11]:    38.00            
+         Langsam, Bella H ( TB) [12]:    38.20            
+         Carmona, Marisol ( FH) [12]:    38.55            
+          Cacho, Lauren P ( MB) [11]:    39.71            
+               Diaz, Sara ( TN) [12]:    40.32             ERR [ Bad Seed.  Best time of 39.13 on week 5 event 12 ]
+          Diaz, Gabriella ( TN) [11]:    40.41             ERR [ Bad Seed.  Best time of 40.06 on week 5 event 12 ]
+         Turner, Olivia G ( TB) [12]:    41.37            
+              Smith, Kyra (WHI) [11]:    45.32            
+           Mason, Cameron (WHI) [12]:    49.50            
+
+Event #13: Boys 15-18 100M Freestyle (1518)
+           Vipavetz, Ryan ( MB) [15]:    55.26            
+           Reed, Hunter L ( FH) [18]:    55.28            
+         Samuelson, Eli M ( TB) [18]:    58.94            
+            Girguis, Mark ( MB) [18]:    59.44            
+          Ostuni, Anthony ( TB) [17]:  1:00.44            
+      Ramirez, JuanCarlos ( FH) [16]:  1:01.16            
+          Wallace, Kyle A (WHI) [16]:  1:04.00            
+             Yetter, Luka (WHI) [17]:  1:05.94            
+Garcia-McConnell, Christian ( TN) [18]:  1:08.25            
+             Kitts, Tyler ( KM) [15]:  1:12.09            
+         Sylvester, Dylan ( KM) [15]:  1:14.15            
+             Nguyen, Liem ( TN) [15]:       NT             ERR [ Swimmer has not swam an A meet ]
+
+Event #14: Girls 15-18 100M Freestyle (1518)
+        N'Gambwa, Amina J ( MB) [16]:  1:03.25            
+            Lo, Georgia W (WHI) [16]:  1:10.72            
+             Moser, Zoe J ( TB) [15]:  1:14.44            
+            Mayer, Anna I ( FH) [16]:  1:14.85            
+           Vipavetz, Lexi ( MB) [18]:  1:15.18             ERR [ Bad Seed.  Best time of 1:16.65 on week 5 event 14 ]
+         Garcia, Andrea M (WHI) [15]:  1:16.46            
+          Garrison, Amber ( KM) [17]:  1:17.28            
+         Hubbard, Jasmine ( TN) [16]:  1:19.77            
+          Martin, Jessica ( TN) [16]:  1:19.95             ERR [ Bad Seed.  Best time of 1:21.16 on week 5 event 14 ]
+      Spritzer, Rebecca C ( KM) [17]:  1:26.87            
+      De Melo, Jacqueline ( TB) [15]:  1:30.00            
+         King, Caroline M ( FH) [15]:  1:31.97            
+
+Event #15: Boys 13-14 100M Individual Medley (1314)
+         Martin, Jonathan ( TN) [14]:  1:17.13             ERR [ Bad Seed.  Best time of 1:15.19 on week 5 event 15 ]
+          Helton, Brian A ( FH) [13]:  1:23.07            
+            Hines, Jack B (WHI) [14]:  1:23.21            
+           Rojas, Anthony (WHI) [14]:  1:28.75            
+         Goggin, Justin J ( FH) [13]:  1:31.33            
+         Salas, Michael P ( TB) [13]:  1:32.55            
+          Matusow, Jayden ( KM) [13]:  1:32.78            
+            Fowler, Shane ( MB) [13]:  1:34.54            
+            Martin, Jonah ( TN) [13]:  1:39.73             ERR [ Bad Seed.  Best time of 1:36.68 on week 5 event 15 ]
+         Huynh, Brandon D ( MB) [13]:  1:40.58            
+          Manzon, Jason S ( KM) [14]:  1:41.95            FLAG [ Swimmer has no A meet time in this event ]
+       Phillips, Connor D ( TB) [14]:       NT            
+
+Event #16: Girls 13-14 100M Individual Medley (1314)
+         Hubbard, Trinity ( TN) [13]:  1:22.57             ERR [ Bad Seed.  Best time of 1:22.15 on week 5 event 16 ]
+             Harty, Maris ( TB) [13]:  1:32.34            
+Badobre, Nicole-Chelsea A ( FH) [13]:  1:35.81            
+           Forrest, Cadie ( TB) [13]:  1:35.95            
+          Castle, Rachael ( TN) [14]:  1:37.31             ERR [ Bad Seed.  Best time of 1:38.34 on week 1 event 16 ]
+            Gupta, Maansi ( FH) [13]:  1:39.01            
+        Whitaker, Amira E ( MB) [14]:  1:40.53             ERR [ Bad Seed.  Best time of 1:43.02 on week 3 event 16 ]
+         Penate, Victoria ( MB) [14]:  1:43.25            FLAG [ Swimmer has no A meet time in this event ]
+             Lynch, Gemma (WHI) [13]:  1:50.86            
+          Dorr, Tabitha D ( KM) [13]:  1:51.07             ERR [ Bad Seed.  Best time of 1:54.62 on week 5 event 16 ]
+      Wallace, Samantha M (WHI) [14]:  1:53.25            
+
+Event #17: Boys 8 & Under 25M Backstroke (UN08)
+      Chandran, Alexander ( FH) [ 8]:    23.95            
+          Ford, Brendan S ( TN) [ 8]:    26.58            
+           Luse, Andrew V (WHI) [ 8]:    26.91            
+     Jungbluth, Alexander ( MB) [ 7]:    28.44            
+          Taheri, Mansoor ( FH) [ 7]:    29.43            
+           Nazir, Royce A (WHI) [ 6]:    30.41            
+             Poje, Adam J ( TB) [ 8]:    32.64            
+             Nguyen, Khoi ( TN) [ 8]:    32.69            FLAG [ Swimmer has no A meet time in this event ]
+           Fowler, Landon ( MB) [ 7]:    33.18            
+              Dorr, Sam W ( KM) [ 8]:    38.21             ERR [ Bad Seed.  Best time of 34.53 on week 5 event 17 ]
+            Dorr, Jason E ( KM) [ 8]:    57.09             ERR [ Bad Seed.  Best time of 1:00.94 on week 3 event 17 ]
+          Berube, James E ( TB) [ 5]:       NT            
+
+Event #18: Girls 8 & Under 25M Backstroke (UN08)
+           Morris, Payton ( MB) [ 8]:    25.94            
+          Garcia, Vanessa (WHI) [ 8]:    27.50            
+McKeever-Maragni, Isela G (WHI) [ 8]:    31.31            
+          Turner, Alise B ( TB) [ 7]:    32.74            
+       Berube, Margaret V ( TB) [ 7]:    33.29            
+         Bayona, Jimena P ( TN) [ 7]:    33.34            
+       Jauquet, Lillian T ( FH) [ 7]:    33.49            
+            Hu, Abigail C ( KM) [ 8]:    36.90             ERR [ Bad Seed.  Best time of 37.25 on week 4 event 18 ]
+             Hart, Hannah ( TN) [ 8]:    42.14            
+       Campos, Joceline N ( FH) [ 7]:    45.69            
+          Wilson, Diana E ( MB) [ 6]:    45.98            
+          Martinez, Emely ( KM) [ 7]:    47.82             ERR [ Bad Seed.  Best time of 50.87 on week 1 event 18 ]
+
+Event #19: Boys 9-10 25M Backstroke (0910)
+          Lopez, Joshua E ( FH) [10]:    24.00            
+            Brown, Adan J (WHI) [ 9]:    24.13            
+         Ramirez, Diego F ( FH) [ 9]:    24.40            
+            Turner, Eli P ( TB) [10]:    24.69            
+        Dobrota, Thomas E (WHI) [ 9]:    27.21            
+           Ford, Collin M ( TN) [10]:    29.03             ERR [ Bad Seed.  Best time of 26.28 on week 5 event 19 ]
+          Reed, Lincoln W ( TB) [10]:    32.00            
+        Fessehazion, Abel ( TN) [10]:    35.43             ERR [ Bad Seed.  Best time of 35.34 on week 5 event 19 ]
+
+Event #20: Girls 9-10 25M Backstroke (0910)
+          Chandran, Leela ( FH) [10]:    21.13            
+        Chapple, Aurora R ( FH) [10]:    22.07            
+       Epley, Elizabeth Y ( TB) [ 9]:    23.79            
+         Kasper, Sunita W ( KM) [ 9]:    26.15             ERR [ Bad Seed.  Best time of 27.81 on week 3 event 20 ]
+          Raymond, Ella P (WHI) [10]:    26.28            
+            Diaz, Grace E ( TB) [10]:    27.35            
+        Woolard, Savannah ( MB) [ 9]:    27.88            
+        Hoang, Charlize K ( TN) [ 9]:    28.59            
+            Potter, Ava K (WHI) [ 9]:    29.44            
+           Brown, Ciera N ( KM) [10]:    30.03             ERR [ Bad Seed.  Best time of 30.63 on week 3 event 20 ]
+           Alfaro, Claire ( TN) [ 9]:    37.47            
+
+Event #21: Boys 15-18 100M Backstroke (1518)
+           Reed, Hunter L ( FH) [18]:  1:03.37            
+          Woolard, Wolfie ( MB) [15]:  1:04.76            
+           Vipavetz, Ryan ( MB) [15]:  1:05.03            
+         Samuelson, Eli M ( TB) [18]:  1:06.02            
+       Phillips, Collin B ( TB) [16]:  1:08.93            
+      Ramirez, JuanCarlos ( FH) [16]:  1:17.43            
+           Daniel, Mickey (WHI) [17]:  1:19.71            
+Garcia-McConnell, Christian ( TN) [18]:  1:22.44            
+          Diaz, Alejandro ( TN) [15]:  1:22.75            
+            Daniel, Hailu (WHI) [15]:  1:24.66            
+             Kitts, Tyler ( KM) [15]:  1:30.49             ERR [ Bad Seed.  Best time of 1:31.78 on week 3 event 21 ]
+           Garrison, Cody ( KM) [18]:  1:37.09            
+
+Event #22: Girls 15-18 100M Backstroke (1518)
+        N'Gambwa, Amina J ( MB) [16]:  1:14.22            
+         Vaules, Sayaka H ( FH) [17]:  1:19.12            
+            Lo, Georgia W (WHI) [16]:  1:22.87            
+             Moser, Zoe J ( TB) [15]:  1:25.02            
+         Garcia, Andrea M (WHI) [15]:  1:25.32             ERR [ Bad Seed.  Best time of 1:30.71 on week 3 event 22 ]
+          Garrison, Amber ( KM) [17]:  1:32.26             ERR [ Bad Seed.  Best time of 1:32.61 on week 5 event 22 ]
+         Hubbard, Jasmine ( TN) [16]:  1:36.20             ERR [ Bad Seed.  Best time of 1:33.90 on week 5 event 22 ]
+      Dohler-Rodas, Emily ( MB) [16]:  1:38.16            
+          Nguyen, Mai-Anh ( TN) [18]:  1:40.28             ERR [ Bad Seed.  Best time of 1:39.35 on week 5 event 22 ]
+           Ostlund, Julia ( TB) [16]:  1:47.88            
+         King, Caroline M ( FH) [15]:  1:49.39            
+    Campagna, Catherine G ( KM) [15]:  2:14.63             ERR [ Bad Seed.  Best time of 2:19.47 on week 4 event 22 ]
+
+Event #23: Boys 11-12 50M Backstroke (1112)
+          Nguyen, Matthew ( MB) [12]:    44.06            
+          Diaz, Nicolas C ( TB) [12]:    44.82            
+                 Oo, Hted ( TB) [12]:    45.88            
+           Cacho, Nigel A ( MB) [11]:    46.50            
+          Lawry, Hunter L ( TN) [11]:    50.05            
+          Potter, Aiden A (WHI) [11]:    51.47            
+ Jenkins-Johnston, Darren ( TN) [12]:    51.83            
+          Parmhans, Shawn ( FH) [12]:    57.94            
+             Hines, Harry (WHI) [11]:  1:00.71            
+           Clark, David H ( FH) [11]:  1:01.63            
+           Sosa, Gamaliel ( KM) [12]:  1:03.36            
+
+Event #24: Girls 11-12 50M Backstroke (1112)
+         Langsam, Bella H ( TB) [12]:    43.93            
+         Behailu, Abigail ( FH) [11]:    44.15            
+         Carmona, Marisol ( FH) [12]:    45.18            
+        Gaskill, Hannah E ( MB) [11]:    45.44            
+               Diaz, Sara ( TN) [12]:    47.37             ERR [ Bad Seed.  Best time of 47.25 on week 5 event 24 ]
+          Diaz, Gabriella ( TN) [11]:    49.78            
+         Turner, Olivia G ( TB) [12]:    51.09            
+          Cacho, Lauren P ( MB) [11]:    53.28            
+             Garner, Dana (WHI) [12]:    57.71            
+              Smith, Kyra (WHI) [11]:    57.75            
+
+Event #25: Boys 13-14 50M Backstroke (1314)
+         Martin, Jonathan ( TN) [14]:    36.51             ERR [ Bad Seed.  Best time of 36.06 on week 5 event 25 ]
+       Phillips, Connor D ( TB) [14]:    38.35            
+          Helton, Brian A ( FH) [13]:    38.94            
+            Hines, Jack B (WHI) [14]:    39.63            
+     Perencevich, Stephen ( KM) [13]:    39.87             ERR [ Bad Seed.  Best time of 39.16 on week 5 event 25 ]
+         Salas, Michael P ( TB) [13]:    41.34            
+           Rojas, Anthony (WHI) [14]:    42.41            
+            Fowler, Shane ( MB) [13]:    43.44            
+       Manzon, Terrence J ( KM) [14]:    43.81             ERR [ Bad Seed.  Best time of 42.50 on week 5 event 25 ]
+         Goggin, Justin J ( FH) [13]:    44.19            
+         Huynh, Brandon D ( MB) [13]:    46.09            
+
+Event #26: Girls 13-14 50M Backstroke (1314)
+             Harty, Maris ( TB) [13]:    41.52            
+           Forrest, Cadie ( TB) [13]:    43.03            
+        Whitaker, Amira E ( MB) [14]:    44.27             ERR [ Bad Seed.  Best time of 47.22 on week 4 event 26 ]
+         Nguyen, Minh-Anh ( TN) [13]:    45.08             ERR [ Bad Seed.  Best time of 46.94 on week 3 event 26 ]
+Badobre, Nicole-Chelsea A ( FH) [13]:    46.47            
+          Alvarez, Mariah (WHI) [14]:    49.29            
+          Castle, Rachael ( TN) [14]:    51.03             ERR [ Bad Seed.  Best time of 52.32 on week 1 event 26 ]
+           Mason, Penny J (WHI) [13]:    51.20            
+            Gupta, Maansi ( FH) [13]:    53.00            
+         Davis, Kennedy L ( KM) [13]:  1:05.07            
+
+Event #27: Boys 15-18 100M Individual Medley (1518)
+           Reed, Hunter L ( FH) [18]:  1:04.57            
+          Woolard, Wolfie ( MB) [15]:  1:05.04             ERR [ Bad Seed.  Best time of 1:05.56 on week 3 event 27 ]
+          Ostuni, Anthony ( TB) [17]:  1:06.63            
+           Vipavetz, Ryan ( MB) [15]:  1:06.76             ERR [ Bad Seed.  Best time of 1:07.82 on week 1 event 27 ]
+         Samuelson, Eli M ( TB) [18]:  1:08.91            
+      Ramirez, JuanCarlos ( FH) [16]:  1:10.93            
+          Wallace, Kyle A (WHI) [16]:  1:13.47            
+             Nguyen, Viet ( TN) [15]:  1:18.84            
+            Alfaro, Ethan ( TN) [15]:  1:23.03            
+             Kitts, Tyler ( KM) [15]:  1:23.82             ERR [ Bad Seed.  Best time of 1:25.58 on week 5 event 27 ]
+     Sainvilier, Joshua R (WHI) [16]:  1:26.81            
+           Garrison, Cody ( KM) [18]:  1:27.89             ERR [ Bad Seed.  Best time of 1:28.72 on week 2 event 27 ]
+
+Event #28: Girls 15-18 100M Individual Medley (1518)
+        N'Gambwa, Amina J ( MB) [16]:  1:11.47             ERR [ Bad Seed.  Best time of 1:12.56 on week 3 event 28 ]
+         Vaules, Sayaka H ( FH) [17]:  1:13.36            
+            Lo, Georgia W (WHI) [16]:  1:20.22            
+             Moser, Zoe J ( TB) [15]:  1:21.91            
+            Mayer, Anna I ( FH) [16]:  1:26.22            
+           Vipavetz, Lexi ( MB) [18]:  1:27.38             ERR [ Bad Seed.  Best time of 1:34.59 on week 5 event 28 ]
+         Garcia, Andrea M (WHI) [15]:  1:28.45            
+          Martin, Jessica ( TN) [16]:  1:29.54            
+          Garrison, Amber ( KM) [17]:  1:33.09             ERR [ Bad Seed.  Best time of 1:30.85 on week 5 event 28 ]
+          Nguyen, Mai-Anh ( TN) [18]:  1:36.19            
+      Spritzer, Rebecca C ( KM) [17]:  1:37.69            
+            Manor, Isabel ( TB) [18]:       NT            
+
+Event #29: Boys 8 & Under 25M Breaststroke (UN08)
+      Chandran, Alexander ( FH) [ 8]:    25.01            
+             Nguyen, Khoi ( TN) [ 8]:    25.60             ERR [ Bad Seed.  Best time of 25.25 on week 5 event 29 ]
+           Donley, Trevor ( TN) [ 7]:    26.45            NOTE [ This time is event 31 week 3 ]
+     Jungbluth, Alexander ( MB) [ 7]:    29.20            
+           Ghosh, Shreyas ( FH) [ 8]:    29.24            
+             Poje, Adam J ( TB) [ 8]:    36.16            
+          Wilson, James J ( MB) [ 8]:    37.32            
+            Dorr, Jason E ( KM) [ 8]:       NT             ERR [ Missing Seed.  Best time of 50.22 on week 5 event 29 ]
+              Dorr, Sam W ( KM) [ 8]:       NT            
+
+Event #30: Girls 8 & Under 25M Breaststroke (UN08)
+           Morris, Payton ( MB) [ 8]:    28.19            
+         Moser, Annabelle ( KM) [ 8]:    34.03            
+          Turner, Alise B ( TB) [ 7]:    34.97            
+             Hart, Hannah ( TN) [ 8]:    35.78            
+          Dobrota, Anne D (WHI) [ 7]:    36.03            
+       Jauquet, Lillian T ( FH) [ 7]:    36.70            
+          Thiero, Tatiana (WHI) [ 8]:    38.84            
+     Bergoffen, Kannika F ( TB) [ 7]:    43.24            
+         Bayona, Jimena P ( TN) [ 7]:    55.53            
+       Campos, Joceline N ( FH) [ 7]:       NT            
+          Martinez, Emely ( KM) [ 7]:       NT            
+
+Event #31: Boys 9-10 25M Breaststroke (0910)
+          Lopez, Joshua E ( FH) [10]:    24.69            
+            Turner, Eli P ( TB) [10]:    25.67            
+          Badobre, Axel F ( FH) [ 9]:    25.79            
+        Dobrota, Thomas E (WHI) [ 9]:    25.97            
+        Yetter, Gabriel B (WHI) [10]:    26.43            
+        Bascope, Santiago ( TN) [ 9]:    29.72            
+        Fessehazion, Abel ( TN) [10]:    32.72             ERR [ Bad Seed.  Best time of 31.98 on week 5 event 31 ]
+Lyons-Bennington, Matthew L ( TB) [ 9]:    35.10            
+
+Event #32: Girls 9-10 25M Breaststroke (0910)
+       Badobre, Oceanie T ( FH) [10]:    22.19            
+        Chapple, Aurora R ( FH) [10]:    23.25            
+        Woolard, Savannah ( MB) [ 9]:    23.69            
+          Raymond, Ella P (WHI) [10]:    26.28            
+     Gyeke-Aboagye, Joy G ( TN) [10]:    28.01             ERR [ Bad Seed.  Best time of 27.82 on week 5 event 32 ]
+             Colas, Anais ( TN) [ 9]:    29.28            
+          Moser, Samantha ( KM) [10]:    29.70            
+         Pone, Isabelle D ( TB) [10]:    32.16            
+           Brown, Ciera N ( KM) [10]:    32.96             ERR [ Bad Seed.  Best time of 34.88 on week 4 event 32 ]
+
+Event #33: Boys 11-12 50M Breaststroke (1112)
+          Nguyen, Matthew ( MB) [12]:    45.37            
+                 Oo, Hted ( TB) [12]:    47.04            
+         Langsam, Macky S ( TB) [11]:    51.44            
+            Ropeta, Lakki ( MB) [12]:    52.97            
+           Clark, David H ( FH) [11]:    56.25            
+       Johnson, William H ( KM) [11]:    57.28            
+          Lawry, Hunter L ( TN) [11]:    57.91             ERR [ Bad Seed.  Best time of 53.78 on week 5 event 33 ]
+Gassaway-Mesutmen, Taikhem ( TN) [11]:    58.75             ERR [ Bad Seed.  Best time of 57.55 on week 5 event 33 ]
+          Parmhans, Shawn ( FH) [12]:    58.80            
+          Garcia, David G (WHI) [11]:  1:01.49            
+             Hines, Harry (WHI) [11]:  1:08.59            
+
+Event #34: Girls 11-12 50M Breaststroke (1112)
+     PeBenito, Isabella E ( FH) [12]:    45.19            
+         Langsam, Bella H ( TB) [12]:    45.25            
+         Behailu, Abigail ( FH) [11]:    48.07            
+        Gaskill, Hannah E ( MB) [11]:    48.41            
+             Paul, Celine ( TN) [11]:    48.83             ERR [ Bad Seed.  Best time of 48.17 on week 5 event 34 ]
+          Hubbard, Alyssa ( TN) [11]:    55.78            
+              Smith, Kyra (WHI) [11]:    58.09            
+  Taylor, Anna-Charlize C ( MB) [11]:  1:00.07            
+             Garner, Dana (WHI) [12]:  1:02.87            
+
+Event #35: Boys 13-14 50M Breaststroke (1314)
+           Rojas, Anthony (WHI) [14]:    42.06            
+          Menendez, Scott ( KM) [14]:    42.65             ERR [ Bad Seed.  Best time of 42.10 on week 5 event 35 ]
+            Hines, Jack B (WHI) [14]:    43.15            
+            Fowler, Shane ( MB) [13]:    45.40            
+           Mazhari, Arron ( FH) [13]:    46.45            
+       Phillips, Connor D ( TB) [14]:    46.71            
+Ferentinos, Christopher M ( FH) [13]:    47.04            
+        Manzon, Phillip H ( KM) [14]:    47.90            
+            Martin, Jonah ( TN) [13]:    48.22             ERR [ Bad Seed.  Best time of 47.68 on week 5 event 35 ]
+
+Event #36: Girls 13-14 50M Breaststroke (1314)
+         Hubbard, Trinity ( TN) [13]:    42.61            
+         Nguyen, Minh-Anh ( TN) [13]:    43.66            
+          Moser, Alexia L ( TB) [13]:    44.82            
+         Penate, Victoria ( MB) [14]:    45.22            
+            Gupta, Maansi ( FH) [13]:    47.85            
+            Ostuni, Grace ( TB) [13]:    47.92            
+          Dorr, Tabitha D ( KM) [13]:    51.39             ERR [ Bad Seed.  Best time of 52.14 on week 5 event 36 ]
+          Page, Camille M ( FH) [13]:    51.90            
+      Wallace, Samantha M (WHI) [14]:    52.64            
+             Lynch, Gemma (WHI) [13]:    55.77            
+
+Event #37: Boys 15-18 100M Breaststroke (1518)
+          Woolard, Wolfie ( MB) [15]:  1:12.94            
+            Girguis, Mark ( MB) [18]:  1:14.19            
+          Ostuni, Anthony ( TB) [17]:  1:15.47            
+      Ramirez, JuanCarlos ( FH) [16]:  1:21.94            
+         Soldavini, Scott ( TB) [16]:  1:24.43            
+          Wallace, Kyle A (WHI) [16]:  1:24.56            
+             Kitts, Tyler ( KM) [15]:  1:28.89             ERR [ Bad Seed.  Best time of 1:28.58 on week 5 event 37 ]
+             Nguyen, Viet ( TN) [15]:  1:30.31            
+          Anam, Zeeshan F ( FH) [15]:  1:30.97            
+            Paul, Calixte ( TN) [17]:  1:34.79            
+            Daniel, Hailu (WHI) [15]:  1:34.90            
+         Sylvester, Dylan ( KM) [15]:  1:40.31            
+
+Event #38: Girls 15-18 100M Breaststroke (1518)
+         Vaules, Sayaka H ( FH) [17]:  1:24.87            
+        N'Gambwa, Amina J ( MB) [16]:  1:26.40            FLAG [ Swimmer has no A meet time in this event ]
+            Mayer, Anna I ( FH) [16]:  1:28.48            
+             Moser, Zoe J ( TB) [15]:  1:28.59            
+      Dohler-Rodas, Emily ( MB) [16]:  1:37.66            
+         Iduma, Elizabeth ( TN) [17]:  1:38.75            
+          Martin, Jessica ( TN) [16]:  1:45.17            
+      Spritzer, Rebecca C ( KM) [17]:  1:47.10             ERR [ Bad Seed.  Best time of 1:50.60 on week 4 event 38 ]
+            Yetter, Chloe (WHI) [16]:  1:47.20            
+    Campagna, Catherine G ( KM) [15]:  2:28.35             ERR [ Bad Seed.  Best time of 2:21.00 on week 5 event 38 ]
+            Murray, Molly (WHI) [16]:       NT            
+      De Melo, Jacqueline ( TB) [15]:       NT            
+
+Event #39: Boys 8 & Under 25M Butterfly (UN08)
+           Donley, Trevor ( TN) [ 7]:    22.04             ERR [ Bad Seed.  Best time of 21.63 on week 5 event 39 ]
+      Chandran, Alexander ( FH) [ 8]:    26.96            
+           Ghosh, Shreyas ( FH) [ 8]:    30.15            
+           Luse, Andrew V (WHI) [ 8]:    31.56            
+          Ford, Brendan S ( TN) [ 8]:    35.47             ERR [ Bad Seed.  Best time of 26.09 on week 5 event 39 ]
+           Fowler, Landon ( MB) [ 7]:    47.09            
+
+Event #40: Girls 8 & Under 25M Butterfly (UN08)
+          Garcia, Vanessa (WHI) [ 8]:    28.13            
+          Thiero, Tatiana (WHI) [ 8]:    32.69            
+       Jauquet, Lillian T ( FH) [ 7]:    36.28            
+             Hart, Hannah ( TN) [ 8]:    36.88             ERR [ Bad Seed.  Best time of 36.50 on week 5 event 40 ]
+         Moser, Annabelle ( KM) [ 8]:    39.50            FLAG [ Swimmer has no A meet time in this event ]
+            Hu, Abigail C ( KM) [ 8]:    49.67             ERR [ Bad Seed.  Best time of 49.75 on week 4 event 40 ]
+       Berube, Margaret V ( TB) [ 7]:       NT            
+
+Event #41: Boys 9-10 25M Butterfly (0910)
+         Ramirez, Diego F ( FH) [ 9]:    21.92            
+          Badobre, Axel F ( FH) [ 9]:    21.94            
+            Brown, Adan J (WHI) [ 9]:    24.37            
+        Yetter, Gabriel B (WHI) [10]:    24.57            
+           Ford, Collin M ( TN) [10]:    30.00             ERR [ Bad Seed.  Best time of 26.14 on week 5 event 41 ]
+        Bascope, Santiago ( TN) [ 9]:    38.41            
+Lyons-Bennington, Matthew L ( TB) [ 9]:    42.15            
+
+Event #42: Girls 9-10 25M Butterfly (0910)
+          Chandran, Leela ( FH) [10]:    19.00            
+       Badobre, Oceanie T ( FH) [10]:    20.84            
+       Epley, Elizabeth Y ( TB) [ 9]:    23.36            
+         Kasper, Sunita W ( KM) [ 9]:    26.50             ERR [ Bad Seed.  Best time of 25.84 on week 5 event 42 ]
+     Gyeke-Aboagye, Joy G ( TN) [10]:    27.68             ERR [ Bad Seed.  Best time of 27.06 on week 5 event 42 ]
+            Diaz, Grace E ( TB) [10]:    27.74            
+         Couch, Caitlyn J ( MB) [ 9]:    28.34            
+          Moser, Samantha ( KM) [10]:    31.47             ERR [ Bad Seed.  Best time of 30.34 on week 5 event 42 ]
+        Kersima, Meklet A ( TN) [ 9]:    36.44             ERR [ Bad Seed.  Best time of 33.44 on week 5 event 42 ]
+
+Event #43: Boys 11-12 50M Butterfly (1112)
+                 Oo, Hted ( TB) [12]:    40.15            
+        Cajayon, Calvin A ( MB) [12]:    40.84            
+ Jenkins-Johnston, Darren ( TN) [12]:    46.25            
+          Pone, Gabriel D ( TB) [11]:    47.88            
+           Cacho, Nigel A ( MB) [11]:    48.00            
+          Potter, Aiden A (WHI) [11]:    53.19            
+       Johnson, William H ( KM) [11]:    55.53             ERR [ Bad Seed.  Best time of 57.75 on week 4 event 43 ]
+          Parmhans, Shawn ( FH) [12]:    58.12            
+           Page, Marcus C ( FH) [11]:    59.03            
+          Garcia, David G (WHI) [11]:  1:00.03            
+           Sosa, Gamaliel ( KM) [12]:  1:03.16             ERR [ Bad Seed.  Best time of 1:01.22 on week 5 event 43 ]
+        Desalegn, Caleb G ( TN) [11]:  1:03.61            
+
+Event #44: Girls 11-12 50M Butterfly (1112)
+       Lawrence, Bobbie M ( FH) [12]:    44.41            
+         Carmona, Marisol ( FH) [12]:    45.69            
+         Turner, Olivia G ( TB) [12]:    46.93            
+             Paul, Celine ( TN) [11]:    49.28            
+               Diaz, Sara ( TN) [12]:    51.87             ERR [ Bad Seed.  Best time of 49.75 on week 5 event 44 ]
+             Garner, Dana (WHI) [12]:    53.25            
+           Mason, Cameron (WHI) [12]:  1:09.16            
+          Cacho, Lauren P ( MB) [11]:  1:15.88            
+
+Event #45: Boys 13-14 50M Butterfly (1314)
+         Martin, Jonathan ( TN) [14]:    33.00            
+          Helton, Brian A ( FH) [13]:    34.27            
+     Perencevich, Stephen ( KM) [13]:    35.75            
+Ferentinos, Christopher M ( FH) [13]:    38.35            
+            Hines, Jack B (WHI) [14]:    38.87            
+               Ard, Ian S (WHI) [14]:    42.03            
+         Huynh, Brandon D ( MB) [13]:    44.22            FLAG [ Swimmer has no A meet time in this event ]
+         Salas, Michael P ( TB) [13]:    44.67            
+          Matusow, Jayden ( KM) [13]:    45.56            FLAG [ Swimmer has no A meet time in this event ]
+            Martin, Jonah ( TN) [13]:    49.42             ERR [ Bad Seed.  Best time of 45.55 on week 5 event 45 ]
+
+Event #46: Girls 13-14 50M Butterfly (1314)
+         Hubbard, Trinity ( TN) [13]:    34.11            
+             Harty, Maris ( TB) [13]:    39.69            
+Badobre, Nicole-Chelsea A ( FH) [13]:    42.09            
+          Castle, Rachael ( TN) [14]:    44.03             ERR [ Bad Seed.  Best time of 45.00 on week 2 event 46 ]
+           Forrest, Cadie ( TB) [13]:    44.69            
+            Gupta, Maansi ( FH) [13]:    48.04            
+          Alvarez, Mariah (WHI) [14]:    48.13            
+        Whitaker, Amira E ( MB) [14]:    48.89             ERR [ Bad Seed.  Best time of 54.39 on week 3 event 46 ]
+          Dorr, Tabitha D ( KM) [13]:    52.71             ERR [ Bad Seed.  Best time of 56.50 on week 5 event 46 ]
+      Wallace, Samantha M (WHI) [14]:    54.72            
+         Davis, Kennedy L ( KM) [13]:  1:11.47            FLAG [ Swimmer has no A meet time in this event ]
+
+Event #47: Boys 15-18 50M Butterfly (1518)
+           Vipavetz, Ryan ( MB) [15]:    27.46            
+           Reed, Hunter L ( FH) [18]:    28.12            
+          Ostuni, Anthony ( TB) [17]:    28.48            
+         Samuelson, Eli M ( TB) [18]:    29.71            
+            Girguis, Mark ( MB) [18]:    30.13             ERR [ Bad Seed.  Best time of 30.42 on week 3 event 47 ]
+             Yetter, Luka (WHI) [17]:    31.78            
+          Wallace, Kyle A (WHI) [16]:    31.81            
+            Paul, Calixte ( TN) [17]:    33.13            
+           Gemma, Jacob M ( FH) [15]:    34.09            
+Garcia-McConnell, Christian ( TN) [18]:    35.41             ERR [ Bad Seed.  Best time of 36.06 on week 1 event 47 ]
+         Sylvester, Dylan ( KM) [15]:    36.89            
+           Garrison, Cody ( KM) [18]:    37.50             ERR [ Bad Seed.  Best time of 37.89 on week 1 event 47 ]
+
+Event #48: Girls 15-18 50M Butterfly (1518)
+         Vaules, Sayaka H ( FH) [17]:    32.07            
+            Lo, Georgia W (WHI) [16]:    35.53            
+          Martin, Jessica ( TN) [16]:    36.46             ERR [ Bad Seed.  Best time of 35.82 on week 5 event 48 ]
+           Vipavetz, Lexi ( MB) [18]:    37.87             ERR [ Bad Seed.  Best time of 38.65 on week 3 event 48 ]
+         Garcia, Andrea M (WHI) [15]:    38.36            
+            Mayer, Anna I ( FH) [16]:    39.07            
+         Hubbard, Jasmine ( TN) [16]:    41.91            
+          Garrison, Amber ( KM) [17]:    44.04             ERR [ Bad Seed.  Best time of 42.20 on week 5 event 48 ]
+      Dohler-Rodas, Emily ( MB) [16]:    44.88             ERR [ Bad Seed.  Best time of 45.67 on week 2 event 48 ]
+      Spritzer, Rebecca C ( KM) [17]:    45.22            
+           Ostlund, Julia ( TB) [16]:    48.46            
+            Manor, Isabel ( TB) [18]:       NT            
+
+Event #49: Boys 14 & Under 175M Freestyle Relay (UN14)
+                Flower Hill Dolphins:  2:09.22            
+           Twinbrook Ducks Swim Team:  2:16.99            
+                     West Hillandale:  2:23.69            
+                 Kemp Mill Kangaroos:                      ERR [ Bad Seed.  Best time of 2:44.28 at the relay carnival ]
+                   Tanglewood Tigers:                      ERR [ Bad Seed.  Best time of 2:08.68 at the relay carnival ]
+
+Event #50: Girls 14 & Under 175M Freestyle Relay (UN14)
+                Flower Hill Dolphins:  2:22.42            
+           Twinbrook Ducks Swim Team:  2:27.62            
+                     West Hillandale:  2:35.26            
+                 Kemp Mill Kangaroos:                      ERR [ Bad Seed.  Best time of 167.09 on week  5.00 team A ]
+      Middlebridge Marlins Swim Team:                      ERR [ Bad Seed.  Best time of 2:18.16 at the relay carnival ]
+                   Tanglewood Tigers:                      ERR [ Bad Seed.  Best time of 2:26.90 at the relay carnival ]
+
+
+
+Discrepancies:
+
+  1) Event 1: Lawry, Hunter L has bad seed time
+  2) Event 2: Gaskill, Hannah E has bad seed time
+  3) Event 2: Diaz, Sara has bad seed time
+  4) Event 2: Kasper, Sunita W has bad seed time
+  5) Event 3: Middlebridge Marlins Swim Team has bad seed time
+  6) Event 3: Kemp Mill Kangaroos has bad seed time
+  7) Event 3: Tanglewood Tigers has bad seed time
+  8) Event 4: Middlebridge Marlins Swim Team has bad seed time
+  9) Event 4: West Hillandale has bad seed time
+ 10) Event 4: Kemp Mill Kangaroos has bad seed time
+ 11) Event 4: Tanglewood Tigers has bad seed time
+ 12) Event 5: Nguyen, Khoi has bad seed time
+ 13) Event 5: Dorr, Sam W has bad seed time
+ 14) Event 5: Dorr, Jason E has bad seed time
+ 15) Event 6: Bayona, Jimena P has bad seed time
+ 16) Event 6: Moser, Annabelle has bad seed time
+ 17) Event 6: Martinez, Emely has bad seed time
+ 18) Event 7: Ford, Collin M has bad seed time
+ 19) Event 8: Kasper, Sunita W has bad seed time
+ 20) Event 8: Gyeke-Aboagye, Joy G has bad seed time
+ 21) Event 9: Martin, Jonathan has bad seed time
+ 22) Event 9: Perencevich, Stephen has bad seed time
+ 23) Event 9: Martin, Jonah has bad seed time
+ 24) Event 10: Castle, Rachael has bad seed time
+ 25) Event 10: Whitaker, Amira E has bad seed time
+ 26) Event 10: Dorr, Tabitha D has bad seed time
+ 27) Event 11: Jenkins-Johnston, Darren has bad seed time
+ 28) Event 11: Lawry, Hunter L has bad seed time
+ 29) Event 12: Diaz, Sara has bad seed time
+ 30) Event 12: Diaz, Gabriella has bad seed time
+ 31) Event 13: Nguyen, Liem has never swam an A meet
+ 32) Event 14: Vipavetz, Lexi has bad seed time
+ 33) Event 14: Martin, Jessica has bad seed time
+ 34) Event 15: Martin, Jonathan has bad seed time
+ 35) Event 15: Martin, Jonah has bad seed time
+ 36) Event 15: Manzon, Jason S has no A meet time in this event
+ 37) Event 16: Hubbard, Trinity has bad seed time
+ 38) Event 16: Castle, Rachael has bad seed time
+ 39) Event 16: Whitaker, Amira E has bad seed time
+ 40) Event 16: Penate, Victoria has no A meet time in this event
+ 41) Event 16: Dorr, Tabitha D has bad seed time
+ 42) Event 17: Nguyen, Khoi has no A meet time in this event
+ 43) Event 17: Dorr, Sam W has bad seed time
+ 44) Event 17: Dorr, Jason E has bad seed time
+ 45) Event 18: Hu, Abigail C has bad seed time
+ 46) Event 18: Martinez, Emely has bad seed time
+ 47) Event 19: Ford, Collin M has bad seed time
+ 48) Event 19: Fessehazion, Abel has bad seed time
+ 49) Event 20: Kasper, Sunita W has bad seed time
+ 50) Event 20: Brown, Ciera N has bad seed time
+ 51) Event 21: Kitts, Tyler has bad seed time
+ 52) Event 22: Garcia, Andrea M has bad seed time
+ 53) Event 22: Garrison, Amber has bad seed time
+ 54) Event 22: Hubbard, Jasmine has bad seed time
+ 55) Event 22: Nguyen, Mai-Anh has bad seed time
+ 56) Event 22: Campagna, Catherine G has bad seed time
+ 57) Event 24: Diaz, Sara has bad seed time
+ 58) Event 25: Martin, Jonathan has bad seed time
+ 59) Event 25: Perencevich, Stephen has bad seed time
+ 60) Event 25: Manzon, Terrence J has bad seed time
+ 61) Event 26: Whitaker, Amira E has bad seed time
+ 62) Event 26: Nguyen, Minh-Anh has bad seed time
+ 63) Event 26: Castle, Rachael has bad seed time
+ 64) Event 27: Woolard, Wolfie has bad seed time
+ 65) Event 27: Vipavetz, Ryan has bad seed time
+ 66) Event 27: Kitts, Tyler has bad seed time
+ 67) Event 27: Garrison, Cody has bad seed time
+ 68) Event 28: N'Gambwa, Amina J has bad seed time
+ 69) Event 28: Vipavetz, Lexi has bad seed time
+ 70) Event 28: Garrison, Amber has bad seed time
+ 71) Event 29: Nguyen, Khoi has bad seed time
+ 72) Event 29: Dorr, Jason E is missing seed time
+ 73) Event 31: Fessehazion, Abel has bad seed time
+ 74) Event 32: Gyeke-Aboagye, Joy G has bad seed time
+ 75) Event 32: Brown, Ciera N has bad seed time
+ 76) Event 33: Lawry, Hunter L has bad seed time
+ 77) Event 33: Gassaway-Mesutmen, Taikhem has bad seed time
+ 78) Event 34: Paul, Celine has bad seed time
+ 79) Event 35: Menendez, Scott has bad seed time
+ 80) Event 35: Martin, Jonah has bad seed time
+ 81) Event 36: Dorr, Tabitha D has bad seed time
+ 82) Event 37: Kitts, Tyler has bad seed time
+ 83) Event 38: N'Gambwa, Amina J has no A meet time in this event
+ 84) Event 38: Spritzer, Rebecca C has bad seed time
+ 85) Event 38: Campagna, Catherine G has bad seed time
+ 86) Event 39: Donley, Trevor has bad seed time
+ 87) Event 39: Ford, Brendan S has bad seed time
+ 88) Event 40: Hart, Hannah has bad seed time
+ 89) Event 40: Moser, Annabelle has no A meet time in this event
+ 90) Event 40: Hu, Abigail C has bad seed time
+ 91) Event 41: Ford, Collin M has bad seed time
+ 92) Event 42: Kasper, Sunita W has bad seed time
+ 93) Event 42: Gyeke-Aboagye, Joy G has bad seed time
+ 94) Event 42: Moser, Samantha has bad seed time
+ 95) Event 42: Kersima, Meklet A has bad seed time
+ 96) Event 43: Johnson, William H has bad seed time
+ 97) Event 43: Sosa, Gamaliel has bad seed time
+ 98) Event 44: Diaz, Sara has bad seed time
+ 99) Event 45: Huynh, Brandon D has no A meet time in this event
+ 100) Event 45: Matusow, Jayden has no A meet time in this event
+ 101) Event 45: Martin, Jonah has bad seed time
+ 102) Event 46: Castle, Rachael has bad seed time
+ 103) Event 46: Whitaker, Amira E has bad seed time
+ 104) Event 46: Dorr, Tabitha D has bad seed time
+ 105) Event 46: Davis, Kennedy L has no A meet time in this event
+ 106) Event 47: Girguis, Mark has bad seed time
+ 107) Event 47: Garcia-McConnell, Christian has bad seed time
+ 108) Event 47: Garrison, Cody has bad seed time
+ 109) Event 48: Martin, Jessica has bad seed time
+ 110) Event 48: Vipavetz, Lexi has bad seed time
+ 111) Event 48: Garrison, Amber has bad seed time
+ 112) Event 48: Dohler-Rodas, Emily has bad seed time
+ 113) Event 49: Kemp Mill Kangaroos has bad seed time
+ 114) Event 49: Tanglewood Tigers has bad seed time
+ 115) Event 50: Kemp Mill Kangaroos has bad seed time
+ 116) Event 50: Middlebridge Marlins Swim Team has bad seed time
+ 117) Event 50: Tanglewood Tigers has bad seed time
+
