@@ -1,0 +1,44 @@
+$files = {
+           '_</Users/mike/MCSL/Automation/perl/DivDB/Eligible.pm' => [
+                                                                       {
+                                                                         'line' => '66',
+                                                                         'text' => '    $gender = $gender{$gender};
+',
+                                                                         'fname' => '/Users/mike/MCSL/Automation/perl/DivDB/Eligible.pm',
+                                                                         'value' => '1',
+                                                                         'type' => 'user',
+                                                                         'expr' => undef
+                                                                       }
+                                                                     ],
+           '_<perl/gen_html' => [
+                                  {
+                                    'line' => 46,
+                                    'text' => '&gen_eligible;
+',
+                                    'fname' => 'perl/gen_html',
+                                    'expr' => undef,
+                                    'value' => '1',
+                                    'type' => 'user'
+                                  }
+                                ]
+         };
+$expr_list = [
+               {
+                 'depth' => -1,
+                 'expr' => '($last_team,$last_group,$last_gender,$last_name)'
+               },
+               {
+                 'expr' => '($team,$name,$gender,$age,$age_group,$distance,$stroke,$seed_time)',
+                 'depth' => -1
+               },
+               {
+                 'expr' => '$group',
+                 'depth' => -1
+               },
+               {
+                 'expr' => '$rval',
+                 'depth' => -1
+               }
+             ];
+$eval_saved_text = undef;
+$main_win_geometry = '1131x908+0+0';

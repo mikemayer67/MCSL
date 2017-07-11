@@ -232,3 +232,57 @@ div.age_stroke
 {
   font-size:80%;
 }
+
+td.blankcol
+{
+  width: 2em;
+}
+
+table.eligible
+{
+  text-align:center;
+  font-size:small;
+  margin-left:3em;
+  margin-bottom:1em;
+}
+
+td.eligible
+{
+  font-weight:bold;
+  outline-style:solid;
+  outline-width:1px;
+  padding-left:1em;
+  padding-right:1em;
+  text-align:left;
+}
+
+
+td.st-name
+{
+  width: 20em;
+  font-weight:bold;
+  outline-style:solid;
+  outline-width:1px;
+  padding-left:1em;
+  padding-right:1em;
+}
+
+div.st-data
+{
+  font-size:85%;
+}
+
+span.seed-time
+{
+  width: 4em;
+  display:inline-block;
+  text-align:right;
+}
+
+span.seed-time-stroke
+{
+  width: 15em;
+  display:inline-block;
+  text-align:left;
+  padding-left: 1em;
+}

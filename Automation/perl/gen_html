@@ -18,6 +18,7 @@ use DivDB::Relays;
 use DivDB::Stats;
 use DivDB::CarnivalRelays;
 use DivDB::Divisionals;
+use DivDB::Eligible;
 
 my $sdif     = new DivDB::SDIF;
 my $meets    = new DivDB::Meets;
@@ -27,6 +28,7 @@ my $relays   = new DivDB::Relays;
 my $stats    = new DivDB::Stats;
 my $carnival = new DivDB::CarnivalRelays;
 my $div      = new DivDB::Divisionals;
+my $eligible = new DivDB::Eligible;
 
 my $htmldir = $FindBin::RealBin;
 $htmldir=~s(/[^/]+$)(/html);
@@ -41,6 +43,7 @@ $tmpl=~s/\{\{DIVISION}}/$DivDB::Division/g;
 &gen_relay;
 &gen_carnival;
 &gen_stats;
+&gen_eligible;
 
 ################################################################################
 # common html setup
@@ -54,8 +57,8 @@ sub setup_html
   my $date = localtime;
   $html=~s/\{\{DATE}}/$date/g;
 
-  my @pages  = qw(summary individual relay carnival stats);
-  my @labels = ('Summary','Individual Results','Relay Results','Relay Carnival','Statistics');
+  my @pages  = qw(summary individual relay carnival stats eligible);
+  my @labels = ('Summary','Individual Results','Relay Results','Relay Carnival','Statistics','Divisional Eligibility');
   my %labels = map { ( $pages[$_] => $labels[$_]||$pages[$_] ) } (0..$#pages);
 
   my @links = map { my $tag = $_ eq $page ? 'span' : 'a' ;
@@ -173,6 +176,26 @@ sub gen_stats
   print $fh $html;
   $fh->close;
 }
+
+################################################################################
+# gen eligibility page
+################################################################################
+
+sub gen_eligible
+{
+  my $html = setup_html('eligible');
+
+  my $fh = new FileHandle(">$htmldir/eligible.html") || die "Failed to create eligible.html: $!\n";
+
+  my $body = $eligible->gen_html;
+
+  $html=~s/\{\{BODY}}/$body/g;
+
+  print $fh $html;
+  $fh->close;
+
+}
+
 
 __DATA__
 <html>
