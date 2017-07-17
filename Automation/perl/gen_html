@@ -29,6 +29,7 @@ my $stats    = new DivDB::Stats;
 my $carnival = new DivDB::CarnivalRelays;
 my $div      = new DivDB::Divisionals;
 my $eligible = new DivDB::Eligible;
+my $teams    = new DivDB::Teams;
 
 my $htmldir = $FindBin::RealBin;
 $htmldir=~s(/[^/]+$)(/html);
@@ -40,6 +41,7 @@ $tmpl=~s/\{\{DIVISION}}/$DivDB::Division/g;
 
 &gen_summary;
 &gen_individual;
+&gen_team($_) foreach keys %{$teams};
 &gen_relay;
 &gen_carnival;
 &gen_stats;
@@ -65,7 +67,8 @@ sub setup_html
                     "<$tag class=menubar href=$_.html>$labels{$_}</$tag>" 
                   } @pages;
 
-  $html=~s/\{\{TITLE}}/$labels{$page}/g;
+  my $label = $labels{$page} || $teams->{$page}{team_name};
+  $html=~s/\{\{TITLE}}/$label/g;
 
   while($html=~/^(.*?)\{\{LINKS}}/m)
   {
@@ -116,6 +119,22 @@ sub gen_individual
   my $fh = new FileHandle(">$htmldir/individual.html") || die "Failed to create individual.html: $!\n";
 
   my $body = $results->gen_html;
+  
+  $html=~s/\{\{BODY}}/$body/g;
+
+  print $fh $html;
+  $fh->close;
+}
+
+sub gen_team
+{
+  my($team) = @_;
+
+  my $html = setup_html($team);
+
+  my $fh = new FileHandle(">$htmldir/$team.html") || die "Failed to create $team.html: $!\n";
+
+  my $body = $results->gen_html($team);
   
   $html=~s/\{\{BODY}}/$body/g;
 

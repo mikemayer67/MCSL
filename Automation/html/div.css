@@ -44,6 +44,11 @@ td#links
   background:#ffcccc;
 }
 
+.relays
+{
+  background:#cccccc;
+}
+
 h1#title
 {
   font-size:320%;
@@ -265,6 +270,11 @@ td.st-name
   outline-width:1px;
   padding-left:1em;
   padding-right:1em;
+}
+
+td.seed-time
+{
+  width: 8em;
 }
 
 div.st-data

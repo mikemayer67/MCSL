@@ -53,7 +53,7 @@ my %score;
 
 my %lineup;
 my %relay;
-my @report;
+my %report;
 
 my $nteams = $seed->count;
 
@@ -107,7 +107,7 @@ while(<$cl2>)
 
     unless($rec->{ussid}=~/\w/)
     {
-      push @report, "$rec->{name} ($rec->{team}) is missing a USSID, manually audit event $number";
+      push @{$report{audit}}, "$rec->{name} ($rec->{team}) is missing a USSID, manually audit event $number";
     }
     else
     {
@@ -204,6 +204,7 @@ foreach my $number ( sort {$a<=>$b} keys %lineup )
             my $time = $recs->{$meet}{time};
             next unless $time>0;
             my $week = $schedule->week($meet);
+            next unless defined $week;
             $best_time = [ $time, $week, $lane ] if ( ! defined $best_time ) || $time < $best_time->[0];
           }
         }
@@ -229,7 +230,7 @@ foreach my $number ( sort {$a<=>$b} keys %lineup )
             {
               print " ERR [ Missing Seed.  Best time of ".print_time($best_time->[0])." on week $best_time->[1] team $best_time->[2] ]";
             }
-            push @report, "Event $number: $name is missing seed time";
+            push @{$report{audit}}, "Event $number: $name is missing seed time";
           }
           elsif ( abs($best_time->[0] - $seed ) > .001 )
           {
@@ -239,9 +240,9 @@ foreach my $number ( sort {$a<=>$b} keys %lineup )
             }
             else
             {
-              print " ERR [ Bad Seed.  Best time of $best_time->[0] on week ".print_time($best_time->[1])." team $best_time->[2] ]";
+              print " ERR [ Bad Seed.  Best time of ".print_time($best_time->[0])." on week $best_time->[1] team $best_time->[2] ]";
             }
-            push @report, "Event $number: $name has bad seed time";
+            push @{$report{seed}}, "Event $number: $name has bad seed time";
           }
         }
         else
@@ -249,7 +250,7 @@ foreach my $number ( sort {$a<=>$b} keys %lineup )
           if ( $seed ne 'NT' )
           {
             print "FLAG [ Relay Team has no A meet time in this event ]";
-            push @report, "Event $number: $name has no A meet time in this event";
+            push @{$report{info}}, "Event $number: $name has no A meet time in this event";
           }
         }
         print "\n";
@@ -274,7 +275,7 @@ foreach my $number ( sort {$a<=>$b} keys %lineup )
       unless($ages->may_swim($age,$age_group))
       {
         print " ERR [ Bad Age ]";
-        push @report, "Event $number: $name has wrong age";
+        push @{$report{error}}, "Event $number: $name has wrong age";
       }
 
       my $best_time;
@@ -288,6 +289,7 @@ foreach my $number ( sort {$a<=>$b} keys %lineup )
             my $time = $recs->{$meet}{time};
             next unless $time > 0;
             my $week = $schedule->week($meet);
+            next unless defined $week;
             $best_time = [ $time, $week, $i ] if ( ! defined $best_time ) || $time < $best_time->[0];
           }
         }
@@ -297,12 +299,12 @@ foreach my $number ( sort {$a<=>$b} keys %lineup )
         if ( $seed eq 'NT' )
         {
           print " ERR [ Missing Seed.  Best time of ".print_time($best_time->[0])." on week $best_time->[1] event $best_time->[2] ]";
-          push @report, "Event $number: $name is missing seed time";
+          push @{$report{audit}}, "Event $number: $name is missing seed time";
         }
         elsif ( abs($best_time->[0] - $seed ) > .001 )
         {
           print " ERR [ Bad Seed.  Best time of ".print_time($best_time->[0])." on week $best_time->[1] event $best_time->[2] ]";
-          push @report, "Event $number: $name has bad seed time";
+          push @{$report{seed}}, "Event $number: $name has bad seed time";
         }
         elsif( $best_time->[2] != $number )
         {
@@ -314,12 +316,12 @@ foreach my $number ( sort {$a<=>$b} keys %lineup )
         if( ! defined $results->{swimmers}{$ussid})
         {
           print " ERR [ Swimmer has not swam an A meet ]";
-          push @report, "Event $number: $name has never swam an A meet";
+          push @{$report{error}}, "Event $number: $name has never swam an A meet";
         }
         elsif ( $seed ne 'NT' )
         {
           print "FLAG [ Swimmer has no A meet time in this event ]";
-          push @report, "Event $number: $name has no A meet time in this event";
+          push @{$report{info}}, "Event $number: $name has no A meet time in this event";
         }
       }
 
@@ -329,19 +331,26 @@ foreach my $number ( sort {$a<=>$b} keys %lineup )
   print "\n";
 }
 
-if(@report)
+my %labels = ( audit=>'Manually Audit', info=>'Things of Note', seed=>'Seeding Issues', error=>'Ineligible Swimmers' );
+
+my $clean = 1;
+foreach my $category (qw/info seed audit error/)
 {
-  print "\n\nDiscrepancies:\n\n";
-  foreach my $i (0..$#report)
+  next unless exists $report{$category};
+
+  my @report = @{$report{$category}};
+  if(@report)
   {
-    printf(" %2d) $report[$i]\n",1+$i);
+    $clean = 0;
+    print "\n\n$labels{$category}:\n\n";
+    foreach my $i (0..$#report)
+    {
+      printf(" %2d) $report[$i]\n",1+$i);
+    }
+    print "\n";
   }
-  print "\n";
 }
-else
-{
-  print "\n\nAll is clean\n\n";
-}
+print "\n\nAll is clean\n\n" if $clean;
 
 sub cvt_time
 {

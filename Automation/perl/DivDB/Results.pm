@@ -34,6 +34,7 @@ use POSIX qw(floor);
 use DivDB;
 use DivDB::Events;
 use DivDB::Swimmers;
+use DivDB::Teams;
 
 our $Instance;
 
@@ -70,7 +71,7 @@ sub new
 
 sub gen_html
 {
-  my($this) = @_;
+  my($this,$teamFilter) = @_;
   my $events   = new DivDB::Events;
   my $swimmers = new DivDB::Swimmers;
   my $schedule = new DivDB::Schedule;
@@ -81,7 +82,14 @@ sub gen_html
   my $colspan = 4 + $seed->count;
 
   my $rval;
-  $rval .= "<h1 class=reporthead>Individual Event Results</h1>\n";
+  
+  my $label = 'Individual Event Results';
+  if( defined $teamFilter )
+  {
+    my $teams = new DivDB::Teams;
+    $label = $teams->{$teamFilter}{team_name};
+  }
+  $rval .= "<h1 class=reporthead>$label</h1>\n";
   $rval .= "<table class=report>\n";
 
   my @events = sort { $a<=>$b } keys %{$this->{events}};
@@ -191,6 +199,9 @@ sub gen_html
     foreach my $swimmer (@swimmers)
     {
       my $team = $swimmers->{$swimmer}{team};
+      
+      next if (defined $teamFilter) && ($team ne $teamFilter);
+
       my $name = $swimmers->{$swimmer}{name};
       $name = "$2 $1" if $name=~/(.*),(.*)/;
 

@@ -6,10 +6,12 @@ use Carp;
 use DivDB;
 use DivDB::Schedule;
 use DivDB::Teams;
+use DivDB::Events;
 use POSIX qw(floor);
 
 my %gender = ( M=>'Boys', F=>'Girls' );
 my $schedule = new DivDB::Schedule;
+my $events   = new DivDB::Events;
 my $relay_meet = $schedule->relay_carnival_meet;
 
 sub new
@@ -70,6 +72,9 @@ DIV_SEED_TIMES
     if($team ne $last_team)
     {
       $rval .= "</td></tr></table>\n" if length($last_gender)>0;
+
+      $rval .= add_relays($last_team) if length($last_team);
+
       my $team_name = $teams->{$team}{team_name};
       $rval .= "<h2 class=xyz>$team_name</h2>\n"; 
       $last_team = $team;
@@ -121,6 +126,47 @@ DIV_SEED_TIMES
   }
 
   $rval .= "</td><</tr></table>\n" if length($last_gender)>0;
+
+  $rval .= add_relays($last_team) if length($last_team);
+
+  return $rval;
+}
+
+sub add_relays
+{
+  my($team) = @_;
+
+  my $dbh = &DivDB::getConnection;
+
+  my $sql = <<"RELAY_SEED_TIMES";
+select
+  event,
+  seed_time
+from 
+  div_relay_seed_times
+where
+  team='$team'
+order by 
+  event;
+RELAY_SEED_TIMES
+
+  my $q = $dbh->selectall_arrayref($sql);
+
+  my $rval = "<table class=eligible>\n";
+  $rval .= "<tr><td class='eligible relays' colspan=3>Relays</td></tr>\n";
+
+  foreach my $x (@$q)
+  {
+    my($event,$seed_time) = @$x;
+
+    $seed_time = format_seed_time($seed_time);
+
+    $rval .= "<td class=blankcol />\n";
+    $rval .= "<td class=st-name>$events->{$event}{label}</td>\n";
+    $rval .= "<td class='reportbody seed-time'>$seed_time</td></tr>\n";
+  }
+
+  $rval .= "</table>\n";
 
   return $rval;
 }
